@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Process - Shalom Donga</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-navy: #051425;
+            --navy: #08101b;
+            --light-navy: #0f1b2e;
+            --lightest-navy: #1a2332;
+            --slate: #8892b0;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f6;
+            --white: #e6f1ff;
+            --green: #64ffda;
+            --font-sans: 'Arial', -apple-system, system-ui, sans-serif;
+            --font-mono: 'Courier New', monospace;
+            --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--navy);
+            color: var(--slate);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background-color: rgb(8 16 27 / 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            /* border-bottom: 1px solid rgba(100, 255, 218, 0.1); */
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--lightest-slate);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            transition: var(--transition);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .back-button:hover {
+            color: var(--green);
+        }
+
+        .back-button svg {
+            transition: var(--transition);
+        }
+
+        .back-button:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 50px 50px;
+            text-align: center;
+        }
+
+        .content-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .gif-container {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .gif-container img {
+            max-width: 25%;
+            height: auto;
+        }
+
+        .status-text {
+            margin-bottom: 30px;
+        }
+
+        .status-text h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            color: var(--lightest-slate);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .status-text p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .accent-text {
+            font-size: 18px;
+            color: var(--slate);
+            margin-bottom: 15px;
+        }
+
+        .status-highlight {
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: 16px;
+        }
+
+        /* Loading animation */
+        .loading-dots {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .loading-dots span {
+            animation: blink 1.4s infinite both;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 80%, 100% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 25px;
+            }
+
+            .main-content {
+                padding: 80px 25px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="back-button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"/>
+                <path d="m12 19-7-7 7-7"/>
+            </svg>
+            Back to Portfolio
+        </a>
+    </header>
+
+    <main class="main-content">
+        <div class="content-container">
+            <div class="gif-container">
+                <img src="./images/working.gif" alt="Design Process Animation">
+            </div>
+
+            <div class="status-text">
+                <h1>Design Process & UI/UX Work</h1>
+                <p class="status-highlight">Coming soon<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></p>
+                <p class="accent-text">This section will trace the path from concept to code, highlighting design decisions, user flows, and the creative process behind building intuitive interfaces.</p>
+                <p class="accent-text">It will also feature the progression from early research and wireframes to high-fidelity prototypes and complete design systems.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
