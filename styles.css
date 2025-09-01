@@ -695,6 +695,8 @@ footer .heart {
 
     .container {
         padding: 0 25px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     section {
@@ -748,25 +750,25 @@ footer .heart {
 
     .project-content {
         grid-column: 1 / -1 !important;
+        padding: 20px 0 30px 0;
+        text-align: left !important;
+        background-color: var(--light-navy);
+        border-radius: 4px;
+        z-index: 5;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .project-image {
         display: none;
     }
 
-    .project-content {
-        padding: 40px 40px 30px;
-        text-align: left !important;
-        background-color: var(--light-navy);
-        border-radius: 4px;
-        z-index: 5;
-        margin-bottom: 20px;
-    }
-
     .project-description {
-        padding: 0;
+        padding: 20px;
         background-color: transparent;
         box-shadow: none !important;
+        margin: 0 0 15px 0;
     }
 
     .project-description p{
@@ -777,26 +779,52 @@ footer .heart {
 
     .project-tech-list {
         justify-content: flex-start !important;
+        margin: 20px 20px 10px 20px;
+        flex-wrap: wrap;
     }
 
     .project-tech-list li {
-        margin: 0 20px 5px 0 !important;
+        margin: 0 15px 5px 0 !important;
+        font-size: 12px
     }
 
     .project-links {
         justify-content: flex-start !important;
-        margin-left: -10px !important;
-        margin-right: 0 !important;
+        /* margin-left: -10px !important;
+        margin-right: 0 !important; */
+        margin: 10px 10px 0 10px !important;
     }
 
     .experience-header {
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
     }
 
-    .experience-company {
-        margin-left: 0;
-        margin-top: 5px;
+    .experience-title,
+    .experience-company,
+    .experience-date {
+        width: 100%;
+        /* word-wrap: break-word; */
+        /* margin-left: 0;
+        margin-top: 5px; */
+    }
+
+    .experience-description li {
+        word-wrap: break-word; /* Prevent text overflow */
+        padding-right: 10px; /* Small buffer for bullet points */
+    }
+
+    /* Ensure other sections don't have width issues */
+    section {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Additional safety measures */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     body {
