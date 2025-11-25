@@ -1,0 +1,125 @@
+{
+  "projects": [
+    {
+      "id": "multilingual-chatbot",
+      "category": "aiml",
+      "overline": "Featured Project",
+      "title": "Multilingual Chatbot Evaluation Framework",
+      "description": "Evaluation framework for multilingual chatbots supporting Chinese, Korean, Japanese, and Hebrew. Features synthetic dataset creation, LLM fine-tuning with RAG systems, and automated model routing for production deployment.",
+      "technologies": ["Python", "Transformers", "RAG Systems", "NLP", "LLM Fine-tuning"],
+      "image": "./images/projects/chatbot.png",
+      "links": []
+    },
+    {
+      "id": "bird-migration",
+      "category": "aiml",
+      "overline": "Featured Project",
+      "title": "Bird Migration & Light Pollution Analysis",
+      "description": "Conservation technology project quantifying urban light pollution's effects on nocturnal bird migration. Integrates NASA VIIRS radiance data with BirdCast migration metrics through XGBoost and Random Forest models for policy recommendations.",
+      "technologies": ["Python", "XGBoost", "Random Forest", "SHAP", "NASA APIs"],
+      "image": "./images/projects/bird-migration.png",
+      "links": []
+    },
+    {
+      "id": "world-happiness",
+      "category": "aiml",
+      "overline": "Featured Project",
+      "title": "World Happiness Clustering",
+      "description": "Machine learning clustering analysis of World Happiness Report data using K-means to group 164 countries by GDP, social support, health, freedom, generosity, and corruption factors. Applied PCA visualization and elbow method for optimal cluster selection.",
+      "technologies": ["Python", "scikit-learn", "pandas", "matplotlib", "Jupyter"],
+      "image": "./images/projects/world-happiness.png",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/ShalomDee/world_happiness_clustering",
+          "label": "GitHub Link"
+        }
+      ]
+    },
+    {
+      "id": "uniride",
+      "category": "uiux",
+      "overline": "Featured Project",
+      "title": "UniRide",
+      "description": "Mobile platform addressing transportation barriers for HBCU students at isolated campuses. Features real-time shuttle tracking and student ridesharing with fixed routes to essential destinations based on research revealing 76% distrust current shuttle schedules.",
+      "technologies": ["User Research", "Figma", "Mobile UI/UX", "v0"],
+      "image": "./images/projects/uniride.png",
+      "links": [
+        {
+          "type": "case-study",
+          "url": "https://drive.google.com/file/d/1yR9B-fDO_ghtzPV6uMawGPVqRxQ5SHzz/view?usp=sharing",
+          "label": "Case Study"
+        }
+      ]
+    },
+    {
+      "id": "classync",
+      "category": "swe uiux",
+      "overline": "Featured Project",
+      "title": "ClassSync",
+      "description": "A privacy-first automated attendance iOS application currently being implemented at a major university. Features proximity detection, FaceID authentication, and real-time attendance tracking with elegant SwiftUI design.",
+      "technologies": ["Swift", "SwiftUI", "Firebase", "CoreLocation", "MVVM"],
+      "image": "./images/projects/classSync.png",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/AdrDube/Classync",
+          "label": "GitHub Link"
+        },
+        {
+          "type": "case-study",
+          "url": "https://drive.google.com/file/d/1dfmWJ1TxgRzDFi_YMKjTaMJfM6R94OOk/view?usp=sharing",
+          "label": "Case Study"
+        }
+      ]
+    },
+    {
+      "id": "aidpoint",
+      "category": "swe",
+      "overline": "Featured Project",
+      "title": "AidPoint",
+      "description": "A Progressive Web App (PWA) that helps users easily locate and contact emergency resources with or without internet access. Built with React and Google Maps API, it offers an interactive map, offline-first functionality, one-touch calling, and cross-platform installation.",
+      "technologies": ["React", "JS", "PWA", "Google Maps API", "Service Workers"],
+      "image": "./images/projects/aidpoint.png",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/ShalomDee/aidpoint",
+          "label": "GitHub Link"
+        }
+      ]
+    },
+    {
+      "id": "holidays-package",
+      "category": "swe",
+      "overline": "Open Source Contribution",
+      "title": "Holidays Python Package",
+      "description": "Contributed to the holidays library (544 forks, PyPI package) supporting 219 countries for government-designated holiday generation. Implemented complete Turks and Caicos Islands holiday support with comprehensive unit testing and documentation.",
+      "technologies": ["Python", "PyPI", "Unit Testing", "Open Source"],
+      "image": "./images/projects/holidays.png",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/vacanza/holidays",
+          "label": "GitHub Link"
+        }
+      ]
+    },
+    {
+      "id": "space-explorer",
+      "category": "swe",
+      "overline": "Featured Project",
+      "title": "Space Explorer",
+      "description": "Full-stack web application integrating NASA's Astronomy Picture of the Day API with interactive educational features. Includes secure authentication, favorites system, space quiz, and responsive design for cross-device compatibility.",
+      "technologies": ["React", "Node.js", "Express", "MongoDB", "NASA API"],
+      "image": "./images/projects/space-explo.png",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/ShalomDee/space-explorer",
+          "label": "GitHub Link"
+        }
+      ]
+    }
+  ]
+}

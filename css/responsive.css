@@ -1,0 +1,225 @@
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 40px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hamburger-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1010;
+    }
+
+    nav {
+        padding: 0 25px;
+        height: 80px;
+    }
+
+    .container {
+        padding: 0 25px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    section:not(.hi-section) {
+        padding-top: 50px;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    } */
+
+    .intro-text {
+        order: 2;
+    }
+
+    .intro-avatar {
+        display: none;
+    }
+
+    .social-links {
+        order: 3;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .about-image {
+        order: -1;
+        max-width: 250px;
+    }
+
+    .container-icons {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 20px;
+    }
+
+    .contact-social-links {
+        justify-content: center;
+    }
+
+    .project-content {
+        grid-column: 1 / -1 !important;
+        padding: 0;
+        text-align: left !important;
+        background-color: var(--light-navy);
+        border-radius: 4px;
+        z-index: 5;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .project-overline,
+    .project-title {
+        padding: 0 20px;
+        margin: 20px 0 10px 0;
+    }
+
+    .project-overline {
+        padding-top: 20px; /* Extra top padding for first element */
+    }
+
+    .project-image {
+        display: none;
+    }
+
+    .project-description {
+        padding: 0 20px 20px 20px;
+        background-color: transparent;
+        box-shadow: none !important;
+        margin: 0;
+    }
+
+    .project-description p{
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .project-tech-list {
+        justify-content: flex-start !important;
+        margin: 20px 20px 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    .project-tech-list li {
+        margin: 0 15px 5px 0 !important;
+        font-size: 12px
+    }
+
+    .project-links {
+        justify-content: flex-start !important;
+        margin: 10px 10px 0 10px !important;
+    }
+
+    .experience-item {
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 0;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .experience-title {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .experience-company {
+        display: block;
+        margin-left: 0 !important;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .experience-date {
+        margin-top: 10px;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .experience-description {
+        width: 100%;
+    }
+
+    .experience-description li {
+        word-wrap: break-word;
+        padding-right: 10px;
+    }
+
+    section {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    body {
+        counter-reset: section;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0 15px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .container-icons {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .box-icon {
+        padding: 20px;
+    }
+
+    .box-icon i {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+}
