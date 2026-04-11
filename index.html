@@ -1,308 +1,516 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shalom Donga - Portfolio</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalom | The Maker's Times</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=UnifrakturMaguntia&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <a href="#hi"><img src="images/brand/logo.png" alt="SD Logo"></a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose">✕</button>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skill Suite</a>
+  <a href="#projects">Projects</a>
+  <a href="https://drive.google.com/file/d/1gKSGbTj4xa-p8Nhh5LJSzXToyzc8nfkO/view?usp=drive_link" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email ↗</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<header>
+  <!-- Mobile top bar (hidden on desktop) -->
+  <div class="mast-top">
+    <div class="mast-pub">
+      <strong>Portfolio Edition</strong>
+      Grambling, Louisiana · Est. 2024
+    </div>
+    <div class="mast-actions">
+      <button class="theme-btn" aria-label="Toggle theme">
+        <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mast-corner">
+      <strong>Where Code Meets Canvas</strong>
+      Design Engineer · CS Student<br>
+      Break Through Tech AI Fellow
+    </div>
+  </div>
+
+  <!-- Mobile title (hidden on desktop) -->
+  <div class="mast-title">
+    <h1 class="mast-name">The Maker's Times</h1>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <!-- Desktop broadsheet (hidden on mobile) -->
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">"Where Code<br>Meets Canvas"</span>
+    </div>
+    <div class="mast-center">
+      <h1 class="mast-name">The Maker's Times</h1>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Weather: High innovation, low friction. Full report on Home Page. Price: One Collaboration</p>
+      <button class="theme-btn mast-theme-btn" aria-label="Toggle theme">
+        <svg class="theme-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="mast-theme-label">Night Edition</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-ticker" id="navTicker">
+    <a href="#about" class="active">About</a>
+    <span class="nav-sep">✦</span>
+    <a href="#experience">Experience</a>
+    <span class="nav-sep">✦</span>
+    <a href="#skills">Skill Suite</a>
+    <span class="nav-sep">✦</span>
+    <a href="#projects">Projects</a>
+    <span class="nav-sep">✦</span>
+    <a href="https://drive.google.com/file/d/1gKSGbTj4xa-p8Nhh5LJSzXToyzc8nfkO/view?usp=drive_link" class="nav-cta">Resume</a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-left animate-in">
+    <h2 class="hero-greeting">
+      <span class="hero-hi">HI, I'M</span>
+      <em>SHALOM</em>
+    </h2>
+    <p class="hero-tagline">Take a glimpse into a design engineer's world</p>
+    <a href="#about" class="hero-cta">Read the story</a>
+    <div class="hero-socials">
+      <a href="mailto:shalomdonga@gmail.com" class="hero-social-link" aria-label="Email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/shalom-donga" class="hero-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/shalomdee" class="hero-social-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S9 17.44 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-illo animate-in delay-1">
+    <div class="hero-illo-tint"></div>
+    <img id="heroIllo" src="./assets/images/hero-dark.png" alt="Victorian etching: two figures pulling a rope between code and design worlds">
+  </div>
+</section>
+
+<!-- ═══ MAIN STORY ═══ -->
+<section class="main-story wrap" id="about">
+  <div class="ms-portrait-col">
+    <div class="ms-portrait">
+      <img src="./assets/images/portrait.png" alt="Portrait of Shalom Donga" class="alive-reveal">
+    </div>
+  </div>
+  <div class="ms-banner animate-in">
+    <div class="ms-headline">
+      <span>Engineer Who <span class="hl">Designs</span></span>
+      <span>Designer Who <span class="hl">Codes</span></span>
+    </div>
+    <p class="ms-deck">Inside the portfolio of a design engineer spanning AI frameworks, iOS apps, and enterprise solutions</p>
+  </div>
+  <div class="ms-body animate-in delay-1">
+    <div class="ms-body-text">
+      <p>Hi, I’m Shalom, a design engineer 👋</p>
+      <p>What does that mean?</p>
+      <p>It makes more sense with a little context. I started in creative work. Writing, visual art, choir. Then I moved into code, and it felt like the same discipline expressed through a different medium. The goal never changed. It was always about shaping ideas into something others can experience.</p>
+      <p>That perspective stayed with me. I do not separate design from engineering. I approach both as one continuous process of thinking, building, and refining.</p>
+      <p>The products I create reflect that. They are intentional in how they feel and rigorous in how they function.</p>
+    </div>
+  </div>
+  <p class="ms-byline animate-in delay-2">
+    <span class="ms-byline-text">By <span class="ms-byline-name">SHALOM DONGA</span></span>
+    <em class="ms-byline-note">Special to The Maker's Times</em>
+  </p>
+  <div class="ms-dual">
+    <img src="./assets/images/dual.webp" alt="Design and code work side by side" class="alive-reveal">
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE WIRE + CLASSIFIEDS ═══ -->
+<div class="wire-classifieds-row wrap" id="experience">
+
+  <section class="exp-wire">
+    <div class="sec-head sec-head-gold">
+      <h2 class="sec-label">Experience <span class="aw">Wire</span></h2>
+      <span class="sec-meta">Latest Headlines</span>
+    </div>
+    <div class="wire-list">
+
+      <div class="wire-item wire-item--incoming animate-in">
+        <div class="wire-logo"><img src="./assets/images/exp/tiffco.webp" alt="Tiffany & Co logo"></div>
+        <div class="wire-content">
+          <span class="kicker">Summer 2026</span>
+          <div class="wire-role-row">
+            <h3 class="wire-role">UX Designer</h3>
+          </div>
+          <p class="wire-org">Tiffany &amp; Co.</p>
+          <p class="wire-desc">Joining the Digital Omni and Client team to deliver white glove digital experiences for one of the world’s most historic luxury houses, where heritage craftsmanship continues to shape the digital work.</p>
         </div>
+        <span class="badge-incoming">Incoming</span>
+      </div>
 
-        <!-- Desktop Navigation -->
-        <ul class="nav-links desktop-nav">
-            <li><a href="#hi">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#project">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://drive.google.com/file/d/1ttHroYTM11onrayl6_1dL2jg7hFKuMTn/view?usp=sharing" class="resume-button" target="_blank">Resume</a></li>
-        </ul>
-
-        <!-- Hamburger Button -->
-        <button class="hamburger-button" aria-label="Menu">
-            <div class="ham-box">
-                <div class="ham-box-inner"></div>
-            </div>
-        </button>
-
-        <!-- Mobile Menu Sidebar -->
-        <aside class="mobile-sidebar">
-            <ol>
-                <li><a href="#hi">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ol>
-            <a href="https://drive.google.com/file/d/1ttHroYTM11onrayl6_1dL2jg7hFKuMTn/view?usp=sharing" class="resume-link" target="_blank">Resume</a>
-        </aside>
-    </nav>
-
-    <main>
-        <!-- Hi Section -->
-        <section id="hi" class="hi-section">
-            <div class="container">
-                <div class="intro-content">
-                    <div class="intro-text">
-                        <p class="intro">Hi, my name is</p>
-                        <h1>Shalom Donga</h1>
-                        <h2><a href="#project">Engineer.</a> <a href="#project">Designer.</a> Innovator.</h2>
-                        <p>I build intelligent systems and modern applications, combining design instincts with engineering to deliver software that is clear, functional, and engaging. Currently focused on AI/ML, full stack development, and mobile apps.</p>
-                        
-                        <div class="social-links">
-                            <a href="https://github.com/ShalomDee" class="social-link" target="_blank" aria-label="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                            </a>
-                            <a href="mailto:shalomdonga@gmail.com" class="social-link" aria-label="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </a>
-                            <a href="https://linkedin.com/in/shalom-donga/" class="social-link" target="_blank" aria-label="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                            </a>
-                        </div>
-
-                        <a href="#contact" class="cta-button">Get In Touch</a>
-                    </div>
-
-                    <div class="intro-avatar">
-                        <img src="images/brand/shalom_avatar.png" alt="Profile Picture">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hello! I'm Shalom, a passionate Computer Science student with a perfect 4.0 GPA. I began in art and design, then realized I could bring my ideas to life through code. That shift took me from sketchbooks to software, where I now build applications and systems that are both practical and engaging, and make a real impact.</p>
-                        
-                        <p>I've had the privilege of working on diverse projects - from developing iOS applications that streamline university processes to contributing to open-source Python packages used by developers worldwide.  During my time as an intern at CORE Futures Innovations, I expanded my skills by building and refining user-facing solutions in a fast-paced environment.</p>
-
-                        <p>Currently, I'm an AI/ML Fellow at Break Through Tech AI working on multilingual chatbot evaluation frameworks and also creating machine learning models for data analysis.</p>
-
-                        <h3>Some technologies I work with:</h3>
-                    </div>
-                    <div class="about-image">
-                        <img src="images/brand/shalom.png" alt="Shalom Donga">
-                    </div>
-                </div>
-                <div class="skills-tools">
-                    <div class="container-icons">
-                        <div class="box-icon">
-                            <i class="devicon-python-plain" aria-hidden="true"></i>
-                            <p>Python</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-swift-plain" aria-hidden="true"></i>
-                            <p>Swift</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-html5-plain" aria-hidden="true"></i>
-                            <p>HTML5</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-css3-plain" aria-hidden="true"></i>
-                            <p>CSS3</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-javascript-plain" aria-hidden="true"></i>
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-react-original" aria-hidden="true"></i>
-                            <p>React</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-flutter-plain" aria-hidden="true"></i>
-                            <p>Flutter</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-flask-original" aria-hidden="true"></i>
-                            <p>Flask</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-nodejs-plain" aria-hidden="true"></i>
-                            <p>Node.js</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-fastapi-plain" aria-hidden="true"></i>
-                            <p>FastAPI</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-firebase-plain" aria-hidden="true"></i>
-                            <p>Firebase</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-mongodb-plain" aria-hidden="true"></i>
-                            <p>MongoDB</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-sqlite-plain" aria-hidden="true"></i>
-                            <p>SQLite</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-git-plain" aria-hidden="true"></i>
-                            <p>Git</p>
-                        </div>
-                        <div class="box-icon">
-                            <i class="devicon-figma-plain" aria-hidden="true"></i>
-                            <p>Figma</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="container">
-                <h2 class="section-title">My Journey & Experiences</h2>
-                
-                <!-- Break Through Tech AI Fellow -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <span class="experience-title">AI/ML Fellow & Engineer</span>
-                            <span class="experience-company">@ <a href="https://www.breakthroughtech.org/" target="_blank" rel="noopener noreferrer">Break Through Tech AI & Anote</a></span>
-                        </div>
-                        <span class="experience-date">May 2025 - Present</span>
-                    </div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Selected from 3,000+ applicants for Cornell Tech AI Fellowship, mastering end-to-end ML pipeline development from data preprocessing to production deployment</li>
-                            <li>Developed multilingual chatbot evaluation framework at Anote for Chinese, Korean, Japanese, and Hebrew models, engineering synthetic datasets from Wikipedia, AIHub, and Kyoto Corpus to benchmark ChatGPT, Claude, and Llama</li>
-                            <li>Fine-tuned LLMs and implemented RAG systems with vector databases and semantic search for language-specific optimization</li>
-                            <li>Built automated model routing system that deploys best-performing models to production based on real-time evaluation and task requirements</li>
-                            <li>Completed K-means clustering of World Happiness data (164 countries, 2005-2017) with PCA visualization to group nations by economic, social, and governance indicators</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Black Venture Capital Consortium UX Designer -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <span class="experience-title">User Experience Designer</span>
-                            <span class="experience-company">@ <a href="https://www.bvcc.vc/" target="_blank" rel="noopener noreferrer">Black Venture Capital Consortium</a></span>
-                        </div>
-                        <span class="experience-date">Sep 2025 - Present</span>
-                    </div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Completing 10-week UX program led by Oracle professionals, developing full-cycle capstone project addressing transportation inequities for HBCU students</li>
-                            <li>Conducted user interviews with 4+ students revealing 76% distrust current shuttle schedules, informing design of UniRide platform with real-time tracking and fixed-route ridesharing</li>
-                            <li>Facilitated ideation workshops using How Might We statements and Crazy 8 methodology, creating wireframes and interactive prototypes in Figma</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- CORE Futures Lab Frontend Development Intern -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <span class="experience-title">Frontend Development Intern</span>
-                            <span class="experience-company">@ <a href="https://corefutureslab.org/project/https-www-worldsofhello-com" target="_blank" rel="noopener noreferrer">CORE Futures Lab</a></span>
-                        </div>
-                        <span class="experience-date">May - Aug 2025</span>
-                    </div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Built 30+ UI screens for AI-powered speech therapy app "Worlds of Hello" using Flutter, implementing authentication, onboarding, and clinical workflow features that accelerated development timeline by 50%</li>
-                            <li>Developed caseload search, session notes, voice filtering, and SLP connection workflows with 25+ responsive components using Cupertino design patterns</li>
-                            <li>Integrated Supabase for real-time data storage and Eleven Labs for AI voice processing in 2-person dev team</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Section -->
-        <section id="project">
-            <div class="container">
-                <h2 class="section-title">Highlights from My Work</h2>
-
-                <!-- Intro Text (shown when no filter active) -->
-                <div class="project-intro" id="projectIntro">
-                    <p>I am a thinker in motion, exploring ideas through hands-on building across ML, engineering, and design.</p>
-                    <p>I build for fun, for impact, and to learn. Check out some of my featured work.</p>
-                    </div>
-
-                <div class="project-filters">
-                    <button class="filter-btn" data-filter="aiml">AI/ML</button>
-                    <button class="filter-btn" data-filter="swe">Software Engineering</button>
-                    <button class="filter-btn" data-filter="uiux">UI/UX</button>
-                </div>
-                
-                <div class="project-grid">
-                    <!-- Projects will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <div class="contact-content">
-                    <h2>Get In Touch</h2>
-                    <p>I'm currently looking for new opportunities and exciting projects to work on. Whether you have a question, want to collaborate, or just want to say hi, feel free to reach out!</p>
-                    
-                    <div class="contact-social-links">
-                        <a href="https://github.com/ShalomDee" class="contact-social-link" target="_blank" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </a>
-                        <a href="mailto:shalomdonga@gmail.com" class="contact-social-link" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/shalom-donga/" class="contact-social-link" target="_blank" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Built with <span class="heart">♥</span> and dedication. All rights reserved for Shalom Donga.</p>
+      <div class="wire-item animate-in delay-1">
+        <div class="wire-logo"><img src="./assets/images/exp/ford2.webp" alt="Ford Motor Company logo"></div>
+        <div class="wire-content">
+          <span class="kicker">Spring 2026</span>
+          <div class="wire-role-row">
+            <h3 class="wire-role">Student Consultant</h3>
+          </div>
+          <p class="wire-org">BVCC × Ford Motor Company</p>
+          <p class="wire-desc">One of 16 students selected nationally to consult directly with Ford on current UXR internal pain point. Working in a team of four to research, design, and present solutions to Ford executives.</p>
         </div>
-    </footer>
+      </div>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/mobile-menu.js"></script>
-    <script src="js/project-renderer.js"></script>
-    <script src="js/project-filter.js"></script>
-    <script src="js/utils.js"></script>
+      <div class="wire-item animate-in delay-2">
+        <div class="wire-logo wire-logo--zoom"><img src="./assets/images/exp/anote.webp" alt="Anote logo"></div>
+        <div class="wire-content">
+          <span class="kicker">Fall 2025</span>
+          <div class="wire-role-row">
+            <h3 class="wire-role">AI Studio Fellow</h3>
+          </div>
+          <p class="wire-org">Break Through Tech × Anote</p>
+          <p class="wire-desc">Built a multilingual LLM evaluation system across four languages and 9,322 data chunks. Discovered that a free local model outperformed Claude, OpenAI, and Gemini. The finding reached Anote's CEO and a partner in Japan.</p>
+        </div>
+      </div>
 
+      <div class="wire-item animate-in delay-3">
+        <div class="wire-logo wire-logo--contain"><img src="./assets/images/exp/core.webp" alt="CORE Futures logo"></div>
+        <div class="wire-content">
+          <span class="kicker">Summer 2025</span>
+          <div class="wire-role-row">
+            <h3 class="wire-role">Frontend Development Intern</h3>
+          </div>
+          <p class="wire-org">CORE Futures Lab</p>
+          <p class="wire-desc">Designed and built the UI for an AI speech therapy platform serving children in under-resourced communities. Two connected apps, one for clinicians and one for families. Shipped ahead of schedule and supported a successful VC raise.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="classifieds-col" id="skills">
+    <div class="sec-head sec-head-gold">
+      <h2 class="sec-label"><em>Classifieds</em></h2>
+      <span class="sec-meta">Skills</span>
+    </div>
+    <div class="classifieds-frame animate-in">
+
+      <div class="classified-category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.033 14.828L6.448 16.243L10.69 12L6.448 7.757L5.033 9.172L7.862 12L5.033 14.828ZM15 14H11V16H15V14Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M2 2C1.47 2 .961 2.211.586 2.586.211 2.961 0 3.47 0 4v16c0 .53.211 1.039.586 1.414C.961 21.789 1.47 22 2 22h20c.53 0 1.039-.211 1.414-.586C23.789 21.039 24 20.53 24 20V4c0-.53-.211-1.039-.586-1.414C23.039 2.211 22.53 2 22 2H2ZM22 4H2v16h20V4Z" fill="currentColor"/></svg>
+            Engineering
+          </div>
+        </div>
+        <p class="cat-sub">tools &amp; infrastructure</p>
+        <div class="tags-row">
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7.5H7.5M7.5 7.5H5.978C5.171 7.5 4.345 7.688 3.848 8.324C3.318 9.003 2.75 10.159 2.75 12C2.75 13.84 3.318 14.997 3.848 15.676C4.345 16.312 5.171 16.5 5.978 16.5H7.5M7.5 7.5V5.978C7.5 5.171 7.688 4.345 8.324 3.848C9.003 3.318 10.159 2.75 12 2.75C13.84 2.75 14.997 3.318 15.676 3.848C16.312 4.345 16.5 5.171 16.5 5.978V7.5M12 16.5H16.5M16.5 16.5H18.021C18.828 16.5 19.655 16.312 20.151 15.676C20.682 14.997 21.25 13.841 21.25 12C21.25 10.16 20.682 9.003 20.152 8.324C19.655 7.688 18.828 7.5 18.022 7.5H16.5M16.5 16.5V18.021C16.5 18.828 16.312 19.655 15.676 20.151C14.997 20.682 13.841 21.25 12 21.25C10.16 21.25 9.003 20.682 8.324 20.152C7.688 19.655 7.5 18.828 7.5 18.022V16.5M16.5 7.5V10C16.5 10.5304 16.2893 11.0391 15.9142 11.4142C15.5391 11.7893 15.0304 12 14.5 12H9.5C8.96957 12 8.46086 12.2107 8.08579 12.5858C7.71071 12.9609 7.5 13.4696 7.5 14V16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 18.5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9 5.5a.75.75 0 1 1 1.5 0A.75.75 0 0 1 9 5.5Z" fill="currentColor"/></svg>Python</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.334 16.055L12.476 17.243C13.29 17.969 14.302 18.332 15.512 18.332C16.436 18.31 17.14 18.0717 17.624 17.617C18.1153 17.155 18.361 16.605 18.361 15.967C18.361 15.3437 18.1887 14.8303 17.844 14.427C17.4993 14.0237 16.92 13.701 16.106 13.459C15.4327 13.2543 14.956 13.0673 14.676 12.898C14.3973 12.722 14.258 12.5093 14.258 12.26C14.258 12.0333 14.3717 11.85 14.599 11.71C14.827 11.57 15.1313 11.5003 15.512 11.501C15.7913 11.501 16.1067 11.556 16.458 11.666C16.81 11.7613 17.1217 11.9153 17.393 12.128L18.163 10.929C17.489 10.3863 16.5943 10.115 15.479 10.115C14.6803 10.115 14.024 10.3203 13.51 10.731C12.982 11.141 12.718 11.6507 12.718 12.26C12.7253 12.9053 12.938 13.4077 13.356 13.767C13.7813 14.127 14.3863 14.4203 15.171 14.647C15.8243 14.8517 16.268 15.057 16.502 15.263C16.736 15.469 16.843 15.72 16.843 16.011C16.843 16.307 16.737 16.539 16.503 16.671C16.2677 16.8323 15.93 16.913 15.49 16.913C14.772 16.9197 14.0533 16.6337 13.334 16.055ZM7.804 16.693C7.5628 16.5405 7.35358 16.3424 7.188 16.11L6.154 16.957C6.46267 17.477 6.844 17.84 7.298 18.046C7.72333 18.236 8.211 18.3313 8.761 18.332C9.061 18.332 9.37267 18.2843 9.696 18.189C10.0193 18.0937 10.3163 17.9323 10.587 17.705C11.0637 17.3237 11.313 16.7003 11.335 15.835V10.247H9.85V15.549C9.85 16.0557 9.73667 16.4113 9.51 16.616C9.282 16.814 8.99567 16.913 8.651 16.913C8.321 16.913 8.03867 16.8397 7.804 16.693ZM3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H18C18.7956 3 19.5587 3.31607 20.1213 3.87868C20.6839 4.44129 21 5.20435 21 6V18C21 18.7956 20.6839 19.5587 20.1213 20.1213C19.5587 20.6839 18.7956 21 18 21H6C5.20435 21 4.44129 20.6839 3.87868 20.1213C3.31607 19.5587 3 18.7956 3 18V6ZM6 5C5.73478 5 5.48043 5.10536 5.29289 5.29289C5.10536 5.48043 5 5.73478 5 6V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H18C18.2652 19 18.5196 18.8946 18.7071 18.7071C18.8946 18.5196 19 18.2652 19 18V6C19 5.73478 18.8946 5.48043 18.7071 5.29289C18.5196 5.10536 18.2652 5 18 5H6Z" fill="currentColor"/></svg>JavaScript</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5.9 15.375L2.5 12L13.5 1H20.275L5.9 15.375ZM13.5 23L7.575 17.075L13.5 11.15H20.275L14.35 17.075L20.275 23H13.5Z" fill="currentColor"/></svg>Flutter</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 7.563V6.984C22 6.534 21.968 6.116 21.871 5.666C21.839 5.216 21.646 4.798 21.453 4.444C21.035 3.672 20.424 2.997 19.588 2.579C19.17 2.386 18.785 2.225 18.334 2.161C17.884 2.129 17.466 2.032 17.016 2.032H6.695C6.341 2.032 6.051 2.064 5.698 2.129C5.366 2.169 5.041 2.256 4.733 2.386C4.637 2.418 4.508 2.482 4.412 2.515C4.131 2.701 3.863 2.905 3.608 3.125C3.511 3.158 3.447 3.255 3.318 3.351C3.016 3.658 2.757 4.003 2.547 4.379C2.354 4.798 2.193 5.183 2.129 5.634C2.064 6.084 2.032 6.502 2 6.952V16.984C2 17.434 2.032 17.852 2.129 18.302C2.161 18.752 2.354 19.171 2.547 19.556C2.965 20.36 3.576 21.003 4.412 21.421C4.83 21.614 5.215 21.775 5.666 21.839C6.116 21.872 6.534 21.968 6.984 21.968H17.017C17.467 21.968 17.884 21.936 18.334 21.839C18.784 21.807 19.203 21.614 19.588 21.421C20.36 21.003 21.035 20.392 21.453 19.556C21.646 19.138 21.807 18.753 21.871 18.302C21.936 17.852 22 17.434 22 16.984V7.563ZM18.881 18.27C17.981 16.566 16.341 16.952 15.505 17.402C15.439 17.459 15.362 17.502 15.28 17.531H15.215C13.511 18.495 11.1 18.527 8.752 17.499C6.838 16.645 5.217 15.247 4.09 13.479C4.63 13.902 5.225 14.248 5.859 14.509C8.399 15.698 10.875 15.601 12.675 14.509C10.135 12.579 8.077 10.039 6.405 8.013C6.089 7.659 5.799 7.283 5.537 6.888C7.467 8.656 10.553 10.907 11.647 11.486C9.299 9.042 7.273 5.956 7.337 6.116C11.003 9.814 14.379 11.936 14.379 11.936C14.508 11.968 14.605 12.064 14.701 12.129C14.733 11.936 14.83 11.775 14.894 11.582C15.473 9.46 14.862 6.984 13.351 4.99C16.791 7.016 18.785 10.907 17.949 14.219C17.916 14.251 17.916 14.347 17.916 14.444C19.556 16.405 19.106 18.656 18.881 18.27Z" fill="currentColor"/></svg>Swift</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 10.11a1.87 1.87 0 1 1 0 3.74 1.87 1.87 0 0 1 0-3.74ZM7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9-.808-.078-1.609-.198-2.4-.36C6.55 18.18 6.74 19.65 7.37 20ZM8.08 14.26l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51ZM14.62 13.5l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47-.54-.03-1.1-.03-1.71-.03-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.97.91-1.47ZM12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72ZM12 17.22c.19-.2.39-.43.59-.7h-1.18c.2.27.4.5.59.7ZM16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.822.08 1.633.2 2.44.36.5-2.14.31-3.61-.36-3.96ZM15.92 9.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51ZM17.37 2.69c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68 0 1.69-1.83 2.93-4.37 3.68.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68 0-1.69 1.83-2.93 4.37-3.68-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95Z" fill="currentColor"/></svg>React</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 2L4.578 19.824L12 22L19.467 19.825L21 2H3ZM17.049 8.048H9.075L9.247 10.064H16.944L16.318 16.629L12.072 18.01L7.791 16.555L7.503 13.623H9.527L9.687 15.034L12.087 15.849L14.433 15.086L14.73 12.081H7.416L6.854 6.031H17.266L17.049 8.048Z" fill="currentColor"/></svg>HTML / CSS</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.781 13.579C3.104 12.596 1.671 10.223.93 8.141.633 7.238.531 6.27.148 5.402c-.401-.63.068-1.32.759-1.52.307-.059.848-.348.195-.557-.585.429-.641-.39-.041-.441.41-.054.561-.39.421-.691-.44-.287 1.065-.602.307-1.03-.789-.851 1.104-1.015.637.952-.112.743 1.322-.137.989.727.338.412 1.267.094 1.244.672.493.034.662.448 1.124.48.48.216 1.348.387 1.512.927-.476.377-1.577-.777-1.63.265.2 3.677.39 4.945 2.166 6.871 1.196 1.353 2.839 1.991 4.226 2.218.299-.228.827-1.078 1.293-.72.022.403-.927.841.153.797.517-.156.875.4 1.301-.101.392.465 1.63-.297 1.351.653-.377.243-.927.096-1.305.43-.623-.311-1.12.279-1.81.204-2.66.465-6.127.045-8.062-1.37Zm3.127 1.151c1.16.161 2.358.409 3.522.183-.527-.238-1.072.093-1.597-.17-.629.135-1.305-.035-1.945-.118-.728-.324-1.513-.547-2.194-.968-.852-.311.442.4.674.457.532.302-.582-.155-.739-.28-.446-.25-.514-.192-.053.062.715.443 1.611.743 2.342.834Zm-3.52-.93c.646.239-.001-.455-.297-.395-.131-.228-.501-.372-.242-.494-.469.163-.491-.62-.712-.508-.496-.843.143-.286.361-.37-.28-.235-.559-.234-.567-.597-.003-.378 1.07.236 1.48.598.335.141 1.228.21.57-.144-.178-.101-1.87-.508-1.27-.872-.436.237-.804.09-.95-.946-.046-.26-.578-1.057-.254-.299.277.715.762 1.327 1.166 1.938.314.582.681 1.19 1.253 1.553.193.185.379.468.512.54Zm.832-1.131c-.369-.188-.54.198 0 .404.349.141 1.238.209.571-.144l-.57-.26Zm.59.75c.76.215-.599-.48-.15-.08l.187.079Zm.007-.398c.552.071-.652-.476-.184-.164l.121.04Zm1.878 1.179c.515-.29.345.759.878.125.521-.381-.449.47.193.066.465-.311 1.152.147 1.585.296.312-.015.615.27.935.096.616-.166-1.199-.246-.722-.54-.564.164-.998-.195-1.275-.556-.633-.146-1.363-.469-1.678-1.028-.128-.21.162.042-.135-.301-.38-.339-.57-.723-.826-1.135-.305-.163-.34-.642-.369.984-.003-.395-.371-.661-.46-.55-.002-.38.397-.193.118-.471-.061-.395-.258-.806-.318-1.251-.092-.215.017-.675-.284-.161-.11.514.073-.63.244-.208.175-.385-.13-.33-.138-.276.147-.325.093-.786-.038-.611.068-.339.113-1.262-.127-1.099.145-.36.783-1.532.151-1.023-.256.145.168.31-.056.5.657.362-.137.311-.138.376.167.322.156.706.297.953-.134.39-.087.682-.213.714.105.388.162.104.162-.08.481.104.369.389.52.588.333.15-.566-1.136.072-.43.6.541.31.727.13 1.026.534.167.54.872.816 1.24.645.321.08.361.44.333.428.082.313.322-.078.31.25-.044.222.427.131.469.549.068.174.499.099.469.394Zm-.699-2.13c-.227-.333.08.07.278.276.366.375-.125-.213-.215-.257Zm-.996-1.799s.053-.365-.162-.305c-.162-.04-.071.065.062.345.032.067.051.09.051.089M4.288 8.336c-.163-.36.074.137.044-.017-.076-.155-.789-.978-.458-.359.297.74-.187-.092-.237-.344-.056.155.122.662.227.835.267.412.147-.226.424.885Zm-1.48-1.423c-.418-.352.137.173-.05.166-.439-.322-.219.094.03.341.27.401.493-.24.02-.507Zm.215.06c.791.218-1.643-1.001-.916.356l1.218 1.193Zm2.148.945c-.227.005.094-.5-.21-.399-.107-.776-.337.606-.023.795.097.278.198.165.233-.145M3.344 6.805c1.054.486-1.762-.805-1.296-.433.055.124.187.135.297.162Zm.12-.248c.798.33-.067-.125-.344-.064.07.102.26.057.345.155Zm.227-.301c.26-.048-.034-.131-.188-.254-.358-.539.052.042-.06.206.149.147.656.409.248.048Zm1.833-1.066c-.105.559-.213.326-.038-.09-.044-.535-.325.32-.169.573.238.378.476-.931.28-.49Zm.315 6.653c.411.106.41-.064.038-.114-.2-.186-.827-.294-.272.053.037.095.155.093.234.135Zm-1.545-1.038c.227.169.63.479.1.065.179-.208-.342-.319-.169-.458-.437-.163-.482-.576-.186-.435.449.131.627.479.143.066.158.001-1.045-.511-.735-.125.238.225.718.576.373.377.115.122.655.399-.526-.495.353.275-.342-.14-.497-.35-.504.225.464.693-.039.344Zm3.862 2.354c.213-.21-.005.244.351-.146.004-.277-.016-.44-.408.277-.112.06-.067.315.126.161Zm-2.46-1.28c.357-.029.817.39.292-.157.358.04.617-.33.906.127.301-.015.311.38.63.207.615-.166-2.179-.396-1.702-.7.455.164.464.564.878.568.362.187.58.886-.187.591-.378-.234-1.05-.47-.384.128.159.1 1.108.458 1.705.817.33.226.613.655.775.724-.361.172-1.084-.137-.547-.042-.335-.061-.7-.233-.389.187.266.243.966.204 1.09.23-.105.232-.287.25.004.268-.325.173.099.176.129.275Zm-.499-1.695c-.217-.363.011.206.216.412.306.376.08-.179-.03-.223Zm-1.778-1.76s.053-.365-.162-.305c-.162-.04-.071.065.062.345.041.067.06.09.06.088M2.808 6.913c-.382-.348.547.162.377.16-.441-.322-.219.094.03.341.27.401.493-.24.02-.507Z" fill="currentColor"/></svg>Flask</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 18.69L12.7 22.74c-.5.26-1 .26-1.5 0L4 18.69l13.05-13.15.35-.1c.3 0 .47.13.5.4L20 18.69ZM9.35 5.74L4.8 13.29 6.7 1.34c.03-.27.2-.4.5-.4.2 0 .33.06.4.25l2.15 3.95-.4.6ZM13.85 7l-9.55 9.59 7.25-12.3c.1-.2.25-.29.45-.29.2 0 .33.09.4.29L13.85 7Z" fill="currentColor"/></svg>Firebase</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><clipPath id="clip-supabase"><rect width="24" height="24"/></clipPath><g clip-path="url(#clip-supabase)"><path d="M12 23.956c-.342 0-.66-.089-.957-.243l-3.029-1.738c-.455-.242-.227-.33-.09-.374.614-.198.728-.242 1.366-.595.068-.044.16-.022.228.022l2.323 1.343c.09.044.205.044.273 0l9.087-5.084c.09-.044.136-.132.136-.242V6.899c0-.11-.045-.198-.136-.242L12.114 1.596c-.091-.044-.205-.044-.273 0L2.754 6.657c-.091.044-.137.154-.137.242V17.045c0 .088.046.198.137.242l2.482 1.387c1.344.66 2.186-.11 2.186-.88V7.78c0-.132.114-.264.274-.264h1.161c.137 0 .273.11.273.264v9.793c0 1.739-.979 2.751-2.687 2.751-.525 0-.935 0-2.096-.55L1.957 18.674C1.363 18.35 1 17.734 1 17.066V6.921c0-.66.364-1.276.957-1.606l9.087-5.085A1.98 1.98 0 0 1 12 0c.332 0 .66.079.956.23l9.088 5.085c.592.33.956.946.956 1.606V17.066c0 .66-.364 1.276-.956 1.607l-9.088 5.083A1.98 1.98 0 0 1 12 23.956Zm2.801-6.979c-3.985 0-4.805-1.76-4.805-3.257 0-.132.114-.264.273-.264h1.184c.137 0 .25.088.25.22.183 1.166.707 1.738 3.121 1.738 1.913 0 2.733-.418 2.733-1.408 0-.572-.228-.99-3.211-1.276-2.483-.243-4.031-.77-4.031-2.685 0-1.783 1.548-2.84 4.145-2.84 2.915 0 4.35.969 4.532 3.082a.264.264 0 0 1-.068.198.264.264 0 0 1-.182.132h-1.184a.255.255 0 0 1-.25-.198c-.274-1.21-.98-1.607-2.847-1.607-2.096 0-2.346.704-2.346 1.233 0 .638.296.836 3.12 1.188 2.801.352 4.122.858 4.122 2.75 0 1.938-1.639 3.038-4.532 3.038Z" fill="currentColor"/></g></svg>Supabase</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><clipPath id="clip-nodejs"><rect width="24" height="24"/></clipPath><g clip-path="url(#clip-nodejs)"><path d="M3.086 15.25C1.422 15.25.486 13.338 1.506 12.024L10.212.806C10.796.054 12.002.466 12.002 1.42V8.75h8.916C22.579 8.75 23.516 10.662 22.496 11.976L13.79 23.194C13.206 23.946 12 23.534 12 22.581V15.25H3.086Z" fill="currentColor"/></g></svg>Node.js</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><clipPath id="clip-fastapi"><rect width="16" height="16"/></clipPath><g clip-path="url(#clip-fastapi)"><path d="M7.69 15.948a8 8 0 1 1 0-15.896 8 8 0 0 1 0 15.896Zm.099-14.403-3.811 8.32h3.73v4.527l3.812-8.32H7.789V1.545Z" fill="currentColor"/></g></svg>FastAPI</span>
+          <span class="stag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.17 1.78.95 2.23v5.54c-.6.34-1 .99-1 1.73a2 2 0 0 0 3.98 0c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5a2 2 0 1 0 2-2c-.18 0-.35 0-.5.07L13.93 7.5c.124-.463.076-.95-.136-1.38A1.983 1.983 0 0 0 12.78 5.16c-.43-.16-.88-.2-1.28-.09L9.8 3.38l.79-.78c.78-.79 2.04-.79 2.82 0l7.99 7.99c.79.78.79 2.04 0 2.82l-7.99 7.99c-.78.79-2.04.79-2.82 0L2.6 13.41c-.79-.78-.79-2.04 0-2.82Z" fill="currentColor"/></svg>Git</span>
+        </div>
+      </div>
+
+      <!-- <div class="cat-divider"></div> -->
+
+      <div class="classified-category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.025 20.975C2.342 20.292 2 19.467 2 18.5s.342-1.792 1.025-2.475C3.708 15.342 4.533 15 5.5 15c.3 0 .592.037.875.112.283.075.55.179.8.313L11 11.6V8.85c-.733-.217-1.333-.629-1.8-1.237C8.733 7.005 8.5 6.3 8.5 5.5c0-.967.342-1.792 1.025-2.475C10.208 2.342 11.033 2 12 2s1.792.342 2.475 1.025C15.158 3.708 15.5 4.533 15.5 5.5c0 .8-.233 1.504-.7 2.113-.467.608-1.067 1.02-1.8 1.237V11.6l3.85 3.825c.25-.133.513-.237.788-.312.275-.075.563-.113.862-.113.967 0 1.792.342 2.475 1.025C21.658 16.708 22 17.533 22 18.5s-.342 1.792-1.025 2.475C20.292 21.658 19.467 22 18.5 22s-1.792-.342-2.475-1.025C15.342 20.292 15 19.467 15 18.5c0-.3.037-.592.112-.875.075-.283.179-.55.313-.8L12 13.4l-3.425 3.425c.133.25.237.513.313.8.075.283.112.575.112.875 0 .967-.342 1.792-1.025 2.475C7.292 21.658 6.467 22 5.5 22s-1.792-.342-2.475-1.025ZM19.563 19.563c.291-.292.437-.646.437-1.063s-.146-.771-.437-1.062c-.292-.292-.646-.438-1.063-.438s-.771.146-1.062.438c-.292.291-.438.645-.438 1.062s.146.771.438 1.063c.291.291.645.437 1.062.437s.771-.146 1.063-.437ZM13.063 6.563c.291-.292.437-.646.437-1.063s-.146-.771-.437-1.062C12.771 4.146 12.417 4 12 4s-.771.146-1.062.438C10.646 4.729 10.5 5.083 10.5 5.5s.146.771.438 1.063C11.229 6.854 11.583 7 12 7s.771-.146 1.063-.437ZM6.563 19.563c.291-.292.437-.646.437-1.063s-.146-.771-.437-1.062C6.271 17.146 5.917 17 5.5 17s-.771.146-1.062.438C4.146 17.729 4 18.083 4 18.5s.146.771.438 1.063C4.729 19.854 5.083 20 5.5 20s.771-.146 1.063-.437Z" fill="currentColor"/></svg>
+            AI / ML
+          </div>
+        </div>
+        <p class="cat-sub">data systems</p>
+        <div class="tags-row">
+          <span class="stag stag-amber">scikit-learn</span>
+          <span class="stag stag-purple">SHAP</span>
+          <span class="stag stag-teal">RAG Systems</span>
+          <span class="stag stag-indigo">BLEU / BERTScore</span>
+          <span class="stag stag-olive">NLP</span>
+          <span class="stag stag-cyan">XGBoost</span>
+          <span class="stag stag-violet">Model Evaluation</span>
+          <span class="stag stag-coral">Random Forest</span>
+        </div>
+      </div>
+
+      <!-- <div class="cat-divider"></div> -->
+
+      <div class="classified-category">
+        <div class="cat-header">
+          <div class="cat-title">
+            <svg width="14" height="14" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 15.414H3C1.895 15.414 1 16.31 1 17.414c0 1.105.895 2 2 2h12c1.105 0 2-.895 2-2 0-1.104-.895-2-2-2Z" stroke="currentColor" stroke-width="2"/><path d="M1.91 10.778L5 15.414h8l3.09-4.636c.436-.653.654-.98.618-1.335-.035-.356-.312-.633-.867-1.188L9 1.414l-6.84 6.841c-.556.556-.833.833-.868 1.188-.035.356.183.682.618 1.335Z" stroke="currentColor" stroke-width="2"/><path d="M9 12.414c1.105 0 2-.895 2-2 0-1.104-.895-2-2-2s-2 .896-2 2c0 1.105.895 2 2 2Z" stroke="currentColor" stroke-width="2"/><path d="M9 1.414v7" stroke="currentColor" stroke-width="2"/></svg>
+            Design
+          </div>
+        </div>
+        <p class="cat-sub">creative practice</p>
+        <div class="tags-row">
+          <span class="stag stag-amber">Figma</span>
+          <span class="stag stag-purple">Wireframing</span>
+          <span class="stag stag-indigo">UX Research</span>
+          <span class="stag stag-coral">Adobe Creative Cloud</span>
+          <span class="stag stag-cyan">Vercel v0</span>
+          <span class="stag stag-olive">Info Architecture</span>
+          <span class="stag stag-teal">Prototyping</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══ EDITORIAL (desktop only) ═══ -->
+<section class="editorial-section wrap" id="editorials">
+  <div class="sec-head sec-head-gold">
+    <h2 class="sec-label"><em>Editorial</em></h2>
+    <span class="sec-meta">Fun Facts About Me</span>
+  </div>
+
+  <div class="editorial-grid">
+
+    <article class="ed-tile ed-tile--1">
+      <div class="ed-img">
+        <img src="./assets/images/cards/card1_1.webp" alt="Anya from Spy × Family" class="alive-reveal">
+      </div>
+      <div class="ed-body">
+        <span class="ed-headline">Serious About<br>Not Being Serious</span>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--2">
+      <div class="ed-img">
+        <img src="./assets/images/cards/card2.webp" alt="Handmade yarn keychains" class="alive-reveal">
+      </div>
+      <div class="ed-body">
+        <h3 class="ed-headline">FIRST MICRO BUSINESS</h3>
+        <p class="ed-text">Handmade yarn keychains.</p>
+        <p class="ed-text">— ShaDo Crafts —</p>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--3">
+      <div class="ed-img">
+        <img src="./assets/images/cards/card3_1.webp" alt="Open sketchbook" class="alive-reveal">
+      </div>
+      <div class="ed-body">
+        <p class="ed-text ed-text--md">Sketchbooks built the eye,<br>The IDE inherited it.</p>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--4">
+      <div class="ed-img ed-img--flags">
+        <img class="flags-dark alive-reveal" src="./assets/images/cards/card4d.webp" alt="Flag icons">
+        <img class="flags-light alive-reveal" src="./assets/images/cards/card4l.webp" alt="Flag icons">
+      </div>
+      <div class="ed-body">
+        <h3 class="ed-headline">LANGUAGES</h3>
+        <p class="ed-text">English, Ndebele, Zulu</p>
+        <p class="ed-subtext">four others</p>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--5">
+      <div class="ed-top">
+        <h3 class="ed-headline">THE SHIFT</h3>
+      </div>
+      <div class="ed-img">
+        <img src="./assets/images/cards/card5.webp" alt="Figure walking from sketchbook to IDE" class="alive-reveal">
+      </div>
+      <div class="ed-body">
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--6">
+      <div class="ed-img">
+        <img src="./assets/images/cards/card6.webp" alt="Church and community building cityscape" class="alive-reveal">
+      </div>
+      <div class="ed-body">
+        <h3 class="ed-headline">DESIGN WORK</h3>
+        <p class="ed-text">Graphics created for churches and community organizations.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="editorial-caption"><em>A Maker's Journey</em></p>
+</section>
+
+<!-- ═══ PRESS ARCHIVE ═══ -->
+<section class="press-archive wrap" id="projects">
+  <div class="sec-head sec-head-gold">
+    <h2 class="sec-label">Press <span class="aw">Archive</span></h2>
+    <span class="sec-meta">Featured Projects</span>
+  </div>
+
+  <div class="arch-tabs">
+    <button class="arch-tab active" data-filter="all">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>All
+    </button>
+    <button class="arch-tab" data-filter="ux">
+      <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>UX
+    </button>
+    <button class="arch-tab" data-filter="code">
+      <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Code
+    </button>
+  </div>
+
+  <div class="archive-grid">
+
+    <article class="pa-card animate-in delay-5" data-type="ux code">
+      <div class="pa-img pa-img--c6"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">AI/ML</span><span class="pa-tag">Linguistics</span></div>
+        <h3 class="pa-title">VocalPrint</h3>
+        <p class="pa-desc">A living, community-built voice museum designed to preserve endangered languages and close the AI listening gap. First-place winner at the Kirchner HBCU Pitch Competition.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://shalomdee.github.io/vocalPrint/" target="_blank" rel="noopener" class="pa-link pa-link--design"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>View Project</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Flutter</span><span class="pa-tech">AI/ML</span><span class="pa-tech">NLP</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in" data-type="ux code">
+      <div class="pa-img pa-img--c1"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">iOS</span><span class="pa-tag">Education</span></div>
+        <h3 class="pa-title">ClassSync</h3>
+        <p class="pa-desc">Streamlined attendance tracking for Grambling State, rethinking the student check-in flow from the ground up. Adopted by faculty in the same semester it shipped.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://drive.google.com/file/d/1OndzEoGTPkuiIIGWiBZ2bVTCoH9hlEg1/view?usp=sharing" target="_blank" rel="noopener" class="pa-link pa-link--design"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+            <a href="https://github.com/AdrDube/Classync" target="_blank" rel="noopener" class="pa-link pa-link--code"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>View Code</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Swift</span><span class="pa-tech">SwiftUI</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-1" data-type="ux">
+      <div class="pa-img pa-img--c2"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Mobile</span><span class="pa-tag">Transit</span></div>
+        <h3 class="pa-title">UniRide</h3>
+        <p class="pa-desc">Redesigned campus transportation for students without reliable car access, mapping pain points through user research and iterative prototyping across six sprint cycles.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://drive.google.com/file/d/10hZKidEogXUPKC8_aEt4F5vMHuI855Yb/view?usp=sharing" target="_blank" rel="noopener" class="pa-link pa-link--design"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">UX</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-2" data-type="code">
+      <div class="pa-img pa-img--c3"><div class="pa-badges"><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">AI/ML</span><span class="pa-tag">NLP</span></div>
+        <h3 class="pa-title">Multilingual LLM Eval</h3>
+        <p class="pa-desc">Evaluated four LLMs across four languages with 9,322 Wikipedia chunks. Open-weight models outperformed commercial alternatives on BERTScore despite lower exact-match scores.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://github.com/anote-ai/btt-anote1a" target="_blank" rel="noopener" class="pa-link pa-link--code"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>View Code</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Python</span><span class="pa-tech">React</span><span class="pa-tech">FastAPI</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-3" data-type="ux">
+      <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Consulting</span><span class="pa-tag">AI</span></div>
+        <h3 class="pa-title">InsightCuts</h3>
+        <p class="pa-desc">AI-assisted research insight video tool developed for WGM Studios during the BVCC × Ford consulting engagement. Delivered strategy, logo, and stakeholder feasibility analysis.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://docs.google.com/presentation/d/15gSKvrncKpZoT8sZh8akpmjQReWBof95x4ZFLXGT67A/edit?usp=sharing" target="_blank" rel="noopener" class="pa-link pa-link--design"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Research</span><span class="pa-tech">Strategy</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-4" data-type="code">
+      <div class="pa-img pa-img--c5"><div class="pa-badges"><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">ML Research</span><span class="pa-tag">Ecology</span></div>
+        <h3 class="pa-title">ALAN Bird Migration</h3>
+        <p class="pa-desc">Investigated artificial light at night's impact on bird migration patterns using ensemble methods. Achieved AUC of 0.847 with XGBoost and Random Forest on the AI4ALL research track.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="https://github.com/tatendakasirori/AI_4_ALL_project" target="_blank" rel="noopener" class="pa-link pa-link--code"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>View Code</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Python</span><span class="pa-tech">XGBoost</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker's Times</div>
+      <p class="foot-brand-desc">A portfolio of work at the intersection of design and engineering, where creative vision meets technical execution.</p>
+      <p class="foot-brand-quote">"Where Code Meets Canvas"</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="#" class="foot-ext-link">Full Resume <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="#projects" class="foot-ext-link">Featured Projects <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <div class="foot-icon-row">
+        <a href="mailto:shalomdonga@gmail.com" class="foot-icon-btn" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+      <p class="foot-connect-note">Open to collaboration, work, and interesting conversations.</p>
+    </div>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
