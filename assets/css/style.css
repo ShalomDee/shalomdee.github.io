@@ -867,7 +867,6 @@ body::before{
 }
 .foot-icon-btn:hover{border-color:var(--gold);color:var(--gold);}
 .foot-icon-btn svg{width:18px;height:18px;fill:currentColor;}
-.foot-icon-btn[aria-label="Email"] svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .foot-connect-note{
   font-family:var(--font-bd);font-size:var(--sz-xs);
   font-style:italic;color:var(--v45);line-height:1.55;
