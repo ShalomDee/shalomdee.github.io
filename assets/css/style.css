@@ -327,6 +327,14 @@ body::before{
   font-family:var(--font-hd);
   font-weight:900;line-height:1.0;color:var(--v100);
 }
+.hero-hi{
+  display:block;
+  font-size:clamp(2rem,5vw,4.5rem);
+  font-weight:900;
+  letter-spacing:0.04em;
+  color:var(--v100);
+  margin-bottom:0;
+}
 .hero-greeting em{
   font-style:normal;display:block;
   font-size:clamp(2.8rem,6.8vw,6rem);
