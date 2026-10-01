@@ -521,6 +521,7 @@ body::before{
   color:var(--v55);flex-shrink:0;overflow:hidden;
 }
 .wire-logo img{width:100%;height:100%;object-fit:cover;}
+.wire-logo:empty{visibility:hidden;}
 .wire-role-row{display:flex;align-items:center;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:2px;}
 .wire-role{font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;color:var(--v100);line-height:1.2;}
 .wire-org{font-family:var(--font-ui);font-size:var(--sz-xs);text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);margin-bottom:var(--sp-sm);}
