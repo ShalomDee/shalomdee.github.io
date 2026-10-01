@@ -327,14 +327,6 @@ body::before{
   font-family:var(--font-hd);
   font-weight:900;line-height:1.0;color:var(--v100);
 }
-.hero-hi{
-  display:block;
-  font-size:clamp(2rem,5vw,4.5rem);
-  font-weight:900;
-  letter-spacing:0.04em;
-  color:var(--v100);
-  margin-bottom:0;
-}
 .hero-greeting em{
   font-style:normal;display:block;
   font-size:clamp(2.8rem,6.8vw,6rem);
@@ -405,12 +397,6 @@ body::before{
 }
 .ms-headline span { font-size: clamp(1.6rem,2.6vw,2.7rem); text-transform: uppercase; }
 .ms-headline .hl { font-style: italic; color: var(--terra); }
-.ms-deck {
-  font-family: var(--font-bd); font-size: var(--sz-base); font-weight: 500;
-  font-style: italic; color: var(--v100); line-height: 1.5;
-  margin-top: var(--sp-md); margin-bottom: var(--sp-md); padding-bottom: var(--sp-md);
-  text-align: center;
-}
 .ms-body-text {
   font-family: var(--font-bd); font-size: var(--sz-base);
   line-height: 1.55; color: var(--v70);
