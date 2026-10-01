@@ -59,19 +59,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
-/* ─── Archive tab filter ─── */
-document.querySelectorAll('.arch-tab').forEach(tab => {
-  tab.addEventListener('click', function () {
-    document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
-    this.classList.add('active');
-    const filter = this.getAttribute('data-filter');
-    document.querySelectorAll('.pa-card').forEach(card => {
-      const show = filter === 'all' || (card.getAttribute('data-type') || '').split(' ').includes(filter);
-      card.style.display = show ? '' : 'none';
-    });
-  });
-});
-
 /* ─── Main story images: reveal when section in view ─── */
 const mainStory = document.querySelector('.main-story');
 if (mainStory) {

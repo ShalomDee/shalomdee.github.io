@@ -778,31 +778,6 @@ body::before{
   padding:var(--sp-2xl) 0 var(--sp-2xl);
   border-bottom:1px solid var(--v15);
 }
-.arch-tabs{
-  display:flex;gap:var(--sp-lg);
-  padding:var(--sp-sm) 0;margin-bottom:var(--sp-lg);
-  border-bottom:1px solid var(--v15);
-  overflow-x:auto;scrollbar-width:none;
-}
-.arch-tabs::-webkit-scrollbar{display:none;}
-.arch-tab{
-  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:500;
-  text-transform:uppercase;letter-spacing:0.08em;color:var(--v35);
-  background:none;border:none;cursor:pointer;
-  padding:var(--sp-xs) 0;white-space:nowrap;
-  position:relative;transition:color var(--t);
-}
-.arch-tab:hover{color:var(--v70);}
-.arch-tab.active{color:var(--v100);font-weight:600;}
-.arch-tab.active::after{
-  content:'';position:absolute;bottom:-9px;left:0;right:0;
-  height:1px;background:var(--gold);
-}
-.arch-tab svg{
-  width:13px;height:13px;vertical-align:-2px;margin-right:3px;
-  fill:none;stroke:currentColor;stroke-width:1.5;
-  stroke-linecap:round;stroke-linejoin:round;
-}
 .archive-grid{
   display:grid;grid-template-columns:1fr;gap:var(--sp-lg);
 }
