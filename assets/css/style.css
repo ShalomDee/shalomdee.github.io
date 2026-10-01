@@ -232,8 +232,8 @@ body::before{
   color:var(--v85);display:block;
 }
 .mast-ed-blurb{
-  font-family:var(--font-bd);font-size:var(--sz-2xs);
-  font-style:italic;color:var(--v45);line-height:1.5;
+  font-family:var(--font-bd);font-size:var(--sz-sm);
+  font-style:italic;color:var(--v55);line-height:1.6;
   text-align:right;margin-bottom:var(--sp-xs);
 }
 .mast-desktop .mast-theme-btn{
