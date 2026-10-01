@@ -552,22 +552,11 @@ body::before{
   font-family:var(--font-hd);font-size:1rem;
   font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--v100);
 }
-.cat-title svg{color:var(--v55);flex-shrink:0;}
 .cat-badge{
   font-family:var(--font-ui);font-size:9px;font-weight:700;
   text-transform:uppercase;letter-spacing:0.1em;
   color:var(--gold);background:var(--g15);border:1px solid var(--g60);
   padding:2px 7px;border-radius:2px;
-}
-.cat-sub{
-  font-family:var(--font-bd);font-size:var(--sz-sm);
-  font-style:italic;color:var(--v45);
-  margin-bottom:var(--sp-sm);
-  display:flex;align-items:center;gap:var(--sp-sm);
-  white-space:nowrap;
-}
-.cat-sub::before,.cat-sub::after{
-  content:'';flex:1;height:1px;background:var(--v15);
 }
 .tags-row{display:flex;flex-wrap:wrap;gap:var(--sp-md);}
 .stag{
@@ -587,12 +576,12 @@ body::before{
 .stag-figma {background:rgba(162,89,255,.10);border-color:rgba(162,89,255,.28);color:rgba(216,180,254,.85);}
 .cat-divider{height:1px;background:var(--v15);margin:var(--sp-sm) 0;}
 
-/* Engineering: static pills, no hover change */
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag:hover {
+/* AI, Data, and Backend: static pills, no hover change */
+#skills .classifieds-frame > .classified-category:nth-child(3) .stag:hover {
   background: var(--v08);border-color: var(--v20);color: var(--v85);
 }
 
-/* ─── AI/ML Classifieds: solid filled pills ─── */
+/* ─── Engineering and Tools: solid filled pills ─── */
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag         { color: var(--vellum); }
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber   { background: rgba(195,158,85,0.55); }
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-purple  { background: rgba(60,110,175,0.52); }
@@ -603,16 +592,16 @@ body::before{
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-violet  { background: rgba(128,80,188,0.46); }
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-coral   { background: rgba(205,100,60,0.50); }
 
-/* ─── Design Classifieds: outline pills ─── */
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(3) .stag { background: rgba(0,0,0,0.40); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-amber   { border-color: rgba(195,158,85,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-purple  { border-color: rgba(60,110,175,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-indigo  { border-color: rgba(185,80,135,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-coral   { border-color: rgba(205,100,60,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-cyan    { border-color: rgba(40,185,205,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-olive   { border-color: rgba(148,158,55,1); }
-#skills .classifieds-frame > .classified-category:nth-child(3) .stag-teal    { border-color: rgba(45,170,135,1); }
+/* ─── Design and Research: outline pills ─── */
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(1) .stag { background: rgba(0,0,0,0.40); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-amber   { border-color: rgba(195,158,85,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-purple  { border-color: rgba(60,110,175,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-indigo  { border-color: rgba(185,80,135,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-coral   { border-color: rgba(205,100,60,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-cyan    { border-color: rgba(40,185,205,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-olive   { border-color: rgba(148,158,55,1); }
+#skills .classifieds-frame > .classified-category:nth-child(1) .stag-teal    { border-color: rgba(45,170,135,1); }
 
 /* ═══ EDITORIAL (desktop only) ═══ */
 .editorial-section{
