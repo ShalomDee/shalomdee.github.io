@@ -15,7 +15,7 @@ assets/
     projs/                    Selected Builds card images
     exp/                      Experience Wire logos
     cards/                    Editorial tiles
-    hero-*.png, portrait.png, texture_w.webp
+    hero-*.png, portrait.png, texture.webp
 _reference/                   Local design notes. Ignored by git, never deployed.
 ```
 
