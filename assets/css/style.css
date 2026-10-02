@@ -140,8 +140,11 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
 /* ─── Animations ─── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-.animate-in{opacity:0;animation:fadeUp .55s var(--ease) forwards;animation-play-state:paused;}
-.animate-in.is-visible{animation-play-state:running;}
+/* Only hide content for the fade when JS can reveal it again */
+@media (scripting: enabled){
+  .animate-in{opacity:0;animation:fadeUp .55s var(--ease) forwards;animation-play-state:paused;}
+  .animate-in.is-visible{animation-play-state:running;}
+}
 .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;}
 .delay-3{animation-delay:.3s;} .delay-4{animation-delay:.4s;}
 .delay-5{animation-delay:.5s;}
