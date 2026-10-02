@@ -68,7 +68,17 @@ if (drawer && drawerOverlay && hamburger && drawerClose) {
   drawerClose.addEventListener('click', () => closeNav(true));
   drawerOverlay.addEventListener('click', () => closeNav(true));
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeNav(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(true); });
+  document.addEventListener('keydown', e => {
+    if (!drawer.classList.contains('open')) return;
+    if (e.key === 'Escape') closeNav(true);
+    // Keep Tab inside the open drawer
+    if (e.key === 'Tab') {
+      const items = drawer.querySelectorAll('a, button');
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
 }
 
 /* ─── Scroll animations ─── */
