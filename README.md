@@ -29,7 +29,7 @@ Then open http://localhost:8000. Use a server, not a double-clicked file, so pat
 
 ## Edit copy
 
-All copy is in `index.html`. Find the section by its comment and edit the text. The only text in `main.js` is the "Night Edition" / "Day Edition" label on the desktop theme button.
+All copy is in `index.html`. Find the section by its comment and edit the text. The desktop theme button keeps both of its labels in `data-label-light` and `data-label-dark` attributes on its `.mast-theme-label` span.
 
 ## Add a project card
 
