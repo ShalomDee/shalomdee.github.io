@@ -709,12 +709,12 @@ body::before{
   display:grid;grid-template-columns:1fr;gap:var(--sp-lg);
 }
 .pa-card{
-  background:var(--v05);border:1px solid var(--v15);
+  background:var(--v05);border:1px solid var(--v35);
   border-radius:4px;overflow:hidden;
   transition:border-color var(--t),box-shadow var(--t),transform var(--t);
 }
 .pa-card:hover{
-  border-color:var(--v35);
+  border-color:var(--gold);
   transform:translateY(-3px);
   box-shadow:0 8px 24px rgba(0,0,0,0.4);
 }
