@@ -341,6 +341,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .hero-left{display:flex;flex-direction:column;gap:var(--sp-md);}
 .hero-greeting{
+  font-size:1.5em; /* the old h2 default; children set their own sizes */
   font-family:var(--font-hd);
   font-weight:900;line-height:1.0;color:var(--v100);
 }
