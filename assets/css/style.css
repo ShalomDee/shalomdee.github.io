@@ -414,7 +414,7 @@ body::before{
 .ms-byline {
   font-family: var(--font-ui); font-size: var(--sz-xs);
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--v45);
-  margin-top: var(--sp-md);
+  margin-top: var(--sp-md); margin-bottom: var(--sp-md);
 }
 .ms-byline-name { color: var(--terra); font-weight: 700; letter-spacing: 0.12em; }
 .ms-byline-note {
