@@ -627,7 +627,7 @@ body::before{
 .ed-tile--1{background:#001a33;} .ed-tile--2{background:#3d261a;}
 .ed-tile--3{background:#2A3D38;} .ed-tile--4{background:#301934;}
 .ed-tile--5{background:#d3cbb1;} .ed-tile--6{background:#333333;}
-.ed-tile--5 .ed-top,.ed-tile--5 .ed-body{color:#1a1a1a;}
+.ed-tile--5 .ed-top,.ed-tile--5 .ed-body{color:#1a1a1a;text-shadow:none;}
 [data-theme="light"] .ed-tile--1{background:#ffffff;}
 [data-theme="light"] .ed-tile--2{background:#A898B8;}
 [data-theme="light"] .ed-tile--3{background:#C4B89A;}
@@ -651,7 +651,8 @@ body::before{
 .editorial-section.in-view .ed-img img{filter:none;}
 .ed-tile:hover .ed-img img{transform:scale(1.03);}
 
-/* Text overlays */
+/* Text overlays. The halo in the page colour keeps text legible on busy photos. */
+.ed-body,.ed-top{text-shadow:0 0 3px var(--ink),0 0 8px var(--ink);}
 .ed-body{
   position:absolute;z-index:3;
   padding:var(--sp-sm) var(--sp-md);
@@ -694,7 +695,7 @@ body::before{
 .ed-tile--1 .ed-headline{font-size:var(--sz-lg);line-height:1.2;}
 .ed-subtext{
   font-family:var(--font-bd);font-size:var(--sz-2xs);
-  font-style:italic;color:var(--v45);margin-top:2px;
+  font-style:italic;color:var(--v70);margin-top:2px;
 }
 .ed-accent{
   font-family:var(--font-bd);font-size:var(--sz-xs);
