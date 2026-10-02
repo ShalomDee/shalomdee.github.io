@@ -13,8 +13,8 @@
 
 <!-- ═══ MOBILE DRAWER ═══ -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
-<nav class="drawer" id="drawer">
-  <button class="drawer-close" id="drawerClose">✕</button>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#experience">Experience</a>
@@ -37,7 +37,7 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
         <span></span><span></span><span></span>
       </button>
     </div>

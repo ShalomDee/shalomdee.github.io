@@ -31,21 +31,35 @@ applyTheme(saved || 'light');
 document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('click', toggleTheme));
 
 /* ─── Drawer ─── */
+const drawer = document.getElementById('drawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const hamburger = document.getElementById('hamburger');
+const drawerClose = document.getElementById('drawerClose');
+
 function openNav() {
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('drawerOverlay').classList.add('open');
+  drawer.classList.add('open');
+  drawerOverlay.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
+  drawerClose.focus();
 }
-function closeNav() {
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('drawerOverlay').classList.remove('open');
+// restoreFocus is false after a link click, so the page jumps to the link target
+function closeNav(restoreFocus) {
+  if (!drawer.classList.contains('open')) return;
+  const hadFocus = restoreFocus && drawer.contains(document.activeElement);
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
+  if (hadFocus) hamburger.focus();
 }
-document.getElementById('hamburger').addEventListener('click', openNav);
-document.getElementById('drawerClose').addEventListener('click', closeNav);
-document.getElementById('drawerOverlay').addEventListener('click', closeNav);
-// Close drawer on link click
-document.querySelectorAll('.drawer a').forEach(a => a.addEventListener('click', closeNav));
+if (drawer && drawerOverlay && hamburger && drawerClose) {
+  hamburger.addEventListener('click', openNav);
+  drawerClose.addEventListener('click', () => closeNav(true));
+  drawerOverlay.addEventListener('click', () => closeNav(true));
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeNav(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(true); });
+}
 
 /* ─── Scroll animations ─── */
 const observer = new IntersectionObserver(entries => {
