@@ -756,7 +756,7 @@ body::before{
   color:var(--v35);background:var(--v08);padding:2px 8px;border-radius:2px;
 }
 .pa-title{
-  font-family:var(--font-hd);font-size:var(--sz-xl);font-weight:700;
+  font-family:var(--font-bd);font-size:var(--sz-xl);font-weight:700;
   line-height:1.2;color:var(--v100);margin-bottom:var(--sp-sm);
 }
 .pa-desc{
