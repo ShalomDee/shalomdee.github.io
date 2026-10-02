@@ -368,7 +368,7 @@ body::before{
 
 /* ═══ MAIN STORY ═══ */
 .main-story {
-  padding: var(--sp-3xl) 0 var(--sp-2xl);
+  padding-top: var(--sp-3xl); padding-bottom: var(--sp-2xl);
   border-bottom: 2px solid var(--gold);
 }
 .ms-header {
@@ -470,7 +470,7 @@ body::before{
 
 /* ═══ EXPERIENCE WIRE + CLASSIFIEDS ROW ═══ */
 .wire-classifieds-row{
-  padding:var(--sp-2xl) 0 var(--sp-xl);
+  padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
   border-bottom:2px solid var(--gold);
   display:block;
 }
@@ -578,7 +578,7 @@ body::before{
 /* ═══ EDITORIAL (desktop only) ═══ */
 .editorial-section{
   display:none;
-  padding:var(--sp-2xl) 0 var(--sp-xl);
+  padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
 }
 .editorial-section .sec-head,
 .press-archive .sec-head{ border-top:none; }
@@ -702,7 +702,7 @@ body::before{
 
 /* ═══ PRESS ARCHIVE ═══ */
 .press-archive{
-  padding:var(--sp-2xl) 0 var(--sp-2xl);
+  padding-top:var(--sp-2xl);padding-bottom:var(--sp-2xl);
   border-bottom:1px solid var(--v15);
 }
 .archive-grid{
@@ -797,8 +797,6 @@ body::before{
   gap:var(--sp-2xl);row-gap:var(--sp-lg);align-items:start;
   padding-bottom:var(--sp-xl);
   border-bottom:1px solid var(--v15);
-  padding-left: 0;
-  padding-right: 0;
 }
 .foot-logotype{
   font-family:var(--font-bl);
@@ -847,7 +845,7 @@ body::before{
 .foot-bottom{
   display:flex;justify-content:center;
   align-items:center;flex-wrap:wrap;gap:var(--sp-md);
-  padding:var(--sp-lg) 0;
+  padding-top:var(--sp-lg);padding-bottom:var(--sp-lg);
 }
 .foot-copy{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
@@ -888,7 +886,7 @@ body::before{
       "portrait banner"
       "portrait body";
     column-gap:var(--sp-xl);row-gap:0;
-    padding:var(--sp-3xl) 0 var(--sp-2xl);
+    padding-top:var(--sp-3xl);padding-bottom:var(--sp-2xl);
   }
   .ms-portrait-col{
     display:flex;flex-direction:column;padding-top:0;
@@ -906,7 +904,7 @@ body::before{
   /* Wire + Classifieds side-by-side */
   .wire-classifieds-row{
     display:grid;grid-template-columns:2fr 1fr;gap:var(--sp-3xl);
-    padding:var(--sp-2xl) 0 var(--sp-xl);
+    padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
   }
   .classifieds-col{margin-top:0;}
 
