@@ -3,7 +3,8 @@
    Token system: dark canonical. Light overrides below.
 
    Breakpoints (mobile first):
-     640px   two-column project grid, wider gutter
+     640px   two-column project grid, wider gutter; Experience text
+             justified (left-aligned below, where gaps get wide)
      768px   About: portrait beside the story
      960px   desktop masthead and nav, Experience + Skills side by side,
              Editorial shown (max-width 959.98px is its mobile pair)
@@ -731,7 +732,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-desc{
   font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.5;
   color:var(--v60);margin-bottom:var(--sp-md);
-  text-align:justify;hyphens:auto;
 }
 .pa-footer{
   display:flex;justify-content:space-between;align-items:center;
@@ -881,4 +881,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .hamburger{display:flex;}
   .mast-top{justify-content:flex-end;padding:8px var(--pad);}
   .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);}
+}
+
+/* Phones: justified Experience text leaves wide gaps in the narrow column */
+@media(max-width:639.98px){
+  .wire-desc{text-align:left;hyphens:manual;}
 }
