@@ -728,7 +728,7 @@ body::before{
 .pa-img--c2{background:#2A3D38 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 .pa-img--c3{background:#3D3525 url('../images/projs/woh.webp') center/cover no-repeat;}
 .pa-img--c4{background:#1E2A3D url('../images/projs/insightcuts.webp') center/cover no-repeat;}
-.pa-img--c5{background:#3B3226 url('../images/projs/recaps.webp') center/cover no-repeat;}
+.pa-img--c5{background:#26343D url('../images/projs/recaps.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c6{background:#A3BDB9 url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c1{background:#B8C4CA url('../images/projs/classync.webp') center/100% 100% no-repeat;}
