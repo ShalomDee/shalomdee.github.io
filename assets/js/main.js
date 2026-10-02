@@ -11,13 +11,13 @@
    of the page to it and handles changes. Icons swap in CSS. */
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-// { ok: false } when storage is blocked; value is 'light', 'dark' or null
+// 'light', 'dark', or null when nothing is saved or storage is blocked
 function savedTheme() {
   try {
     const value = localStorage.getItem('theme');
-    return { ok: true, value: value === 'light' || value === 'dark' ? value : null };
+    return value === 'light' || value === 'dark' ? value : null;
   } catch (e) {
-    return { ok: false, value: null };
+    return null;
   }
 }
 
@@ -36,8 +36,12 @@ function applyTheme(theme) {
   if (themeColor) themeColor.content = dark ? '#121417' : '#F4F1ED';
 }
 
+// A toggle this visit counts as a choice even when storage can't keep it
+let chosenThisVisit = false;
+
 function toggleTheme() {
   const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  chosenThisVisit = true;
   applyTheme(next);
   try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
 }
@@ -45,11 +49,10 @@ function toggleTheme() {
 applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
 document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('click', toggleTheme));
 
-// With no saved choice, follow the device setting live.
+// With no saved choice (or blocked storage), follow the device setting live.
 // (Safari before 14 has no addEventListener on media queries.)
 if (darkQuery.addEventListener) darkQuery.addEventListener('change', e => {
-  const saved = savedTheme();
-  if (saved.ok && !saved.value) applyTheme(e.matches ? 'dark' : 'light');
+  if (!chosenThisVisit && !savedTheme()) applyTheme(e.matches ? 'dark' : 'light');
 });
 
 /* ─── Drawer ─── */
