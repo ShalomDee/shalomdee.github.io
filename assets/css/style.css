@@ -83,6 +83,15 @@ a{color:var(--v70);text-decoration:none;transition:color var(--t);}
 a:hover{color:var(--v100);}
 button{font-family:inherit;}
 
+/* ─── Skip link: off screen until focused ─── */
+.skip-link{
+  position:absolute;left:var(--sp-md);top:-100px;z-index:10000;
+  padding:var(--sp-sm) var(--sp-md);
+  background:var(--vellum);color:var(--ink);
+  font-family:var(--font-ui);font-size:var(--sz-sm);font-weight:600;
+}
+.skip-link:focus{top:var(--sp-md);color:var(--ink);}
+
 /* ─── Paper texture ─── */
 body::before{
   content:'';position:absolute;inset:0;
