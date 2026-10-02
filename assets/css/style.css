@@ -824,6 +824,28 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--v45);letter-spacing:0.04em;
 }
 
+/* ═══ TOUCH TARGETS ═══
+   Invisible ::before hit areas bring small controls to about 44×44px
+   without changing how they look or where anything sits. Each inset is
+   sized to stop short of its neighbours. Insets start inside the
+   border, so bordered elements get 1px more. */
+.theme-btn,.hamburger,.drawer-close,.drawer a.nav-cta,.drawer-foot a,
+.hero-social-link,.pa-link,.nav-ticker a,.foot-icon-btn{position:relative;}
+.theme-btn::before,.hamburger::before,.drawer-close::before,.drawer a.nav-cta::before,
+.drawer-foot a::before,.hero-social-link::before,.pa-link::before,
+.nav-ticker a::before,.foot-icon-btn::before{content:'';position:absolute;}
+.theme-btn::before{inset:-8px -5px -8px -8px;}     /* 8px gap to the menu button */
+.hamburger::before{inset:-7px -7px -7px -4px;}
+.mast-desktop .mast-theme-btn::before{inset:-10px 0;}
+.drawer-close::before{inset:-3px -9px;}
+.drawer a.nav-cta::before{inset:0 0 -15px;}
+.drawer-foot a::before{inset:-15px -4px;}
+.hero-social-link::before{inset:-13px -11px;}       /* 24px gap between icons */
+.pa-link::before{inset:-16px 0;}
+.nav-ticker a::before{inset:-15px 0;}
+.nav-ticker a.nav-cta::before{inset:-12px 0;}
+.foot-icon-btn::before{inset:-2px;}
+
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:640px){
   :root{--pad:32px;}
