@@ -110,11 +110,15 @@ body::before{
 /* ─── Layout shell ─── */
 .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
 
-/* ─── Scrollbar ─── */
-::-webkit-scrollbar{width:5px;}
+/* ─── Scrollbar ───
+   Standard properties for Chrome/Edge 121+ and Firefox; the ::-webkit
+   rules cover Safari and older Chrome. Overlay scrollbars (macOS default,
+   iOS, Android) are drawn by the OS and ignore both. */
+html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
+::-webkit-scrollbar{width:8px;}
 ::-webkit-scrollbar-track{background:var(--ink);}
-::-webkit-scrollbar-thumb{background:var(--v15);border-radius:3px;}
-::-webkit-scrollbar-thumb:hover{background:var(--v35);}
+::-webkit-scrollbar-thumb{background:var(--v45);border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:var(--v70);}
 
 /* ─── Alive reveal ─── */
 .alive-reveal{
