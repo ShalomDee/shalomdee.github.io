@@ -746,7 +746,7 @@ body::before{
   padding:3px 8px;border-radius:2px;
 }
 .pa-badge--ux{background:var(--gold);color:var(--ink);}
-.pa-badge--code{background:var(--g60);color:var(--ink);}
+.pa-badge--code{background:var(--terra);color:var(--ink);}
 [data-theme="light"] .pa-badge--code{background:rgba(36,106,115,0.85);color:#F4F1ED;}
 .pa-body{padding:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
