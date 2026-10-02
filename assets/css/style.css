@@ -133,6 +133,14 @@ body::before{
 .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;}
 .delay-3{animation-delay:.3s;} .delay-4{animation-delay:.4s;}
 
+/* Reduced motion: show content immediately, no smooth scroll or movement */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .animate-in{opacity:1;animation:none;}
+  *,*::before,*::after{transition-duration:0.01ms!important;}
+  .pa-card:hover,.ed-tile:hover .ed-img img{transform:none;}
+}
+
 /* ═══ SHARED SECTION HEADERS ═══ */
 .sec-head{
   display:flex;justify-content:space-between;align-items:baseline;
