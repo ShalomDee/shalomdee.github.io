@@ -933,7 +933,7 @@ body::before{
 }
 
 /* ── Mobile hamburger visible ── */
-@media(max-width:959px){
+@media(max-width:959.98px){
   .hamburger{display:flex;}
   .mast-top{justify-content:flex-end;padding:8px var(--pad);}
   .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);}
