@@ -28,9 +28,9 @@ function applyTheme(theme) {
   document.querySelectorAll('.theme-btn').forEach(btn => {
     btn.setAttribute('aria-label', dark ? btn.dataset.labelDark : btn.dataset.labelLight);
   });
-  // data-src-light / data-src-dark on the hero image
-  const illo = document.getElementById('heroIllo');
-  if (illo) illo.src = dark ? illo.dataset.srcDark : illo.dataset.srcLight;
+  // The dark hero <source> wins only in dark theme
+  const heroDark = document.getElementById('heroDark');
+  if (heroDark) heroDark.media = dark ? 'all' : 'not all';
   // Browser UI colour (mobile address bar) follows the page background
   const themeColor = document.querySelector('meta[name="theme-color"]');
   if (themeColor) themeColor.content = dark ? '#121417' : '#F4F1ED';

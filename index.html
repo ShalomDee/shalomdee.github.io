@@ -136,7 +136,11 @@
     </div>
   </div>
   <div class="hero-illo animate-in delay-1">
-    <img id="heroIllo" fetchpriority="high" src="./assets/images/hero-light.webp" width="1280" height="853" data-src-light="./assets/images/hero-light.webp" data-src-dark="./assets/images/hero-dark.webp" alt="Victorian etching: two figures pulling a rope between code and design worlds">
+    <!-- main.js sets the source's media to match the active theme -->
+    <picture>
+      <source id="heroDark" srcset="./assets/images/hero-dark.webp" media="(prefers-color-scheme: dark)" width="1264" height="842">
+      <img fetchpriority="high" src="./assets/images/hero-light.webp" width="1280" height="853" alt="Victorian etching: two figures pulling a rope between code and design worlds">
+    </picture>
   </div>
 </section>
 
