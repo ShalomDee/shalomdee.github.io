@@ -453,7 +453,7 @@ body::before{
   .ms-header, .ms-banner { max-width: 52rem; }
 
   .ms-portrait-col {
-    min-height: 600px;
+    min-height: 400px;
     overflow: hidden;
     border: 3px solid var(--gold);
 
@@ -902,7 +902,7 @@ body::before{
 
   /* Main Story: 3-col */
   .main-story{
-    grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;
+    grid-template-columns:1fr 1.5fr;grid-template-rows:auto 1fr;
     grid-template-areas:
       "portrait banner"
       "portrait body";
@@ -936,7 +936,7 @@ body::before{
 @media(min-width:1200px){
   /* Main Story: 3-col wide */
   .main-story{
-    grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;
+    grid-template-columns:1fr 1.8fr;grid-template-rows:auto 1fr;
     grid-template-areas:
       "portrait banner"
       "portrait body";
