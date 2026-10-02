@@ -735,7 +735,7 @@ body::before{
 [data-theme="light"] .pa-img--c2{background:#A3BDB9 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/woh.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/insightcuts.webp') center/100% 100% no-repeat;}
-[data-theme="light"] .pa-img--c5{background:#B8C4CA url('../images/projs/recaps.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c5{background:#201C30 url('../images/projs/recaps.webp') center/cover no-repeat;}
 .pa-badges{
   position:absolute;top:8px;right:8px;
   display:flex;gap:4px;
