@@ -857,7 +857,7 @@ body::before{
 }
 .foot-icon-btn:hover{border-color:var(--gold);color:var(--gold);}
 .foot-icon-btn svg{width:18px;height:18px;fill:currentColor;}
-.foot-email{text-decoration:underline;text-underline-offset:3px;}
+.foot-email{text-decoration:underline;text-underline-offset:3px;margin-bottom:var(--sp-sm);}
 .foot-inner > .foot-connect-note{grid-column:1 / -1;text-align:center;}
 .foot-connect-note{
   font-family:var(--font-bd);font-size:var(--sz-xs);
