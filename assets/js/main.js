@@ -24,6 +24,9 @@ function applyTheme(theme) {
   // data-src-light / data-src-dark on the hero image
   const illo = document.getElementById('heroIllo');
   if (illo) illo.src = dark ? illo.dataset.srcDark : illo.dataset.srcLight;
+  // Browser UI colour (mobile address bar) follows the page background
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.content = dark ? '#121417' : '#F4F1ED';
 }
 
 function toggleTheme() {
