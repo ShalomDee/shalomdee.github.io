@@ -5,9 +5,11 @@
    Breakpoints (mobile first):
      640px   two-column project grid, wider gutter; Experience text
              justified (left-aligned below, where gaps get wide)
-     768px   About: portrait beside the story
-     960px   desktop masthead and nav, Experience + Skills side by side,
-             Editorial shown (max-width 959.98px is its mobile pair)
+     768px   About: portrait beside the story; sticky section bar
+             replaces the phone bar and drawer (max-width 767.98px is
+             its pair)
+     960px   desktop masthead, Experience + Skills side by side,
+             Editorial shown (max-width 959.98px is its pair)
      1200px  three-column project grid
    ═══════════════════════════════════════════════════ */
 
@@ -24,6 +26,8 @@
 
   --sp-xs:4px; --sp-sm:8px; --sp-md:16px; --sp-lg:24px;
   --sp-xl:32px; --sp-2xl:48px; --sp-3xl:64px;
+
+  --sticky-h: 47px;   /* height of the sticky bar, for anchor offsets */
 
   --pad: 20px;
   --max: 1320px;
@@ -75,7 +79,7 @@
 
 /* ═══ RESET ═══ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h);}
 body{
   font-family:var(--font-bd);
   background:var(--ink);
@@ -185,6 +189,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .mast-top{
   display:flex;justify-content:space-between;align-items:flex-start;
   padding:10px var(--pad);border-bottom:1px solid var(--v15);
+  position:sticky;top:0;z-index:100;background:var(--ink);
 }
 .mast-actions{display:flex;gap:var(--sp-sm);align-items:center;}
 .theme-btn{
@@ -194,6 +199,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--v55);transition:all var(--t);
 }
 .theme-btn:hover{border-color:var(--gold);color:var(--gold);}
+/* Both icons are in the markup; the theme picks one, so it is right before JS runs */
+.icon-sun,[data-theme="dark"] .icon-moon{display:none;}
+[data-theme="dark"] .icon-sun{display:block;}
 
 .hamburger{
   display:none;background:none;border:none;cursor:pointer;
@@ -253,27 +261,22 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-style:italic;color:var(--v55);line-height:1.6;
   text-align:right;margin-bottom:var(--sp-xs);
 }
-.mast-desktop .mast-theme-btn{
-  width:auto;height:auto;
-  border-radius:2px;
-  background:var(--v85);
-  border:none;
-  color:var(--ink);
-  padding:6px 13px;
-  font-family:var(--font-ui);font-size:var(--sz-2xs);
-  font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  display:flex;align-items:center;gap:6px;
-  cursor:pointer;transition:opacity var(--t);
-}
-.mast-desktop .mast-theme-btn:hover{opacity:0.85;}
-.mast-theme-label{pointer-events:none;}
 
-/* Nav ticker */
-.nav-ticker{
+/* Section bar (768px and up): sticky, links centred, theme toggle at the right end */
+.nav-bar{
   display:none;
-  justify-content:center;align-items:center;
-  gap:var(--sp-xl);padding:9px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+  position:sticky;top:0;z-index:100;background:var(--ink);
+  padding:9px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
   border-bottom:1px solid var(--v15);
+}
+.nav-bar .theme-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  right:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+}
+.nav-ticker{
+  display:flex;
+  justify-content:center;align-items:center;
+  gap:var(--sp-xl);
 }
 .nav-ticker a{
   font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:500;
@@ -836,7 +839,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .nav-ticker a::before,.foot-icon-btn::before{content:'';position:absolute;}
 .theme-btn::before{inset:-8px -5px -8px -8px;}     /* 8px gap to the menu button */
 .hamburger::before{inset:-7px -7px -7px -4px;}
-.mast-desktop .mast-theme-btn::before{inset:-10px 0;}
+.nav-bar .theme-btn::before{inset:-8px;}
 .drawer-close::before{inset:-3px -9px;}
 .drawer a.nav-cta::before{inset:0 0 -15px;}
 .drawer-foot a::before{inset:-15px -4px;}
@@ -853,12 +856,18 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .hero-illo{max-width:480px;}
 }
 
+@media(min-width:768px){
+  :root{--sticky-h:41px;}
+  .mast-top{display:none;}
+  .nav-bar{display:block;}
+  .nav-ticker{gap:var(--sp-md);}   /* desktop spacing runs into the toggle below 960px */
+}
+
 @media(min-width:960px){
   :root{--pad:48px;}
-  .mast-top{display:none;}
   .mast-title{display:none;}
   .mast-desktop{display:grid;}
-  .nav-ticker{display:flex;}
+  .nav-ticker{gap:var(--sp-xl);}
 
   /* Hero: 2-col */
   .hero{
@@ -901,10 +910,13 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .archive-grid{grid-template-columns:1fr 1fr 1fr;}
 }
 
-/* ── Mobile hamburger visible ── */
-@media(max-width:959.98px){
+/* ── Phones: hamburger visible ── */
+@media(max-width:767.98px){
   .hamburger{display:flex;}
   .mast-top{justify-content:flex-end;padding:8px var(--pad);}
+}
+
+@media(max-width:959.98px){
   .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);}
 }
 

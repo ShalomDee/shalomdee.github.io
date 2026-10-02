@@ -5,22 +5,15 @@
 
 (() => {
 
-const SVG_SUN  = `<circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/>`;
-const SVG_MOON = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+/* ─── Theme ─── (icons swap in CSS) */
 
-/* ─── Theme ─── */
 function applyTheme(theme) {
   const dark = theme === 'dark';
   document.documentElement.setAttribute('data-theme', theme);
-  document.querySelectorAll('.theme-icon').forEach(icon => {
-    icon.innerHTML = dark ? SVG_SUN : SVG_MOON;
+  // Accessible name from data-label-light / data-label-dark
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.setAttribute('aria-label', dark ? btn.dataset.labelDark : btn.dataset.labelLight);
   });
-  document.querySelectorAll('.theme-btn[aria-pressed]').forEach(btn => {
-    btn.setAttribute('aria-pressed', String(dark));
-  });
-  // data-label-light / data-label-dark on the desktop button label
-  const label = document.querySelector('.mast-theme-label');
-  if (label) label.textContent = dark ? label.dataset.labelDark : label.dataset.labelLight;
   // data-src-light / data-src-dark on the hero image
   const illo = document.getElementById('heroIllo');
   if (illo) illo.src = dark ? illo.dataset.srcDark : illo.dataset.srcLight;
@@ -68,6 +61,9 @@ function closeNav(restoreFocus) {
 }
 if (drawer && drawerOverlay && hamburger && drawerClose) {
   hamburger.addEventListener('click', openNav);
+  // The drawer only exists below 768px; close it if the window grows past that
+  const wide = window.matchMedia('(min-width: 768px)');
+  if (wide.addEventListener) wide.addEventListener('change', e => { if (e.matches) closeNav(false); });
   drawerClose.addEventListener('click', () => closeNav(true));
   drawerOverlay.addEventListener('click', () => closeNav(true));
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeNav(false)));

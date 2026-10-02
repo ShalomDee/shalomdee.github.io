@@ -54,21 +54,20 @@
 </nav>
 
 <!-- ═══ MASTHEAD ═══ -->
-<header>
-  <!-- Mobile top bar: theme + menu buttons (hidden on desktop) -->
-  <div class="mast-top">
-    <div class="mast-actions">
-      <button type="button" class="theme-btn" aria-label="Dark theme" aria-pressed="false">
-        <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
-      <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+<!-- Phone top bar: theme + menu buttons, sticky (hidden from 768px) -->
+<div class="mast-top">
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</div>
 
+<header>
   <!-- Mobile title (hidden on desktop) -->
   <div class="mast-title">
     <p class="mast-name">The Maker's Times</p>
@@ -87,15 +86,12 @@
     <div class="mast-edition-info">
       <strong class="mast-ed-label">Portfolio Edition</strong>
       <p class="mast-ed-blurb">USA · Est. 2024<br>Price: Free Press</p>
-      <button type="button" class="theme-btn mast-theme-btn">
-        <svg class="theme-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <span class="mast-theme-label" data-label-light="Night Edition" data-label-dark="Day Edition">Night Edition</span>
-      </button>
     </div>
   </div>
+</header>
 
+<!-- Section bar: sticky from 768px, theme toggle at the right end -->
+<div class="nav-bar">
   <nav class="nav-ticker" id="navTicker" aria-label="Sections">
     <a href="#about" class="active">About</a>
     <span class="nav-sep" aria-hidden="true">✦</span>
@@ -109,7 +105,11 @@
     <span class="nav-sep" aria-hidden="true">✦</span>
     <a href="./assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
   </nav>
-</header>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
 
 <main id="main">
 
