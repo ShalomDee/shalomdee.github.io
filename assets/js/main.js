@@ -9,6 +9,9 @@ function applyTheme(theme) {
   document.querySelectorAll('.theme-icon').forEach(icon => {
     icon.innerHTML = theme === 'dark' ? SVG_SUN : SVG_MOON;
   });
+  document.querySelectorAll('.theme-btn[aria-pressed]').forEach(btn => {
+    btn.setAttribute('aria-pressed', String(theme === 'dark'));
+  });
   const label = document.querySelector('.mast-theme-label');
   if (label) label.textContent = theme === 'dark' ? 'Day Edition' : 'Night Edition';
   const illo = document.getElementById('heroIllo');
@@ -21,11 +24,13 @@ function toggleTheme() {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'dark' ? 'light' : 'dark';
   applyTheme(next);
-  localStorage.setItem('theme', next);
+  try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
 }
 
-// Init from storage
-const saved = localStorage.getItem('theme');
+// Init from storage. Reading can throw when storage is blocked, which
+// would stop this script and leave every .animate-in block invisible.
+let saved = null;
+try { saved = localStorage.getItem('theme'); } catch (e) { /* storage blocked */ }
 applyTheme(saved || 'light');
 
 document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('click', toggleTheme));
