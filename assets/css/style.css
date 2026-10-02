@@ -7,9 +7,9 @@
              justified (left-aligned below, where gaps get wide)
      768px   About: portrait beside the story; sticky section bar
              replaces the phone bar and drawer (max-width 767.98px is
-             its pair)
+             its pair); Editorial shown as a two-column grid
      960px   desktop masthead, Experience + Skills side by side,
-             Editorial shown (max-width 959.98px is its pair)
+             full Editorial grid (max-width 959.98px is its pair)
      1200px  three-column project grid
    ═══════════════════════════════════════════════════ */
 
@@ -575,7 +575,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 #skills .classifieds-frame > .classified-category:nth-child(1) .stag-olive   { border-color: rgba(148,158,55,1); }
 #skills .classifieds-frame > .classified-category:nth-child(1) .stag-teal    { border-color: rgba(45,170,135,1); }
 
-/* ═══ EDITORIAL (desktop only) ═══ */
+/* ═══ EDITORIAL (768px and up; tile layout per breakpoint below) ═══ */
 .editorial-section{
   display:none;
   padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
@@ -584,17 +584,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .press-archive .sec-head{ border-top:none; }
 .editorial-grid{
   display:grid;
-  grid-template-columns:repeat(20,1fr);
-  grid-template-rows:300px 260px;
   gap:12px;
   margin-bottom:var(--sp-lg);
 }
-.ed-tile--1{grid-column:1/9;grid-row:1;}
-.ed-tile--2{grid-column:9/15;grid-row:1;}
-.ed-tile--3{grid-column:15/21;grid-row:1;}
-.ed-tile--4{grid-column:1/6;grid-row:2;}
-.ed-tile--5{grid-column:6/16;grid-row:2;}
-.ed-tile--6{grid-column:16/21;grid-row:2;}
 
 .ed-tile{
   border-radius:4px;overflow:hidden;
@@ -863,6 +855,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .mast-top{display:none;}
   .nav-bar{display:block;}
   .nav-ticker{gap:var(--sp-md);}   /* desktop spacing runs into the toggle below 960px */
+  /* Editorial: two columns, three rows */
+  .editorial-section{display:block;}
+  .editorial-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,240px);}
+  .editorial-grid .ed-tile{grid-column:auto;grid-row:auto;}
 }
 
 @media(min-width:960px){
@@ -899,8 +895,14 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   }
   .classifieds-col{margin-top:0;}
 
-  /* Editorial visible */
-  .editorial-section{display:block;}
+  /* Editorial: full 20-column grid */
+  .editorial-grid{grid-template-columns:repeat(20,1fr);grid-template-rows:300px 260px;}
+  .editorial-grid .ed-tile--1{grid-column:1/9;grid-row:1;}
+  .editorial-grid .ed-tile--2{grid-column:9/15;grid-row:1;}
+  .editorial-grid .ed-tile--3{grid-column:15/21;grid-row:1;}
+  .editorial-grid .ed-tile--4{grid-column:1/6;grid-row:2;}
+  .editorial-grid .ed-tile--5{grid-column:6/16;grid-row:2;}
+  .editorial-grid .ed-tile--6{grid-column:16/21;grid-row:2;}
 }
 
 @media(min-width:1200px){
