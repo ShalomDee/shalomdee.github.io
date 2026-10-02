@@ -387,7 +387,7 @@ body::before{
 /* ═══ MAIN STORY ═══ */
 .main-story {
   padding: var(--sp-3xl) 0 var(--sp-2xl);
-  border-bottom: 1px solid var(--v15);
+  border-bottom: 2px solid var(--gold);
 }
 .ms-header {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -617,7 +617,6 @@ body::before{
 .editorial-section{
   display:none;
   padding:var(--sp-2xl) 0 var(--sp-xl);
-  border-bottom:2px solid var(--gold);
 }
 .editorial-section .sec-head,
 .press-archive .sec-head{ border-top:none; }
