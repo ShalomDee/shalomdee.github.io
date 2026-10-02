@@ -29,10 +29,12 @@
   --terra: #C4695F;
   --foot:  #13100C;
 
-  /* Vellum steps */
+  /* Vellum steps. v45, v55 and v60 are text greys, raised above their
+     names to meet WCAG AA (4.5:1) on every surface. v35 and below are
+     for borders and decoration only, never text. */
   --v100:rgba(217,206,178,1.00); --v85:rgba(217,206,178,0.85);
-  --v70:rgba(217,206,178,0.70);  --v60:rgba(217,206,178,0.60);
-  --v55:rgba(217,206,178,0.55);  --v45:rgba(217,206,178,0.45);
+  --v70:rgba(217,206,178,0.70);  --v60:rgba(217,206,178,0.68);
+  --v55:rgba(217,206,178,0.66);  --v45:rgba(217,206,178,0.64);
   --v35:rgba(217,206,178,0.35);  --v20:rgba(217,206,178,0.20);
   --v15:rgba(217,206,178,0.15);  --v08:rgba(217,206,178,0.08);
   --v06:rgba(217,206,178,0.06);  --v05:rgba(217,206,178,0.05);
@@ -52,8 +54,8 @@
   --foot:  #E0DDD8;
 
   --v100:rgba(13,17,23,1.00); --v85:rgba(13,17,23,0.85);
-  --v70:rgba(13,17,23,0.70);  --v60:rgba(13,17,23,0.60);
-  --v55:rgba(13,17,23,0.55);  --v45:rgba(13,17,23,0.45);
+  --v70:rgba(13,17,23,0.70);  --v60:rgba(13,17,23,0.68);
+  --v55:rgba(13,17,23,0.66);  --v45:rgba(13,17,23,0.64);
   --v35:rgba(13,17,23,0.35);  --v20:rgba(13,17,23,0.20);
   --v15:rgba(13,17,23,0.15);  --v08:rgba(13,17,23,0.08);
   --v06:rgba(13,17,23,0.06);  --v05:rgba(13,17,23,0.05);
@@ -138,7 +140,7 @@ body::before{
 [data-theme="light"] .sec-label .aw{color:var(--terra);}
 .sec-meta{
   font-family:var(--font-ui);font-size:var(--sz-xs);
-  text-transform:uppercase;letter-spacing:0.12em;color:var(--v35);
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
 }
 .kicker{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
@@ -563,6 +565,8 @@ body::before{
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-cyan    { background: rgba(40,185,205,0.44); }
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-violet  { background: rgba(128,80,188,0.46); }
 #skills .classifieds-frame > .classified-category:nth-child(2) .stag-coral   { background: rgba(205,100,60,0.50); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber { background: rgba(195,158,85,0.44); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-olive { background: rgba(148,158,55,0.46); }
 
 /* ─── Design and Research: outline pills ─── */
 #skills .classifieds-frame > .classified-category:nth-child(1) .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
@@ -747,13 +751,13 @@ body::before{
 }
 .pa-badge--ux{background:var(--gold);color:var(--ink);}
 .pa-badge--code{background:#D4A0A7;color:var(--ink);}
-[data-theme="light"] .pa-badge--code{background:rgba(36,106,115,0.85);color:#F4F1ED;}
+[data-theme="light"] .pa-badge--code{background:rgba(36,106,115,1);color:#F4F1ED;}
 .pa-body{padding:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
 .pa-tag{
   font-family:var(--font-ui);font-size:10px;font-weight:500;
   text-transform:uppercase;letter-spacing:0.08em;
-  color:var(--v35);background:var(--v08);padding:2px 8px;border-radius:2px;
+  color:var(--v45);background:var(--v08);padding:2px 8px;border-radius:2px;
 }
 .pa-title{
   font-family:var(--font-bd);font-size:var(--sz-xl);font-weight:700;
@@ -782,7 +786,7 @@ body::before{
 .pa-tech{
   font-family:var(--font-ui);font-size:9px;font-weight:500;
   text-transform:uppercase;letter-spacing:0.05em;
-  color:var(--v35);padding:2px 6px;
+  color:var(--v45);padding:2px 6px;
   border:1px solid var(--v15);border-radius:2px;
 }
 
@@ -810,7 +814,7 @@ body::before{
 }
 .foot-brand-quote{
   font-family:var(--font-bd);font-size:var(--sz-xs);
-  font-style:italic;color:var(--v35);
+  font-style:italic;color:var(--v45);
 }
 .foot-col-title{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
@@ -849,7 +853,7 @@ body::before{
 }
 .foot-copy{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
-  color:var(--v35);letter-spacing:0.04em;
+  color:var(--v45);letter-spacing:0.04em;
 }
 
 /* ═══ RESPONSIVE ═══ */
