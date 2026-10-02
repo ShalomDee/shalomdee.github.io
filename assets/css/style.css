@@ -548,7 +548,7 @@ body::before{
   border:2px dashed var(--gold);
   background:var(--g05);
   border-radius:3px;padding:var(--sp-lg);
-  display:flex;flex-direction:column;gap:var(--sp-lg);
+  display:flex;flex-direction:column;gap:var(--sp-xl);
 }
 [data-theme="light"] .classifieds-frame{
   border-color:rgba(60,105,151,0.35);
@@ -557,10 +557,11 @@ body::before{
 .classified-category{}
 .cat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
 .cat-title{
-  display:flex;align-items:center;gap:var(--sp-sm);
-  font-family:var(--font-hd);font-size:1rem;
+  flex:1;display:flex;align-items:center;gap:var(--sp-sm);
+  font-family:var(--font-bd);font-size:1rem;
   font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--v100);
 }
+.cat-title::after{content:'';flex:1;height:1px;background:var(--v15);}
 .cat-badge{
   font-family:var(--font-ui);font-size:9px;font-weight:700;
   text-transform:uppercase;letter-spacing:0.1em;
