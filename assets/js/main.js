@@ -5,7 +5,21 @@
 
 (() => {
 
-/* ─── Theme ─── (icons swap in CSS) */
+/* ─── Theme ───
+   The inline script in <head> picks the theme before first paint
+   (saved choice, else device setting, else light). This syncs the rest
+   of the page to it and handles changes. Icons swap in CSS. */
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+// { ok: false } when storage is blocked; value is 'light', 'dark' or null
+function savedTheme() {
+  try {
+    const value = localStorage.getItem('theme');
+    return { ok: true, value: value === 'light' || value === 'dark' ? value : null };
+  } catch (e) {
+    return { ok: false, value: null };
+  }
+}
 
 function applyTheme(theme) {
   const dark = theme === 'dark';
@@ -28,13 +42,15 @@ function toggleTheme() {
   try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
 }
 
-// Init from storage. Reading can throw when storage is blocked, which
-// would stop this script and leave every .animate-in block invisible.
-let saved = null;
-try { saved = localStorage.getItem('theme'); } catch (e) { /* storage blocked */ }
-applyTheme(saved || 'light');
-
+applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
 document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('click', toggleTheme));
+
+// With no saved choice, follow the device setting live.
+// (Safari before 14 has no addEventListener on media queries.)
+if (darkQuery.addEventListener) darkQuery.addEventListener('change', e => {
+  const saved = savedTheme();
+  if (saved.ok && !saved.value) applyTheme(e.matches ? 'dark' : 'light');
+});
 
 /* ─── Drawer ─── */
 const drawer = document.getElementById('drawer');

@@ -27,6 +27,7 @@
   --sp-xs:4px; --sp-sm:8px; --sp-md:16px; --sp-lg:24px;
   --sp-xl:32px; --sp-2xl:48px; --sp-3xl:64px;
 
+  color-scheme: dark;
   --sticky-h: 47px;   /* height of the sticky bar, for anchor offsets */
 
   --pad: 20px;
@@ -59,6 +60,7 @@
 
 /* ─── TOKENS: LIGHT ─── */
 [data-theme="light"] {
+  color-scheme: light;
   --ink:   #F4F1ED;
   --vellum:#0D1117;
   --gold:  #3C6997;

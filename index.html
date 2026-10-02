@@ -6,8 +6,9 @@
   <title>Shalom Donga | Design Engineer</title>
   <meta name="description" content="Shalom Donga is a design engineer working across UX, product design, and frontend development, with work spanning e-commerce, AI, and interactive products.">
   <meta name="theme-color" content="#F4F1ED">
-  <!-- Apply a saved dark theme before first paint so it doesn't flash light. main.js does the rest. -->
-  <script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.querySelector('meta[name="theme-color"]').content='#121417';}}catch(e){}</script>
+  <!-- Theme before first paint: saved choice, else device setting, else light (also if storage is blocked).
+       Case study pages must copy this script unchanged so the theme carries across pages. main.js does the rest. -->
+  <script>(function(){var t='light';try{var s=localStorage.getItem('theme');t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
   <link rel="icon" href="./favicon.ico">
   <link rel="canonical" href="https://shalomdee.github.io/">
 
