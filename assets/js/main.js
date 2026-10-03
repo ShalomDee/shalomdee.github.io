@@ -129,6 +129,26 @@ if (editorialSection) {
   editorialObserver.observe(editorialSection);
 }
 
+/* ─── Sticky bars: raise them once the masthead has scrolled away ───
+   The top margin is the phone bar's height (0 when it is hidden from
+   768px), so the class lands as the masthead slides fully under it. */
+const mastHeader = document.querySelector('header');
+const stickyBars = document.querySelectorAll('.mast-top, .nav-bar');
+const mastTop = document.querySelector('.mast-top');
+let stuckObserver;
+function watchMasthead() {
+  if (stuckObserver) stuckObserver.disconnect();
+  stuckObserver = new IntersectionObserver(entries => {
+    const stuck = !entries[0].isIntersecting;
+    stickyBars.forEach(bar => bar.classList.toggle('is-stuck', stuck));
+  }, { rootMargin: `-${mastTop ? mastTop.offsetHeight : 0}px 0px 0px 0px` });
+  stuckObserver.observe(mastHeader);
+}
+if (mastHeader) {
+  watchMasthead();
+  window.matchMedia('(min-width: 768px)').addEventListener('change', watchMasthead);
+}
+
 /* ─── Nav scroll spy ─── */
 const sections = document.querySelectorAll('section[id], div[id], footer[id]');
 const navLinks = document.querySelectorAll('.nav-ticker a:not(.nav-cta)');

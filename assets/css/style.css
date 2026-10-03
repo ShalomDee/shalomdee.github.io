@@ -42,8 +42,9 @@
   --terra: #C4695F;
   --foot:  #0A0B0E;   /* one step deeper than the page, as in light */
 
-  /* Sticky bars. A shadow barely shows on a near-black page, so in dark
-     the bar is also lifted one step lighter than the page. */
+  /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
+     shows on a near-black page, so in dark the bar is also lifted one
+     step lighter than the page. */
   --bar-bg: #1B1E23;
   --bar-shadow: 0 6px 20px rgba(0,0,0,0.9);
 
@@ -73,7 +74,7 @@
   --foot:  #E0DDD8;
 
   --bar-bg: var(--ink);
-  --bar-shadow: 0 2px 10px rgba(13,17,23,0.12);
+  --bar-shadow: 0 3px 14px rgba(13,17,23,0.2);
 
   --v100:rgba(13,17,23,1.00); --v85:rgba(13,17,23,0.85);
   --v70:rgba(13,17,23,0.76);  --v60:rgba(13,17,23,0.68);
@@ -199,8 +200,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .mast-top{
   display:flex;justify-content:space-between;align-items:flex-start;
   padding:10px var(--pad);border-bottom:1px solid var(--v15);
-  position:sticky;top:0;z-index:100;background:var(--bar-bg);
-  box-shadow:var(--bar-shadow);
+  position:sticky;top:0;z-index:100;background:var(--ink);
+  transition:background-color var(--t),box-shadow var(--t);
 }
 .mast-actions{display:flex;gap:var(--sp-sm);align-items:center;}
 .theme-btn{
@@ -273,11 +274,14 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   text-align:right;margin-bottom:var(--sp-xs);
 }
 
+/* Both bars, plain at rest, raised once the masthead has scrolled away */
+.mast-top.is-stuck,.nav-bar.is-stuck{background:var(--bar-bg);box-shadow:var(--bar-shadow);}
+
 /* Section bar (768px and up): sticky, links centred, theme toggle at the right end */
 .nav-bar{
   display:none;
-  position:sticky;top:0;z-index:100;background:var(--bar-bg);
-  box-shadow:var(--bar-shadow);
+  position:sticky;top:0;z-index:100;background:var(--ink);
+  transition:background-color var(--t),box-shadow var(--t);
   padding:9px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
   border-bottom:1px solid var(--v15);
 }
