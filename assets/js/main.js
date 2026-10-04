@@ -149,9 +149,11 @@ if (mastHeader) {
   window.matchMedia('(min-width: 768px)').addEventListener('change', watchMasthead);
 }
 
-/* ─── Nav scroll spy ─── */
+/* ─── Nav scroll spy ───
+   In-page links only: on case study pages the ticker points back to the
+   homepage and keeps its own .active, and the contents column is spied. */
 const sections = document.querySelectorAll('section[id], div[id], footer[id]');
-const navLinks = document.querySelectorAll('.nav-ticker a:not(.nav-cta)');
+const navLinks = document.querySelectorAll('.nav-ticker a[href^="#"]:not(.nav-cta), .cs-toc a');
 
 window.addEventListener('scroll', () => {
   let current = '';
