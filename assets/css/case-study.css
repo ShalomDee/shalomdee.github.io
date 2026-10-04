@@ -5,7 +5,8 @@
    style.css; this file only adds the case study layout.
 
    Breakpoints match style.css:
-     640px   facts in four columns, two-column card grid
+     640px   facts in four columns, image galleries side by side,
+             two-column card grid
      960px   hero beside its image, sticky contents column
      1200px  three-column card grid
 
@@ -59,7 +60,7 @@
 .cs-tools{display:flex;flex-wrap:wrap;gap:6px;}
 
 /* ═══ IMAGE SLOTS ═══ */
-.cs-media{margin:0;}
+.cs-media,.cs-phones{margin:0;}
 .cs-media > img,.cs-ph{
   width:100%;aspect-ratio:var(--ratio,16/10);
   border:1px solid var(--v20);border-radius:3px;
@@ -107,14 +108,16 @@
 .cs-sec{padding-bottom:var(--sp-2xl);}
 .cs-sec .sec-label em{font-style:italic;}
 
-/* Body copy, set like the About story */
-.cs-prose{max-width:68ch;}
-.cs-prose p,.cs-prose li,.cs-sources dd,.cs-decision p:not(.cs-tradeoff){
+/* Body copy, set like the About story; spans the whole column */
+.cs-prose p,.cs-prose li{
   font-family:var(--font-bd);font-size:var(--sz-base);
   line-height:1.55;color:var(--v70);
   text-align:justify;hyphens:auto;
 }
 .cs-prose > * + *{margin-top:0.75em;}
+/* Images get more room than paragraphs */
+.cs-prose > .cs-media,.cs-prose > .cs-gallery,.cs-prose > .cs-phones,
+.cs-source > .cs-media,.cs-source > .cs-gallery{margin-block:var(--sp-lg);}
 .cs-prose strong{color:var(--v85);}
 .cs-prose > .cs-subhead{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
@@ -129,48 +132,29 @@
 }
 .cs-quote p{font-style:italic;color:var(--v85);}
 
-/* Research sources: label above each finding */
-.cs-sources{display:grid;gap:var(--sp-md);}
-.cs-sources dt{margin-bottom:var(--sp-xs);}
+/* Research sources: label, image, finding */
+.cs-prose > .cs-source{margin-top:var(--sp-xl);}
+.cs-source > p{margin-top:0.75em;}
+.cs-prose > .cs-source > .cs-media,.cs-prose > .cs-source > .cs-gallery{margin-block:var(--sp-sm) var(--sp-md);}
+.cs-decision > .cs-media:last-child{margin-bottom:0;}
 
-.cs-screens{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:var(--sp-lg);margin-top:var(--sp-xl);
-}
+/* Image galleries: stacked on phones, side by side from 640px */
+.cs-gallery{display:grid;gap:var(--sp-lg);}
+/* One column per phone, up to 220px each, shrinking together on narrow screens */
+.cs-gallery--phones{grid-auto-flow:column;grid-auto-columns:minmax(0,220px);justify-content:center;}
 
 /* Key decisions */
-.cs-decision{padding:var(--sp-lg) 0;border-top:1px solid var(--v15);max-width:68ch;}
-.cs-decision:first-of-type{border-top:0;padding-top:0;}
+.cs-decision{padding:var(--sp-lg) 0;border-top:1px solid var(--v15);}
+.sec-head + .cs-decision{border-top:0;padding-top:0;}
 .cs-decision h3{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
-  line-height:1.2;color:var(--v100);
+  line-height:1.2;color:var(--v100);margin-top:0;
 }
-.cs-tradeoff{
-  font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.5;
-  text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);
-  margin:var(--sp-xs) 0 var(--sp-sm);
-}
+.cs-decision .cs-list{margin-top:var(--sp-sm);}
 .cs-list{list-style:none;}
 .cs-list li{position:relative;padding-left:var(--sp-md);}
 .cs-list li + li{margin-top:0.75em;}
 .cs-list li::before{content:'✦';position:absolute;left:0;top:0.2em;font-size:8px;color:var(--gold);}
-
-/* Outcome figures */
-.cs-figures{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  border-top:1px solid var(--v15);border-left:1px solid var(--v15);
-  max-width:68ch;margin-bottom:var(--sp-lg);
-}
-.cs-figures div{padding:var(--sp-lg) var(--sp-md);border-right:1px solid var(--v15);border-bottom:1px solid var(--v15);}
-.cs-figures b{
-  display:block;font-family:var(--font-hd);font-weight:900;
-  font-size:var(--sz-3xl);line-height:1;color:var(--terra);
-}
-.cs-figures span{
-  display:block;margin-top:var(--sp-sm);
-  font-family:var(--font-bd);font-size:var(--sz-sm);font-style:italic;
-  line-height:1.5;color:var(--v70);
-}
 
 /* ═══ MORE STORIES ═══ */
 .cs-more{padding-top:var(--sp-2xl);padding-bottom:var(--sp-2xl);border-top:1px solid var(--v15);}
@@ -182,6 +166,8 @@
 @media(min-width:640px){
   .cs-facts{grid-template-columns:repeat(4,minmax(0,1fr));}
   .cs-facts .cs-facts-wide{grid-column:1 / -1;}
+  .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
 }
 
 @media(min-width:960px){
@@ -198,10 +184,8 @@
   }
 }
 
-/* Phones: justified copy leaves wide gaps; screens stack */
+/* Phones: justified copy leaves wide gaps */
 @media(max-width:639.98px){
-  .cs-prose p,.cs-prose li,.cs-sources dd,.cs-decision p:not(.cs-tradeoff){text-align:left;hyphens:manual;}
-  .cs-screens{grid-template-columns:1fr;gap:var(--sp-xl);}
-  .cs-figures{grid-template-columns:1fr;}
+  .cs-prose p,.cs-prose li{text-align:left;hyphens:manual;}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
 }
