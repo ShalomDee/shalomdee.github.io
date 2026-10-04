@@ -1,0 +1,207 @@
+/* ═══════════════════════════════════════════════════
+   THE MAKER'S TIMES — case-study.css
+   Loads after style.css on every case study page. Tokens, masthead,
+   nav, drawer, section heads, project cards and footer all come from
+   style.css; this file only adds the case study layout.
+
+   Breakpoints match style.css:
+     640px   facts in four columns, two-column card grid
+     960px   hero beside its image, sticky contents column
+     1200px  three-column card grid
+
+   Images: every .cs-media starts with a .cs-ph placeholder. Swap it for
+   an <img> with width, height and alt; the frame keeps its ratio either
+   way, so nothing shifts when images arrive.
+   ═══════════════════════════════════════════════════ */
+
+/* Masthead title links home without looking like a link */
+.mast-name a{color:inherit;}
+
+/* ═══ HERO ═══ */
+.cs-hero{
+  display:grid;gap:var(--sp-2xl);
+  padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
+  border-bottom:2px solid var(--gold);
+}
+.cs-crumb{
+  font-family:var(--font-ui);font-size:var(--sz-xs);
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
+  margin-bottom:var(--sp-lg);
+}
+.cs-crumb a{color:var(--gold);}
+.cs-crumb a:hover{color:var(--v100);}
+.cs-title{
+  font-family:var(--font-hd);font-weight:900;
+  font-size:clamp(2.4rem,5.5vw,4rem);line-height:1;
+  letter-spacing:0.02em;text-transform:uppercase;color:var(--terra);
+  text-wrap:balance;
+}
+.cs-deck{
+  font-family:var(--font-bd);font-style:italic;
+  font-size:var(--sz-lg);line-height:1.5;color:var(--v100);
+  margin-top:var(--sp-md);max-width:40ch;
+}
+.cs-hero .ms-byline{margin-top:var(--sp-lg);}
+
+.cs-facts{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--sp-md) var(--sp-lg);
+  margin-top:var(--sp-lg);padding-top:var(--sp-md);
+  border-top:1px solid var(--v15);
+}
+.cs-facts dt{
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--v45);
+  margin-bottom:var(--sp-xs);
+}
+.cs-facts dd{font-size:var(--sz-base);line-height:1.5;color:var(--v85);}
+.cs-facts .cs-facts-wide{grid-column:1 / -1;}
+.cs-tools{display:flex;flex-wrap:wrap;gap:6px;}
+
+/* ═══ IMAGE SLOTS ═══ */
+.cs-media{margin:0;}
+.cs-media > img,.cs-ph{
+  width:100%;aspect-ratio:var(--ratio,16/10);
+  border:1px solid var(--v20);border-radius:3px;
+}
+.cs-media > img{object-fit:cover;background:var(--v05);}
+.cs-ph{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--v05);border-style:dashed;border-color:var(--v35);
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
+}
+.cs-media--hero{outline:3px solid var(--gold);outline-offset:6px;margin:6px;}
+.cs-media--screen{--ratio:9/19.5;max-width:220px;margin-inline:auto;width:100%;}
+.cs-caption{
+  display:flex;align-items:center;gap:var(--sp-sm);
+  margin-top:var(--sp-md);
+  font-family:var(--font-bd);font-size:var(--sz-sm);font-style:italic;
+  line-height:1.4;color:var(--v45);text-align:center;
+}
+.cs-caption::before,.cs-caption::after{content:'';flex:1;min-width:var(--sp-md);height:1px;background:var(--v15);}
+
+/* ═══ STORY: contents column + article ═══ */
+.cs-story{
+  display:grid;gap:var(--sp-xl);
+  padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
+}
+.cs-toc{display:none;}
+.cs-box-title{
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:700;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
+  padding-bottom:var(--sp-sm);margin-bottom:var(--sp-sm);
+  border-bottom:1px solid var(--v15);
+}
+.cs-toc ol{list-style:none;}
+.cs-toc a{
+  display:block;padding:7px 0 7px 10px;
+  border-left:1px solid var(--v15);
+  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:500;
+  text-transform:uppercase;letter-spacing:0.08em;color:var(--v55);
+  transition:color var(--t),border-color var(--t);
+}
+.cs-toc a:hover{color:var(--v100);}
+.cs-toc a.active{color:var(--v100);font-weight:600;border-left-color:var(--gold);}
+
+.cs-sec{padding-bottom:var(--sp-2xl);}
+.cs-sec .sec-label em{font-style:italic;}
+
+/* Body copy, set like the About story */
+.cs-prose{max-width:68ch;}
+.cs-prose p,.cs-prose li,.cs-sources dd,.cs-decision p:not(.cs-tradeoff){
+  font-family:var(--font-bd);font-size:var(--sz-base);
+  line-height:1.55;color:var(--v70);
+  text-align:justify;hyphens:auto;
+}
+.cs-prose > * + *{margin-top:0.75em;}
+.cs-prose strong{color:var(--v85);}
+.cs-prose > .cs-subhead{
+  font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
+  line-height:1.2;color:var(--v100);
+  margin-top:var(--sp-xl);
+}
+
+/* The original user story, set as a pull quote */
+.cs-quote{
+  border-left:2px solid var(--gold);
+  padding:var(--sp-xs) 0 var(--sp-xs) var(--sp-md);
+}
+.cs-quote p{font-style:italic;color:var(--v85);}
+
+/* Research sources: label above each finding */
+.cs-sources{display:grid;gap:var(--sp-md);}
+.cs-sources dt{margin-bottom:var(--sp-xs);}
+
+.cs-screens{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--sp-lg);margin-top:var(--sp-xl);
+}
+
+/* Key decisions */
+.cs-decision{padding:var(--sp-lg) 0;border-top:1px solid var(--v15);max-width:68ch;}
+.cs-decision:first-of-type{border-top:0;padding-top:0;}
+.cs-decision h3{
+  font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
+  line-height:1.2;color:var(--v100);
+}
+.cs-tradeoff{
+  font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.5;
+  text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);
+  margin:var(--sp-xs) 0 var(--sp-sm);
+}
+.cs-list{list-style:none;}
+.cs-list li{position:relative;padding-left:var(--sp-md);}
+.cs-list li + li{margin-top:0.75em;}
+.cs-list li::before{content:'✦';position:absolute;left:0;top:0.2em;font-size:8px;color:var(--gold);}
+
+/* Outcome figures */
+.cs-figures{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--v15);border-left:1px solid var(--v15);
+  max-width:68ch;margin-bottom:var(--sp-lg);
+}
+.cs-figures div{padding:var(--sp-lg) var(--sp-md);border-right:1px solid var(--v15);border-bottom:1px solid var(--v15);}
+.cs-figures b{
+  display:block;font-family:var(--font-hd);font-weight:900;
+  font-size:var(--sz-3xl);line-height:1;color:var(--terra);
+}
+.cs-figures span{
+  display:block;margin-top:var(--sp-sm);
+  font-family:var(--font-bd);font-size:var(--sz-sm);font-style:italic;
+  line-height:1.5;color:var(--v70);
+}
+
+/* ═══ MORE STORIES ═══ */
+.cs-more{padding-top:var(--sp-2xl);padding-bottom:var(--sp-2xl);border-top:1px solid var(--v15);}
+.cs-more .sec-head{border-top:none;}
+.cs-more .sec-meta a{color:var(--gold);}
+.cs-more .sec-meta a:hover{color:var(--v100);}
+
+/* ═══ RESPONSIVE ═══ */
+@media(min-width:640px){
+  .cs-facts{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .cs-facts .cs-facts-wide{grid-column:1 / -1;}
+}
+
+@media(min-width:960px){
+  .cs-hero{
+    grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+    align-items:center;gap:var(--sp-3xl);
+    padding-top:var(--sp-3xl);padding-bottom:var(--sp-2xl);
+  }
+  .cs-facts{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cs-story{grid-template-columns:200px minmax(0,1fr);gap:var(--sp-3xl);}
+  .cs-toc{
+    display:block;position:sticky;align-self:start;
+    top:calc(var(--sticky-h) + var(--sp-lg));
+  }
+}
+
+/* Phones: justified copy leaves wide gaps; screens stack */
+@media(max-width:639.98px){
+  .cs-prose p,.cs-prose li,.cs-sources dd,.cs-decision p:not(.cs-tradeoff){text-align:left;hyphens:manual;}
+  .cs-screens{grid-template-columns:1fr;gap:var(--sp-xl);}
+  .cs-figures{grid-template-columns:1fr;}
+  .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Items &amp; Comparison, Tiffany &amp; Co. | Shalom Donga</title>
+  <meta name="description" content="A case study on a saved-items and comparison experience for Tiffany &amp; Co.’s e-commerce site, scoped from a broad wishlist brief through research into how customers consider a luxury purchase.">
+  <meta name="theme-color" content="#F4F1ED">
+  <!-- Copied unchanged from index.html so the theme carries across pages -->
+  <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://shalomdee.github.io/case-studies/tiffany-wishlist/">
+
+  <!-- Share previews. Swap og:image for a case study cover once one exists (absolute URL, 1200×630). -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shalomdee.github.io/case-studies/tiffany-wishlist/">
+  <meta property="og:title" content="Saved Items &amp; Comparison, Tiffany &amp; Co. | Shalom Donga">
+  <meta property="og:description" content="A saved-items and comparison experience for Tiffany &amp; Co.’s e-commerce site, scoped from a broad wishlist brief through research into how customers consider a luxury purchase.">
+  <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Open Graph preview for Shalom Donga’s portfolio, featuring The Maker’s Times masthead, her name and Design Engineer title, and an illustrated tug-of-war between design and engineering.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <!-- Same ?v= as index.html; bump all three together -->
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-04">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-04">
+  <script src="../../assets/js/main.js?v=2026-10-04" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="../../#about">About</a>
+  <a href="../../#projects">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email ↗</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<div class="mast-top">
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<header>
+  <div class="mast-title">
+    <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">"Where Code<br>Meets Canvas"</span>
+    </div>
+    <div class="mast-center">
+      <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Case Study</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <nav class="nav-ticker" aria-label="Sections">
+    <a href="../../#about">About</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#projects" class="active">Projects</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#experience">Experience</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#skills">Skills</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#editorials">Editorial</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  </nav>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="cs-hero wrap" aria-labelledby="cs-title">
+  <div class="animate-in">
+    <p class="cs-crumb"><a href="../../#projects">Selected Builds</a> / Case Study</p>
+    <span class="kicker">Summer 2026</span>
+    <h1 class="cs-title" id="cs-title">Saved Items&nbsp;&amp; Comparison</h1>
+    <p class="cs-deck">A saved-items and comparison experience for Tiffany &amp; Co.’s e-commerce site, scoped from a broad wishlist brief through research into how customers consider a luxury purchase.</p>
+    <p class="ms-byline"><span class="ms-byline-text">By <span class="ms-byline-name">SHALOM DONGA</span></span></p>
+    <dl class="cs-facts">
+      <div><dt>Role</dt><dd>UX Design Intern</dd></div>
+      <div><dt>Timeline</dt><dd>June to August 2026 (10&nbsp;weeks)</dd></div>
+      <div><dt>Team</dt><dd>Individual project, with my manager (UX Designer) and input from UX Research</dd></div>
+      <div><dt>Context</dt><dd>Tiffany &amp; Co. (LVMH), Digital Omni &amp; Client</dd></div>
+      <div class="cs-facts-wide"><dt>Tools</dt><dd class="cs-tools"><span class="stag">Figma</span><span class="stag">FigJam</span><span class="stag">ContentSquare</span><span class="stag">UserTesting.com</span><span class="stag">Jira</span></dd></div>
+    </dl>
+  </div>
+  <!-- Image slot: replace the .cs-ph div with
+       <img src="../../assets/images/case-studies/tiffany-wishlist/hero.webp" width="…" height="…" alt="…" fetchpriority="high">
+       The frame is 16:10; set style="--ratio:W/H" on the figure for another shape. -->
+  <figure class="cs-media cs-media--hero animate-in delay-1">
+    <div class="cs-ph" role="img" aria-label="Hero image to come">Hero image</div>
+  </figure>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<div class="cs-story wrap">
+  <nav class="cs-toc" aria-label="On this page">
+    <p class="cs-box-title">On This Page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#role">My Role</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#solution">The Solution</a></li>
+      <li><a href="#decisions">Key Decisions</a></li>
+      <li><a href="#outcome">Outcome</a></li>
+      <li><a href="#learned">What I Learned</a></li>
+    </ol>
+    <!-- Project links, for projects that have public ones. Keep only those that exist:
+    <p class="cs-box-title">Project Links</p>
+    <div class="pa-links"><a href="…" class="pa-link pa-link--code" target="_blank" rel="noopener noreferrer">View Code</a></div>
+    -->
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
+      <div class="cs-prose">
+        <p>Tiffany’s e-commerce platform had no persistent wishlist. One had existed on the legacy site but did not carry over to the newer platform. I was asked to explore how persistent saving could work across the site, with entry points on product pages, category pages, search, and cart, and a brief that also included account-based persistence, multiple lists, sharing, and recommendations.</p>
+        <p>My work was an early phase of that larger effort. Rather than designing every capability end to end, I investigated how customers approached saving and consideration, determined which capabilities had the strongest basis for development, and turned that into a focused design direction: a saved-items experience paired with a dedicated comparison flow.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
+      <div class="cs-prose">
+        <p>This was an individually assigned project. I led the research framing, survey design and analysis, interaction exploration, and interface decisions for the portion of the experience I scoped.</p>
+        <p>My manager provided design critique throughout and helped establish the broader product and business context. I also incorporated input from UX research partners, client advisors, store leadership, and other stakeholders where their expertise informed the work.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Problem</span></h2></div>
+      <div class="cs-prose">
+        <p>The original user story:</p>
+        <blockquote class="cs-quote">
+          <p>As a Tiffany.com customer, I want to save items to a persistent wishlist and access expanded wishlist capabilities across the site, so that I can revisit my selections across sessions and devices, share them with others, and receive relevant recommendations.</p>
+        </blockquote>
+        <p>Early in the project, I asked the director overseeing UX why the old wishlist had been removed. His response was that its purpose had not been clear enough to justify carrying it forward.</p>
+        <p>That made the project more than restoring an old feature. Before deciding how saving should work, I needed to understand what role it served in a luxury purchase: when customers want to return to products, what they are trying to accomplish when they save one, and how comparison and sharing fit into the same process.</p>
+
+        <h3 class="cs-subhead">What the research showed</h3>
+        <p>Each source answered a different part of the problem.</p>
+        <dl class="cs-sources">
+          <div>
+            <dt class="kicker">Existing experience</dt>
+            <dd>ContentSquare showed how customers used product and commerce pages, and later informed where new controls could sit without disrupting established behavior. The cart already kept products indefinitely, so persistence alone would not differentiate a dedicated saved-items experience.</dd>
+          </div>
+          <div>
+            <dt class="kicker">Competitive analysis</dt>
+            <dd>Among luxury competitors, saved-item organization was generally limited. Multiple lists and folders appeared more often in mass-market experiences, which showed where Tiffany’s brief extended beyond common luxury implementations.</dd>
+          </div>
+          <div>
+            <dt class="kicker">Published research</dt>
+            <dd>Customers frequently keep products outside retailer wishlists, through browser bookmarks and other external methods, and early account requirements are a source of friction in wishlist experiences. That became important later, when deciding where account creation should enter the journey.</dd>
+          </div>
+          <div>
+            <dt class="kicker">Retail immersion</dt>
+            <dd>I spent a week at Tiffany’s Wall Street store speaking with client advisors and store leadership. Customers often compared a small number of pieces before purchasing, with an advisor placing them side by side and talking through the differences. The website offered no equivalent. Comparison was less a new behavior to introduce than an existing one that had not yet been translated online.</dd>
+          </div>
+          <div>
+            <dt class="kicker">Customer survey</dt>
+            <dd>I designed and fielded a survey to 36 respondents from Tiffany’s client base, revising it so respondents who did not save or share products could still answer relevant questions rather than being filtered out. Side-by-side comparison emerged as a stronger unmet need than saving alone. Sharing ranked substantially lower than the other behaviors, despite its prominence in the brief.</dd>
+          </div>
+        </dl>
+        <p>Together, these gave me a hierarchy of needs. Persistence already existed in partial form through the cart and external tools. Comparison had support in both qualitative and quantitative research. Sharing had comparatively weak support. Early sign-in introduced friction that had to be weighed against the business goal of increasing account creation.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="solution">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Solution</span></h2></div>
+      <div class="cs-prose">
+        <p>The clearest gap was what happened between discovering a product and deciding whether to purchase it. Some customers need a way to return to products they have seen; others need support evaluating a smaller set of options before deciding. That shifted the project away from recreating a traditional wishlist and toward supporting consideration over time.</p>
+        <p>I explored three levels of intent. Recently Viewed required no deliberate action and supported people returning to something they had seen. Compare asked for a small amount of effort from customers narrowing a decision between a few products. Save, potentially paired with stock or price alerts, was a longer-term commitment to tracking an item. A single wishlist could not solve all three. Tiffany also did not yet have a personalization system to support the brief’s recommendation concepts, so I prioritized interactions that would stay useful without it.</p>
+        <p>The final direction combined a persistent saved-items experience with a dedicated comparison flow, designed within Tiffany’s existing visual language, grids, and component system.</p>
+      </div>
+      <!-- Image slots: phone-shaped (9:19.5) by default. For desktop screens, set
+           style="--ratio:16/10" on each figure and drop the cs-media--screen class. -->
+      <div class="cs-screens">
+        <figure class="cs-media cs-media--screen">
+          <div class="cs-ph" role="img" aria-label="Screen to come">Screen 1</div>
+          <figcaption class="cs-caption">Saving from a product page, without signing in</figcaption>
+        </figure>
+        <figure class="cs-media cs-media--screen">
+          <div class="cs-ph" role="img" aria-label="Screen to come">Screen 2</div>
+          <figcaption class="cs-caption">The comparison table</figcaption>
+        </figure>
+        <figure class="cs-media cs-media--screen">
+          <div class="cs-ph" role="img" aria-label="Screen to come">Screen 3</div>
+          <figcaption class="cs-caption">Comparison on mobile</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="decisions">
+      <div class="sec-head"><h2 class="sec-label">Key <span class="aw">Decisions</span></h2></div>
+      <div class="cs-decision">
+        <span class="kicker">Decision</span>
+        <h3>Save first, sign in at Compare</h3>
+        <p class="cs-tradeoff">Trade-off: asking for an account at the first save, the earliest point to capture one</p>
+        <p>Account creation was a business objective and a KPI on the original brief, but the research showed that requiring authentication before customers got any value from saving added friction. I separated the two. Customers could save without signing in, and account creation entered when they chose to use Compare, connecting a higher-intent behavior to the account-creation goal.</p>
+      </div>
+      <div class="cs-decision">
+        <span class="kicker">Decision</span>
+        <h3>Make Compare its own surface, with a cap</h3>
+        <p class="cs-tradeoff">Trade-off: comparing a wider set of products at once</p>
+        <p>Client advisors and the survey both gave comparison stronger support than a conventional wishlist, so Compare became a dedicated surface rather than a secondary function inside the saved-items page. A fixed cap on products kept it to focused evaluation of a small selection rather than an indefinitely expanding grid.</p>
+      </div>
+      <div class="cs-decision">
+        <span class="kicker">Decision</span>
+        <h3>Take one journey all the way through</h3>
+        <p class="cs-tradeoff">Trade-off: the separate post-purchase direction and the rest of the brief stayed undesigned</p>
+        <p>The brief covered several journeys and capabilities. I focused detailed design on one primary consideration journey and set aside a separate post-purchase direction, taking the strongest research-backed opportunity into interaction and interface design rather than spreading the remaining time across several unfinished journeys.</p>
+      </div>
+      <div class="cs-decision cs-prose">
+        <span class="kicker">Smaller calls</span>
+        <ul class="cs-list">
+          <li><strong>Ranking and sorting were cut</strong> from the saved-items view. I did not find sufficient evidence that either solved an important problem in this journey.</li>
+          <li><strong>“Wishlist” was reconsidered as the name.</strong> It suggests products someone may want eventually; the experience also covered returning to products and actively evaluating them. Naming became part of defining the product rather than an inherited label.</li>
+          <li><strong>Hierarchy without filled buttons.</strong> Tiffany reserves filled primary buttons for checkout, so saved-items actions had to establish hierarchy through control type, placement, and scale without competing with the purchase path.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-figures">
+        <div><b>36</b><span>client survey respondents</span></div>
+        <div><b>1 week</b><span>at the Wall Street store</span></div>
+        <div><b>5</b><span>research sources</span></div>
+      </div>
+      <div class="cs-prose">
+        <p>By the final day of the internship, I had completed the focused customer journey, comparison-table design, and mobile comparison behavior, and handed the designs, supporting research, and decision rationale to my manager for continued development.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="learned">
+      <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
+      <div class="cs-prose">
+        <p>The project started with a feature brief and became an exercise in defining what the feature needed to accomplish before deciding what it should look like. Along the way I found myself working in three modes. Think within the box: understand the existing system, its constraints, and why they exist. Think outside the box: explore beyond the patterns already established. Question the box: is the problem framed correctly, and is the proposed solution solving the right problem? Asking why the old wishlist had not carried over was the third mode, and it shaped the research that followed. I have carried the three modes into my work since.</p>
+        <p>I was also working within an established design system, business constraints, and technical limitations, producing work clear enough for someone else to continue after I left. That meant designing for continuity, not just presentation. With this project running alongside other UX work, I got faster at telling apart decisions that needed deeper investigation from those where an existing pattern was sufficient.</p>
+        <p>The work now sits with my manager as the foundation for the broader saved-items experience.</p>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- ═══ MORE STORIES ═══
+     Cards copied from the Selected Builds grid in index.html; keep the copy in step.
+     Add a Case Study link to .pa-links once that project's page exists. -->
+<section class="cs-more wrap" aria-labelledby="more-title">
+  <div class="sec-head sec-head-gold">
+    <h2 class="sec-label" id="more-title">More <span class="aw">Stories</span></h2>
+    <span class="sec-meta"><a href="../../#projects">Selected Builds</a></span>
+  </div>
+  <div class="archive-grid">
+
+    <article class="pa-card animate-in">
+      <div class="pa-img pa-img--c3"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Mobile</span><span class="pa-tag">Healthcare</span><span class="pa-tag">Speech Therapy</span><span class="pa-tag">AI</span></div>
+        <h3 class="pa-title">Worlds of Hello</h3>
+        <p class="pa-desc">A two-app speech therapy platform for children and clinicians. I designed and built Flutter screens across both experiences, redesigned authentication, implemented custom child-facing video capture, and helped build deterministic voice playback using pre-generated cloned audio.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Flutter</span><span class="pa-tech">Supabase</span><span class="pa-tech">Python</span><span class="pa-tech">Figma</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-1">
+      <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span></div>
+        <h3 class="pa-title">InsightCuts</h3>
+        <p class="pa-desc">A research storytelling concept developed with Ford to turn dense UX findings into shorter, narrative-driven formats. I built the first interactive prototype, defined the core interaction flow, tested the concept with Ford researchers and stakeholders, and produced the video simulation used at final review.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Prototyping</span><span class="pa-tech">Research</span><span class="pa-tech">Video</span><span class="pa-tech">AI</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-2">
+      <div class="pa-img pa-img--c5"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Retail</span><span class="pa-tag">Service Design</span><span class="pa-tag">Research</span></div>
+        <h3 class="pa-title">Tiffany Boutique Visits</h3>
+        <p class="pa-desc">An exploration of Tiffany’s appointment and in-store experience across New York boutiques, connecting digital booking flows with what happens before, during, and after a client visit. The work mapped gaps across internal systems and helped redirect the scope of a follow-on experience.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Journey Mapping</span><span class="pa-tech">Contextual Inquiry</span><span class="pa-tech">UX Research</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker's Times</div>
+      <p class="foot-brand-desc">Design, engineering, and the work in between.</p>
+      <p class="foot-brand-quote">"Where Code Meets Canvas"</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="foot-ext-link">Resume <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="../../#projects" class="foot-ext-link">Selected Builds <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <a href="mailto:shalomdonga@gmail.com" class="foot-email">shalomdonga@gmail.com</a>
+      <div class="foot-icon-row">
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
