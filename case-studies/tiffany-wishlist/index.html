@@ -220,8 +220,39 @@
 
         <div class="cs-source">
           <h4 class="kicker">Customer survey</h4>
-          <!-- Survey charts: best built in HTML from the response numbers (sharp, themed, readable on phones) -->
-          <figure class="cs-media" style="--ratio:16/9"><div class="cs-ph" role="img" aria-label="Charts to come">Survey charts</div></figure>
+          <!-- Survey charts, built in HTML from wishlist-survey-data.json. Bars scale to all 36 respondents
+               (--v is a count). Colors: .cs-survey in case-study.css. -->
+          <div class="cs-survey">
+            <div class="cs-stats">
+              <figure class="cs-chart cs-stat">
+                <figcaption class="cs-chart-q">Before your most recent luxury jewelry purchase, did you look at the piece online?</figcaption>
+                <p class="cs-stat-val">29 <span>of 36</span></p>
+                <p class="cs-stat-label">looked at it online first</p>
+                <span class="cs-meter" aria-hidden="true"><span style="--v:29"></span></span>
+              </figure>
+              <figure class="cs-chart cs-stat">
+                <figcaption class="cs-chart-q">How many times did you go back to that piece before buying it?</figcaption>
+                <p class="cs-stat-val">34 <span>of 36</span></p>
+                <p class="cs-stat-label">went back two or more times</p>
+                <span class="cs-meter" aria-hidden="true"><span style="--v:34"></span></span>
+              </figure>
+            </div>
+            <figure class="cs-chart">
+              <figcaption class="cs-chart-q">How do you usually keep track of a piece while you’re deciding?</figcaption>
+              <div class="cs-bar-row"><span class="cs-bar-label">Bookmarked it in the browser</span><span class="cs-bar"><span class="cs-bar-fill" style="--v:14"></span><span class="cs-bar-val">14</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Searched for it again, e.g. on Google</span><span class="cs-bar"><span class="cs-bar-fill" style="--v:10"></span><span class="cs-bar-val">10</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Saved it on the brand’s website</span><span class="cs-bar"><span class="cs-bar-fill cs-bar-fill--acc" style="--v:10"></span><span class="cs-bar-val">10</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Other</span><span class="cs-bar"><span class="cs-bar-fill" style="--v:2"></span><span class="cs-bar-val">2</span></span></div>
+            </figure>
+            <figure class="cs-chart">
+              <figcaption class="cs-chart-q">Rank these by how useful they would have been while you were deciding.</figcaption>
+              <ul class="cs-legend" aria-hidden="true"><li class="cs-seg--1">Ranked 1st</li><li class="cs-seg--2">2nd</li><li class="cs-seg--3">3rd</li></ul>
+              <div class="cs-bar-row"><span class="cs-bar-label">Comparing pieces side by side</span><span class="cs-stack"><span class="cs-seg cs-seg--1" style="--v:18"><span class="cs-vh">ranked first: </span>18</span><span class="cs-seg cs-seg--2" style="--v:13"><span class="cs-vh">ranked second: </span>13</span><span class="cs-seg cs-seg--3" style="--v:5"><span class="cs-vh">ranked third: </span>5</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Saving a piece to revisit later</span><span class="cs-stack"><span class="cs-seg cs-seg--1" style="--v:13"><span class="cs-vh">ranked first: </span>13</span><span class="cs-seg cs-seg--2" style="--v:13"><span class="cs-vh">ranked second: </span>13</span><span class="cs-seg cs-seg--3" style="--v:10"><span class="cs-vh">ranked third: </span>10</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Sharing pieces with someone else</span><span class="cs-stack"><span class="cs-seg cs-seg--1" style="--v:5"><span class="cs-vh">ranked first: </span>5</span><span class="cs-seg cs-seg--2" style="--v:10"><span class="cs-vh">ranked second: </span>10</span><span class="cs-seg cs-seg--3" style="--v:21"><span class="cs-vh">ranked third: </span>21</span></span></div>
+            </figure>
+            <p class="cs-chart-src">Counts of people, out of 36 respondents.</p>
+          </div>
           <p>I designed and fielded a survey to 36 respondents from Tiffany’s client base, revising it so respondents who did not save or share products could still answer relevant questions rather than being filtered out. Side-by-side comparison emerged as a stronger unmet need than saving alone. Sharing ranked substantially lower than the other behaviors, despite its prominence in the brief.</p>
         </div>
 
