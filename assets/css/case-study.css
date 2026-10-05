@@ -106,10 +106,9 @@
 .cs-toc a.active{color:var(--v100);font-weight:600;border-left-color:var(--gold);}
 
 .cs-sec{padding-bottom:var(--sp-2xl);}
-/* Sections divide with a hairline, not style.css's heavy rule. The first
-   section has none: the hero's gold rule above it already does that job. */
-.cs-sec .sec-head{border-top:1px solid var(--v15);}
-.cs-sec:first-child .sec-head{border-top:0;padding-top:0;}
+/* No rule above section heads: the headings and spacing divide the story,
+   and the hero's gold rule sits above the first one */
+.cs-sec .sec-head{border-top:0;padding-top:0;}
 .cs-sec .sec-label em{font-style:italic;}
 
 /* Body copy, set like the About story; spans the whole column */
