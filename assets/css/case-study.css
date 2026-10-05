@@ -5,8 +5,7 @@
    style.css; this file only adds the case study layout.
 
    Breakpoints match style.css:
-     640px   facts in four columns, image galleries side by side,
-             two-column card grid
+     640px   image galleries side by side, two-column card grid
      960px   hero beside its image, sticky contents column
      1200px  three-column card grid
 
@@ -42,22 +41,20 @@
   font-size:var(--sz-lg);line-height:1.5;color:var(--v100);
   margin-top:var(--sp-md);max-width:40ch;
 }
-.cs-hero .ms-byline{margin-top:var(--sp-lg);}
-
-.cs-facts{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:var(--sp-md) var(--sp-lg);
+/* Role line: title, then company and length */
+.cs-role{
+  display:flex;flex-direction:column;gap:var(--sp-xs);
   margin-top:var(--sp-lg);padding-top:var(--sp-md);
   border-top:2px solid var(--v20);
 }
-.cs-facts dt{
-  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.14em;color:var(--v45);
-  margin-bottom:var(--sp-xs);
+.cs-role-title{
+  font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
+  line-height:1.2;color:var(--v100);
 }
-.cs-facts dd{font-size:var(--sz-base);line-height:1.5;color:var(--v85);}
-.cs-facts .cs-facts-wide{grid-column:1 / -1;}
-.cs-tools{display:flex;flex-wrap:wrap;gap:6px;}
+.cs-role-meta{
+  font-family:var(--font-ui);font-size:var(--sz-xs);
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
+}
 
 /* ═══ IMAGE SLOTS ═══ */
 .cs-media,.cs-phones{margin:0;}
@@ -135,6 +132,10 @@
 }
 .cs-quote p{font-style:italic;color:var(--v85);}
 
+/* Tools, closing the My Role section */
+.cs-prose > .cs-tools-row{margin-top:var(--sp-lg);}
+.cs-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--sp-xs);}
+
 /* Research sources: label, image, finding */
 .cs-prose > .cs-source{margin-top:var(--sp-xl);}
 .cs-source > p{margin-top:0.75em;}
@@ -167,8 +168,6 @@
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:640px){
-  .cs-facts{grid-template-columns:repeat(4,minmax(0,1fr));}
-  .cs-facts .cs-facts-wide{grid-column:1 / -1;}
   .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
 }
@@ -179,7 +178,6 @@
     align-items:center;gap:var(--sp-3xl);
     padding-top:var(--sp-3xl);padding-bottom:var(--sp-2xl);
   }
-  .cs-facts{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-story{grid-template-columns:200px minmax(0,1fr);gap:var(--sp-3xl);}
   .cs-toc{
     display:block;position:sticky;align-self:start;
