@@ -108,7 +108,7 @@ button{font-family:inherit;}
 
 /* ─── Skip link: off screen until focused ─── */
 .skip-link{
-  position:absolute;left:var(--sp-md);top:-100px;z-index:10000;
+  position:absolute;left:var(--sp-md);top:-100px;z-index:10003;
   padding:var(--sp-sm) var(--sp-md);
   background:var(--vellum);color:var(--ink);
   font-family:var(--font-ui);font-size:var(--sz-sm);font-weight:600;
@@ -126,6 +126,24 @@ body::before{
   transition:opacity 0.3s ease;
 }
 [data-theme="light"] body::before{
+  mix-blend-mode:multiply;opacity:0.85;
+  filter:none;
+}
+/* The sticky bars sit above the page texture (z-index 10000) and carry
+   their own copy, fixed to the viewport. At the top of the page the two
+   line up; on scroll the page's paper moves and the bars' stays put,
+   instead of sliding across them. Drawer and skip link sit above. */
+.mast-top::after,.nav-bar::after{
+  content:'';position:absolute;inset:0;
+  background-image:url('../images/texture.webp');
+  background-repeat:repeat;background-size:3500px;
+  background-attachment:fixed;
+  mix-blend-mode:screen;opacity:0.3;
+  filter:invert(1);
+  pointer-events:none;z-index:1;
+  transition:opacity 0.3s ease;
+}
+[data-theme="light"] .mast-top::after,[data-theme="light"] .nav-bar::after{
   mix-blend-mode:multiply;opacity:0.85;
   filter:none;
 }
@@ -200,7 +218,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .mast-top{
   display:flex;justify-content:space-between;align-items:flex-start;
   padding:10px var(--pad);border-bottom:1px solid var(--v15);
-  position:sticky;top:0;z-index:100;background:var(--ink);
+  position:sticky;top:0;z-index:10000;background:var(--ink);
   transition:background-color var(--t),box-shadow var(--t);
 }
 .mast-actions{display:flex;gap:var(--sp-sm);align-items:center;}
@@ -280,7 +298,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Section bar (768px and up): sticky, links centred, theme toggle at the right end */
 .nav-bar{
   display:none;
-  position:sticky;top:0;z-index:100;background:var(--ink);
+  position:sticky;top:0;z-index:10000;background:var(--ink);
   transition:background-color var(--t),box-shadow var(--t);
   padding:9px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
   border-bottom:1px solid var(--v15);
@@ -307,12 +325,12 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.6);
-  z-index:999;opacity:0;visibility:hidden;transition:all 0.3s ease;
+  z-index:10001;opacity:0;visibility:hidden;transition:all 0.3s ease;
 }
 .drawer-overlay.open{opacity:1;visibility:visible;}
 .drawer{
   position:fixed;top:0;right:0;width:280px;max-width:80vw;height:100%;
-  background:rgba(18,20,23,0.98);z-index:1000;
+  background:rgba(18,20,23,0.98);z-index:10002;
   transform:translateX(100%);visibility:hidden;
   transition:transform 0.35s var(--ease),visibility 0s linear 0.35s;
   padding:var(--sp-xl) var(--sp-lg);display:flex;flex-direction:column;
