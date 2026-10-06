@@ -446,7 +446,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .hero-illo picture{display:block;}
 .hero-illo img{
   width:100%;height:auto;display:block;
-  filter:brightness(0.85) contrast(1.15);
+  filter:brightness(0.72) contrast(1.12);
 }
 [data-theme="light"] .hero-illo img{
   filter:brightness(0.95) contrast(1.05);
