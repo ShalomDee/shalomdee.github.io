@@ -86,6 +86,8 @@
   padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
 }
 .cs-toc{display:none;}
+/* Lets wide content (the competitive table) scroll inside the column instead of widening the page */
+.cs-story > article{min-width:0;}
 .cs-box-title{
   font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:700;
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
@@ -160,6 +162,32 @@
 .cs-list li{position:relative;padding-left:var(--sp-md);}
 .cs-list li + li{margin-top:0.75em;}
 .cs-list li::before{content:'✦';position:absolute;left:0;top:0.2em;font-size:8px;color:var(--gold);}
+
+/* ═══ COMPETITIVE TABLE ═══
+   Framed like the survey charts. Below about 640px of column it scrolls
+   sideways inside the frame, with the brand column pinned. */
+.cs-source > .cs-table-wrap{margin-block:var(--sp-sm) var(--sp-md);}
+.cs-table-wrap{position:relative;overflow-x:auto;border:2px solid var(--v20);border-radius:3px;}
+.cs-table-wrap:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.cs-table{
+  width:100%;min-width:600px;border-collapse:collapse;
+  font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.3;color:var(--v85);
+}
+.cs-table th,.cs-table td{padding:10px 6px;text-align:center;vertical-align:middle;border-bottom:1px solid var(--v15);}
+.cs-table tbody tr:last-child > *{border-bottom:0;}
+.cs-table thead th{
+  font-size:var(--sz-2xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--v70);vertical-align:bottom;border-bottom:2px solid var(--v20);
+}
+.cs-table tbody th{
+  text-align:left;font-weight:600;color:var(--v100);white-space:nowrap;
+  padding-left:var(--sp-md);
+}
+/* Brand column stays put while the rest scrolls */
+.cs-table th:first-child{position:sticky;left:0;z-index:1;background:var(--ink);}
+.cs-yes{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);vertical-align:middle;}
+.cs-prose .cs-table-hint{display:none;font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
+@media(max-width:767.98px){.cs-prose .cs-table-hint{display:block;}}
 
 /* ═══ USER FLOW ═══
    Two drawings of the same flow: wide from 1200px (where the column is
