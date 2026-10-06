@@ -122,6 +122,8 @@
 .cs-prose > .cs-media,.cs-prose > .cs-gallery,.cs-prose > .cs-phones,
 .cs-source > .cs-media,.cs-source > .cs-gallery{margin-block:var(--sp-lg);}
 .cs-prose strong{color:var(--v85);}
+.cs-prose p a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+.cs-prose p a:hover{color:var(--v100);}
 .cs-prose > .cs-subhead{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
   line-height:1.2;color:var(--v100);
