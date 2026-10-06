@@ -175,6 +175,8 @@
 }
 .cs-table th,.cs-table td{padding:10px 6px;text-align:center;vertical-align:middle;border-bottom:1px solid var(--v15);}
 .cs-table tbody tr:last-child > *{border-bottom:0;}
+/* Vertical rules between columns; the outer edges are the frame */
+.cs-table th + th,.cs-table th + td,.cs-table td + td{border-left:1px solid var(--v15);}
 .cs-table thead th{
   font-size:var(--sz-2xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;
   color:var(--v70);vertical-align:bottom;border-bottom:2px solid var(--v20);
