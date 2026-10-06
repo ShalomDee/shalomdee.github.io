@@ -7,7 +7,7 @@
    Breakpoints match style.css:
      640px   image galleries side by side, two-column card grid
      960px   hero beside its image, sticky contents column
-     1200px  three-column card grid
+     1200px  three-column card grid, wide user flow
 
    Images: every .cs-media starts with a .cs-ph placeholder. Swap it for
    an <img> with width, height and alt; the frame keeps its ratio either
@@ -160,6 +160,23 @@
 .cs-list li{position:relative;padding-left:var(--sp-md);}
 .cs-list li + li{margin-top:0.75em;}
 .cs-list li::before{content:'✦';position:absolute;left:0;top:0.2em;font-size:8px;color:var(--gold);}
+
+/* ═══ USER FLOW ═══
+   Two drawings of the same flow: wide from 1200px (where the column is
+   about 840px or more, so labels stay 11px and up), stacked below. */
+.cs-flow{display:block;width:100%;height:auto;font-family:var(--font-ui);}
+.cs-flow--wide{display:none;}
+.cs-flow--tall{max-width:420px;margin-inline:auto;}
+.cs-flow .n rect,.cs-flow .n path{fill:var(--ink);stroke:var(--v100);stroke-width:1.5;}
+.cs-flow .n text{fill:var(--v100);font-weight:500;text-anchor:middle;}
+.cs-flow .e{fill:none;stroke:var(--v100);stroke-width:1.5;stroke-linejoin:round;}
+.cs-flow .ah{fill:none;stroke:var(--v100);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+/* Branch labels, haloed in the page colour where they sit on a line */
+.cs-flow .l{fill:var(--v100);font-weight:600;letter-spacing:.04em;stroke:var(--ink);stroke-width:5px;stroke-linejoin:round;}
+@media(min-width:1200px){
+  .cs-flow--wide{display:block;}
+  .cs-flow--tall{display:none;}
+}
 
 /* ═══ SURVEY CHARTS ═══
    Counts scale to all 36 respondents. Ordinal steps (1st, 2nd, 3rd) are one
