@@ -81,6 +81,11 @@
   line-height:1.4;color:var(--v45);text-align:center;
 }
 .cs-caption::before,.cs-caption::after{content:'';flex:1;min-width:var(--sp-md);height:1px;background:var(--v15);}
+/* Longer captions that explain a finding: left-aligned, no side rules */
+.cs-caption--note{display:block;text-align:left;}
+.cs-caption--note::before,.cs-caption--note::after{content:none;}
+/* Source line under a pair of images */
+.cs-prose .cs-media-note{font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
 
 /* ═══ STORY: contents column + article ═══ */
 .cs-story{
