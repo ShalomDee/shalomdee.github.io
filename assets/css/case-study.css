@@ -26,8 +26,9 @@
 .cs-crumb{
   font-family:var(--font-ui);font-size:var(--sz-xs);
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
-  margin-bottom:var(--sp-lg);
+  margin-bottom:var(--sp-xl);
 }
+.cs-hero .kicker{margin-bottom:var(--sp-sm);}
 .cs-crumb a{color:var(--gold);}
 .cs-crumb a:hover{color:var(--v100);}
 .cs-title{
@@ -39,13 +40,12 @@
 .cs-deck{
   font-family:var(--font-bd);font-style:italic;
   font-size:var(--sz-lg);line-height:1.5;color:var(--v100);
-  margin-top:var(--sp-md);max-width:40ch;
+  margin-top:var(--sp-lg);max-width:40ch;
 }
 /* Role line: title, then company and length */
 .cs-role{
-  display:flex;flex-direction:column;gap:var(--sp-xs);
-  margin-top:var(--sp-lg);padding-top:var(--sp-md);
-  border-top:2px solid var(--v20);
+  display:flex;flex-direction:column;gap:6px;
+  margin-top:var(--sp-xl);
 }
 .cs-role-title{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
@@ -55,6 +55,7 @@
   font-family:var(--font-ui);font-size:var(--sz-xs);
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
 }
+.cs-role-meta .cs-sep{margin-inline:0.5em;color:var(--v35);}
 
 /* ═══ IMAGE SLOTS ═══ */
 .cs-media,.cs-phones{margin:0;}
@@ -169,7 +170,7 @@
   --c1:#E6CC96;--c2:var(--gold);--c3:#6E5A38;
   --t1:#121417;--t2:#121417;--t3:#F4F1ED;
   --c-mute:#4A4C52;
-  display:grid;gap:var(--sp-xl);
+  display:grid;gap:var(--sp-lg);
   margin-block:var(--sp-sm) var(--sp-md);
 }
 [data-theme="light"] .cs-survey{
@@ -177,12 +178,16 @@
   --t1:#F4F1ED;--t2:#F4F1ED;--t3:#121417;
   --c-mute:#9A9A92;
 }
-.cs-chart{margin:0;display:grid;gap:var(--sp-sm);}
+/* Each chart sits in its own frame */
+.cs-chart{
+  margin:0;display:grid;gap:var(--sp-sm);
+  padding:var(--sp-lg);border:2px solid var(--v20);border-radius:3px;
+}
 .cs-chart-q{
   font-family:var(--font-bd);font-size:var(--sz-base);font-weight:600;
   line-height:1.4;color:var(--v100);text-align:left;
 }
-.cs-stats{display:grid;gap:var(--sp-xl);}
+.cs-stats{display:grid;gap:var(--sp-lg);}
 .cs-survey .cs-stat-val{
   font-family:var(--font-ui);font-size:2.5rem;font-weight:600;line-height:1;color:var(--v100);
 }
@@ -260,4 +265,5 @@
 @media(max-width:639.98px){
   .cs-prose p,.cs-prose li{text-align:left;hyphens:manual;}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
+  .cs-chart{padding:var(--sp-md);}
 }
