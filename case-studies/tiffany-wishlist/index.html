@@ -116,11 +116,9 @@
     <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
     <p class="cs-role"><span class="cs-role-title">UX Design Intern</span><span class="cs-role-meta">Tiffany &amp; Co.<span class="cs-sep" aria-hidden="true">|</span>10&nbsp;weeks</span></p>
   </div>
-  <!-- Image slot: replace the .cs-ph div with
-       <img src="../../assets/images/case-studies/tiffany-wishlist/hero.webp" width="…" height="…" alt="…" fetchpriority="high">
-       The frame is 16:10; set style="--ratio:W/H" on the figure for another shape. -->
-  <figure class="cs-media cs-media--hero animate-in delay-1">
-    <div class="cs-ph" role="img" aria-label="Hero image to come">Hero image</div>
+  <!-- Transparent cut-out, so it sits on the page without the gold frame (.cs-media--bare) -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1404/1268">
+    <img src="assets/images/hero%20(2).webp" width="1404" height="1268" alt="A laptop showing the Saved Items page, with pieces selected and the Compare button ready" fetchpriority="high">
   </figure>
 </section>
 
@@ -152,14 +150,14 @@
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
         <p>Tiffany’s e-flagship platform had no persistent wishlist, while the legacy sites do. I was asked to explore how persistent saving could work across the modern e-flagship sites, with entry points on product pages, category pages, search, and cart, and a brief that also included account-based persistence, multiple lists, sharing, and recommendations.</p>
-        <!-- nav-legacy.webp, nav-flagship.webp: header corner crops, 1200×400 each -->
+
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:3/1">
-            <div class="cs-ph" role="img" aria-label="Image to come">Legacy nav</div>
+            <img src="assets/images/legacy.webp" width="1200" height="400" alt="Legacy site header, with a heart icon for the wishlist beside the account and bag icons" loading="lazy">
             <figcaption class="cs-caption">Legacy site</figcaption>
           </figure>
           <figure class="cs-media" style="--ratio:3/1">
-            <div class="cs-ph" role="img" aria-label="Image to come">E-flagship nav</div>
+            <img src="assets/images/eflag.webp" width="1200" height="400" alt="E-flagship site header, with account and bag icons but no wishlist icon" loading="lazy">
             <figcaption class="cs-caption">E-flagship site</figcaption>
           </figure>
         </div>
@@ -191,10 +189,10 @@
 
         <div class="cs-source">
           <h4 class="kicker">Existing experience</h4>
-          <!-- contentsquare-1.webp, contentsquare-2.webp: 1200×750 each (for one image, use 1920×1200 and drop the gallery) -->
+
           <div class="cs-gallery cs-gallery--2">
-            <figure class="cs-media"><div class="cs-ph" role="img" aria-label="Image to come">ContentSquare 1</div></figure>
-            <figure class="cs-media"><div class="cs-ph" role="img" aria-label="Image to come">ContentSquare 2</div></figure>
+            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-home.webp" width="1200" height="688" alt="ContentSquare zone overlay on the homepage: 26.9% on the header and navigation, 0.65% on the hero, 0.53% on the promo banner" loading="lazy"></figure>
+            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-pdp.webp" width="1200" height="688" alt="ContentSquare zone overlay on a product page: 27.5% on the product details and buttons, 2.65% on the product images" loading="lazy"></figure>
           </div>
           <p>ContentSquare showed how customers used product and commerce pages, and later informed where new controls could sit without disrupting established behavior. The cart already kept products indefinitely, so persistence alone would not differentiate a dedicated saved-items experience.</p>
         </div>
@@ -232,8 +230,7 @@
 
         <div class="cs-source">
           <h4 class="kicker">Retail immersion</h4>
-          <!-- wall-street-store.webp: 1920×1280 (3:2 landscape crop) -->
-          <figure class="cs-media" style="--ratio:3/2"><div class="cs-ph" role="img" aria-label="Image to come">Wall Street store</div></figure>
+          <figure class="cs-media" style="--ratio:3/2"><img src="assets/images/wall-street.webp" width="1920" height="1280" alt="Tiffany's Wall Street store from the mezzanine, glass display cases under the banking hall's tall windows" loading="lazy"></figure>
           <p>I spent a week at Tiffany’s Wall Street store speaking with client advisors and store leadership. Customers often compared a small number of pieces before purchasing, with an advisor placing them side by side and talking through the differences. The website offered no equivalent. Comparison was less a new behavior to introduce than an existing one that had not yet been translated online.</p>
         </div>
 

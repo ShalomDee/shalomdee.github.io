@@ -63,7 +63,7 @@
   width:100%;aspect-ratio:var(--ratio,16/10);
   border:1px solid var(--v20);border-radius:3px;
 }
-.cs-media > img{object-fit:cover;background:var(--v05);}
+.cs-media > img{height:auto;object-fit:cover;background:var(--v05);}
 .cs-ph{
   display:flex;align-items:center;justify-content:center;
   background:var(--v05);border-style:dashed;border-color:var(--v35);
@@ -71,6 +71,8 @@
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
 }
 .cs-media--hero{outline:3px solid var(--gold);outline-offset:6px;margin:6px;}
+/* Cut-out images (transparent background) sit straight on the page */
+.cs-media--bare > img{border:0;border-radius:0;background:none;object-fit:contain;}
 .cs-media--screen{--ratio:9/19.5;max-width:220px;margin-inline:auto;width:100%;}
 .cs-caption{
   display:flex;align-items:center;gap:var(--sp-sm);
