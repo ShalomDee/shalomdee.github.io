@@ -330,6 +330,8 @@
 /* Phones: justified copy leaves wide gaps */
 @media(max-width:639.98px){
   .cs-prose p,.cs-prose li{text-align:left;hyphens:manual;}
+  /* Phone screens two across rather than four tiny ones */
+  .cs-gallery--phones{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,180px));}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
   .cs-chart{padding:var(--sp-md);}
 }
