@@ -102,8 +102,16 @@ body{
   transition:background 0.3s var(--ease),color 0.3s var(--ease);
 }
 img{max-width:100%;display:block;}
-a{color:var(--v70);text-decoration:none;transition:color var(--t);}
-a:hover{color:var(--v100);}
+/* Text links underline on hover, fading in with the colour change.
+   Buttons, icon links and the nav bar (which has its own rule) opt out below. */
+a{
+  color:var(--v70);
+  text-decoration-line:underline;text-decoration-color:transparent;
+  text-decoration-thickness:1px;text-underline-offset:3px;
+  transition:color var(--t),text-decoration-color var(--t);
+}
+a:hover{color:var(--v100);text-decoration-color:currentColor;}
+.skip-link,.nav-ticker a,.nav-cta,.hero-cta,.hero-social-link,.pa-link,.foot-icon-btn{text-decoration:none;}
 button{font-family:inherit;}
 
 /* ─── Skip link: off screen until focused ─── */
@@ -346,7 +354,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .drawer a{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
   color:var(--v85);padding:var(--sp-md) 0;
-  border-bottom:1px solid var(--v15);display:block;transition:color var(--t);
+  border-bottom:1px solid var(--v15);display:block;transition:color var(--t),text-decoration-color var(--t);
 }
 .drawer a:hover{color:var(--gold);}
 .drawer-foot{
@@ -824,7 +832,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .foot-col a{
   display:flex;align-items:center;gap:6px;
   font-family:var(--font-bd);font-size:var(--sz-sm);
-  color:var(--v70);padding:4px 0;transition:color var(--t);
+  color:var(--v70);padding:4px 0;transition:color var(--t),text-decoration-color var(--t);
 }
 .foot-col a:hover{color:var(--v100);}
 .foot-ext-link svg{color:var(--v35);flex-shrink:0;transition:color var(--t);}
