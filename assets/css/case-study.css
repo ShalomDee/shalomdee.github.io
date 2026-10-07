@@ -69,7 +69,8 @@
    cover them on scroll. Cut-outs keep the texture, or their transparent box
    would show as a flat patch of page colour. */
 .cs-media > img{position:relative;z-index:9999;}
-.cs-media--bare > img{z-index:auto;}
+.cs-hero .cs-media--bare > img{z-index:auto;}
+/* Phone mockups only have small transparent corners, so they stay above the texture with the other screens */
 .cs-ph{
   display:flex;align-items:center;justify-content:center;
   background:var(--v05);border-style:dashed;border-color:var(--v35);
