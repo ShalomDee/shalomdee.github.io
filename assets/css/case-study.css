@@ -9,6 +9,14 @@
      960px   hero beside its image, sticky contents column
      1200px  three-column card grid, wide user flow
 
+   Every case study page loads this file and uses the same hero markup,
+   so the hero needs no page-level CSS:
+     section.cs-hero > p.cs-crumb, a.cs-back, div.animate-in (kicker,
+     h1.cs-title, p.cs-deck, p.cs-role), figure.cs-media
+   Below 960px the hero stacks and centres, the image under the text, and
+   .cs-back replaces the hidden breadcrumb. From 960px: breadcrumb above,
+   text left, image right.
+
    Images: every .cs-media starts with a .cs-ph placeholder. Swap it for
    an <img> with width, height and alt; the frame keeps its ratio either
    way, so nothing shifts when images arrive.
