@@ -40,12 +40,12 @@
 .cs-deck{
   font-family:var(--font-bd);font-style:italic;
   font-size:var(--sz-lg);line-height:1.5;color:var(--v100);
-  margin-top:var(--sp-lg);max-width:40ch;
+  margin-top:var(--sp-xl);max-width:40ch;
 }
 /* Role line: title, then company and length */
 .cs-role{
   display:flex;flex-direction:column;gap:6px;
-  margin-top:var(--sp-2xl);
+  margin-top:var(--sp-3xl);
 }
 .cs-role-title{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
@@ -319,7 +319,7 @@
   .cs-crumb{grid-column:1 / -1;margin-bottom:0;}
   /* Text sits near the top rather than centred on the image */
   .cs-hero > .animate-in:not(figure){align-self:start;margin-top:var(--sp-2xl);}
-  .cs-role{margin-top:var(--sp-3xl);}
+  .cs-role{margin-top:88px;}
   .cs-story{grid-template-columns:200px minmax(0,1fr);gap:var(--sp-3xl);}
   .cs-toc{
     display:block;position:sticky;align-self:start;
