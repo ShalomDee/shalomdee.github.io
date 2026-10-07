@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsightCuts, Ford × BVCC Studios | Shalom Donga</title>
+  <meta name="description" content="A case study on InsightCuts, a generative AI concept for Ford’s UX research team that turns flagged moments in test-clinic footage into short, captioned highlight clips.">
+  <meta name="theme-color" content="#F4F1ED">
+  <!-- Copied unchanged from index.html so the theme carries across pages -->
+  <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://shalomdee.github.io/case-studies/insightcuts/">
+
+  <!-- Share previews. Swap og:image for a case study cover once one exists (absolute URL, 1200×630). -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shalomdee.github.io/case-studies/insightcuts/">
+  <meta property="og:title" content="InsightCuts, Ford × BVCC Studios | Shalom Donga">
+  <meta property="og:description" content="A generative AI concept for Ford’s UX research team that turns flagged moments in test-clinic footage into short, captioned highlight clips.">
+  <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Open Graph preview for Shalom Donga’s portfolio, featuring The Maker’s Times masthead, her name and Design Engineer title, and an illustrated tug-of-war between design and engineering.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <!-- Same ?v= as index.html; bump all three together -->
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-06b">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-06b">
+  <script src="../../assets/js/main.js?v=2026-10-06b" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="../../#about">About</a>
+  <a href="../../#projects">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email ↗</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<div class="mast-top">
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<header>
+  <div class="mast-title">
+    <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">"Where Code<br>Meets Canvas"</span>
+    </div>
+    <div class="mast-center">
+      <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Case Study</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <nav class="nav-ticker" aria-label="Sections">
+    <a href="../../#about">About</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#projects" class="active">Projects</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#experience">Experience</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#skills">Skills</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#editorials">Editorial</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  </nav>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="cs-hero wrap" aria-labelledby="cs-title">
+  <!-- Breadcrumb spans the hero, above the title and image -->
+  <p class="cs-crumb"><a href="../../#projects">Selected Builds</a> / InsightCuts</p>
+  <div class="animate-in">
+    <span class="kicker">Winter 2026</span>
+    <h1 class="cs-title" id="cs-title">InsightCuts</h1>
+    <p class="cs-deck">A generative AI concept for Ford’s UX research team. A researcher flags a moment in raw test-clinic footage, and the tool assembles a short, captioned highlight clip.</p>
+    <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
+    <p class="cs-role"><span class="cs-role-title">Presentation Manager</span><span class="cs-role-meta">Ford × BVCC Studios<span class="cs-sep" aria-hidden="true">|</span>Jan to Mar&nbsp;2026</span></p>
+  </div>
+  <!-- The screen has its own frame and transparent rounded corners, so it sits on the page without the cs-media border (.cs-media--bare) -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1512/982">
+    <img src="assets/images/hero.webp" width="1512" height="982" alt="The InsightCuts AI Editor: scene 3 of a test drive, the scene timeline below it, and a panel for asking AI to refine the video" fetchpriority="high">
+  </figure>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<div class="cs-story wrap">
+  <nav class="cs-toc" aria-label="On this page">
+    <p class="cs-box-title">On This Page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#role">My Role</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#solution">The Solution</a></li>
+      <li><a href="#decisions">Key Decisions</a></li>
+      <li><a href="#outcome">Outcome</a></li>
+      <li><a href="#learned">What I Learned</a></li>
+    </ol>
+    <p class="cs-box-title">Project Links</p>
+    <div class="pa-links"><a href="https://v0-insight-cuts.vercel.app" class="pa-link pa-link--code" target="_blank" rel="noopener noreferrer">View Prototype ↗</a></div>
+  </nav>
+
+  <!-- Image slots: each .cs-ph div is a placeholder. Replace it with
+       <img src="assets/images/NAME.webp" width="W" height="H" alt="…" loading="lazy">
+       and set the figure's --ratio to W/H. -->
+  <article>
+    <section class="cs-sec" id="overview">
+      <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
+      <div class="cs-prose">
+        <p>Ford’s UX research team synthesized large amounts of video and quantitative data from vehicle test clinics entirely by hand. Our team was asked to find a way to bring generative AI into that process without losing the researcher’s judgment in the middle of it.</p>
+        <p>InsightCuts was one of three directions explored during the sprint. By the final gate review, it was the one the team had taken furthest, with a working prototype and its own feasibility analysis.</p>
+        <p>The work ran through BVCC Studios, which connects students at Historically Black Colleges and Universities with industry mentors and client work, for Ford’s Digital Product Design, Insights &amp; Analytics group.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
+      <div class="cs-prose">
+        <p>I was Presentation Manager on a four-person team, responsible for narrative structure, slide hierarchy, and translating technical research for an executive audience. In practice, my role expanded into product thinking, video production, and hands-on frontend prototyping.</p>
+        <p>Kelly was Research Manager and designed most of the final UI and user journey. Sean was Project Manager. Munashe provided cross-functional support and built the final prototype used at the gate review. A Product Designer and Interaction Designer from Microsoft AI served as our mentor.</p>
+        <p>Before there was an interface, I made the team’s first exploratory video, titled “Searching for Control: Ford EV UX Research,” in Google Vids. Once the concept settled on InsightCuts, the team produced two final videos for the pitch, one by me and one by a teammate.</p>
+        <!-- DRAFT, not yet approved by Shalom: written from her note that the video graphics were inspired by Spotify -->
+        <p>For mine, I took the graphics from Spotify Wrapped, with bold type, halftone patterns, and one big number at a time, so the findings would feel youthful and engaging rather than like a standard research readout.</p>
+        <figure class="cs-media" style="--ratio:1920/1157">
+          <img src="assets/images/moodboard.webp" width="1920" height="1157" alt="Moodboard titled “What does clarity feel like when complexity is high?”, pairing busy restaurant kitchens with Spotify Wrapped graphics" loading="lazy">
+          <figcaption class="cs-caption">Moodboard</figcaption>
+        </figure>
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:16/9">
+            <img src="assets/images/video-title.webp" width="1600" height="900" alt="Video title card: “Camera Interface Study” in bold blue type beside black and white concentric rings, with the Ford logo" loading="lazy">
+          </figure>
+          <figure class="cs-media" style="--ratio:16/9">
+            <img src="assets/images/video-stat.webp" width="1600" height="900" alt="Video findings card: Task Success Rate, 89%, across both vehicles tested, on navy with a halftone dot burst" loading="lazy">
+          </figure>
+        </div>
+        <p class="cs-media-note">Frames from my final video.</p>
+        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Figma</span><span class="stag">FigJam</span><span class="stag">v0</span><span class="stag">Google Vids</span></div></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Problem</span></h2></div>
+      <div class="cs-prose">
+        <p>Ford’s Insights &amp; Analytics group runs physical test clinics with roughly two dozen participants an hour through vehicle rigs. Each clinic produces task success rates, error counts, Likert data, verbatim quotes, and video of every session, all synthesized manually. Researchers spent weeks building charts in Excel, and pulling a quote or clip for an executive presentation meant scrubbing through video and cutting it in VLC.</p>
+        <p>The team set two targets, a lightweight report within 48 hours of a clinic and a full report within two weeks. AI also had to be introduced without hallucinating findings or treating one participant’s feedback as a systemic pattern.</p>
+
+        <h3 class="cs-subhead">What researchers told us</h3>
+        <p>The direction came out of interviews with Ford’s research team. One lead UX researcher said video creation, pulling data out of footage and transcripts, and transcribing everything by hand was very time consuming and not what the job was supposed to be about. Another described writing a handful of numbers on paper after a study because handling participant video was that tedious. The director for the function wanted something short enough for leadership to skim, while still letting engineers get into the raw detail.</p>
+        <figure class="cs-media" style="--ratio:1920/704">
+          <img src="assets/images/research-synthesis.webp" width="1920" height="704" alt="FigJam board of sticky notes grouped under Interview Findings, including researchers’ wishes, and Research Findings on AI and UX research" loading="lazy">
+          <figcaption class="cs-caption">Research synthesis</figcaption>
+        </figure>
+        <p>InsightCuts was built to address the gap between what leadership needed and what engineers needed, and the manual effort in between.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="solution">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Solution</span></h2></div>
+      <div class="cs-prose">
+        <h3 class="cs-subhead">Three directions</h3>
+        <p>The team explored three concepts. RPM turned long text and spreadsheet reports into podcast-style audio overviews. TraceStories presented AI-extracted insights as swipeable cards, each able to flip and show the quote, chart, or video frame behind it. InsightCuts let a researcher flag a moment in raw footage and have the tool assemble a short, captioned, narrative-driven highlight clip, addressing the hours spent on manual VLC clipping.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <img src="assets/images/concepts.webp" width="960" height="540" alt="Slide summarizing the three concepts: RPM, an AI-generated podcast; TraceStories, insights in a Stories-like interface; and InsightCuts, an AI video tool for short research briefings" loading="lazy">
+          <figcaption class="cs-caption">RPM, TraceStories, and InsightCuts</figcaption>
+        </figure>
+
+        <h3 class="cs-subhead">Building the prototype</h3>
+        <p>I built a coded version of InsightCuts in v0, an AI-assisted app builder, so the team and our mentor could click through it before visual design. I kept the team’s existing Figma files open as reference so the coded interface stayed consistent with what the team had already designed.</p>
+        <p>The prototype is a UX research media library. A researcher moves through five steps across the top of the screen (select clips, annotate, assemble, preview, share). Sessions are organized by project and sprint, and every clip carries a thumbnail, its length, basic participant info, and semantic tags like “safety signal” or “glance duration,” so a researcher isn’t scrubbing through raw footage blind.</p>
+        <!-- v0-select: screenshot of the live prototype at 1440×770, 2x.
+             v0-preview: the live prototype only renders Select Clips, so this one still needs
+             Figma InsightCuts-Ford › Page 3 › "image 15" (node 62:2797), 7147×3838. Export 1200×644. -->
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:1920/1027">
+            <img src="assets/images/v0-select.webp" width="1920" height="1027" alt="The v0 prototype on Select Clips: Session 03’s four clips, each with a thumbnail, length, participant and tags such as Glance Duration and Safety Signal" loading="lazy">
+            <figcaption class="cs-caption">Select clips</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:7147/3838">
+            <div class="cs-ph" role="img" aria-label="Image to come">v0, preview</div>
+            <figcaption class="cs-caption">Preview</figcaption>
+          </figure>
+        </div>
+        <p>When we first showed the coded prototype and the video to the team and our mentor, the reaction was immediate, and it kept coming up in the team’s Slack channel afterward. Kelly designed the final UI and user journey from these iterations.</p>
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:16/9">
+            <img src="assets/images/journey-1.webp" width="960" height="540" alt="User journey, steps 1 to 3: conduct a user test, the researcher writes a report from their own insights, then goes to InsightCuts to clip video evidence" loading="lazy">
+          </figure>
+          <figure class="cs-media" style="--ratio:16/9">
+            <img src="assets/images/journey-2.webp" width="960" height="540" alt="User journey, steps 4 to 6: the final video is ready in minutes, stakeholders get insights faster, and the researcher stays in control" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="decisions">
+      <div class="sec-head"><h2 class="sec-label">Key <span class="aw">Decisions</span></h2></div>
+      <div class="cs-decision cs-prose">
+        <h3>Quantitative backing</h3>
+        <p>Concept validation with one of Ford’s lead researchers pressure-tested a weakness early. Engineers won’t trust a highlighted clip unless it comes with a number behind it, such as how many people failed the step and whether it was one outlier or a pattern. Quantitative backing became a requirement built into the tool.</p>
+      </div>
+      <div class="cs-decision cs-prose">
+        <h3>Trace route to source footage</h3>
+        <p>A Ford functional lead made clear that trust in an AI-driven output depends on being able to see where it came from. Every clip and tag InsightCuts surfaces needed a path back to its source footage.</p>
+        <figure class="cs-media" style="--ratio:1099/788">
+          <img src="assets/images/decision-trace.webp" width="1099" height="788" alt="Insights panel: a finding from User Survey Results Q1 2026.pdf, “67% of users struggled with navigation,” placed on scene 3 as a caption, with Remove from current scene and Ask AI buttons" loading="lazy">
+        </figure>
+      </div>
+      <div class="cs-decision cs-prose">
+        <h3>Licensing the video pipeline</h3>
+        <p>Full in-house video processing and storage carries cost and data-privacy exposure. The feasibility section recommended licensing or partnering on the video infrastructure and reserving in-house engineering for the parts of the concept without that risk.</p>
+      </div>
+      <div class="cs-decision cs-prose">
+        <span class="kicker">Constraints</span>
+        <ul class="cs-list">
+          <li><strong>No physical controls.</strong> Physical hardware controls were not coming back into Ford vehicles, so hardware-based ideas were out of scope.</li>
+          <li><strong>No “intuitive.”</strong> Ford’s leadership had banned the word internally, since it describes a feeling without telling anyone what to fix.</li>
+          <li><strong>Touch targets.</strong> 48 to 60px minimum on every interactive element, enforced after mentor critique, for mobile accessibility.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-prose">
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:1099/788">
+            <img src="assets/images/final-cuedetector.webp" width="1099" height="788" alt="CueDetector: four uploaded test videos on the left, and suggested patterns to explore, such as “Red paper appears,” above a prompt box and a Wrap Up button" loading="lazy">
+            <figcaption class="cs-caption">CueDetector</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1099/788">
+            <img src="assets/images/final-review.webp" width="1099" height="788" alt="AI Editor: the assembled video on scene 3, with suggested edits such as “Cut from 00:30 - 00:45” and “Remake scene 3”" loading="lazy">
+            <figcaption class="cs-caption">AI review</figcaption>
+          </figure>
+        </div>
+        <p>We presented InsightCuts at the program’s final gate review on March 6, 2026, with a dedicated feasibility section.</p>
+        <!-- Feasibility, rebuilt from the deck's table (slide 25) as HTML so it follows the theme. -->
+        <div class="cs-table-wrap" role="region" aria-label="InsightCuts feasibility" tabindex="0">
+          <table class="cs-table">
+            <thead><tr><th scope="col">Category</th><th scope="col">Assessment</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Technical complexity</th><td>High</td></tr>
+              <tr><th scope="row">MVP timeline</th><td>3 to 4 months</td></tr>
+              <tr><th scope="row">Existing tools</th><td>NotebookLM, Grain, Dovetail</td></tr>
+              <tr><th scope="row">Recommendation</th><td>License or partner</td></tr>
+              <tr><th scope="row">Data privacy risk</th><td>High (video)</td></tr>
+              <tr><th scope="row">Relative cost in-house</th><td>Significantly higher than licensing</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The v0 prototype is still live. What Ford did with the recommendation afterward isn’t something I have on record.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="learned">
+      <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
+      <div class="cs-prose">
+        <p>This project meant pitching directly to a Fortune 500 director and a panel of gate jurors, and it depended on getting something functional in front of the team fast enough to test. Building the coded version in v0 gave the team something to react to and refine.</p>
+        <p>I learned how to translate an existing Figma design system into a coded, AI-assisted build, and got comfortable pitching a functional prototype directly to enterprise stakeholders.</p>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- ═══ MORE STORIES ═══
+     Cards copied from the Selected Builds grid in index.html; keep the copy in step.
+     Add a Case Study link to .pa-links once that project's page exists. -->
+<section class="cs-more wrap" aria-labelledby="more-title">
+  <div class="sec-head">
+    <h2 class="sec-label" id="more-title">More <span class="aw">Stories</span></h2>
+    <span class="sec-meta"><a href="../../#projects">Selected Builds</a></span>
+  </div>
+  <div class="archive-grid">
+
+    <article class="pa-card animate-in">
+      <div class="pa-img pa-img--c2"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">E-commerce</span><span class="pa-tag">Research</span><span class="pa-tag">Luxury</span></div>
+        <h3 class="pa-title">Tiffany Wishlist</h3>
+        <p class="pa-desc">A saved-items and comparison experience for Tiffany’s e-commerce platform, shaped through behavioral analytics, consumer research, client segmentation, and in-store observation. I designed the interaction behavior, states, hierarchy, and UX copy within Tiffany’s existing design system.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../tiffany-wishlist/" class="pa-link pa-link--design"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">UX Research</span><span class="pa-tech">Interaction Design</span><span class="pa-tech">Design Systems</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-1">
+      <div class="pa-img pa-img--c3"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Mobile</span><span class="pa-tag">Healthcare</span><span class="pa-tag">Speech Therapy</span><span class="pa-tag">AI</span></div>
+        <h3 class="pa-title">Worlds of Hello</h3>
+        <p class="pa-desc">A two-app speech therapy platform for children and clinicians. I designed and built Flutter screens across both experiences, redesigned authentication, implemented custom child-facing video capture, and helped build deterministic voice playback using pre-generated cloned audio.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Flutter</span><span class="pa-tech">Supabase</span><span class="pa-tech">Python</span><span class="pa-tech">Figma</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-2">
+      <div class="pa-img pa-img--c5"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Retail</span><span class="pa-tag">Service Design</span><span class="pa-tag">Research</span></div>
+        <h3 class="pa-title">Tiffany Boutique Visits</h3>
+        <p class="pa-desc">An exploration of Tiffany’s appointment and in-store experience across New York boutiques, connecting digital booking flows with what happens before, during, and after a client visit. The work mapped gaps across internal systems and helped redirect the scope of a follow-on experience.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Journey Mapping</span><span class="pa-tech">Contextual Inquiry</span><span class="pa-tech">UX Research</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker's Times</div>
+      <p class="foot-brand-desc">Design, engineering, and the work in between.</p>
+      <p class="foot-brand-quote">"Where Code Meets Canvas"</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" title="Shalom Donga resume (PDF, opens in a new tab)" class="foot-ext-link">Resume <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="../../#projects" class="foot-ext-link">Selected Builds <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <a href="mailto:shalomdonga@gmail.com" class="foot-email">shalomdonga@gmail.com</a>
+      <div class="foot-icon-row">
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
