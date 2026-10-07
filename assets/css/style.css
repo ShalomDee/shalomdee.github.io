@@ -760,7 +760,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-badge--ux{background:var(--gold);color:var(--ink);}
 .pa-badge--code{background:#D4A0A7;color:var(--ink);}
 [data-theme="light"] .pa-badge--code{background:rgba(36,106,115,1);color:#F4F1ED;}
-.pa-body{padding:var(--sp-md);}
+/* --pa-rule-gap sits above and below the footer rule, so both gaps stay equal */
+.pa-body{padding:var(--sp-md);--pa-rule-gap:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
 .pa-tag{
   font-family:var(--font-ui);font-size:10px;font-weight:500;
@@ -773,14 +774,18 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-desc{
   font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.5;
-  color:var(--v60);margin-bottom:var(--sp-md);
+  color:var(--v60);margin-bottom:var(--pa-rule-gap);
 }
+/* Items align to the top so the link and the pills both start one gap below the rule */
 .pa-footer{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:var(--sp-sm);border-top:1px solid var(--v15);
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding-top:var(--pa-rule-gap);border-top:1px solid var(--v15);
   flex-wrap:wrap;gap:var(--sp-sm);
 }
 .pa-links{display:flex;gap:var(--sp-md);flex-wrap:wrap;}
+/* Cards with no links: the empty row would push the pills down a line; the pills keep their place at the right */
+.pa-links:empty{display:none;}
+.pa-links:empty + .pa-techs{margin-left:auto;}
 .pa-link{
   font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
   text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);
