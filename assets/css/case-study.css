@@ -102,6 +102,8 @@
    cover them on scroll. The hero cut-out too: under the texture its silver
    edges and baked shadow washed into the paper. */
 .cs-media > img,.cs-media > video,.cs-mood-frame{position:relative;z-index:9999;}
+/* Videos with controls take focus; Chrome draws no ring on them by default */
+.cs-media > video:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
