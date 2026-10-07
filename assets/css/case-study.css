@@ -31,8 +31,19 @@
   margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
 }
 .cs-hero .kicker{margin-bottom:var(--sp-sm);}
-.cs-crumb a{color:var(--gold);}
-.cs-crumb a:hover{color:var(--v100);}
+.cs-crumb a,.cs-back{color:var(--gold);}
+.cs-crumb a:hover,.cs-back:hover{color:var(--v100);}
+/* Way back below 960px, where the breadcrumb is hidden. Same anchor and link
+   colours as the breadcrumb; the hit area reaches about 44px tall. */
+.cs-back{
+  justify-self:center;position:relative;
+  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;
+  margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
+}
+.cs-back::before{content:'';position:absolute;inset:-16px -8px;}
+/* Inline-block so the hover underline runs under the words only */
+.cs-back-arrow{display:inline-block;}
 .cs-title{
   font-family:var(--font-hd);font-weight:900;
   font-size:clamp(2.4rem,5.5vw,4rem);line-height:1;
@@ -331,6 +342,7 @@
     padding-top:var(--sp-xl);padding-bottom:var(--sp-2xl);
   }
   .cs-crumb{grid-column:1 / -1;margin-bottom:0;}
+  .cs-back{display:none;}
   /* Text sits near the top rather than centred on the image */
   .cs-hero > .animate-in:not(figure){align-self:start;margin-top:var(--sp-2xl);}
   .cs-deck,.cs-role{margin-top:60px;}
