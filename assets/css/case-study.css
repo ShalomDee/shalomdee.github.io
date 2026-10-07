@@ -339,6 +339,15 @@
   }
 }
 
+/* Below desktop the hero stacks, so its text centres over the image. The breadcrumb
+   is hidden there: it repeats the nav and sat alone at the left of a centred column. */
+@media(max-width:959.98px){
+  .cs-crumb{display:none;}
+  .cs-hero > .animate-in:not(figure){text-align:center;}
+  .cs-hero .cs-deck{margin-inline:auto;}
+  .cs-hero .cs-role{align-items:center;}
+}
+
 /* Phones: justified copy leaves wide gaps */
 @media(max-width:639.98px){
   .cs-prose p,.cs-prose li{text-align:left;hyphens:manual;}
