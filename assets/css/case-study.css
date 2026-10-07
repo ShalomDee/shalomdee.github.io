@@ -233,7 +233,7 @@
    label colour clears 4.5:1 on it. */
 .cs-survey{
   --n:36;
-  --c1:#E6CC96;--c2:var(--gold);--c3:#6E5A38;
+  --c1:#F5EAD0;--c2:var(--gold);--c3:#5E4B2D;
   --t1:#121417;--t2:#121417;--t3:#F4F1ED;
   --c-mute:#4A4C52;
   display:grid;gap:var(--sp-lg);
