@@ -112,6 +112,8 @@
   border-bottom:1px solid var(--v15);
 }
 .cs-toc ol{list-style:none;}
+/* Project links, when a page has them, get the same gap above as the list has from its title */
+.cs-toc ol + .cs-box-title{margin-top:var(--sp-xl);}
 .cs-toc a{
   display:block;text-decoration:none;padding:7px 0 7px 10px;
   border-left:1px solid var(--v15);
