@@ -328,7 +328,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .nav-ticker a:not(.nav-cta):hover,
 .nav-ticker a:not(.nav-cta).active{color:var(--v100);border-bottom-color:var(--gold);}
-.nav-sep{color:var(--v20);font-size:8px;user-select:none;}
+/* Big enough to read as a four-point star, faint enough to stay behind the links */
+.nav-sep{color:var(--v35);font-size:11px;line-height:1;user-select:none;}
 
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
