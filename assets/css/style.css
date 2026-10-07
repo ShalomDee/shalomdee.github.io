@@ -210,8 +210,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-weight:900;text-transform:uppercase;
   letter-spacing:0.02em;color:var(--v100);
 }
-.sec-label .aw{color:var(--gold);font-style:italic;}
-[data-theme="light"] .sec-label .aw{color:var(--terra);}
+/* Accent word in red in both themes, so dark pages keep the red as well as the gold */
+.sec-label .aw{color:var(--terra);font-style:italic;}
 .sec-meta{
   font-family:var(--font-ui);font-size:var(--sz-xs);
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
