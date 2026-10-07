@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-06b">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-06b">
-  <script src="../../assets/js/main.js?v=2026-10-06b" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-07">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-07">
+  <script src="../../assets/js/main.js?v=2026-10-07" defer></script>
 </head>
 <body>
 
@@ -117,9 +117,9 @@
     <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
     <p class="cs-role"><span class="cs-role-title">Presentation Manager</span><span class="cs-role-meta">Ford × BVCC Studios<span class="cs-sep" aria-hidden="true">|</span>Jan to Mar&nbsp;2026</span></p>
   </div>
-  <!-- The screen has its own frame and transparent rounded corners, so it sits on the page without the cs-media border (.cs-media--bare) -->
-  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1512/982">
-    <img src="assets/images/hero.webp" width="1512" height="982" alt="The InsightCuts AI Editor: scene 3 of a test drive, the scene timeline below it, and a panel for asking AI to refine the video" fetchpriority="high">
+  <!-- Transparent cut-out, so it sits on the page without the gold frame (.cs-media--bare) -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1103/797">
+    <img src="assets/images/hero.webp" width="1103" height="797" alt="A laptop showing the InsightCuts AI Editor: scene 3 of a test drive, the scene timeline below it, and a panel for asking AI to refine the video" fetchpriority="high">
   </figure>
 </section>
 
@@ -235,19 +235,20 @@
         <h3 class="cs-subhead">The video</h3>
         <!-- DRAFT, not yet approved by Shalom: written from her note that the video graphics were inspired by Spotify -->
         <p>Before the interface existed, I made the team’s first exploratory video, “Searching for Control: Ford EV UX Research,” in Google Vids. Once the concept settled on InsightCuts, the team produced two final videos for the pitch, one by me and one by a teammate. Mine simulated a video InsightCuts would produce from a clinic. Its graphics were inspired by Spotify Wrapped, with bold type, halftone patterns, and one large number per frame, to make the findings youthful and engaging.</p>
-        <figure class="cs-media" style="--ratio:1920/1157">
+        <!-- The two moving tiles play over the still, placed by % of the 1920×1157 image
+             (Wrapped panel 81,181 512×908; kitchen tile 953,181 578×325). With reduced motion the still shows alone. -->
+        <figure class="cs-media cs-mood">
+          <div class="cs-mood-frame" style="--ratio:1920/1157">
           <img src="assets/images/moodboard.webp" width="1920" height="1157" alt="Moodboard titled “What does clarity feel like when complexity is high?”, pairing busy restaurant kitchens with Spotify Wrapped graphics" loading="lazy">
+          <video src="assets/video/moodboard-wrapped.mp4" style="--x:4.219%;--y:15.644%;--w:26.667%;--h:78.479%" autoplay muted loop playsinline aria-hidden="true"></video>
+          <video src="assets/video/moodboard-kitchen.mp4" style="--x:49.635%;--y:15.644%;--w:30.104%;--h:28.090%" autoplay muted loop playsinline aria-hidden="true"></video>
+          </div>
           <figcaption class="cs-caption">Moodboard</figcaption>
         </figure>
-        <div class="cs-gallery cs-gallery--2">
-          <figure class="cs-media" style="--ratio:16/9">
-            <img src="assets/images/video-title.webp" width="1600" height="900" alt="Video title card: “Camera Interface Study” in bold blue type beside black and white concentric rings, with the Ford logo" loading="lazy">
-          </figure>
-          <figure class="cs-media" style="--ratio:16/9">
-            <img src="assets/images/video-stat.webp" width="1600" height="900" alt="Video findings card: Task Success Rate, 89%, across both vehicles tested, on navy with a halftone dot burst" loading="lazy">
-          </figure>
-        </div>
-        <p class="cs-media-note">Frames from my final video.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <video src="assets/video/final-video.mp4" width="1280" height="720" poster="assets/images/final-video-poster.webp" controls playsinline preload="none" aria-label="My final video: a Camera Interface Study title card, a participant using the in-car touchscreen, and a Task Success Rate of 89% across both vehicles tested"></video>
+          <figcaption class="cs-caption">My final video</figcaption>
+        </figure>
       </div>
     </section>
 

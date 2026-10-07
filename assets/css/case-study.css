@@ -60,16 +60,16 @@
 
 /* ═══ IMAGE SLOTS ═══ */
 .cs-media,.cs-phones{margin:0;}
-.cs-media > img,.cs-ph{
+.cs-media > img,.cs-media > video,.cs-mood-frame > img,.cs-ph{
   width:100%;aspect-ratio:var(--ratio,16/10);
   border:1px solid var(--v20);border-radius:3px;
 }
-.cs-media > img{height:auto;object-fit:cover;background:var(--v05);}
+.cs-media > img,.cs-media > video,.cs-mood-frame > img{height:auto;object-fit:cover;background:var(--v05);}
 /* Screenshots and photos sit above the paper texture (body::before, z-index
    9999) so their colours and detail stay true; the sticky bars (10000+) still
    cover them on scroll. The hero cut-out too: under the texture its silver
    edges and baked shadow washed into the paper. */
-.cs-media > img{position:relative;z-index:9999;}
+.cs-media > img,.cs-media > video,.cs-mood-frame{position:relative;z-index:9999;}
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
@@ -80,6 +80,12 @@
   font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:600;
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
 }
+/* Moodboard with moving tiles: clips sit over their tiles on the still, placed by % (--x --y --w --h).
+   With reduced motion they're hidden and the still shows alone. */
+.cs-mood-frame{display:block;}
+.cs-mood-frame > img{display:block;}
+.cs-mood-frame > video{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);object-fit:cover;}
+@media(prefers-reduced-motion:reduce){.cs-mood-frame > video{display:none;}}
 .cs-media--hero{outline:3px solid var(--gold);outline-offset:6px;margin:6px;}
 /* Cut-out images (transparent background) sit straight on the page */
 .cs-media--bare > img{border:0;border-radius:0;background:none;object-fit:contain;}
