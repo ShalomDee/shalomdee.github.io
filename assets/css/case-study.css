@@ -111,6 +111,8 @@
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
+/* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
+[data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
 /* Phone mockups only have small transparent corners, so they stay above the texture with the other screens */
 .cs-ph{
   display:flex;align-items:center;justify-content:center;
