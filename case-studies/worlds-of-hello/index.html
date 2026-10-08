@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-08b">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-08b">
-  <script src="../../assets/js/main.js?v=2026-10-08b" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-08c">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-08c">
+  <script src="../../assets/js/main.js?v=2026-10-08c" defer></script>
 </head>
 <body>
 
@@ -120,7 +120,7 @@
     <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
     <p class="cs-role"><span class="cs-role-title">Frontend Developer</span><span class="cs-role-meta">CORE Futures Lab<span class="cs-sep" aria-hidden="true">|</span>May to Aug&nbsp;2025</span></p>
   </div>
-  <!-- Transparent cut-out from worldsofhello.com (credited at the end), so it sits on the page without the gold frame (.cs-media--bare) -->
+  <!-- Transparent cut-out from donell.dev (credited at the end), so it sits on the page without the gold frame (.cs-media--bare) -->
   <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:960/696">
     <img src="assets/images/activity-ipad.webp" width="960" height="696" alt="An iPad showing a Worlds of Hello lesson: a red apple above the word APPLE on a grassy scene, a parent’s face in a circular frame on the right, and a microphone button for the child to speak" fetchpriority="high">
   </figure>
@@ -163,11 +163,10 @@
         <p>Worlds of Hello was split into two connected applications.</p>
         <p>The therapist app supported the clinical side of the experience. Speech-language pathologists (SLPs) could manage clients, assign activities, review progress, and work with session documentation. AI-assisted tools could transcribe recorded sessions and help turn recordings or written notes into structured clinical documentation, reducing some of the administrative work surrounding each session.</p>
         <p>The family app extended that work into the home, handling the child’s experience. Children completed therapist-guided activities using familiar voices contributed by parents, caregivers, or selected from the platform’s broader voice library. The interface was intentionally playful, with warm colors, gamified interactions, and child-friendly characters.</p>
-        <figure class="cs-media" style="--ratio:1194/834">
-          <img src="assets/images/activity-apples.webp" width="1194" height="834" alt="A lesson activity in the family app: a bowl of yellow, green, and red apples on a red table, with back and pause buttons" loading="lazy">
+        <figure class="cs-media cs-media--bare" style="--ratio:1302/942">
+          <img src="assets/images/activity-apples-ipad.webp" width="1302" height="942" alt="A lesson activity in the family app: a bowl of yellow, green, and red apples on a red table, with back and pause buttons" loading="lazy">
           <figcaption class="cs-caption">A lesson activity</figcaption>
         </figure>
-        <p>Most of my work was on the family application, although I also contributed to therapist-facing flows.</p>
       </div>
     </section>
 
@@ -178,6 +177,10 @@
         <p>The codebase used a DTO, DAO, repository, and BLoC architecture, so even early screen work required me to understand more than the widget layer. I had to trace how data, application state, and navigation moved through each feature before I could implement it correctly. I used AI development tools to inspect patterns in the existing code and understand how features had been structured before making changes. In one of my first major code reviews, my manager specifically praised how quickly I had adapted to the architecture he had established. We worked in sprints, with features assigned through tickets and reviewed via pull requests.</p>
         <p>My scope expanded as I became more familiar with the product. I started receiving features that required design work in Figma before I implemented them in Flutter. By later sprints, I was moving between Figma, Flutter development, Supabase voice metadata, and Python scripts supporting the ElevenLabs workflow depending on what the product needed.</p>
         <p>Across the internship, I worked on authentication and onboarding, avatar and photo capture, parent video recording, the home experience, settings, SLP connection flows, community voices, and voice asset preparation. I also worked on therapist-side features near the end of the internship, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
+        <figure class="cs-media cs-media--bare" style="--ratio:1302/942">
+          <img src="assets/images/avatar-ipad.webp" width="1302" height="942" alt="Onboarding screen, Select your child’s avatar: a grid of emoji faces across skin tones and animals, with a Take a photo instead button and a Next button" loading="lazy">
+          <figcaption class="cs-caption">Avatar selection</figcaption>
+        </figure>
         <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
       </div>
     </section>
@@ -213,8 +216,8 @@
           </figure>
         </div>
         <p>My responsibilities were not limited to implementing existing designs. I designed the feature-card layout for the redesigned home screen and then built it in Flutter.</p>
-        <figure class="cs-media" style="--ratio:1194/834">
-          <img src="assets/images/home.webp" width="1194" height="834" alt="The family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" loading="lazy">
+        <figure class="cs-media cs-media--bare" style="--ratio:1302/942">
+          <img src="assets/images/home-ipad.webp" width="1302" height="942" alt="The family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" loading="lazy">
           <figcaption class="cs-caption">Home screen</figcaption>
         </figure>
         <p>Some of the work also moved on a tighter schedule because the product was being used in fundraising and pitch conversations while we were still building it. What I shipped would become part of the versions my manager and the broader team were presenting externally.</p>
@@ -254,6 +257,11 @@
       <div class="sec-head"><h2 class="sec-label">Designing Within <span class="aw">AI Constraints</span></h2></div>
       <div class="cs-prose">
         <p>One of the most important constraints behind the child experience was how much freedom the cloned voice was allowed to have during a lesson.</p>
+        <!-- Donell Mtabvuri's diagram of the first version (donell.dev), credited at the end -->
+        <figure class="cs-media" style="--ratio:1600/1286">
+          <img src="assets/images/agent-flow.webp" width="1600" height="1286" alt="Diagram of the initial agentic voice flow: the mobile app streams the child’s voice to an agent, ElevenLabs transcribes it, Gemini 2.0 Flash generates a response transcript, and ElevenLabs turns it into speech sent back to the app with agentic actions" loading="lazy">
+          <figcaption class="cs-caption">Initial agentic voice flow, before the switch to pre-generated audio</figcaption>
+        </figure>
         <p>The platform did not generate lesson dialogue live. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>
         <p>My manager established this approach, and I worked within it while building the experience. The constraint made sense once I understood the user. A wrong line from the model was not just a technical error. It could interrupt an exercise or make a voice that was supposed to feel familiar suddenly behave unpredictably.</p>
         <p>That changed how I thought about AI in a product. More freedom from the model would not have made this experience better. The design depended on knowing when the system would speak, what it would say, and how that line should sound. Predictability was part of the experience we were designing for the child.</p>
@@ -285,7 +293,7 @@
         <p>Worlds of Hello changed how I understood frontend work because the interface was only one part of what I needed to understand to build a feature well. I started the summer focused mainly on translating Figma designs into Flutter, but the work gradually pushed me into the systems underneath those screens and the decisions that shaped their behavior. That perspective has stayed with me in later design work, where I now pay much more attention to the assumptions, data, and technical constraints behind an interface.</p>
         <p>I also came away with a more practical view of AI product development. I learned that the useful question is not how much AI can be exposed to the user, but how much control the experience requires. That has become a standard I carry into my design work now.</p>
         <!-- Credit for images taken from the public Worlds of Hello site -->
-        <p class="cs-media-note" style="margin-top:var(--sp-2xl);text-align:left">The iPad lesson mockup and the photo in Overview are from <a href="https://www.worldsofhello.com/" target="_blank" rel="noopener noreferrer">worldsofhello.com</a>.</p>
+        <p class="cs-media-note cs-credit">The iPad lesson mockup, the photo in Overview, and the initial agentic voice flow diagram are from <a href="https://donell.dev/projects/worlds-of-hello/" target="_blank" rel="noopener noreferrer">Donell Mtabvuri’s Worlds of Hello project page</a>.</p>
       </div>
     </section>
   </article>

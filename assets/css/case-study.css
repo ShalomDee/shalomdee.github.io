@@ -144,6 +144,8 @@
 .cs-caption--note::before,.cs-caption--note::after{content:none;}
 /* Source line under a pair of images, centred so it reads as a note on them, not a new paragraph */
 .cs-prose .cs-media-note{font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:center;}
+/* Image credits close the article, set apart from the last section */
+.cs-prose .cs-credit{margin-top:var(--sp-2xl);text-align:left;}
 
 /* ═══ STORY: contents column + article ═══ */
 .cs-story{
