@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-08d">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-08d">
-  <script src="../../assets/js/main.js?v=2026-10-08d" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-08e">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-08e">
+  <script src="../../assets/js/main.js?v=2026-10-08e" defer></script>
 </head>
 <body>
 
@@ -177,11 +177,11 @@
         <p>The codebase used a DTO, DAO, repository, and BLoC architecture, so even early screen work required me to understand more than the widget layer. I had to trace how data, application state, and navigation moved through each feature before I could implement it correctly. I used AI development tools to inspect patterns in the existing code and understand how features had been structured before making changes. In one of my first major code reviews, my manager specifically praised how quickly I had adapted to the architecture he had established. We worked in sprints, with features assigned through tickets and reviewed via pull requests.</p>
         <p>My scope expanded as I became more familiar with the product. I started receiving features that required design work in Figma before I implemented them in Flutter. By later sprints, I was moving between Figma, Flutter development, Supabase voice metadata, and Python scripts supporting the ElevenLabs workflow depending on what the product needed.</p>
         <p>Across the internship, I worked on authentication and onboarding, avatar and photo capture, parent video recording, the home experience, settings, SLP connection flows, community voices, and voice asset preparation. I also worked on therapist-side features near the end of the internship, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
+        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
         <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
           <img src="assets/images/avatar-ipad.webp" width="1302" height="942" alt="Onboarding screen, Select your child’s avatar: a grid of emoji faces across skin tones and animals, with a Take a photo instead button and a Next button" loading="lazy">
           <figcaption class="cs-caption">Avatar selection</figcaption>
         </figure>
-        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
       </div>
     </section>
 
@@ -258,8 +258,8 @@
       <div class="cs-prose">
         <p>One of the most important constraints behind the child experience was how much freedom the cloned voice was allowed to have during a lesson.</p>
         <!-- Donell Mtabvuri's diagram of the first version (donell.dev), credited at the end -->
-        <figure class="cs-media" style="--ratio:1600/1286">
-          <img src="assets/images/agent-flow.webp" width="1600" height="1286" alt="Diagram of the initial agentic voice flow: the mobile app streams the child’s voice to an agent, ElevenLabs transcribes it, Gemini 2.0 Flash generates a response transcript, and ElevenLabs turns it into speech sent back to the app with agentic actions" loading="lazy">
+        <figure class="cs-media" style="--ratio:1600/1089">
+          <img src="assets/images/agent-flow.webp" width="1600" height="1089" alt="Diagram of the initial agentic voice flow: the mobile app streams the child’s voice to an agent, ElevenLabs transcribes it, Gemini 2.0 Flash generates a response transcript, and ElevenLabs turns it into speech sent back to the app with agentic actions" loading="lazy">
           <figcaption class="cs-caption">Initial agentic voice flow, before the switch to pre-generated audio</figcaption>
         </figure>
         <p>The platform did not generate lesson dialogue live. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>

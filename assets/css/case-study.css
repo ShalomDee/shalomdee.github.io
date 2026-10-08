@@ -132,6 +132,7 @@
 .cs-media--screen{--ratio:9/19.5;max-width:220px;margin-inline:auto;width:100%;}
 /* Small portrait photos (under ~700px wide) stay near their own size, centred, so they don't blur */
 .cs-media--narrow{max-width:360px;margin-inline:auto;}
+.cs-media--narrow > img{border:3px solid var(--v35);}
 /* A single framed device screen at full column width filled the whole viewport, so it is capped and centred */
 .cs-media--device{max-width:640px;margin-inline:auto;}
 .cs-caption{
@@ -217,6 +218,8 @@
 .cs-source > p{margin-top:0.75em;}
 .cs-prose > .cs-source > .cs-media,.cs-prose > .cs-source > .cs-gallery{margin-block:var(--sp-sm) var(--sp-md);}
 .cs-decision > .cs-media:last-child{margin-bottom:0;}
+/* A section ending on an image: the section's own padding is the gap, so the image adds none */
+.cs-prose > .cs-media:last-child,.cs-prose > .cs-gallery:last-child{margin-bottom:0;}
 
 /* Image galleries: stacked on phones, side by side from 640px */
 .cs-gallery{display:grid;gap:var(--sp-lg);}
