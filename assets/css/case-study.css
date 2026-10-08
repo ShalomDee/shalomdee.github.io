@@ -180,6 +180,8 @@
 .cs-toc a.active{color:var(--v100);font-weight:600;border-left-color:var(--gold);}
 
 .cs-sec{padding-bottom:var(--sp-2xl);}
+/* The story column's own bottom padding and More Stories' top padding already part the last section from the cards */
+article > .cs-sec:last-child{padding-bottom:0;}
 /* No rule above section heads: the headings and spacing divide the story,
    and the hero's gold rule sits above the first one */
 .cs-sec .sec-head{border-top:0;padding-top:0;}
