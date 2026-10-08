@@ -11,11 +11,12 @@
 
    Every case study page loads this file and uses the same hero markup,
    so the hero needs no page-level CSS:
-     section.cs-hero > p.cs-crumb, a.cs-back, div.animate-in (kicker,
-     h1.cs-title, p.cs-deck, p.cs-role), figure.cs-media
+     section.cs-hero > p.cs-crumb, div.animate-in (kicker, h1.cs-title,
+     p.cs-deck, p.cs-role), figure.cs-media
    Below 960px the hero stacks and centres, the image under the text, and
-   .cs-back replaces the hidden breadcrumb. From 960px: breadcrumb above,
-   text left, image right.
+   the breadcrumb is hidden. From 960px: breadcrumb above, text left,
+   image right. The way back at every width is .back-btn, at the left end
+   of both sticky bars.
 
    Images: every .cs-media starts with a .cs-ph placeholder. Swap it for
    an <img> with width, height and alt; the frame keeps its ratio either
@@ -26,6 +27,22 @@
    but a clear ring for keyboard users */
 .mast-name a{color:inherit;text-decoration:none;}
 .mast-name a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px;}
+
+/* Back button, a round icon like the theme toggle, so the way back stays in
+   the sticky bar while the page scrolls. It sits as far from the left edge
+   as the menu button and toggle sit from the right. */
+.back-btn{
+  width:30px;height:30px;border:1px solid var(--v20);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--v55);text-decoration:none;position:relative;transition:all var(--t);
+}
+.back-btn:hover{border-color:var(--gold);color:var(--gold);}
+.back-btn::before{content:'';position:absolute;inset:-8px;}
+.mast-top{justify-content:space-between;align-items:center;}
+.nav-bar .back-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+}
 
 /* Compact masthead, about half its home page height, so the case study
    starts sooner. Same parts, smaller type and padding. */
@@ -50,19 +67,8 @@
   margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
 }
 .cs-hero .kicker{margin-bottom:var(--sp-sm);}
-.cs-crumb a,.cs-back{color:var(--gold);}
-.cs-crumb a:hover,.cs-back:hover{color:var(--v100);}
-/* Way back below 960px, where the breadcrumb is hidden. Same anchor and link
-   colours as the breadcrumb; the hit area reaches about 44px tall. */
-.cs-back{
-  justify-self:center;position:relative;
-  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.12em;
-  margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
-}
-.cs-back::before{content:'';position:absolute;inset:-16px -8px;}
-/* Inline-block so the hover underline runs under the words only */
-.cs-back-arrow{display:inline-block;}
+.cs-crumb a{color:var(--gold);}
+.cs-crumb a:hover{color:var(--v100);}
 .cs-title{
   font-family:var(--font-hd);font-weight:900;
   font-size:clamp(2.4rem,5.5vw,4rem);line-height:1;
@@ -363,7 +369,6 @@
     padding-top:var(--sp-xl);padding-bottom:var(--sp-2xl);
   }
   .cs-crumb{grid-column:1 / -1;margin-bottom:0;}
-  .cs-back{display:none;}
   /* Text sits near the top rather than centred on the image */
   .cs-hero > .animate-in:not(figure){align-self:start;margin-top:var(--sp-2xl);}
   .cs-deck,.cs-role{margin-top:60px;}
