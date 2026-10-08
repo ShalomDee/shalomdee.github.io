@@ -794,6 +794,21 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-link:hover{gap:8px;color:var(--gold);}
 .pa-link svg{flex-shrink:0;}
+/* Card-wide link: a .pa-stretch link's hit area covers its whole card, so a
+   tap anywhere on the card opens the case study. Other links in the card
+   sit above it and keep working on their own. */
+.pa-card{position:relative;}
+.pa-link.pa-stretch{position:static;}
+.pa-link.pa-stretch::before{content:none;}
+.pa-stretch::after{content:'';position:absolute;inset:0;z-index:1;}
+.pa-card .pa-link:not(.pa-stretch){z-index:2;}
+.pa-card:hover .pa-stretch{gap:8px;}
+/* The ring goes round the card, since the whole card is the link. Browsers
+   without :has() keep the ring on the link itself. */
+@supports selector(:has(*)){
+  .pa-stretch:focus-visible{outline:none;}
+  .pa-card:has(.pa-stretch:focus-visible){outline:2px solid var(--gold);outline-offset:3px;}
+}
 .pa-techs{display:flex;gap:4px;flex-wrap:wrap;}
 .pa-tech{
   font-family:var(--font-ui);font-size:9px;font-weight:500;
