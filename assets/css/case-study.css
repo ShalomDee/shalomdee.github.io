@@ -132,6 +132,8 @@
 .cs-media--screen{--ratio:9/19.5;max-width:220px;margin-inline:auto;width:100%;}
 /* Small portrait photos (under ~700px wide) stay near their own size, centred, so they don't blur */
 .cs-media--narrow{max-width:360px;margin-inline:auto;}
+/* A single framed device screen at full column width filled the whole viewport, so it is capped and centred */
+.cs-media--device{max-width:640px;margin-inline:auto;}
 .cs-caption{
   display:flex;align-items:center;gap:var(--sp-sm);
   margin-top:var(--sp-md);
