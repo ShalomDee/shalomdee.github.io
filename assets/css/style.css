@@ -883,6 +883,17 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--v45);letter-spacing:0.04em;
 }
 
+/* ═══ FOCUS AND PRESS ═══
+   One keyboard focus ring everywhere, in the accent colour (5.1:1 on light
+   paper, 8.2:1 on dark), instead of each browser's own. Buttons and
+   clickable cards nudge down 1px while pressed, so taps get feedback on
+   phones, where there is no hover. `translate` leaves the transforms that
+   centre the nav bar buttons alone. */
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.theme-btn:active,.hamburger:active,.drawer-close:active,.foot-icon-btn:active,
+.hero-cta:active,.nav-cta:active,.back-btn:active{translate:0 1px;}
+.pa-card:has(.pa-stretch):active{transform:translateY(-2px);}
+
 /* ═══ TOUCH TARGETS ═══
    Invisible ::before hit areas bring small controls to about 44×44px
    without changing how they look or where anything sits. Each inset is

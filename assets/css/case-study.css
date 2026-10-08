@@ -108,8 +108,6 @@
    cover them on scroll. The hero cut-out too: under the texture its silver
    edges and baked shadow washed into the paper. */
 .cs-media > img,.cs-media > video,.cs-mood-frame{position:relative;z-index:9999;}
-/* Videos with controls take focus; Chrome draws no ring on them by default */
-.cs-media > video:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
@@ -235,7 +233,6 @@
    sideways inside the frame, with the brand column pinned. */
 .cs-source > .cs-table-wrap{margin-block:var(--sp-sm) var(--sp-md);}
 .cs-table-wrap{position:relative;overflow-x:auto;border:2px solid var(--v20);border-radius:3px;}
-.cs-table-wrap:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
 .cs-table{
   width:100%;min-width:600px;border-collapse:collapse;
   font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.3;color:var(--v85);
