@@ -120,9 +120,9 @@
     <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
     <p class="cs-role"><span class="cs-role-title">Frontend Developer</span><span class="cs-role-meta">CORE Futures Lab<span class="cs-sep" aria-hidden="true">|</span>May to Aug&nbsp;2025</span></p>
   </div>
-  <!-- The redesigned home screen, whose feature-card layout Shalom designed and built (see Frontend Development) -->
-  <figure class="cs-media animate-in delay-1" style="--ratio:1194/834">
-    <img src="assets/images/hero.webp" width="1194" height="834" alt="The Worlds of Hello family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" fetchpriority="high">
+  <!-- Transparent cut-out from worldsofhello.com (credited at the end), so it sits on the page without the gold frame (.cs-media--bare) -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:960/696">
+    <img src="assets/images/activity-ipad.webp" width="960" height="696" alt="An iPad showing a Worlds of Hello lesson: a red apple above the word APPLE on a grassy scene, a parent’s face in a circular frame on the right, and a microphone button for the child to speak" fetchpriority="high">
   </figure>
 </section>
 
@@ -141,7 +141,7 @@
       <li><a href="#reflection">Reflection</a></li>
     </ol>
     <p class="cs-box-title">Project Links</p>
-    <div class="pa-links"><a href="https://doi.org/10.1145/3794786.3830734" class="pa-link pa-link--design" target="_blank" rel="noopener noreferrer">Read the Paper ↗</a></div>
+    <div class="pa-links"><a href="https://www.worldsofhello.com/" class="pa-link pa-link--code" target="_blank" rel="noopener noreferrer">Visit Worlds of Hello ↗</a><a href="https://doi.org/10.1145/3794786.3830734" class="pa-link pa-link--design" target="_blank" rel="noopener noreferrer">Read the Paper ↗</a></div>
   </nav>
 
   <article>
@@ -163,6 +163,10 @@
         <p>Worlds of Hello was split into two connected applications.</p>
         <p>The therapist app supported the clinical side of the experience. Speech-language pathologists (SLPs) could manage clients, assign activities, review progress, and work with session documentation. AI-assisted tools could transcribe recorded sessions and help turn recordings or written notes into structured clinical documentation, reducing some of the administrative work surrounding each session.</p>
         <p>The family app extended that work into the home, handling the child’s experience. Children completed therapist-guided activities using familiar voices contributed by parents, caregivers, or selected from the platform’s broader voice library. The interface was intentionally playful, with warm colors, gamified interactions, and child-friendly characters.</p>
+        <figure class="cs-media" style="--ratio:1194/834">
+          <img src="assets/images/activity-apples.webp" width="1194" height="834" alt="A lesson activity in the family app: a bowl of yellow, green, and red apples on a red table, with back and pause buttons" loading="lazy">
+          <figcaption class="cs-caption">A lesson activity</figcaption>
+        </figure>
         <p>Most of my work was on the family application, although I also contributed to therapist-facing flows.</p>
       </div>
     </section>
@@ -209,6 +213,10 @@
           </figure>
         </div>
         <p>My responsibilities were not limited to implementing existing designs. I designed the feature-card layout for the redesigned home screen and then built it in Flutter.</p>
+        <figure class="cs-media" style="--ratio:1194/834">
+          <img src="assets/images/home.webp" width="1194" height="834" alt="The family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" loading="lazy">
+          <figcaption class="cs-caption">Home screen</figcaption>
+        </figure>
         <p>Some of the work also moved on a tighter schedule because the product was being used in fundraising and pitch conversations while we were still building it. What I shipped would become part of the versions my manager and the broader team were presenting externally.</p>
       </div>
     </section>
@@ -276,6 +284,8 @@
       <div class="cs-prose">
         <p>Worlds of Hello changed how I understood frontend work because the interface was only one part of what I needed to understand to build a feature well. I started the summer focused mainly on translating Figma designs into Flutter, but the work gradually pushed me into the systems underneath those screens and the decisions that shaped their behavior. That perspective has stayed with me in later design work, where I now pay much more attention to the assumptions, data, and technical constraints behind an interface.</p>
         <p>I also came away with a more practical view of AI product development. I learned that the useful question is not how much AI can be exposed to the user, but how much control the experience requires. That has become a standard I carry into my design work now.</p>
+        <!-- Credit for images taken from the public Worlds of Hello site -->
+        <p class="cs-media-note" style="margin-top:var(--sp-2xl);text-align:left">The iPad lesson mockup and the photo in Overview are from <a href="https://www.worldsofhello.com/" target="_blank" rel="noopener noreferrer">worldsofhello.com</a>.</p>
       </div>
     </section>
   </article>
