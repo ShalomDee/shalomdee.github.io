@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worlds of Hello, CORE Futures Lab | Shalom Donga</title>
+  <meta name="description" content="A case study on Worlds of Hello, a pediatric speech therapy platform using familiar voices to support practice between therapy sessions.">
+  <meta name="theme-color" content="#F4F1ED">
+  <!-- Copied unchanged from index.html so the theme carries across pages -->
+  <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://shalomdee.github.io/case-studies/worlds-of-hello/">
+
+  <!-- Share previews. Swap og:image for a case study cover once one exists (absolute URL, 1200×630). -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shalomdee.github.io/case-studies/worlds-of-hello/">
+  <meta property="og:title" content="Worlds of Hello, CORE Futures Lab | Shalom Donga">
+  <meta property="og:description" content="A pediatric speech therapy platform using familiar voices to support practice between therapy sessions.">
+  <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Open Graph preview for Shalom Donga’s portfolio, featuring The Maker’s Times masthead, her name and Design Engineer title, and an illustrated tug-of-war between design and engineering.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <!-- Same ?v= as index.html; bump all three together -->
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-10-08b">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-10-08b">
+  <script src="../../assets/js/main.js?v=2026-10-08b" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="../../#about">About</a>
+  <a href="../../#projects">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email ↗</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<!-- Back button: left end of both sticky bars, mirroring the theme toggle and menu button -->
+<div class="mast-top">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<header>
+  <div class="mast-title">
+    <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">"Where Code<br>Meets Canvas"</span>
+    </div>
+    <div class="mast-center">
+      <p class="mast-name"><a href="../../">The Maker's Times</a></p>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Case Study</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <nav class="nav-ticker" aria-label="Sections">
+    <a href="../../#about">About</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#projects" class="active">Projects</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#experience">Experience</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#skills">Skills</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#editorials">Editorial</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  </nav>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="cs-hero wrap" aria-labelledby="cs-title">
+  <!-- Breadcrumb spans the hero, above the title and image (960px and up) -->
+  <p class="cs-crumb"><a href="../../#projects">Selected Builds</a> / Worlds of Hello</p>
+  <div class="animate-in">
+    <span class="kicker">Summer 2025</span>
+    <h1 class="cs-title" id="cs-title">Worlds of Hello</h1>
+    <p class="cs-deck">A pediatric speech therapy platform using familiar voices to support practice between therapy sessions.</p>
+    <!-- Role, company and length only. Team belongs in My Role's prose, tools at the end of My Role. -->
+    <p class="cs-role"><span class="cs-role-title">Frontend Developer</span><span class="cs-role-meta">CORE Futures Lab<span class="cs-sep" aria-hidden="true">|</span>May to Aug&nbsp;2025</span></p>
+  </div>
+  <!-- The redesigned home screen, whose feature-card layout Shalom designed and built (see Frontend Development) -->
+  <figure class="cs-media animate-in delay-1" style="--ratio:1194/834">
+    <img src="assets/images/hero.webp" width="1194" height="834" alt="The Worlds of Hello family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" fetchpriority="high">
+  </figure>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<div class="cs-story wrap">
+  <nav class="cs-toc" aria-label="On this page">
+    <p class="cs-box-title">On This Page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#product">The Product</a></li>
+      <li><a href="#role">My Role</a></li>
+      <li><a href="#frontend">Frontend Development</a></li>
+      <li><a href="#recording">Video Recording</a></li>
+      <li><a href="#ai">Designing Within AI Constraints</a></li>
+      <li><a href="#outcome">Outcome</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ol>
+    <p class="cs-box-title">Project Links</p>
+    <div class="pa-links"><a href="https://doi.org/10.1145/3794786.3830734" class="pa-link pa-link--design" target="_blank" rel="noopener noreferrer">Read the Paper ↗</a></div>
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
+      <div class="cs-prose">
+        <p>Worlds of Hello is a health and education technology platform that helps children continue therapist-guided speech practice at home using familiar voices. Parents and caregivers can contribute their own voices, while the platform also offers a broader community voice library for families to choose from.</p>
+        <p>The idea grew from the founder’s experience helping her nephew continue speech therapy during COVID after he lost access to his therapist. She noticed that hearing a familiar voice helped him engage with the exercises, which became part of the foundation for the product.</p>
+        <figure class="cs-media cs-media--narrow" style="--ratio:660/799">
+          <img src="assets/images/familiar-voice.webp" width="660" height="799" alt="A young child stands in a living room facing a TV, where a man on screen demonstrates a speech exercise" loading="lazy">
+        </figure>
+        <p>That experience also reflected a broader problem of access. Speech and language needs can be identified late, and families may still struggle to find affordable or culturally relevant support once they know help is needed. Worlds of Hello was built for families broadly, with particular attention to making continued practice more accessible between clinical sessions.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="product">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Product</span></h2></div>
+      <div class="cs-prose">
+        <p>Worlds of Hello was split into two connected applications.</p>
+        <p>The therapist app supported the clinical side of the experience. Speech-language pathologists (SLPs) could manage clients, assign activities, review progress, and work with session documentation. AI-assisted tools could transcribe recorded sessions and help turn recordings or written notes into structured clinical documentation, reducing some of the administrative work surrounding each session.</p>
+        <p>The family app extended that work into the home, handling the child’s experience. Children completed therapist-guided activities using familiar voices contributed by parents, caregivers, or selected from the platform’s broader voice library. The interface was intentionally playful, with warm colors, gamified interactions, and child-friendly characters.</p>
+        <p>Most of my work was on the family application, although I also contributed to therapist-facing flows.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
+      <div class="cs-prose">
+        <p>I joined Worlds of Hello as a frontend developer, working on a two-person implementation team with my manager. My first assignments were design-to-code work: I received Figma screens, learned the existing Flutter codebase, and implemented the interfaces within the patterns already established in the project.</p>
+        <p>The codebase used a DTO, DAO, repository, and BLoC architecture, so even early screen work required me to understand more than the widget layer. I had to trace how data, application state, and navigation moved through each feature before I could implement it correctly. I used AI development tools to inspect patterns in the existing code and understand how features had been structured before making changes. In one of my first major code reviews, my manager specifically praised how quickly I had adapted to the architecture he had established. We worked in sprints, with features assigned through tickets and reviewed via pull requests.</p>
+        <p>My scope expanded as I became more familiar with the product. I started receiving features that required design work in Figma before I implemented them in Flutter. By later sprints, I was moving between Figma, Flutter development, Supabase voice metadata, and Python scripts supporting the ElevenLabs workflow depending on what the product needed.</p>
+        <p>Across the internship, I worked on authentication and onboarding, avatar and photo capture, parent video recording, the home experience, settings, SLP connection flows, community voices, and voice asset preparation. I also worked on therapist-side features near the end of the internship, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
+        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="frontend">
+      <div class="sec-head"><h2 class="sec-label">Frontend <span class="aw">Development</span></h2></div>
+      <div class="cs-prose">
+        <p>My first substantial feature was the redesigned authentication and onboarding flow. I implemented sign-up and sign-in across the different ways a family could enter the platform, including the path where an SLP provided them with an access code. The work included code validation, account creation, modal states, custom PIN input behavior, routing changes, and responsive layouts.</p>
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/slp-code.webp" width="1194" height="834" alt="Sign Up With SLP Code modal over the blurred welcome screen, asking for the code from the family’s SLP in six empty boxes" loading="lazy">
+            <figcaption class="cs-caption">Sign up with SLP code</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/slp-code-invalid.webp" width="1194" height="834" alt="The same modal with the code 142176 entered and the error “Please provide a valid code from an SLP.”" loading="lazy">
+            <figcaption class="cs-caption">Invalid code</figcaption>
+          </figure>
+        </div>
+        <p>The review process helped me learn the product’s design and engineering conventions quickly. Some of my early revisions involved switching components to the existing design tokens, changing a full-page interaction into a modal, following the project’s established responsive patterns, and adjusting interface details to match updated Figma designs. Those reviews gave me a much clearer sense of how the design system and codebase were meant to work together.</p>
+        <p>I later worked on avatar selection and photo capture, the home screen, settings, and SLP connection management. The settings work included child profile settings, a multi-state SLP connection interface, code verification, and confirmation states for destructive actions.</p>
+        <div class="cs-gallery cs-gallery--3">
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/slp-not-connected.webp" width="1194" height="834" alt="Connect SLP screen with a yellow warning icon, Not Connected, and an Enter SLP Code button" loading="lazy">
+            <figcaption class="cs-caption">Not connected</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/slp-connected.webp" width="1194" height="834" alt="Connect SLP screen with a green check mark, Connected, and a Disconnect button" loading="lazy">
+            <figcaption class="cs-caption">Connected</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/slp-disconnect.webp" width="1194" height="834" alt="Disconnect from SLP confirmation: “This will remove your connection with your current SLP. You can reconnect later with a new code,” with Disconnect and Cancel options" loading="lazy">
+            <figcaption class="cs-caption">Disconnect confirmation</figcaption>
+          </figure>
+        </div>
+        <p>My responsibilities were not limited to implementing existing designs. I designed the feature-card layout for the redesigned home screen and then built it in Flutter.</p>
+        <p>Some of the work also moved on a tighter schedule because the product was being used in fundraising and pitch conversations while we were still building it. What I shipped would become part of the versions my manager and the broader team were presenting externally.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="recording">
+      <div class="sec-head"><h2 class="sec-label">Video <span class="aw">Recording</span></h2></div>
+      <div class="cs-prose">
+        <p>The parent video-recording flow was one of the most technically demanding frontend features I worked on.</p>
+        <p>The challenge was not getting a camera feed onto the screen. The recording experience had been designed with a specific visual treatment, including a circular camera frame and custom controls that needed to behave differently depending on the recording state. I used CameraAwesome and worked through its documentation to understand how much of the default camera interface I could replace or restructure.</p>
+        <p>The final experience supported separate states for recording, pausing, stopping, redoing, and completing a recording. The camera appeared within a circular frame with instructions guiding the parent to keep their face positioned correctly.</p>
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/rec-ready.webp" width="1194" height="834" alt="Recording screen for the word Apple: a parent’s face in a circular camera frame, “Say ‘Apple’,” “Keep Your Face In The Circle,” and a red record button" loading="lazy">
+            <figcaption class="cs-caption">Ready to record</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/rec-recording.webp" width="1194" height="834" alt="The same screen while recording, with stop and pause buttons in place of the record button" loading="lazy">
+            <figcaption class="cs-caption">Recording</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/rec-done.webp" width="1194" height="834" alt="The same screen after recording, with a redo button and a green check button to keep the recording" loading="lazy">
+            <figcaption class="cs-caption">Done recording</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:1194/834">
+            <img src="assets/images/rec-uploaded.webp" width="1194" height="834" alt="The same screen once the recording is uploaded, with only a redo button" loading="lazy">
+            <figcaption class="cs-caption">Uploaded</figcaption>
+          </figure>
+        </div>
+        <p>Getting there took several iterations in the repository. Earlier recording branches were closed while I continued refining the implementation, and the completed video-recording lesson flow was eventually merged on June 26.</p>
+        <p>This feature made the difference between a finished interface and a working interaction especially clear. A recording screen can look simple in Figma, but its implementation has to account for camera state, permissions, frozen frames, control changes, layout constraints, and what happens when a user pauses or starts over.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="ai">
+      <div class="sec-head"><h2 class="sec-label">Designing Within <span class="aw">AI Constraints</span></h2></div>
+      <div class="cs-prose">
+        <p>One of the most important constraints behind the child experience was how much freedom the cloned voice was allowed to have during a lesson.</p>
+        <p>The platform did not generate lesson dialogue live. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>
+        <p>My manager established this approach, and I worked within it while building the experience. The constraint made sense once I understood the user. A wrong line from the model was not just a technical error. It could interrupt an exercise or make a voice that was supposed to feel familiar suddenly behave unpredictably.</p>
+        <p>That changed how I thought about AI in a product. More freedom from the model would not have made this experience better. The design depended on knowing when the system would speak, what it would say, and how that line should sound. Predictability was part of the experience we were designing for the child.</p>
+
+        <h3 class="cs-subhead">Building the voice library</h3>
+        <p>By the later sprints, I was also working directly with the voice library behind the interface. The dataset I worked with contained 120+ voice records, with metadata covering fields such as language, accent, gender, age, and voice descriptions. Because some records were incomplete or categorized inconsistently, I cleaned and organized the data in Supabase, corrected metadata, and checked that the application had the information it needed to surface the voices correctly.</p>
+        <p>I also wrote Python scripts for parts of the ElevenLabs workflow and attached the corresponding metadata to generated voice assets. That work fed into the Community Voices feature, where I created and uploaded voice samples, updated the application to use the new community voice model, worked on its repository integration, and redesigned the card and filtering interface. My manager made additional fixes to the fetching and filtering logic before the feature was merged.</p>
+        <!-- Cropped from the full Select a voice screen to the filters and the first two rows of cards -->
+        <figure class="cs-media" style="--ratio:1194/455">
+          <img src="assets/images/community-voices.webp" width="1194" height="455" alt="Community voices: search, Origin of voice and Gender filters above voice cards such as Mark, “Energetic and cheery baritone male voice,” from Maryland, and Elena, “Soft, warm female voice with a hoarse charm,” from South Carolina" loading="lazy">
+          <figcaption class="cs-caption">Community voices</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-prose">
+        <p>Worlds of Hello continued into further research and product testing after the summer development period. An NSF SBIR Phase I grant supported prototype development, testing with parents, educators, and speech-language pathologists, and technical refinement of the platform. The team also participated in the 2025 MITRE RISE Accelerator.</p>
+        <p>The Community Voices library later grew to 170 voices across more than 10 accent categories. Research with 19 caregiver-child pairs and 33 speech-language pathologists found that 75% of caregivers felt culturally represented through the voice library, while internal testing reported a 49% higher activity completion rate in experiences using familial voice clones.</p>
+        <!-- New copy for Shalom to approve: the ACM paper (DOI 10.1145/3794786.3830734) -->
+        <p>The work was published in the ACM Digital Library as <a href="https://doi.org/10.1145/3794786.3830734" target="_blank" rel="noopener noreferrer">Culturally Representative AI Voices for Equitable Pediatric Speech Therapy: Design and Preliminary Evaluation</a>, in the proceedings of GoodIT ’26, the 2026 International Conference on Information Technology for Social Good. I am a co-author, with Donell Mtabvuri and Amy Quarkume.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="reflection">
+      <div class="sec-head"><h2 class="sec-label"><em>Reflection</em></h2></div>
+      <div class="cs-prose">
+        <p>Worlds of Hello changed how I understood frontend work because the interface was only one part of what I needed to understand to build a feature well. I started the summer focused mainly on translating Figma designs into Flutter, but the work gradually pushed me into the systems underneath those screens and the decisions that shaped their behavior. That perspective has stayed with me in later design work, where I now pay much more attention to the assumptions, data, and technical constraints behind an interface.</p>
+        <p>I also came away with a more practical view of AI product development. I learned that the useful question is not how much AI can be exposed to the user, but how much control the experience requires. That has become a standard I carry into my design work now.</p>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- ═══ MORE STORIES ═══
+     Cards copied from the Selected Builds grid in index.html; keep the copy in step.
+     Add a Case Study link to .pa-links once that project's page exists. -->
+<section class="cs-more wrap" aria-labelledby="more-title">
+  <div class="sec-head">
+    <h2 class="sec-label" id="more-title">More <span class="aw">Stories</span></h2>
+    <span class="sec-meta"><a href="../../#projects">Selected Builds</a></span>
+  </div>
+  <div class="archive-grid">
+
+    <article class="pa-card animate-in">
+      <div class="pa-img pa-img--c2"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">E-commerce</span><span class="pa-tag">Research</span><span class="pa-tag">Luxury</span></div>
+        <h3 class="pa-title">Tiffany Wishlist</h3>
+        <p class="pa-desc">A saved-items and comparison experience for Tiffany’s e-commerce platform, shaped through behavioral analytics, consumer research, client segmentation, and in-store observation. I designed the interaction behavior, states, hierarchy, and UX copy within Tiffany’s existing design system.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../tiffany-wishlist/" class="pa-link pa-link--design pa-stretch" aria-label="Tiffany Wishlist case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">UX Research</span><span class="pa-tech">Interaction Design</span><span class="pa-tech">Design Systems</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-1">
+      <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span></div>
+        <h3 class="pa-title">InsightCuts</h3>
+        <p class="pa-desc">A research storytelling concept developed with Ford to turn dense UX findings into shorter, narrative-driven formats. I built the first interactive prototype, defined the core interaction flow, tested the concept with Ford researchers and stakeholders, and produced the video simulation used at final review.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../insightcuts/" class="pa-link pa-link--design pa-stretch" aria-label="InsightCuts case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Prototyping</span><span class="pa-tech">Research</span><span class="pa-tech">Video</span><span class="pa-tech">AI</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pa-card animate-in delay-2">
+      <div class="pa-img pa-img--c5"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Retail</span><span class="pa-tag">Service Design</span><span class="pa-tag">Research</span></div>
+        <h3 class="pa-title">Tiffany Boutique Visits</h3>
+        <p class="pa-desc">An exploration of Tiffany’s appointment and in-store experience across New York boutiques, connecting digital booking flows with what happens before, during, and after a client visit. The work mapped gaps across internal systems and helped redirect the scope of a follow-on experience.</p>
+        <div class="pa-footer">
+          <div class="pa-links"></div>
+          <div class="pa-techs"><span class="pa-tech">Journey Mapping</span><span class="pa-tech">Contextual Inquiry</span><span class="pa-tech">UX Research</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker's Times</div>
+      <p class="foot-brand-desc">Design, engineering, and the work in between.</p>
+      <p class="foot-brand-quote">"Where Code Meets Canvas"</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="foot-ext-link">Resume <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="../../#projects" class="foot-ext-link">Selected Builds <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <a href="mailto:shalomdonga@gmail.com" class="foot-email">shalomdonga@gmail.com</a>
+      <div class="foot-icon-row">
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
