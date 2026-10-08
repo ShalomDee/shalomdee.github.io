@@ -21,6 +21,13 @@
    Images: every .cs-media starts with a .cs-ph placeholder. Swap it for
    an <img> with width, height and alt; the frame keeps its ratio either
    way, so nothing shifts when images arrive.
+
+   Spacing between sections: every section ends 48px above the next
+   heading (.cs-sec padding), and that padding is the only gap. Whatever
+   ends a section (a paragraph, image, gallery or decision block) adds no
+   bottom space of its own; anything new that can end a section needs the
+   same :last-child reset. The last section has no padding, so the story
+   ends 80px above More Stories.
    ═══════════════════════════════════════════════════ */
 
 /* Masthead title links home without looking like a link: no hover underline,
@@ -233,6 +240,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
 /* Key decisions: spacing alone separates one from the next */
 .cs-decision{padding:var(--sp-lg) 0;}
 .sec-head + .cs-decision{padding-top:0;}
+/* The last decision ends the section, so the section's 48px is the only gap */
+.cs-decision:last-child{padding-bottom:0;}
 .cs-decision h3{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
   line-height:1.2;color:var(--v100);margin-top:0;
