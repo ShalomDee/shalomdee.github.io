@@ -135,6 +135,8 @@
 .cs-media--narrow > img{border:3px solid var(--v35);}
 /* A single framed device screen at full column width filled the whole viewport, so it is capped and centred */
 .cs-media--device{max-width:640px;margin-inline:auto;}
+/* Diagrams get the same treatment, a little wider so their labels stay legible */
+.cs-media--diagram{max-width:720px;margin-inline:auto;}
 .cs-caption{
   display:flex;align-items:center;gap:var(--sp-sm);
   margin-top:var(--sp-md);
