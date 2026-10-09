@@ -166,4 +166,15 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
+/* ═══ LOOPING CLIPS ═══ */
+// Short demo loops (.cs-loop) autoplay muted. For visitors who reduce motion
+// they stay on their poster, with controls so they can play one by choice.
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video.cs-loop').forEach(v => {
+    v.removeAttribute('autoplay');
+    v.pause();
+    v.controls = true;
+  });
+}
+
 })();
