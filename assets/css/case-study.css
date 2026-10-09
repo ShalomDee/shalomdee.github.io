@@ -429,7 +429,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
     top:calc(var(--sticky-h) + var(--sp-lg));
   }
   .cs-journey{grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--sp-sm);}
-  .cs-journey li{grid-template-columns:none;align-items:start;gap:var(--sp-sm);font-size:var(--sz-xs);text-align:center;}
+  .cs-journey li{grid-template-columns:none;align-content:start;align-items:start;gap:var(--sp-sm);font-size:var(--sz-xs);text-align:center;}
 }
 
 /* Below desktop the hero stacks, so its text centres over the image. The breadcrumb
