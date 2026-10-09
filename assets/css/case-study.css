@@ -285,6 +285,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-flow{display:block;width:100%;height:auto;font-family:var(--font-ui);}
 .cs-flow--wide{display:none;}
 .cs-flow--tall{max-width:420px;margin-inline:auto;}
+/* A single column of steps: narrower, so its 12px labels stay near 12px */
+.cs-flow--tall.cs-flow--narrow{max-width:260px;}
 .cs-flow .n rect,.cs-flow .n path{fill:var(--ink);stroke:var(--v100);stroke-width:1.5;}
 .cs-flow .n text{fill:var(--v100);font-weight:500;text-anchor:middle;}
 .cs-flow .e{fill:none;stroke:var(--v100);stroke-width:1.5;stroke-linejoin:round;}
@@ -295,6 +297,50 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-flow--wide{display:block;}
   .cs-flow--tall{display:none;}
 }
+
+/* ═══ PROJECT FACTS ═══
+   Overview as label and value pairs: stacked on phones, side by side from 640px */
+.cs-facts{display:grid;gap:var(--sp-md);}
+.cs-facts dt{
+  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
+}
+.cs-facts dd{
+  margin:2px 0 0;font-family:var(--font-bd);font-size:var(--sz-base);
+  line-height:1.55;color:var(--v70);
+}
+
+/* ═══ JOURNEY ═══
+   Numbered steps with an icon each: a list on phones, one row from 960px.
+   The icons are light tiles in both themes, framed like the screenshots. */
+.cs-prose > .cs-journey-fig{margin-block:var(--sp-lg);}
+.cs-prose > .cs-journey-fig:last-child{margin-bottom:0;}
+.cs-journey{list-style:none;display:grid;gap:var(--sp-sm);counter-reset:step;}
+.cs-journey li{
+  counter-increment:step;display:grid;grid-template-columns:72px minmax(0,1fr);
+  align-items:center;gap:var(--sp-md);
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.35;color:var(--v70);
+}
+.cs-journey img{
+  display:block;width:100%;height:auto;aspect-ratio:200/160;
+  border:1px solid var(--v20);border-radius:3px;position:relative;z-index:9999;
+}
+.cs-journey span::before{content:counter(step) '. ';font-weight:600;color:var(--gold);}
+
+/* Small screens of different heights side by side: aligned at the top, and capped
+   like a single device screen so they are not scaled past their own size */
+.cs-gallery--top{align-items:start;max-width:640px;margin-inline:auto;}
+
+/* Book spreads: desktop and mobile share one height from 640px (columns in
+   proportion to each frame's width), stacked below with the phone capped */
+.cs-book{align-items:start;}
+.cs-book > .cs-media:last-child{max-width:240px;width:100%;margin-inline:auto;}
+
+/* Full-length phone screens, three across at every width, capped like a diagram
+   so the strip stays about 2,600px tall on desktop */
+.cs-gallery--strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-md);align-items:start;max-width:720px;margin-inline:auto;}
+.cs-gallery--strip .cs-caption{display:block;}
+.cs-gallery--strip .cs-caption::before,.cs-gallery--strip .cs-caption::after{content:none;}
 
 /* ═══ SURVEY CHARTS ═══
    Counts scale to all 36 respondents. Ordinal steps (1st, 2nd, 3rd) are one
@@ -381,6 +427,10 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
   .cs-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cs-facts > div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:var(--sp-md);align-items:baseline;}
+  .cs-facts dd{margin-top:0;}
+  .cs-book{grid-template-columns:minmax(0,1437fr) minmax(0,462fr);}
+  .cs-book > .cs-media:last-child{max-width:none;}
 }
 
 @media(min-width:960px){
@@ -398,6 +448,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
     display:block;position:sticky;align-self:start;
     top:calc(var(--sticky-h) + var(--sp-lg));
   }
+  .cs-journey{grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--sp-sm);}
+  .cs-journey li{grid-template-columns:none;align-items:start;gap:var(--sp-sm);font-size:var(--sz-xs);text-align:center;}
 }
 
 /* Below desktop the hero stacks, so its text centres over the image. The breadcrumb
