@@ -298,18 +298,6 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-flow--tall{display:none;}
 }
 
-/* ═══ PROJECT FACTS ═══
-   Overview as label and value pairs: stacked on phones, side by side from 640px */
-.cs-facts{display:grid;gap:var(--sp-md);}
-.cs-facts dt{
-  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
-}
-.cs-facts dd{
-  margin:2px 0 0;font-family:var(--font-bd);font-size:var(--sz-base);
-  line-height:1.55;color:var(--v70);
-}
-
 /* ═══ JOURNEY ═══
    Numbered steps with an icon each: a list on phones, one row from 960px.
    The icons are light tiles in both themes, framed like the screenshots. */
@@ -335,12 +323,6 @@ article > .cs-sec:last-child{padding-bottom:0;}
    proportion to each frame's width), stacked below with the phone capped */
 .cs-book{align-items:start;}
 .cs-book > .cs-media:last-child{max-width:240px;width:100%;margin-inline:auto;}
-
-/* Full-length phone screens, three across at every width, capped like a diagram
-   so the strip stays about 2,600px tall on desktop */
-.cs-gallery--strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-md);align-items:start;max-width:720px;margin-inline:auto;}
-.cs-gallery--strip .cs-caption{display:block;}
-.cs-gallery--strip .cs-caption::before,.cs-gallery--strip .cs-caption::after{content:none;}
 
 /* ═══ SURVEY CHARTS ═══
    Counts scale to all 36 respondents. Ordinal steps (1st, 2nd, 3rd) are one
@@ -427,8 +409,6 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
   .cs-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .cs-facts > div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:var(--sp-md);align-items:baseline;}
-  .cs-facts dd{margin-top:0;}
   .cs-book{grid-template-columns:minmax(0,1437fr) minmax(0,462fr);}
   .cs-book > .cs-media:last-child{max-width:none;}
 }
