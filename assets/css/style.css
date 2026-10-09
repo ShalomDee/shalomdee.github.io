@@ -663,8 +663,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .editorial-section.in-view .ed-img img{filter:none;}
 .ed-tile:hover .ed-img img{transform:scale(1.03);}
 
-/* Text overlays. The halo in the page colour keeps text legible on busy photos. */
+/* Text overlays. In dark mode a dark halo keeps text legible on busy photos; light mode has none. */
 .ed-body,.ed-top{text-shadow:0 0 3px var(--ink),0 0 8px var(--ink);}
+[data-theme="light"] .ed-body,[data-theme="light"] .ed-top{text-shadow:none;}
 .ed-body{
   position:absolute;z-index:3;
   padding:var(--sp-sm) var(--sp-md);
