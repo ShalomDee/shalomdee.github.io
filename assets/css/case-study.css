@@ -236,6 +236,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-gallery{display:grid;gap:var(--sp-lg);}
 /* One column per phone, up to 220px each, shrinking together on narrow screens */
 .cs-gallery--phones{grid-auto-flow:column;grid-auto-columns:minmax(0,220px);justify-content:center;}
+/* Phones that would leave empty space either side get a frame, drawn like the survey charts */
+.cs-gallery--framed{padding:var(--sp-lg);border:2px solid var(--v20);border-radius:3px;}
 
 /* Key decisions: spacing alone separates one from the next */
 .cs-decision{padding:var(--sp-lg) 0;}
@@ -449,5 +451,5 @@ article > .cs-sec:last-child{padding-bottom:0;}
   /* An odd last phone centres under the pair above */
   .cs-gallery--phones > :last-child:nth-child(odd){grid-column:1 / -1;width:calc(50% - var(--sp-lg) / 2);}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
-  .cs-chart{padding:var(--sp-md);}
+  .cs-chart,.cs-gallery--framed{padding:var(--sp-md);}
 }
