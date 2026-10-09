@@ -258,18 +258,17 @@
       <div class="cs-decision cs-prose">
         <h3>Collection stories</h3>
         <p>The pieces a client explored appear as pages in a book they can turn, a nod to the Tiffany Blue Book. Each spread pairs a piece with the story behind its collection, such as HardWear’s roots in New York or the archival 1889 motif behind Knot. The recap deliberately looks different from Tiffany.com, but every element still ties back to the brand.</p>
-        <!-- Stills until the page-turn recordings exist. To swap in a recording, replace each <img> with
-               <video src="assets/video/book-desktop.mp4" width="1428" height="994" poster="assets/images/book-desktop.webp"
-                      autoplay muted loop playsinline aria-label="…"></video>
-             keeping the --ratio, and make the poster the first frame of the clip. -->
+        <!-- Screen recordings of the Figma prototype, cropped and trimmed to one turn each way.
+             Posters are each clip's first frame. Reduced motion: main.js stops autoplay (.cs-loop).
+             Descriptions sit in the captions (.cs-vh) since a video without controls is not labelled. -->
         <div class="cs-gallery cs-book">
-          <figure class="cs-media" style="--ratio:1428/994">
-            <img src="assets/images/book-desktop.webp" width="1428" height="994" alt="Desktop book spread for Knot: a rose gold and diamond Knot necklace over a looped teal ribbon on the left page, and The Story Behind Knot on the right, “Inspired by an archival knot motif from 1889”" loading="lazy">
-            <figcaption class="cs-caption">Desktop</figcaption>
+          <figure class="cs-media" style="--ratio:1038/714">
+            <video class="cs-loop" src="assets/video/book-desktop.mp4" width="1038" height="714" poster="assets/images/book-desktop.webp" autoplay muted loop playsinline></video>
+            <figcaption class="cs-caption">Desktop<span class="cs-vh">: the book turns from the HardWear spread, a gold HardWear bracelet beside “Inspired by the energy of New York,” to the Knot spread, “Inspired by an archival knot motif from 1889,” and back</span></figcaption>
           </figure>
-          <figure class="cs-media" style="--ratio:402/870">
-            <img src="assets/images/book-mobile.webp" width="402" height="870" alt="Mobile page for Knot: the same necklace and ribbon under “You Explored… Knot,” with the collection story below and a swipe arrow" loading="lazy">
-            <figcaption class="cs-caption">Mobile</figcaption>
+          <figure class="cs-media" style="--ratio:372/736">
+            <video class="cs-loop" src="assets/video/book-mobile.mp4" width="372" height="736" poster="assets/images/book-mobile.webp" autoplay muted loop playsinline></video>
+            <figcaption class="cs-caption">Mobile<span class="cs-vh">: the HardWear page turns to the Knot page and back</span></figcaption>
           </figure>
         </div>
       </div>

@@ -409,7 +409,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
   .cs-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .cs-book{grid-template-columns:minmax(0,1437fr) minmax(0,462fr);}
+  .cs-book{grid-template-columns:minmax(0,1454fr) minmax(0,505fr);}
   .cs-book > .cs-media:last-child{max-width:none;}
 }
 
