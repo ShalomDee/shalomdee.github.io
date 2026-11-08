@@ -110,17 +110,11 @@
   border:1px solid var(--v20);border-radius:3px;
 }
 .cs-media > img,.cs-media > video,.cs-mood-frame > img{height:auto;object-fit:cover;background:var(--v05);}
-/* Screenshots and photos sit above the paper texture (body::before, z-index
-   9999) so their colours and detail stay true; the sticky bars (10000+) still
-   cover them on scroll. The hero cut-out too: under the texture its silver
-   edges and baked shadow washed into the paper. */
-.cs-media > img,.cs-media > video,.cs-mood-frame{position:relative;z-index:9999;}
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
 /* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
 [data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
-/* Phone mockups only have small transparent corners, so they stay above the texture with the other screens */
 .cs-ph{
   display:flex;align-items:center;justify-content:center;
   background:var(--v05);border-style:dashed;border-color:var(--v35);
@@ -129,7 +123,8 @@
 }
 /* Moodboard with moving tiles: clips sit over their tiles on the still, placed by % (--x --y --w --h).
    With reduced motion they're hidden and the still shows alone. */
-.cs-mood-frame{display:block;}
+/* Positioning context for the moodboard clips placed over their tiles */
+.cs-mood-frame{display:block;position:relative;}
 .cs-mood-frame > img{display:block;}
 .cs-mood-frame > video{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);object-fit:cover;}
 @media(prefers-reduced-motion:reduce){.cs-mood-frame > video{display:none;}}
@@ -192,7 +187,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
 /* No rule above section heads: the headings and spacing divide the story,
    and the hero's gold rule sits above the first one */
 .cs-sec .sec-head{border-top:0;padding-top:0;}
-.cs-sec .sec-label em{font-style:italic;}
+.cs-sec .sec-label em{font-style:normal;}
 
 /* Body copy, set like the About story; spans the whole column */
 .cs-prose p,.cs-prose li{
@@ -313,7 +308,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
 }
 .cs-journey img{
   display:block;width:100%;height:auto;aspect-ratio:200/160;
-  border:1px solid var(--v20);border-radius:3px;position:relative;z-index:9999;
+  border:1px solid var(--v20);border-radius:3px;
 }
 .cs-journey span::before{content:counter(step) '. ';font-weight:600;color:var(--gold);}
 
