@@ -39,11 +39,19 @@ function applyTheme(theme) {
 // A toggle this visit counts as a choice even when storage can't keep it
 let chosenThisVisit = false;
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 function toggleTheme() {
   const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   chosenThisVisit = true;
-  applyTheme(next);
-  try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
+  const swap = () => {
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
+  };
+  // The new theme prints in as halftone dots (Halftone dissolve in style.css).
+  // Browsers without view transitions, and reduced motion, switch instantly.
+  if (document.startViewTransition && !reduceMotion.matches) document.startViewTransition(swap);
+  else swap();
 }
 
 applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
@@ -110,6 +118,19 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+/* ─── Live masthead ───
+   Today's date is added as the first line of the edition box.
+   Without JavaScript the static copy in index.html stays. */
+const liveBlurb = document.querySelector('.mast-ed-blurb[data-live]');
+if (liveBlurb) {
+  const today = new Date();
+  const date = document.createElement('time');
+  date.dateTime = today.toISOString().slice(0, 10);
+  date.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  liveBlurb.prepend(date, document.createElement('br'));
+}
+
 
 /* ─── Main story images: reveal when section in view ─── */
 const mainStory = document.querySelector('.main-story');
