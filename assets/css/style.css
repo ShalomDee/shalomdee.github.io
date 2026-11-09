@@ -67,7 +67,7 @@
 /* ─── TOKENS: LIGHT ─── */
 [data-theme="light"] {
   color-scheme: light;
-  --ink:   #F4F1ED;
+  --ink:   #F5F1E8;
   --vellum:#0D1117;
   --gold:  #3C6997;
   --terra: #90323D;
@@ -333,7 +333,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-family:var(--font-ui);font-size:var(--sz-sm);
   color:var(--v55);border:none;padding:0;
 }
-[data-theme="light"] .drawer{background:rgba(244,241,237,0.98);}
+[data-theme="light"] .drawer{background:rgba(245,241,232,0.98);}
 [data-theme="light"] .drawer a{color:var(--v85);}
 [data-theme="light"] .drawer a:hover{color:var(--gold);}
 [data-theme="light"] .drawer-close{color:var(--v55);}
@@ -727,7 +727,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-badge--ux{background:var(--gold);color:var(--ink);}
 .pa-badge--code{background:#D4A0A7;color:var(--ink);}
-[data-theme="light"] .pa-badge--code{background:rgba(36,106,115,1);color:#F4F1ED;}
+[data-theme="light"] .pa-badge--code{background:rgba(36,106,115,1);color:#F5F1E8;}
 /* --pa-rule-gap sits above and below the footer rule, so both gaps stay equal */
 .pa-body{padding:var(--sp-md);--pa-rule-gap:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
