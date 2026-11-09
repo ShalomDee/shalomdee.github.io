@@ -111,6 +111,19 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
+/* ─── Live masthead ───
+   Today's date is added as the first line of the edition box.
+   Without JavaScript the static copy in index.html stays. */
+const liveBlurb = document.querySelector('.mast-ed-blurb[data-live]');
+if (liveBlurb) {
+  const today = new Date();
+  const date = document.createElement('time');
+  date.dateTime = today.toISOString().slice(0, 10);
+  date.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  liveBlurb.prepend(date, document.createElement('br'));
+}
+
+
 /* ─── Main story images: reveal when section in view ─── */
 const mainStory = document.querySelector('.main-story');
 if (mainStory) {

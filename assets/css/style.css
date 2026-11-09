@@ -123,39 +123,6 @@ button{font-family:inherit;}
 }
 .skip-link:focus{top:var(--sp-md);color:var(--ink);}
 
-/* ─── Paper texture ─── */
-body::before{
-  content:'';position:absolute;inset:0;
-  background-image:url('../images/texture.webp');
-  background-repeat:repeat;background-size:3500px;
-  mix-blend-mode:screen;opacity:0.3;
-  filter:invert(1);
-  pointer-events:none;z-index:9999;
-  transition:opacity 0.3s ease;
-}
-[data-theme="light"] body::before{
-  mix-blend-mode:multiply;opacity:0.85;
-  filter:none;
-}
-/* The sticky bars sit above the page texture (z-index 10000) and carry
-   their own copy, fixed to the viewport. At the top of the page the two
-   line up; on scroll the page's paper moves and the bars' stays put,
-   instead of sliding across them. Drawer and skip link sit above. */
-.mast-top::after,.nav-bar::after{
-  content:'';position:absolute;inset:0;
-  background-image:url('../images/texture.webp');
-  background-repeat:repeat;background-size:3500px;
-  background-attachment:fixed;
-  mix-blend-mode:screen;opacity:0.3;
-  filter:invert(1);
-  pointer-events:none;z-index:1;
-  transition:opacity 0.3s ease;
-}
-[data-theme="light"] .mast-top::after,[data-theme="light"] .nav-bar::after{
-  mix-blend-mode:multiply;opacity:0.85;
-  filter:none;
-}
-
 /* ─── Layout shell ─── */
 .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
 
@@ -210,8 +177,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-weight:900;text-transform:uppercase;
   letter-spacing:0.02em;color:var(--v100);
 }
-/* Accent word in red in both themes, so dark pages keep the red as well as the gold */
-.sec-label .aw{color:var(--terra);font-style:italic;}
+/* Section labels and headlines set in one weight and colour, no accent word */
+.sec-label .aw,.sec-label em{color:inherit;font-style:normal;}
 .sec-meta{
   font-family:var(--font-ui);font-size:var(--sz-xs);
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
@@ -467,7 +434,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   line-height: 1.0; color: var(--v100); margin-bottom: var(--sp-sm);
 }
 .ms-headline span { font-size: clamp(1.6rem,2.6vw,2.7rem); text-transform: uppercase; }
-.ms-headline .hl { font-style: italic; color: var(--terra); }
+.ms-headline .hl { font-style: normal; color: inherit; }
 .ms-body-text {
   font-family: var(--font-bd); font-size: var(--sz-base);
   line-height: 1.55; color: var(--v70);
@@ -663,8 +630,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .editorial-section.in-view .ed-img img{filter:none;}
 .ed-tile:hover .ed-img img{transform:scale(1.03);}
 
-/* Text overlays. The halo in the page colour keeps text legible on busy photos. */
+/* Text overlays. In dark mode a dark halo keeps text legible on busy photos; light mode has none. */
 .ed-body,.ed-top{text-shadow:0 0 3px var(--ink),0 0 8px var(--ink);}
+[data-theme="light"] .ed-body,[data-theme="light"] .ed-top{text-shadow:none;}
 .ed-body{
   position:absolute;z-index:3;
   padding:var(--sp-sm) var(--sp-md);
@@ -736,18 +704,18 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   width:100%;aspect-ratio:16/9;position:relative;
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
-.pa-img--c1{background:#3D2A2A url('../images/projs/classync.webp') center/100% 100% no-repeat;}
+.pa-img--c1{background:#3D2A2A url('../images/projs/card-classync.webp') center/cover no-repeat;}
 .pa-img--c2{background:#2A3D38 url('../images/projs/wishlist.webp') center/cover no-repeat;}
-.pa-img--c3{background:#3D3525 url('../images/projs/woh.webp') center/cover no-repeat;}
-.pa-img--c4{background:#1E2A3D url('../images/projs/insightcuts.webp') center/cover no-repeat;}
-.pa-img--c5{background:#2A2540 url('../images/projs/recaps.webp') center/cover no-repeat;}
+.pa-img--c3{background:#3D3525 url('../images/projs/card-woh.webp') center/cover no-repeat;}
+.pa-img--c4{background:#1E2A3D url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+.pa-img--c5{background:#2A2540 url('../images/projs/card-recaps.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c6{background:#A3BDB9 url('../images/projs/github.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c1{background:#D8C3C1 url('../images/projs/classync.webp') center/100% 100% no-repeat;}
+[data-theme="light"] .pa-img--c1{background:#D8C3C1 url('../images/projs/card-classync.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c2{background:#A3BDB9 url('../images/projs/wishlist.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/woh.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/insightcuts.webp') center/100% 100% no-repeat;}
-[data-theme="light"] .pa-img--c5{background:#201C30 url('../images/projs/recaps.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/card-woh.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c5{background:#A898B8 url('../images/projs/card-recaps.webp') center/cover no-repeat;}
 .pa-badges{
   position:absolute;top:8px;right:8px;
   display:flex;gap:4px;
