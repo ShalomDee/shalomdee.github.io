@@ -39,19 +39,11 @@ function applyTheme(theme) {
 // A toggle this visit counts as a choice even when storage can't keep it
 let chosenThisVisit = false;
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
 function toggleTheme() {
   const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   chosenThisVisit = true;
-  const swap = () => {
-    applyTheme(next);
-    try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
-  };
-  // The new theme prints in as halftone dots (Halftone dissolve in style.css).
-  // Browsers without view transitions, and reduced motion, switch instantly.
-  if (document.startViewTransition && !reduceMotion.matches) document.startViewTransition(swap);
-  else swap();
+  applyTheme(next);
+  try { localStorage.setItem('theme', next); } catch (e) { /* storage blocked */ }
 }
 
 applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');

@@ -157,19 +157,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .delay-3{animation-delay:.3s;} .delay-4{animation-delay:.4s;}
 .delay-5{animation-delay:.5s;}
 
-/* ─── Halftone dissolve on theme change ───
-   The new theme appears through a grid of print dots that grow until
-   they merge (10px grid, so an 8px radius covers every corner). */
-@property --dot{syntax:'<length>';inherits:true;initial-value:0px;}
-::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;}
-::view-transition-new(root){
-  -webkit-mask-image:radial-gradient(circle,#000 var(--dot),transparent calc(var(--dot) + 0.75px));
-  mask-image:radial-gradient(circle,#000 var(--dot),transparent calc(var(--dot) + 0.75px));
-  -webkit-mask-size:10px 10px;mask-size:10px 10px;
-  animation:halftone-dissolve 850ms cubic-bezier(.5,0,.3,1) both;
-}
-@keyframes halftone-dissolve{from{--dot:0px;}to{--dot:8px;}}
-
 /* Reduced motion: show content immediately, no smooth scroll or movement */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
@@ -188,7 +175,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .sec-label{
   font-family:var(--font-hd);font-size:var(--sz-2xl);
   font-weight:900;text-transform:uppercase;
-  letter-spacing:0.02em;color:var(--terra);
+  letter-spacing:0.02em;color:var(--v100);
 }
 /* Section labels and headlines set in one weight and colour, no accent word */
 .sec-label .aw,.sec-label em{color:inherit;font-style:normal;}
