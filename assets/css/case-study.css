@@ -328,14 +328,14 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-survey{
   --n:36;
   --c1:#F5EAD0;--c2:var(--gold);--c3:#5E4B2D;
-  --t1:#121417;--t2:#121417;--t3:#F4F1ED;
+  --t1:#121417;--t2:#121417;--t3:#F5F1E8;
   --c-mute:#4A4C52;
   display:grid;gap:var(--sp-lg);
   margin-block:var(--sp-sm) var(--sp-md);
 }
 [data-theme="light"] .cs-survey{
   --c1:#1A3A62;--c3:#7493B8;
-  --t1:#F4F1ED;--t2:#F4F1ED;--t3:#121417;
+  --t1:#F5F1E8;--t2:#F5F1E8;--t3:#121417;
   --c-mute:#9A9A92;
 }
 /* Each chart sits in its own frame */
