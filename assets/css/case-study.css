@@ -466,3 +466,5 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-swatches li{display:grid;grid-template-columns:40px 1fr;column-gap:var(--sp-sm);align-items:center;font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.35;color:var(--v70);}
 .cs-swatches span{grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--c);border:1px solid var(--v20);}
 .cs-swatches b{font-size:var(--sz-sm);font-weight:600;color:var(--v100);}
+/* Text-heavy tables read better left-aligned */
+.cs-table--left th,.cs-table--left td{text-align:left;}
