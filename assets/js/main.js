@@ -111,6 +111,54 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
+/* ─── Masthead typewriter ───
+   Runs when the head script in index.html set html.press (first home page
+   load of a visit, motion allowed). The full text stays readable to screen
+   readers in a hidden copy; the letters are decoration. */
+if (document.documentElement.classList.contains('press')) {
+  const split = (el, start, step) => {
+    const text = el.textContent;
+    const vh = document.createElement('span');
+    vh.className = 'tw-vh'; vh.textContent = text;
+    const vis = document.createElement('span');
+    vis.setAttribute('aria-hidden', 'true');
+    [...text].forEach((c, k) => {
+      const ch = document.createElement('span');
+      ch.className = 'tw-ch'; ch.textContent = c;
+      ch.style.setProperty('--d', `${start + k * step}ms`);
+      vis.append(ch);
+    });
+    el.replaceChildren(vh, vis);
+    el.classList.add('tw-on');
+    const end = start + text.length * step;
+    // Once typed, put the plain text back so spacing and kerning match the resting masthead
+    setTimeout(() => { el.textContent = text; }, end + (el.matches('.mast-edition') ? 2000 : 400));
+    return end;
+  };
+  document.querySelectorAll('.mast-title, .mast-center').forEach(box => {
+    const name = box.querySelector('.mast-name');
+    const tag = box.querySelector('.mast-edition');
+    if (!name || !tag) return;
+    // Case study mastheads link the title; type the link's text in place
+    const nameEl = name.querySelector('a') || name;
+    const end = split(nameEl, 150, 60);
+    if (nameEl !== name) name.classList.add('tw-on');
+    const tagStart = end + 250;
+    const tagEnd = split(tag, tagStart, 38);
+    // The caret rides just after the newest letter as the tagline types
+    const vis = tag.lastElementChild;
+    vis.style.position = 'relative';
+    const caret = document.createElement('span');
+    caret.className = 'tw-caret'; caret.setAttribute('aria-hidden', 'true');
+    vis.append(caret);
+    const chars = [...vis.querySelectorAll('.tw-ch')];
+    const place = k => { const c = chars[k]; caret.style.left = (c ? c.offsetLeft + c.offsetWidth : 0) + 'px'; };
+    place(-1);
+    chars.forEach((c, k) => setTimeout(() => { c.classList.add('is-in'); place(k); }, tagStart + k * 38));
+    setTimeout(() => caret.classList.add('is-done'), tagEnd + 1200);
+  });
+}
+
 /* ─── Live masthead ───
    Today's date is added as the first line of the edition box.
    Without JavaScript the static copy in index.html stays. */
