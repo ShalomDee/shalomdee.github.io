@@ -116,7 +116,7 @@
     <span class="kicker">Fall 2026</span>
     <h1 class="cs-title" id="cs-title">Lendi</h1>
     <p class="cs-deck">A settling-in companion for international students, built around quests for the practical tasks of a first month in a new country.</p>
-    <p class="cs-role"><span class="cs-role-title">Product Designer</span><span class="cs-role-meta">AFROTECH × PROPEL Center<span class="cs-sep" aria-hidden="true">|</span>October&nbsp;2026</span></p>
+    <p class="cs-role"><span class="cs-role-title">Product Designer</span><span class="cs-role-meta">PROPEL Center × Apple × AfroTech<span class="cs-sep" aria-hidden="true">|</span>October&nbsp;2026</span></p>
   </div>
   <!-- Three final screens (Home map, quest in progress, quest cleared) on a transparent background, from Figma › Lendi › Final screens -->
   <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1230/904">
@@ -152,7 +152,7 @@
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
         <p>Lendi is a settling-in companion for international students in their first weeks in a new country. Each practical task, such as opening a bank account, getting a phone number, or finding transport, is a quest made of steps, with a kit of documents to collect and a peer layer called the Grapevine, where students who have done a step share what worked.</p>
-        <p>Lendi was our entry to the Future of XYZ Challenge, an HBCU innovation challenge run by the PROPEL Center with AfroTech. The prompt asked teams to identify a real problem facing a specific Gen Z community, build a technology-enabled solution, and prove that people want, need, or will use it. Over four weeks of mentor sessions we went from research to a pitch deck, a five-minute pitch video, and a working MVP. The demo follows one quest, Banking &amp; Payments, from onboarding to quest cleared.</p>
+        <p>Lendi was our entry to the Future of XYZ Challenge, an HBCU innovation challenge run by the PROPEL Center, in partnership with Apple and in conjunction with AfroTech. The prompt asked teams to identify a real problem facing a specific Gen Z community, build a technology-enabled solution, and prove that people want, need, or will use it. Over four weeks of mentor sessions we went from research to a pitch deck, a five-minute pitch video, and a working MVP. The demo follows one quest, Banking &amp; Payments, from onboarding to quest cleared.</p>
         <p>The idea came from my own move from Zimbabwe to the United States for university, and from my sisters’ moves to Malaysia and Italy.</p>
       </div>
     </section>
@@ -206,6 +206,11 @@
           </div>
         </div>
         <p>Transport and banking led, most students had little or no one locally to ask, and nearly half got help from students who had already done the task. The product needed a clear order for each task and a way to hear from someone who had done it before.</p>
+        <p>I turned the research into an as-is journey for a student moving abroad, from acceptance to the first four weeks, marking where each stage breaks down and where Lendi could help.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <img src="assets/images/journey.webp" width="1920" height="1080" alt="User journey map from acceptance to the first four weeks: six stages from Accepted to Getting unstuck, pain points under each, and preliminary survey results along the bottom" loading="lazy">
+          <figcaption class="cs-caption">As-is journey, drawn from the preliminary survey</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -214,6 +219,11 @@
       <div class="cs-prose">
         <p>Lendi turns the first weeks into a map of quests. Each quest is a set of steps, and each step has instructions, what to bring, contacts, and an official source with a reviewed date. When a step goes wrong, I’m stuck offers a checked answer, contacts, or a way to ask a student who has done that step.</p>
         <p>Banking &amp; Payments became the demo quest. It was one of the two tasks students named most, and our mentor works in banking and could check its content. Transport and phone appear on the map as connected quests.</p>
+        <p>The process flow maps who does what across the whole journey: the student, the app, the information and review layer, the university and providers, and the Grapevine, with the decision points and fallbacks between them.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <img src="assets/images/processflow.webp" width="1920" height="1080" alt="Swimlane process flow from a school invitation to a completed banking quest, across the student, the Lendi app, information and AI review, the university and providers, and the Grapevine" loading="lazy">
+          <figcaption class="cs-caption">Process flow, from invitation to a completed quest</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -222,6 +232,11 @@
       <div class="cs-prose">
         <p>Lendi has three tabs and an avatar. Home is a map with quests grouped by topic, such as Money, Health, and Getting around, opening on what matters now with a rail of quests by priority. The Grapevine collects tips and questions from students, browsed by quest. Inventory holds the kit, notes, and a quest log. Profile and settings sit behind the avatar at the top left.</p>
         <p>The bottom navigation is hidden inside quest and step screens, so those screens stay on the one task.</p>
+        <p>Before wireframing, I planned the structure as four areas: My Journey, the Grapevine, Resources, and Profile. The wireframes folded Resources into each quest, which left the three tabs above.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <img src="assets/images/ia.webp" width="1920" height="1080" alt="Information architecture diagram: My Journey, the Grapevine, Resources and Profile, the mission detail template, and one persistent mission across before arrival, after arrival and after completion" loading="lazy">
+          <figcaption class="cs-caption">Planned information architecture, before wireframes</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -302,6 +317,11 @@
       <div class="sec-head"><h2 class="sec-label">Banking <span class="aw">Quest</span></h2></div>
       <div class="cs-prose">
         <p>The demo quest has six steps, from comparing banks to knowing the fees. The quest screen shows the kit a student needs, with owned items filled and missing ones dashed. Each step pairs I’m stuck with the main action at the bottom of the screen, so help is always one tap away without competing with the task.</p>
+        <p>The demo path starts after arrival and runs from the journey through requirements, I’m stuck, the Grapevine, and asking someone, to the quest marked complete. Only the student can confirm the real-world task is done.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <img src="assets/images/userflow.webp" width="1920" height="1080" alt="User flow for the Banking and Payments demo path: journey, banking mission, requirements, I’m stuck, the Grapevine, ask someone, banking mission, and mission complete, with decision points and alternative paths" loading="lazy">
+          <figcaption class="cs-caption">Banking &amp; Payments demo path</figcaption>
+        </figure>
         <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
           <figure class="cs-media" style="--ratio:390/844">
             <img src="assets/images/quest-before.webp" width="390" height="844" alt="Banking &amp; Payments before starting: the kit as a row of circles, the six steps, and connected quests" loading="lazy">
