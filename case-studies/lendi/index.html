@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lendi, Settling-In Companion | Shalom Donga</title>
-  <meta name="description" content="A case study on Lendi, a settling-in companion for international students, built around quests for the practical tasks of a first month in a new country.">
+  <meta name="description" content="A case study on Lendi, a settling-in companion for life in a new country, first built for international and study-abroad students.">
   <meta name="theme-color" content="#F5F1E8">
   <!-- Copied unchanged from index.html so the theme carries across pages -->
   <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://shalomdee.github.io/case-studies/lendi/">
   <meta property="og:title" content="Lendi, Settling-In Companion | Shalom Donga">
-  <meta property="og:description" content="A settling-in companion for international students, built around quests for the practical tasks of a first month in a new country.">
+  <meta property="og:description" content="A settling-in companion for life in a new country, first built for international and study-abroad students.">
   <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -115,7 +115,7 @@
   <div class="animate-in">
     <span class="kicker">Fall 2026</span>
     <h1 class="cs-title" id="cs-title">Lendi</h1>
-    <p class="cs-deck">A settling-in companion for international students, built around quests for the practical tasks of a first month in a new country.</p>
+    <p class="cs-deck">A settling-in companion for life in a new country, first built for international and study-abroad students.</p>
     <p class="cs-role"><span class="cs-role-title">Product Designer</span><span class="cs-role-meta">PROPEL Center × Apple × AfroTech<span class="cs-sep" aria-hidden="true">|</span>October&nbsp;2026</span></p>
   </div>
   <!-- Three final screens (Home map, quest in progress, quest cleared) on a transparent background, from Figma › Lendi › Final screens -->
@@ -151,8 +151,8 @@
     <section class="cs-sec" id="overview">
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
-        <p>Lendi is a settling-in companion for international students in their first weeks in a new country. Each practical task, such as opening a bank account, getting a phone number, or finding transport, is a quest made of steps, with a kit of documents to collect and a peer layer called the Grapevine, where students who have done a step share what worked.</p>
-        <p>Lendi was our entry to the Future of XYZ Challenge, an HBCU innovation challenge run by the PROPEL Center, in partnership with Apple and in conjunction with AfroTech. The prompt asked teams to identify a real problem facing a specific Gen Z community, build a technology-enabled solution, and prove that people want, need, or will use it. Over four weeks of mentor sessions we went from research to a pitch deck, a five-minute pitch video, and a working MVP. The demo follows one quest, Banking &amp; Payments, from onboarding to quest cleared.</p>
+        <p>Lendi is a settling-in companion for people moving to a new country for the long term. I scoped the first version to international and study-abroad students, a group I could reach and research directly, and the idea can widen later. Each practical task, such as opening a bank account, getting a phone number, or finding transport, is a quest made of steps, with a kit of documents to collect and a peer layer called the Grapevine, where students who have done a step share what worked.</p>
+        <p>Lendi was my entry to the Future of XYZ Challenge, an HBCU innovation challenge run by the PROPEL Center, in partnership with Apple and in conjunction with AfroTech. The prompt asked teams to identify a real problem facing a specific Gen Z community, build a technology-enabled solution, and prove that people want, need, or will use it. Over four weeks of mentor sessions we went from research to a pitch deck, a five-minute pitch video, and a working MVP. The demo follows one quest, Banking &amp; Payments, from onboarding to quest cleared.</p>
         <p>The idea came from my own move from Zimbabwe to the United States for university, and from my sisters’ moves to Malaysia and Italy.</p>
       </div>
     </section>
@@ -161,7 +161,7 @@
       <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
       <div class="cs-prose">
         <p>I led the project from research through visual design. I wrote the secondary research synthesis and the arrival survey, set the product direction and the information architecture, and designed the wireframes, the visual system, and the logo.</p>
-        <p>Delight Nyanhete built and deployed the MVP, made the presentation video, and helped recruit survey respondents. Our mentor from Apple guided the project and reviewed it at the dry run.</p>
+        <p>Delight Nyanhete built and deployed the MVP, made the presentation video, and helped recruit survey respondents. Delight and I each had a mentor. Mine was from Apple, guided the project, and reviewed it at the dry run.</p>
         <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Figma</span><span class="stag">Claude Design</span><span class="stag">Google Forms</span></div></div>
       </div>
     </section>
@@ -172,7 +172,16 @@
         <p>Moving abroad for university means relearning ordinary tasks: opening a bank account, getting a working phone number, getting around, and sorting out school paperwork. Many of these tasks depend on each other, and the information is spread across university emails, provider websites, group chats, and whoever a student happens to know. Students struggle to know what to expect, what to do next, and where to turn when something goes wrong.</p>
 
         <h3 class="cs-subhead">Secondary research</h3>
-        <p>Before the survey, I reviewed published studies, enrollment data, and existing products. The most specific finding was a chain of tasks at arrival: without a US bank account or mobile data, students could not book a ride from the airport, and some accepted rides and rooms from strangers. University checklists, WhatsApp groups, and Reddit each covered part of the problem. The strongest alternative was a person who had already done the task.</p>
+        <p>Before the survey, I reviewed published studies, enrollment data, and existing products, and kept a table of each source with its sample and limits.</p>
+        <ul class="cs-list">
+          <li><b>The size of the group.</b> The United States had 1,177,766 international students in 2024/25, and 277,118 of them were new that year (IIE Open Doors 2025). Worldwide, about 7.3 million students studied outside their home country in 2023 (UNESCO).</li>
+          <li><b>A chain of tasks at arrival.</b> Without a US bank account or mobile data, students could not book a ride from the airport, so they paid for rides friends booked or accepted rides and rooms from strangers. Students met by family or friends arrived smoothly (Sharma, Journal of International Students, 2026).</li>
+          <li><b>Transport in college towns.</b> At the University of Alabama, 40% of international students had no car and 64.7% relied on friends for rides to offices such as the license office.</li>
+          <li><b>Everyday problems have no owner.</b> Students asked people in the host country for help with 31% of everyday problems and 85% of study problems, and everyday problems were harder to resolve (Hertzum and Hyldegård, Journal of Documentation, 2019).</li>
+          <li><b>Peers come first, and peer forums leave gaps.</b> Students turn to fellow students before university services (OECD, 2026), yet 20% of 8,006 questions on the r/f1visa forum went unanswered (Youm et al., PLOS One, 2026).</li>
+          <li><b>Existing products.</b> Settl and Uni-List offer personalized arrival checklists, but only for students moving to the UK. University checklists, WhatsApp groups, and Reddit each covered part of the problem.</li>
+        </ul>
+        <p>The strongest alternative was a person who had already done the task, which became the basis for the Grapevine.</p>
 
         <h3 class="cs-subhead">The arrival survey</h3>
         <p>The survey never mentioned Lendi or a solution, so answers described what happened to people. It asked which tasks were hard, which was hardest, how long it took, and who finally helped.</p>
@@ -220,10 +229,10 @@
       <div class="sec-head"><h2 class="sec-label">The <span class="aw">Concept</span></h2></div>
       <div class="cs-prose">
         <p>Lendi turns the first weeks into a map of quests. Each quest is a set of steps, and each step has instructions, what to bring, contacts, and an official source with a reviewed date. When a step goes wrong, I’m stuck offers a checked answer, contacts, or a way to ask a student who has done that step.</p>
-        <p>Banking &amp; Payments became the demo quest. It was one of the two tasks students named most, and our mentor works in banking and could check its content. Transport and phone appear on the map as connected quests.</p>
+        <p>Banking &amp; Payments became the demo quest. It was one of the two tasks students named most, and my mentor works in banking and could check its content. Transport and phone appear on the map as connected quests.</p>
 
         <h3 class="cs-subhead">Inspiration from isekai and RPGs</h3>
-        <p>Settling into a new country means starting from zero, and the list of things still to sort out can feel heavy. A game turns a similar list into something to look forward to: a new quest, a guild to lean on, and a reward at the end. Isekai anime such as Log Horizon and Sword Art Online follow characters dropped into an unfamiliar world who learn its rules one adventure at a time.</p>
+        <p>Settling into a new country means starting from zero, and the list of things still to sort out can feel heavy. A game turns a similar list into something to look forward to: a new quest, a guild to lean on, and a reward at the end. Isekai anime such as That Time I Got Reincarnated as a Slime, Log Horizon, and Sword Art Online follow characters dropped into an unfamiliar world who learn its rules one adventure at a time, the way a player does in a classic RPG like Final Fantasy.</p>
         <p>That is why Lendi uses quests, a map, a kit, and the Grapevine. The game language makes each practical task a step forward, while the instructions themselves stay plain.</p>
         <figure class="cs-media" style="--ratio:2400/932">
           <img src="assets/images/moodboard.webp" width="2400" height="932" alt="Moodboard: anime landscapes and a floating island world, an early Lendi brand board, RPG and strategy game maps, game quest screens, Log Horizon artwork, and green map-style Lendi posters" loading="lazy">
@@ -266,7 +275,7 @@
       <div class="sec-head"><h2 class="sec-label">Visual <span class="aw">Design</span></h2></div>
       <div class="cs-prose">
         <h3 class="cs-subhead">Palette and type</h3>
-        <p>The direction is a stamped map: parchment, pine ink, and a vermilion stamp, on a clean layout. Display type is Baloo 2 and body text is Nunito. The palette went through rounds A to O before the final one. Sky blue and green were ruled out as dominant colors, and green appears only as a success state, always with a check.</p>
+        <p>The palette comes from atlases and survey maps: parchment paper, pine-colored ink, a vermilion stamp, and the faint grid lines of a map. It ties the colors to the map the app is built around. Display type is Baloo 2 and body text is Nunito. The palette went through rounds A to O before the final one. Sky blue and green were ruled out as dominant colors, and green appears only as a success state, always with a check.</p>
         <p>In onboarding, each item a student already has flies into a chest as it is tapped, and the map appears as the fog over it clears.</p>
         <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
           <figure class="cs-media" style="--ratio:390/844">
@@ -416,7 +425,7 @@
     <section class="cs-sec" id="learned">
       <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
       <div class="cs-prose">
-        <p>Lendi was the first project where I took a product from research to a finished visual system on my own, using AI design tools along the way, and it became my main visual design piece. Much of it refined skills I already had, such as wireframing, building a palette, and designing for light and dark mode.</p>
+        <p>Lendi was the first project I took from research to a finished visual system on my own, with AI design tools along the way. It became my main visual design piece. Much of it refined skills I already had, such as wireframing, building a palette, and designing for light and dark mode.</p>
         <p>It was also my first time mapping a full product as a process flow, from a school’s invitation to a finished quest, with the decisions and fallbacks at each step.</p>
         <p>Working on a competition entry showed me where business and design processes overlap and where they part. Both rely on research, testing, validation, and diagrams, but they ask different questions of them. The pitch had to show that Lendi was a viable business decision, and the product had to stay a usable experience built around students. Communicating both at once was the hardest part of the project.</p>ion>
   </article>
@@ -446,7 +455,7 @@
     <article class="pa-card animate-in delay-1">
       <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
       <div class="pa-body">
-        <div class="pa-meta"><span class="pa-tag">Ford</span><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span></div>
+        <div class="pa-meta"><span class="pa-tag">Ford Motor Company</span><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span></div>
         <h3 class="pa-title">InsightCuts</h3>
         <p class="pa-desc">A research storytelling concept developed with Ford to turn dense UX findings into shorter, narrative-driven formats. I built the first interactive prototype, defined the core interaction flow, tested the concept with Ford researchers and stakeholders, and produced the video simulation used at final review.</p>
         <div class="pa-footer">
