@@ -268,6 +268,19 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   text-align:right;margin-bottom:var(--sp-xs);
 }
 
+/* Masthead press: html.press is set by a head script in index.html, once per
+   visit. The title is uncovered left to right like a sheet passing the
+   roller, then the double rule draws in underneath. */
+.press .mast-name{width:fit-content;margin-inline:auto;animation:pressRoll 0.85s cubic-bezier(0.65,0,0.25,1) 0.15s both;}
+.press .mast-title,.press .mast-desktop{position:relative;border-bottom-color:transparent;}
+.press .mast-title::after,.press .mast-desktop::after{
+  content:'';position:absolute;left:0;right:0;bottom:-3px;
+  border-bottom:3px double var(--v20);
+  transform-origin:left center;animation:pressRule 0.6s var(--ease) 0.85s both;
+}
+@keyframes pressRoll{from{clip-path:inset(0 100% 0 0);opacity:0.6;}to{clip-path:inset(0 0 0 0);opacity:1;}}
+@keyframes pressRule{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+
 /* Both bars, plain at rest, raised once the masthead has scrolled away */
 .mast-top.is-stuck,.nav-bar.is-stuck{background:var(--bar-bg);box-shadow:var(--bar-shadow);}
 
@@ -799,15 +812,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-card--lead .pa-title{font-family:var(--font-hd);font-weight:900;font-size:var(--sz-3xl);line-height:1.1;}
 .pa-card--short .pa-more,.pa-card--short .pa-techs{display:none;}
-/* Jump line: tells readers the page continues past the projects */
-.builds-jump{
-  display:flex;justify-content:flex-end;gap:6px;
-  margin-top:var(--sp-xl);padding-top:var(--sp-sm);
-  border-top:1px solid var(--v35);
-  font-family:var(--font-bd);font-style:italic;font-size:var(--sz-sm);color:var(--v60);
-  transition:color var(--t);
-}
-.builds-jump:hover{color:var(--gold);}
 
 /* ═══ FOOTER ═══ */
 .site-footer{
