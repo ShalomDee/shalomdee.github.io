@@ -1007,6 +1007,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
     transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);
   }
   .editorial-grid .ed-tile{flex:none;width:min(280px,76vw);height:240px;}
+  /* The Shift is a wide drawing on a transparent background: show all of it, the tile colour fills around it */
+  .editorial-grid .ed-tile--5 .ed-img img{object-fit:contain;}
   .ed-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-md);margin:var(--sp-sm) 0 var(--sp-lg);}
   .ed-count{font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;letter-spacing:0.08em;color:var(--v55);font-variant-numeric:tabular-nums;}
   .ed-hint{flex:1;text-align:center;font-family:var(--font-bd);font-style:italic;font-size:var(--sz-sm);color:var(--v60);}
