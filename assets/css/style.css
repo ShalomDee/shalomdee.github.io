@@ -976,7 +976,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
   /* Selected Builds: lead across the top, image beside its text; second
      stories in halves; short items in thirds */
-  .archive-grid{grid-template-columns:repeat(6,1fr);}
+  #projects .archive-grid{grid-template-columns:repeat(6,1fr);}
   /* The lead's image keeps its full 16:9 frame, inset and centred beside the text */
   .pa-card--lead{display:grid;grid-template-columns:3fr 2fr;align-items:center;}
   .pa-card--lead .pa-img{margin:var(--sp-lg) 0 var(--sp-lg) var(--sp-lg);width:auto;border-radius:2px;}
