@@ -9,6 +9,9 @@
   <!-- Theme before first paint: saved choice, else device setting (also if storage is blocked), else light.
        Case study pages must copy this script unchanged so the theme carries across pages. main.js does the rest. -->
   <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <!-- Masthead press: the title prints in once per visit (not again after coming back from a case study).
+       Skipped for reduced motion or when storage is blocked. Home page only. -->
+  <script>(function(){try{if(matchMedia('(prefers-reduced-motion: reduce)').matches||sessionStorage.getItem('pressed'))return;sessionStorage.setItem('pressed','1');document.documentElement.classList.add('press');}catch(e){}})();</script>
   <link rel="icon" href="./favicon.ico">
   <link rel="canonical" href="https://shalomdee.github.io/">
 
@@ -31,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- When style.css or main.js changes, set ?v= on both lines, and on every case-studies/*/index.html, to the deploy date (YYYY-MM-DD, plus b, c… for a second deploy that day) so returning visitors get the new files -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-14b">
-  <script src="./assets/js/main.js?v=2026-11-14b" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-14c">
+  <script src="./assets/js/main.js?v=2026-11-14c" defer></script>
 </head>
 <body>
 
@@ -280,7 +283,6 @@
     </article>
 
   </div>
-  <a class="builds-jump" href="#experience">Continued below: Experience Wire <span aria-hidden="true">↓</span></a>
 </section>
 
 <!-- ═══ EXPERIENCE WIRE + CLASSIFIEDS ═══ -->
