@@ -142,6 +142,131 @@ if (editorialSection) {
   editorialObserver.observe(editorialSection);
 }
 
+/* ─── Editorial strip (phones) ───
+   Below 768px the tiles show one at a time. Each holds for 4s while the ring
+   fills, then slides to the next, looping. Only the ring button pauses it.
+   A tile with data-act names its own tap interaction: tapping it pauses the
+   strip and fires an "ed:interact" event on the tile. Swiping moves by hand
+   and also pauses. Those two pauses lift when the section is scrolled away;
+   a pause from the ring stays until the ring is pressed again. Reduced
+   motion starts paused. */
+const edStrip = document.querySelector('.ed-strip');
+const edBar = document.querySelector('.ed-bar');
+if (edStrip && edBar) {
+  const track = edStrip.querySelector('.editorial-grid');
+  const tiles = [...track.children];
+  const N = tiles.length, HOLD = 4000, RING = 106.8;
+  const count = edBar.querySelector('.ed-count');
+  const hint = edBar.querySelector('.ed-hint');
+  const btn = edBar.querySelector('.ed-ring-btn');
+  const fill = edBar.querySelector('.ed-ring-fill');
+  const phones = window.matchMedia('(max-width: 767.98px)');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let on = false, i = 0, elapsed = 0, last = 0, raf = 0;
+  let ringPaused = false, softPaused = false, inView = false, sliding = false, drag = null, clone = null;
+
+  const step = () => tiles[0].getBoundingClientRect().width + 12;
+  const paused = () => ringPaused || softPaused;
+  const setRing = p => { fill.style.strokeDashoffset = RING * (1 - p); };
+  const refresh = () => {
+    edBar.classList.toggle('is-paused', paused());
+    btn.setAttribute('aria-label', (paused() ? 'Play' : 'Pause') + ' the Editorial slides');
+    count.setAttribute('aria-live', paused() ? 'polite' : 'off');
+  };
+  const go = (k, animate) => {
+    const motion = animate && !still.matches;
+    track.style.transition = motion ? '' : 'none';
+    i = k;
+    track.style.transform = `translateX(${-i * step()}px)`;
+    elapsed = 0; setRing(0); sliding = motion;
+    const cur = tiles[i % N];
+    count.textContent = `${(i % N) + 1} / ${N}`;
+    hint.textContent = cur.dataset.act ? `Tap the card to ${cur.dataset.act}` : '';
+    if (!motion) { track.getBoundingClientRect(); if (i >= N) go(i - N, false); }
+  };
+  track.addEventListener('transitionend', e => {
+    if (e.target !== track) return;
+    sliding = false;
+    if (i >= N) go(i - N, false);
+  });
+  const back = () => {
+    if (i % N > 0) return go((i % N) - 1, true);
+    go(N, false);
+    requestAnimationFrame(() => requestAnimationFrame(() => go(N - 1, true)));
+  };
+  const tick = t => {
+    const dt = last ? Math.min(64, t - last) : 0;
+    last = t;
+    if (inView && !paused() && !sliding && !drag) {
+      elapsed += dt;
+      setRing(Math.min(1, elapsed / HOLD));
+      if (elapsed >= HOLD) go(i + 1, true);
+    }
+    raf = requestAnimationFrame(tick);
+  };
+
+  btn.addEventListener('click', () => {
+    if (paused()) { ringPaused = false; softPaused = false; } else ringPaused = true;
+    refresh();
+  });
+  edStrip.addEventListener('pointerdown', e => {
+    if (on) drag = { x: e.clientX, y: e.clientY };
+  });
+  edStrip.addEventListener('pointercancel', () => { drag = null; });
+  edStrip.addEventListener('pointerup', e => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    drag = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) go((i % N) + 1, true); else back();
+      softPaused = true; refresh();
+    } else if (Math.abs(dx) < 8 && Math.abs(dy) < 8) {
+      const tile = e.target.closest('.ed-tile');
+      if (tile && tile.dataset.act) {
+        softPaused = true; refresh();
+        tile.dispatchEvent(new CustomEvent('ed:interact', { bubbles: true }));
+      }
+    }
+  });
+  edStrip.addEventListener('keydown', e => {
+    if (!on) return;
+    if (e.key === 'ArrowRight') { go((i % N) + 1, true); softPaused = true; refresh(); }
+    if (e.key === 'ArrowLeft') { back(); softPaused = true; refresh(); }
+  });
+  new IntersectionObserver(entries => {
+    const e = entries[0];
+    inView = e.isIntersecting && e.intersectionRatio >= 0.5;
+    if (!e.isIntersecting && softPaused) { softPaused = false; refresh(); }
+  }, { threshold: [0, 0.5] }).observe(edStrip);
+
+  const start = () => {
+    on = true;
+    clone = tiles[0].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.inert = true;
+    track.appendChild(clone);
+    edStrip.tabIndex = 0;
+    edStrip.setAttribute('role', 'region');
+    edStrip.setAttribute('aria-roledescription', 'carousel');
+    edStrip.setAttribute('aria-label', 'Editorial, one tile at a time');
+    ringPaused = still.matches; softPaused = false;
+    go(0, false); refresh();
+    last = 0; raf = requestAnimationFrame(tick);
+  };
+  const stop = () => {
+    on = false;
+    cancelAnimationFrame(raf);
+    if (clone) clone.remove();
+    clone = null;
+    track.style.transform = track.style.transition = '';
+    edStrip.removeAttribute('tabindex');
+    ['role', 'aria-roledescription', 'aria-label'].forEach(a => edStrip.removeAttribute(a));
+  };
+  phones.addEventListener('change', e => (e.matches ? start() : stop()));
+  window.addEventListener('resize', () => { if (on) go(i % N, false); });
+  if (phones.matches) start();
+}
+
 /* ─── Sticky bars: raise them once the masthead has scrolled away ───
    The top margin is the phone bar's height (0 when it is hidden from
    768px), so the class lands as the masthead slides fully under it. */

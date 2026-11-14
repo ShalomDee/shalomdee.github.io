@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- When style.css or main.js changes, set ?v= on both lines, and on every case-studies/*/index.html, to the deploy date (YYYY-MM-DD, plus b, c… for a second deploy that day) so returning visitors get the new files -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-13">
-  <script src="./assets/js/main.js?v=2026-11-13" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-13b">
+  <script src="./assets/js/main.js?v=2026-11-13b" defer></script>
 </head>
 <body>
 
@@ -420,6 +420,8 @@
     <span class="sec-meta">Fun Facts About Me</span>
   </div>
 
+  <!-- Phones: .ed-strip clips the grid into a one-tile-at-a-time strip (main.js). Desktop ignores it. -->
+  <div class="ed-strip">
   <div class="editorial-grid">
 
     <article class="ed-tile ed-tile--1">
@@ -484,6 +486,19 @@
       </div>
     </article>
 
+  </div>
+  </div>
+
+  <!-- Phones only. A tile with data-act="flip the sketchbook" (for example) shows
+       "Tap the card to flip the sketchbook" in .ed-hint while it is on screen. -->
+  <div class="ed-bar">
+    <span class="ed-count">1 / 6</span>
+    <span class="ed-hint"></span>
+    <button type="button" class="ed-ring-btn" aria-label="Pause the Editorial slides">
+      <svg class="ed-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="ed-ring-track" cx="20" cy="20" r="17"/><circle class="ed-ring-fill" cx="20" cy="20" r="17"/></svg>
+      <svg class="ed-ic ed-ic-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="ed-ic ed-ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+    </button>
   </div>
 
   <p class="editorial-caption"><em>A Maker’s Journey</em></p>
