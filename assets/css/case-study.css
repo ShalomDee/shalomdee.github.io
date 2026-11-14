@@ -400,6 +400,12 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-more{padding-top:var(--sp-2xl);padding-bottom:var(--sp-2xl);}
 .cs-more .sec-meta a{color:var(--gold);}
 .cs-more .sec-meta a:hover{color:var(--v100);}
+/* More Stories cards are a short index: image, organization, title, the first sentence and the link */
+.cs-more .pa-more,.cs-more .pa-techs,.cs-more .pa-badges{display:none;}
+.cs-more .pa-desc{font-size:var(--sz-sm);margin-bottom:var(--sp-sm);}
+.cs-more .pa-tag:not(:first-child){display:none;}
+.cs-more .pa-footer{border-top:0;padding-top:0;}
+@media(min-width:960px){.cs-more .archive-grid{grid-template-columns:repeat(3,1fr);}}
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:640px){
