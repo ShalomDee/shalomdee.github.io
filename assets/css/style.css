@@ -268,18 +268,26 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   text-align:right;margin-bottom:var(--sp-xs);
 }
 
-/* Masthead press: html.press is set by a head script in index.html, once per
-   visit. The title is uncovered left to right like a sheet passing the
-   roller, then the double rule draws in underneath. */
-.press .mast-name{width:fit-content;margin-inline:auto;animation:pressRoll 0.85s cubic-bezier(0.65,0,0.25,1) 0.15s both;}
-.press .mast-title,.press .mast-desktop{position:relative;border-bottom-color:transparent;}
-.press .mast-title::after,.press .mast-desktop::after{
-  content:'';position:absolute;left:0;right:0;bottom:-3px;
-  border-bottom:3px double var(--v20);
-  transform-origin:left center;animation:pressRule 0.6s var(--ease) 0.85s both;
+/* Masthead typewriter: html.press is set by a head script in index.html,
+   once per visit. main.js splits the title and tagline into letters (.tw-on):
+   each title letter strikes on like a typebar hitting paper, then the tagline
+   types out behind a blinking caret. Until main.js runs the text is hidden;
+   if it never runs, it fades in after 2s. */
+.press .mast-name:not(.tw-on),.press .mast-edition:not(.tw-on){opacity:0;animation:twFallback 0.3s 2s forwards;}
+@keyframes twFallback{to{opacity:1;}}
+.tw-ch{display:inline-block;white-space:pre;animation:twStrike 0.14s cubic-bezier(0.2,0.9,0.3,1) both;animation-delay:var(--d);}
+.mast-edition .tw-ch{animation:none;opacity:0;}
+.mast-edition .tw-ch.is-in{opacity:1;}
+@keyframes twStrike{
+  from{opacity:0;transform:translateY(-0.18em) scale(1.14);filter:blur(0.8px);}
+  60%{opacity:1;transform:translateY(0.03em) scale(0.98);filter:blur(0);}
+  to{opacity:1;transform:none;}
 }
-@keyframes pressRoll{from{clip-path:inset(0 100% 0 0);opacity:0.6;}to{clip-path:inset(0 0 0 0);opacity:1;}}
-@keyframes pressRule{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+.tw-caret{position:absolute;top:0.1em;left:0;width:1px;height:1em;margin-left:2px;background:currentColor;animation:twBlink 0.9s steps(1) infinite;}
+.tw-caret.is-done{animation:twFade 0.4s forwards;}
+@keyframes twBlink{50%{opacity:0;}}
+@keyframes twFade{to{opacity:0;}}
+.tw-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
 /* Both bars, plain at rest, raised once the masthead has scrolled away */
 .mast-top.is-stuck,.nav-bar.is-stuck{background:var(--bar-bg);box-shadow:var(--bar-shadow);}
