@@ -454,3 +454,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
   .cs-chart,.cs-gallery--framed{padding:var(--sp-md);}
 }
+
+/* Animated screens: an animated WebP with a still copy for reduced motion */
+.cs-media > .cs-still{display:none;}
+@media (prefers-reduced-motion: reduce){.cs-media > .cs-anim{display:none;}.cs-media > .cs-still{display:block;}}
