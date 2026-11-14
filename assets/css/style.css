@@ -736,6 +736,26 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   position:absolute;top:8px;right:8px;
   display:flex;gap:4px;
 }
+/* ─── Card to case study ───
+   Opening a case study from its card morphs the card image into the case
+   study's hero image (cross-document view transitions; each hero carries the
+   matching view-transition-name inline). Unsupported browsers and reduced
+   motion get a plain page load. */
+@view-transition{navigation:auto;}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none;}}
+.pa-img--c2{view-transition-name:proj-tiffany;}
+.pa-img--c3{view-transition-name:proj-woh;}
+.pa-img--c4{view-transition-name:proj-insightcuts;}
+.pa-img--c5{view-transition-name:proj-recaps;}
+::view-transition-group(*){animation-duration:0.5s;animation-timing-function:cubic-bezier(0.4,0,0.2,1);}
+/* Masthead and section bar are the same on every page, so they hold still while the rest cross-fades */
+header{view-transition-name:site-head;}
+.nav-bar{view-transition-name:site-nav;}
+::view-transition-old(root){animation-duration:0.2s;}
+::view-transition-new(root){animation-duration:0.35s;}
+/* Arriving by a transition, the hero is already in place: skip its fade-in (class set in main.js) */
+.vt-arrived .cs-hero .animate-in{animation:none;opacity:1;}
+
 .pa-badge{
   font-family:var(--font-ui);font-size:10px;font-weight:700;
   text-transform:uppercase;letter-spacing:0.1em;

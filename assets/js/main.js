@@ -99,6 +99,13 @@ if (drawer && drawerOverlay && hamburger && drawerClose) {
   });
 }
 
+/* ─── Card to case study ───
+   When a page arrives through a view transition, mark it so the hero skips
+   its fade-in (style.css) and the morphing image stays visible. */
+window.addEventListener('pagereveal', e => {
+  if (e.viewTransition) document.documentElement.classList.add('vt-arrived');
+});
+
 /* ─── Scroll animations ─── */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
