@@ -785,6 +785,27 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   border:1px solid var(--v15);border-radius:2px;
 }
 
+/* ─── Selected Builds tiers ───
+   One lead story, two second stories, then short items. Short items show
+   only the first sentence of their description (.pa-more stays in the HTML,
+   hidden) and drop the tool pills. */
+.pa-kicker{
+  display:block;margin-bottom:var(--sp-sm);
+  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--terra);
+}
+.pa-card--lead .pa-title{font-family:var(--font-hd);font-weight:900;font-size:var(--sz-3xl);line-height:1.1;}
+.pa-card--short .pa-more,.pa-card--short .pa-techs{display:none;}
+/* Jump line: tells readers the page continues past the projects */
+.builds-jump{
+  display:flex;justify-content:flex-end;gap:6px;
+  margin-top:var(--sp-xl);padding-top:var(--sp-sm);
+  border-top:1px solid var(--v35);
+  font-family:var(--font-bd);font-style:italic;font-size:var(--sz-sm);color:var(--v60);
+  transition:color var(--t);
+}
+.builds-jump:hover{color:var(--gold);}
+
 /* ═══ FOOTER ═══ */
 .site-footer{
   background:var(--foot);
@@ -888,6 +909,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 @media(min-width:640px){
   :root{--pad:32px;}
   .archive-grid{grid-template-columns:1fr 1fr;}
+  .pa-card--lead,.pa-card--short{grid-column:1/-1;}
   .hero-illo{max-width:480px;}
 }
 
@@ -944,6 +966,20 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .editorial-grid .ed-tile--4{grid-column:1/6;grid-row:2;}
   .editorial-grid .ed-tile--5{grid-column:6/16;grid-row:2;}
   .editorial-grid .ed-tile--6{grid-column:16/21;grid-row:2;}
+
+  /* Selected Builds: lead across the top, image beside its text; second
+     stories in halves; short items in thirds */
+  .archive-grid{grid-template-columns:repeat(6,1fr);}
+  .pa-card--lead{display:grid;grid-template-columns:3fr 2fr;}
+  .pa-card--lead .pa-img{aspect-ratio:auto;min-height:340px;height:100%;}
+  .pa-card--lead .pa-body{padding:var(--sp-xl);display:flex;flex-direction:column;justify-content:center;}
+  .pa-card--lead .pa-title{font-size:clamp(2.25rem,3vw,2.75rem);}
+  .pa-card--lead .pa-desc{font-size:var(--sz-lg);}
+  .pa-card--second{grid-column:span 3;}
+  .pa-card--second .pa-img{aspect-ratio:2/1;}
+  .pa-card--second .pa-title{font-size:var(--sz-2xl);}
+  .pa-card--short{grid-column:span 2;}
+  .pa-card--short .pa-img{aspect-ratio:2.2/1;}
 }
 
 @media(min-width:1200px){
@@ -951,8 +987,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .main-story{grid-template-columns:1fr 1.8fr;}
   .ms-headline span { font-size: clamp(2rem, 3vw, 3rem); white-space: nowrap; }
 
-  /* Archive: 3-col */
-  .archive-grid{grid-template-columns:1fr 1fr 1fr;}
 }
 
 /* ── Phones: hamburger visible ── */
@@ -963,6 +997,22 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
 @media(max-width:959.98px){
   .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);}
+
+  /* Short items become compact rows: thumbnail left, text right */
+  .archive-grid .pa-card--short{
+    display:grid;grid-template-columns:120px 1fr;column-gap:14px;align-items:start;
+    background:none;border:0;border-top:1px solid var(--v15);border-radius:0;
+    padding-top:var(--sp-md);overflow:visible;
+  }
+  .archive-grid .pa-card--short:hover{transform:none;box-shadow:none;border-top-color:var(--gold);}
+  .pa-card--short .pa-img{aspect-ratio:16/9;border-radius:3px;}
+  .pa-card--short .pa-badges{display:none;}
+  .pa-card--short .pa-body{padding:0;}
+  .pa-card--short .pa-meta{margin-bottom:4px;}
+  .pa-card--short .pa-tag:not(:first-child){display:none;}
+  .pa-card--short .pa-title{font-size:var(--sz-lg);margin-bottom:4px;}
+  .pa-card--short .pa-desc{font-size:var(--sz-sm);line-height:1.45;margin-bottom:var(--sp-sm);}
+  .pa-card--short .pa-footer{border-top:0;padding-top:0;}
 }
 
 /* Phones: justified Experience text leaves wide gaps in the narrow column */
