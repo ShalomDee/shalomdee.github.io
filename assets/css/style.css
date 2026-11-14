@@ -664,6 +664,19 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Card 6: top left */
 .ed-tile--6 .ed-body{top:0;left:0;}
 
+/* Yarn unravel (tile 2): the SVG matches the photo's cover crop
+   (preserveAspectRatio slice), and the thread draws in on hover or tap */
+.ed-yarn{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;transition:transform 0.3s ease;}
+.ed-tile:hover .ed-yarn{transform:scale(1.03);}
+.ed-yarn path{
+  fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset 1.1s cubic-bezier(0.5,0,0.2,1);
+}
+.ed-yarn-edge{stroke:#1a1a1a;stroke-width:7;}
+.ed-yarn-line{stroke:#ead9e3;stroke-width:4;}
+.ed-tile--2:hover .ed-yarn path,.ed-tile--2.is-unravelled .ed-yarn path{stroke-dashoffset:0;}
+
 /* Flags: show dark version in dark, light in light */
 .ed-img--flags img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .flags-light{opacity:0;transition:opacity 0.3s;}

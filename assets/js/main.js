@@ -267,6 +267,12 @@ if (edStrip && edBar) {
   if (phones.matches) start();
 }
 
+/* ─── Yarn unravel ───
+   Hover draws the thread on desktop (style.css). A tap in the phone strip
+   fires ed:interact, which toggles it. */
+const yarnTile = document.querySelector('.ed-tile--2');
+if (yarnTile) yarnTile.addEventListener('ed:interact', () => yarnTile.classList.toggle('is-unravelled'));
+
 /* ─── Sticky bars: raise them once the masthead has scrolled away ───
    The top margin is the phone bar's height (0 when it is hidden from
    768px), so the class lands as the masthead slides fully under it. */
