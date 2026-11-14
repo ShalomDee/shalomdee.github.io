@@ -973,16 +973,15 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   /* Selected Builds: lead across the top, image beside its text; second
      stories in halves; short items in thirds */
   .archive-grid{grid-template-columns:repeat(6,1fr);}
-  .pa-card--lead{display:grid;grid-template-columns:3fr 2fr;}
-  .pa-card--lead .pa-img{aspect-ratio:auto;min-height:340px;height:100%;}
+  /* The lead's image keeps its full 16:9 frame, inset and centred beside the text */
+  .pa-card--lead{display:grid;grid-template-columns:3fr 2fr;align-items:center;}
+  .pa-card--lead .pa-img{margin:var(--sp-lg) 0 var(--sp-lg) var(--sp-lg);width:auto;border-radius:2px;}
   .pa-card--lead .pa-body{padding:var(--sp-xl);display:flex;flex-direction:column;justify-content:center;}
   .pa-card--lead .pa-title{font-size:clamp(2.25rem,3vw,2.75rem);}
   .pa-card--lead .pa-desc{font-size:var(--sz-lg);}
   .pa-card--second{grid-column:span 3;}
-  .pa-card--second .pa-img{aspect-ratio:2/1;}
   .pa-card--second .pa-title{font-size:var(--sz-2xl);}
   .pa-card--short{grid-column:span 2;}
-  .pa-card--short .pa-img{aspect-ratio:2.2/1;}
 }
 
 @media(min-width:1200px){
@@ -1023,7 +1022,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .ed-ic{width:14px;height:14px;fill:currentColor;}
   .ed-ic-play,.ed-bar.is-paused .ed-ic-pause{display:none;}
   .ed-bar.is-paused .ed-ic-play{display:block;}
-}
   .mast-top{justify-content:flex-end;padding:8px var(--pad);}
 }
 
