@@ -148,7 +148,7 @@
     <section class="cs-sec" id="overview">
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
-        <p>Worlds of Hello is a health and education technology platform that helps children continue therapist-guided speech practice at home using familiar voices. Parents and caregivers can contribute their own voices, while the platform also offers a broader community voice library for families to choose from.</p>
+        <p>Worlds of Hello is a health and education technology platform that helps children continue therapist-guided speech practice at home using familiar voices. Parents and caregivers can contribute their own voices, while the platform also offers a broader community voice library for families to choose from. In a lesson at home, a child hears the prompts in a parent’s cloned voice, while a recorded video of that parent leads the activity from a circular frame on screen.</p>
         <p>The idea grew from the experience of the founder, Dr. Amy Quarkume, helping her nephew continue speech therapy during COVID after he lost access to his therapist. She noticed that hearing a familiar voice helped him engage with the exercises, which became part of the foundation for the product.</p>
         <figure class="cs-media cs-media--narrow" style="--ratio:660/799">
           <img src="assets/images/familiar-voice.webp" width="660" height="799" alt="A young child stands in a living room facing a TV, where a man on screen demonstrates a speech exercise" loading="lazy">
@@ -160,8 +160,8 @@
     <section class="cs-sec" id="product">
       <div class="sec-head"><h2 class="sec-label">The <span class="aw">Product</span></h2></div>
       <div class="cs-prose">
-        <p>Worlds of Hello was split into two connected applications.</p>
-        <p>The therapist app supported the clinical side of the experience. Speech-language pathologists (SLPs) could manage clients, assign activities, review progress, and work with session documentation. AI-assisted tools could transcribe recorded sessions and help turn recordings or written notes into structured clinical documentation, reducing some of the administrative work surrounding each session.</p>
+        <p>Worlds of Hello was split into two connected applications. Activities a speech-language pathologist (SLP) assigns in the therapist app appear for the child in the family app, and the child’s progress returns to the SLP for review.</p>
+        <p>The therapist app supported the clinical side of the experience. SLPs could manage clients, assign activities, review progress, and work with session documentation. AI-assisted tools could transcribe recorded sessions and help turn recordings or written notes into structured clinical documentation, reducing some of the administrative work surrounding each session.</p>
         <p>The family app extended that work into the home, handling the child’s experience. Children completed therapist-guided activities using familiar voices contributed by parents or caregivers, or selected from the platform’s broader voice library. The interface was intentionally playful, with warm colors, gamified interactions, and child-friendly characters.</p>
         <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
           <img src="assets/images/activity-apples-ipad.webp" width="1302" height="942" alt="A lesson activity in the family app: a bowl of yellow, green, and red apples on a red table, with back and pause buttons" loading="lazy">
@@ -174,9 +174,9 @@
       <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
       <div class="cs-prose">
         <p>I joined Worlds of Hello as a frontend developer, working on a two-person implementation team with my manager. My first assignments were design-to-code work: I received Figma screens, learned the existing Flutter codebase, and implemented the interfaces within the patterns already established in the project.</p>
-        <p>The codebase used a DTO, DAO, repository, and BLoC architecture, so even early screen work required me to understand more than the widget layer. I had to trace how data, application state, and navigation moved through each feature before I could implement it correctly. I used AI development tools to inspect patterns in the existing code and understand how features had been structured before making changes. In one of my first major code reviews, my manager specifically praised how quickly I had adapted to the architecture he had established. We worked in sprints, with features assigned through tickets and reviewed via pull requests.</p>
+        <p>The codebase used a layered architecture of DTOs, DAOs, repositories, and BLoC, a pattern that keeps app state separate from the interface, so even early screen work required me to understand more than the widget layer. I had to trace how data, application state, and navigation moved through each feature before I could implement it correctly. I used AI development tools to inspect patterns in the existing code and understand how features had been structured before making changes. In one of my first major code reviews, my manager specifically praised how quickly I had adapted to the architecture he had established. We worked in sprints, with features assigned through tickets and reviewed via pull requests.</p>
         <p>My scope expanded as I became more familiar with the product. I started receiving features that required design work in Figma before I implemented them in Flutter. By later sprints, I was moving between Figma, Flutter development, Supabase voice metadata, and Python scripts supporting the ElevenLabs workflow depending on what the product needed.</p>
-        <p>Across the internship, I worked on authentication and onboarding, avatar and photo capture, parent video recording, the home experience, settings, SLP connection flows, community voices, and voice asset preparation. I also worked on therapist-side features near the end of the internship, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
+        <p>Most of my work was in the family app, from onboarding to parent video recording and the community voice library. Near the end, I also built therapist-side features, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
         <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
         <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
           <img src="assets/images/avatar-ipad.webp" width="1302" height="942" alt="Onboarding screen, Select your child’s avatar: a grid of emoji faces across skin tones and animals, with a Take a photo instead button and a Next button" loading="lazy">
@@ -215,7 +215,7 @@
             <figcaption class="cs-caption">Disconnect confirmation</figcaption>
           </figure>
         </div>
-        <p>My responsibilities were not limited to implementing existing designs. I designed the feature-card layout for the redesigned home screen and then built it in Flutter.</p>
+        <p>I also designed the feature-card layout for the redesigned home screen and then built it in Flutter.</p>
         <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
           <img src="assets/images/home-ipad.webp" width="1302" height="942" alt="The family app home screen for a child named Moana: four large feature cards for Playtime, Child Development Profile, Child progress, and Guides and Tips, with Connect with SLP and settings buttons at the top" loading="lazy">
           <figcaption class="cs-caption">Home screen</figcaption>
@@ -227,8 +227,8 @@
     <section class="cs-sec" id="recording">
       <div class="sec-head"><h2 class="sec-label">Video <span class="aw">Recording</span></h2></div>
       <div class="cs-prose">
-        <p>The parent video-recording flow was one of the most technically demanding frontend features I worked on.</p>
-        <p>The challenge was not getting a camera feed onto the screen. The recording experience had been designed with a specific visual treatment, including a circular camera frame and custom controls that needed to behave differently depending on the recording state. I used CameraAwesome and worked through its documentation to understand how much of the default camera interface I could replace or restructure.</p>
+        <p>In a lesson, the parent appears in a circular frame and leads the activity, so the child sees a familiar face alongside the gamified lesson content. Parents record those videos in the family app, and the recording flow was one of the most technically demanding frontend features I worked on.</p>
+        <p>The recording experience had been designed with a specific visual treatment, including a circular camera frame and custom controls that needed to behave differently depending on the recording state. I used CameraAwesome and worked through its documentation to understand how much of the default camera interface I could replace or restructure.</p>
         <p>The final experience supported separate states for recording, pausing, stopping, redoing, and completing a recording. The camera appeared within a circular frame with instructions guiding the parent to keep their face positioned correctly.</p>
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:1194/834">
@@ -257,17 +257,18 @@
       <div class="sec-head"><h2 class="sec-label">Designing Within <span class="aw">AI Constraints</span></h2></div>
       <div class="cs-prose">
         <p>One of the most important constraints behind the child experience was how much freedom the cloned voice was allowed to have during a lesson.</p>
+        <p>The first version was agentic. The app streamed the child’s voice to an agent, ElevenLabs transcribed it, Gemini 2.0 Flash wrote a response, and ElevenLabs spoke that response back in the cloned voice.</p>
         <!-- Donell Mtabvuri's diagram of the first version (donell.dev), credited at the end -->
         <figure class="cs-media cs-media--diagram" style="--ratio:1600/1089">
           <img src="assets/images/agent-flow.webp" width="1600" height="1089" alt="Diagram of the initial agentic voice flow: the mobile app streams the child’s voice to an agent, ElevenLabs transcribes it, Gemini 2.0 Flash generates a response transcript, and ElevenLabs turns it into speech sent back to the app with agentic actions" loading="lazy">
           <figcaption class="cs-caption">Initial agentic voice flow, before the switch to pre-generated audio</figcaption>
         </figure>
-        <p>The platform did not generate lesson dialogue live. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>
-        <p>My manager established this approach, and I worked within it while building the experience. The constraint made sense once I understood the user. A wrong line from the model was not just a technical error. It could interrupt an exercise or make a voice that was supposed to feel familiar suddenly behave unpredictably.</p>
-        <p>That changed how I thought about AI in a product. More freedom from the model would not have made this experience better. The design depended on knowing when the system would speak, what it would say, and how that line should sound. Predictability was part of the experience we were designing for the child.</p>
+        <p>The team then moved to pre-generated lines. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>
+        <p>My manager designed this architecture, and I worked within it while building the experience. The constraint made sense once I understood the user. A wrong line from the model could interrupt an exercise or make a voice that was supposed to feel familiar suddenly behave unpredictably.</p>
+        <p>That changed how I thought about AI in a product. The design depended on knowing when the system would speak, what it would say, and how that line should sound. Predictability was part of the experience we were designing for the child.</p>
 
         <h3 class="cs-subhead">Building the voice library</h3>
-        <p>By the later sprints, I was also working directly with the voice library behind the interface. The dataset I worked with contained 120+ voice records, with metadata covering fields such as language, accent, gender, age, and voice descriptions. Because some records were incomplete or categorized inconsistently, I cleaned and organized the data in Supabase, corrected metadata, and checked that the application had the information it needed to surface the voices correctly.</p>
+        <p>With every line generated ahead of time, the quality of the experience also depended on the voices themselves. Families find a voice through search and filters for language, accent, gender, and age, so each voice needed complete, consistent metadata. By the later sprints, I was working directly with that library. The dataset I worked with contained 120+ voice records, with metadata covering fields such as language, accent, gender, age, and voice descriptions. Because some records were incomplete or categorized inconsistently, I cleaned and organized the data in Supabase, corrected metadata, and checked that the application had the information it needed to surface the voices correctly.</p>
         <p>I also wrote Python scripts for parts of the ElevenLabs workflow and attached the corresponding metadata to generated voice assets. That work fed into the Community Voices feature, where I created and uploaded voice samples, updated the application to use the new community voice model, worked on its repository integration, and redesigned the card and filtering interface. My manager made additional fixes to the fetching and filtering logic before the feature was merged.</p>
         <!-- Cropped from the full Select a voice screen to the filters and the first two rows of cards -->
         <figure class="cs-media" style="--ratio:1194/455">
@@ -280,8 +281,11 @@
     <section class="cs-sec" id="outcome">
       <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
       <div class="cs-prose">
+        <h3 class="cs-subhead">At the end of my internship</h3>
+        <p>By the end of the summer development period, the parent video-recording lesson flow and Community Voices had been merged into the family app, and the versions the team presented in fundraising and pitch conversations included work I shipped. My therapist-side features were still unmerged.</p>
+        <h3 class="cs-subhead">What followed</h3>
         <p>Worlds of Hello continued into further research and product testing after the summer development period. An NSF SBIR Phase I grant supported prototype development, testing with parents, educators, and speech-language pathologists, and technical refinement of the platform. The team also participated in the 2025 MITRE RISE Accelerator.</p>
-        <p>The Community Voices library later grew to 170 voices across more than 10 accent categories. Research with 19 caregiver-child pairs and 33 speech-language pathologists found that 75% of caregivers felt culturally represented through the voice library, while internal testing reported a 49% higher activity completion rate in experiences using familial voice clones.</p>
+        <p>The Community Voices library later grew to 170 voices across more than 10 accent categories. Research with 19 caregiver-child pairs and 33 speech-language pathologists found that 75% of caregivers felt culturally represented through the voice library, and the team’s internal testing found a 49% higher activity completion rate in experiences using familial voice clones.</p>
         <p>The work was published in the ACM Digital Library as <a href="https://doi.org/10.1145/3794786.3830734" target="_blank" rel="noopener noreferrer"><cite>Culturally Representative AI Voices for Equitable Pediatric Speech Therapy: Design and Preliminary Evaluation</cite></a>. Presented in the proceedings of GoodIT ’26, the 2026 International Conference on Information Technology for Social Good, the paper lists me as a co-author alongside Donell Mtabvuri and Amy Quarkume.</p>
       </div>
     </section>
@@ -289,8 +293,8 @@
     <section class="cs-sec" id="reflection">
       <div class="sec-head"><h2 class="sec-label"><em>Reflection</em></h2></div>
       <div class="cs-prose">
-        <p>Worlds of Hello changed how I understood frontend work because the interface was only one part of what I needed to understand to build a feature well. I started the summer focused mainly on translating Figma designs into Flutter, but the work gradually pushed me into the systems underneath those screens and the decisions that shaped their behavior. That perspective has stayed with me in later design work, where I now pay much more attention to the assumptions, data, and technical constraints behind an interface.</p>
-        <p>I also came away with a more practical view of AI product development. I learned that the useful question is not how much AI can be exposed to the user, but how much control the experience requires. That has become a standard I carry into my design work now.</p>
+        <p>Worlds of Hello changed how I understood frontend work. I started the summer translating Figma designs into Flutter, and the work gradually pushed me into the systems underneath those screens. In later design work, I pay much more attention to the data and technical constraints behind an interface.</p>
+        <p>I also came away with a more practical view of AI product development. The question I now ask is how much control the experience requires.</p>
         <!-- Credit for images taken from the public Worlds of Hello site -->
         <p class="cs-media-note cs-credit">The iPad lesson mockup, the photo in Overview, and the initial agentic voice flow diagram are from <a href="https://donell.dev/projects/worlds-of-hello/" target="_blank" rel="noopener noreferrer">Donell Mtabvuri’s Worlds of Hello project page</a>.</p>
       </div>
