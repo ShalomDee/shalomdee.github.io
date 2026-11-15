@@ -136,8 +136,7 @@
       <li><a href="#ia">Information Architecture</a></li>
       <li><a href="#wireframes">The Wireframes</a></li>
       <li><a href="#visual">Visual Design</a></li>
-      <li><a href="#quest">Banking Quest</a></li>
-      <li><a href="#decisions">Key Decisions</a></li>
+      <li><a href="#quest">The Banking Quest</a></li>
       <li><a href="#outcome">Outcome</a></li>
       <li><a href="#learned">What I Learned</a></li>
     </ol>
@@ -249,6 +248,9 @@
         <h3 class="cs-subhead">Inspiration from isekai and RPGs</h3>
         <p>Settling into a new country means starting from zero, and the list of things still to sort out can feel heavy. A game turns a similar list into something to look forward to: a new quest, a guild to lean on, and a reward at the end. Isekai anime such as That Time I Got Reincarnated as a Slime follow a character dropped into an unfamiliar world who learns its rules one adventure at a time, the way a player does in a classic RPG like Final Fantasy.</p>
         <p>A quest turns an overwhelming list into one next step, shows progress as it happens, and gives each finished task a moment of reward. Lendi borrows that structure and keeps the instructions themselves plain.</p>
+
+        <h3 class="cs-subhead">Quests as the unit</h3>
+        <p>Every task is a quest made of steps. “Mission” was considered and dropped because quest fits the game framing. The game layer stays light: there are no streaks, coins, or characters to manage, and urgent instructions are never behind a game mechanic.</p>
         <figure class="cs-media" style="--ratio:2400/932">
           <img src="assets/images/moodboard.webp" width="2400" height="932" alt="Moodboard: anime landscapes and a floating island world, an early Lendi brand board, RPG and strategy game maps, game quest screens, Log Horizon artwork, and green map-style Lendi posters" loading="lazy">
           <figcaption class="cs-caption">Moodboard</figcaption>
@@ -303,6 +305,8 @@
           <li><span style="--c:#F08A24"></span><b>Amber</b>Deadlines</li>
         </ul>
         <p>In onboarding, each item a student already has flies into a chest as it is tapped, and the map appears as the fog over it clears.</p>
+
+        <p>The kit records whether a student has an item, such as a passport, an I-20, or an SSN, and never stores the item itself. The privacy line appears in onboarding, where students first add their items.</p>
         <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
           <figure class="cs-media" style="--ratio:390/844">
             <img src="assets/images/onb-intro.webp" width="390" height="844" alt="Onboarding intro: the Lendi logo above a map card, Find your footing in a new place, and Let’s go" loading="lazy">
@@ -358,7 +362,7 @@
     </section>
 
     <section class="cs-sec" id="quest">
-      <div class="sec-head"><h2 class="sec-label">Banking <span class="aw">Quest</span></h2></div>
+      <div class="sec-head"><h2 class="sec-label">The Banking <span class="aw">Quest</span></h2></div>
       <div class="cs-prose">
         <p>The demo quest has six steps, from comparing banks to knowing the fees. The quest screen shows the kit a student needs, with owned items filled and missing ones dashed. Each step pairs I’m stuck with the main action at the bottom of the screen, so help is always one tap away without competing with the task.</p>
         <p>The demo path starts after arrival and runs from the journey through requirements, I’m stuck, the Grapevine, and asking someone, to the quest marked complete. Only the student can confirm the real-world task is done.</p>
@@ -382,6 +386,12 @@
           </figure>
         </div>
 
+        <h3 class="cs-subhead">Celebrations sized to the win</h3>
+        <p>Starting a first quest gets a full screen, later quests get a toast, a step that earns an item gets a sheet, and clearing a quest gets a full screen with the kit and its new items. Every finish can be undone.</p>
+
+        <h3 class="cs-subhead">Humor kept out of stressful moments</h3>
+        <p>Humor lives in quest names, the map, celebrations, and waiting screens, such as an Up next card that reads “Today’s boss: the bank.” Instructions and the I’m stuck flow stay plain, because that is where students are stressed.</p>
+
         <h3 class="cs-subhead">When a step goes wrong</h3>
         <p>I’m stuck opens a sheet of problem tiles, such as They asked for an SSN or My ID wasn’t accepted. A tile leads to a checked answer with an official source, or says plainly that no checked answer exists yet. From there a student can ask someone who has done the step, with the question already filled in from the step and the problem.</p>
         <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
@@ -398,30 +408,9 @@
             <figcaption class="cs-caption">Ask someone</figcaption>
           </figure>
         </div>
-      </div>
-    </section>
 
-    <section class="cs-sec" id="decisions">
-      <div class="sec-head"><h2 class="sec-label">Key <span class="aw">Decisions</span></h2></div>
-      <div class="cs-decision cs-prose">
-        <h3>Quests as the unit</h3>
-        <p>Every task is a quest made of steps. “Mission” was considered and dropped because quest fits the game framing. The game layer stays light: there are no streaks, coins, or characters to manage, and urgent instructions are never behind a game mechanic.</p>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>The Grapevine as a ranked board</h3>
+        <h3 class="cs-subhead">The Grapevine as a ranked board</h3>
         <p>I considered a chat room and one-question threads. A board ranked by helpful votes suits a shared pool of answers, and there are no direct messages. Students can read without posting, other students see only their first name and school, and the app says replies are not guaranteed.</p>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>Humor kept out of stressful moments</h3>
-        <p>Humor lives in quest names, the map, celebrations, and waiting screens, such as an Up next card that reads “Today’s boss: the bank.” Instructions and the I’m stuck flow stay plain, because that is where students are stressed.</p>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>A kit that tracks status only</h3>
-        <p>The kit records whether a student has an item, such as a passport, an I-20, or an SSN, and never stores the item itself. The privacy line appears in onboarding, where students first add their items.</p>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>Celebrations sized to the win</h3>
-        <p>Starting a first quest gets a full screen, later quests get a toast, a step that earns an item gets a sheet, and clearing a quest gets a full screen with the kit and its new items. Every finish can be undone.</p>
       </div>
     </section>
 
