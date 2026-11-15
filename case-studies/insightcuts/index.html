@@ -134,8 +134,10 @@
       <li><a href="#overview">Overview</a></li>
       <li><a href="#role">My Role</a></li>
       <li><a href="#problem">The Problem</a></li>
-      <li><a href="#solution">The Solution</a></li>
-      <li><a href="#decisions">Key Decisions</a></li>
+      <li><a href="#directions">Three Directions</a></li>
+      <li><a href="#requirements">Trust Requirements</a></li>
+      <li><a href="#building">Building InsightCuts</a></li>
+      <li><a href="#feasibility">Build Strategy</a></li>
       <li><a href="#outcome">Outcome</a></li>
       <li><a href="#learned">What I Learned</a></li>
     </ol>
@@ -150,17 +152,16 @@
     <section class="cs-sec" id="overview">
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
-        <p>Ford’s UX research team synthesized large amounts of video and quantitative data from vehicle test clinics by hand. Our team was asked to bring generative AI into that process while keeping the researcher’s judgment in it.</p>
-        <p>InsightCuts was one of three directions explored during a Q1 2026 innovation sprint, and the one the team took furthest, with a working prototype, a video simulating the tool’s output, and a feasibility analysis.</p>
-        <p>The work ran through BVCC Studios, a program connecting students at Historically Black Colleges and Universities with industry mentors and client work, for Ford’s Digital Product Design, Insights &amp; Analytics group.</p>
+        <p>Ford’s UX researchers run vehicle test clinics that produce hours of session video alongside survey and task data, and they synthesized all of it by hand. Ford’s Digital Product Design, Insights &amp; Analytics group asked our team to imagine how generative AI could speed up research reporting and make it more engaging, while keeping the researcher’s judgment in it.</p>
+        <p>InsightCuts is a tool that turns user-testing footage and research data into short, narrative-driven video briefs. It was one of three directions we explored during a Q1 2026 innovation sprint with BVCC Studios, a program connecting students at Historically Black Colleges and Universities with industry mentors and client work.</p>
       </div>
     </section>
 
     <section class="cs-sec" id="role">
       <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
       <div class="cs-prose">
-        <p>I worked on a four-person student team, mentored by senior designers from Microsoft AI and AWS. We started with assigned roles for administrative ease, and those roles expanded as the work did. Mine was Presentation Manager, responsible for narrative structure, slide hierarchy, and translating technical research for an executive audience. Beyond that, I originated the concept the team’s work was built on, built the coded prototype in v0, carried out the feasibility research, and structured the final pitch. I also made the team’s first exploratory video and one of the two final pitch videos.</p>
-        <p>Kelly, our Research Manager, designed the final UI and user journey shown below, and Munashe built the final prototype used at the gate review.</p>
+        <p>I worked on a four-person student team, mentored by senior designers from Microsoft AI and AWS. My assigned role was Presentation Manager, responsible for narrative structure and for translating technical research for an executive audience. I originated the InsightCuts concept, built the first coded prototype, made the team’s first exploratory video and one of the two final pitch videos, and researched and wrote the feasibility analysis.</p>
+        <p>Kelly, our Research Manager, designed the final UI and user journey, and Munashe built the final prototype used at the gate review.</p>
         <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Figma</span><span class="stag">FigJam</span><span class="stag">v0</span><span class="stag">Google Vids</span></div></div>
       </div>
     </section>
@@ -168,37 +169,54 @@
     <section class="cs-sec" id="problem">
       <div class="sec-head"><h2 class="sec-label">The <span class="aw">Problem</span></h2></div>
       <div class="cs-prose">
-        <p>Ford’s Insights &amp; Analytics group runs physical test clinics with roughly two dozen participants an hour through vehicle rigs. Each clinic produces task success rates, error counts, Likert data, verbatim quotes, and video of every session, all synthesized manually. Researchers spent weeks building charts in Excel, and pulling a quote or clip for an executive presentation meant scrubbing through video and cutting it in VLC.</p>
-        <p>The team set two targets: a lightweight report within 48 hours of a clinic, and a full report within two weeks. AI also had to be introduced without hallucinating findings or treating one participant’s feedback as a systemic pattern.</p>
-
-        <h3 class="cs-subhead">What researchers told us</h3>
-        <p>The direction came from interviews with Ford’s research team. One researcher described how they mark the moments they need in participant videos:</p>
+        <p>Ford’s Insights &amp; Analytics group runs physical test clinics with roughly two dozen participants an hour moving through vehicle rigs. Each clinic produces task success rates, error counts, Likert data, verbatim quotes, and video of every session.</p>
+        <p>In our interviews, one researcher described how she marks the moments she needs in participant videos:</p>
         <!-- Verbatim from the interview notes on the FigJam board, trimmed with ellipses -->
         <blockquote class="cs-quote">
           <p>I literally have a piece of paper here with three numbers on it from the last study… And I hold up a piece of paper in front of the camera… so that I can fast-forward the video to that white thing and then go back three minutes or whatever and then, like, clip it. Like, that’s how tedious this process [is].</p>
         </blockquote>
-        <p>A lead UX researcher said video creation, pulling data out of footage and transcripts, and transcribing by hand were very time consuming and not what her job was supposed to be about. The director for the function wanted something short enough for leadership to skim, while still letting engineers see the raw detail.</p>
+        <p>Everything from a clinic was synthesized by hand. Researchers spent weeks building charts in Excel, and pulling a quote or clip for an executive presentation meant scrubbing through video and cutting it in VLC. A lead UX researcher said video creation, pulling data out of footage and transcripts, and transcribing by hand took up time her job was not meant to be about.</p>
+        <p>The audiences for that work wanted different things. The director for the function wanted something short enough for leadership to skim, while designers, product managers, and engineers wanted the raw detail.</p>
         <figure class="cs-media" style="--ratio:1920/704">
           <img src="assets/images/research-synthesis.webp" width="1920" height="704" alt="FigJam board of sticky notes grouped under Interview Findings, including researchers’ wishes, and Research Findings on AI and UX research" loading="lazy">
           <figcaption class="cs-caption">Research synthesis</figcaption>
         </figure>
+        <p>The team set two targets: a lightweight report within 48 hours of a clinic, and a full report within two weeks.</p>
         <p>InsightCuts was built to address the gap between what leadership needed and what engineers needed, and the manual work in between.</p>
       </div>
     </section>
 
-    <section class="cs-sec" id="solution">
-      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Solution</span></h2></div>
+    <section class="cs-sec" id="directions">
+      <div class="sec-head"><h2 class="sec-label">Three <span class="aw">Directions</span></h2></div>
       <div class="cs-prose">
-        <h3 class="cs-subhead">Three directions</h3>
-        <p>The team explored three concepts. RPM turned long text and spreadsheet reports into podcast-style audio overviews. TraceStories presented AI-extracted insights as swipeable cards, each able to flip and show the quote, chart, or video frame behind it. InsightCuts let a researcher flag a moment in raw footage and have the tool assemble a short, captioned highlight clip, replacing manual clipping in VLC.</p>
+        <p>The brief asked how we might speed up the sharing of UX research findings with generative AI. The team explored three concepts. RPM turned long text and spreadsheet reports into podcast-style audio overviews. TraceStories presented AI-extracted insights as swipeable cards, each able to flip and show the quote, chart, or video frame behind it. InsightCuts let a researcher flag a moment in raw footage and have the tool assemble a short, captioned highlight clip, replacing manual clipping in VLC.</p>
         <figure class="cs-media" style="--ratio:16/9">
           <img src="assets/images/concepts.webp" width="1920" height="1080" alt="Slide summarizing the three concepts: RPM, an AI-generated podcast; TraceStories, insights in a Stories-like interface; and InsightCuts, an AI video tool for short research briefings" loading="lazy">
           <figcaption class="cs-caption">RPM, TraceStories, and InsightCuts</figcaption>
         </figure>
 
-        <h3 class="cs-subhead">Building the prototype</h3>
+        <h3 class="cs-subhead">The first video</h3>
+        <p>Before any interface existed, I made the team’s first exploratory video, “Searching for Control: Ford EV UX Research,” in Google Vids, to test what a research story could look like as the finished output. I gathered footage online, generated some myself, wrote a storyline, and cut it together. It gave the team a sample of the output to react to while the concepts were still forming.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="requirements">
+      <div class="sec-head"><h2 class="sec-label">Trust <span class="aw">Requirements</span></h2></div>
+      <div class="cs-prose">
+        <p>AI had to be introduced without inventing findings or treating one participant’s feedback as a systemic pattern. Concept validation with Ford’s team turned that into two requirements for anything InsightCuts produced.</p>
+        <h3 class="cs-subhead">Quantitative backing</h3>
+        <p>One of Ford’s lead researchers pointed out that engineers won’t trust a highlighted clip without a number behind it, such as how many people failed the step and whether it was one outlier or a pattern. Ford’s leadership had also banned the word “intuitive” internally, since it describes a feeling without saying what to fix.</p>
+        <h3 class="cs-subhead">Trace route to source footage</h3>
+        <p>A Ford functional lead said trust in an AI-generated output depends on being able to see where it came from, so every clip and tag InsightCuts surfaces needed to link back to its source footage.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="building">
+      <div class="sec-head"><h2 class="sec-label">Building <span class="aw">InsightCuts</span></h2></div>
+      <div class="cs-prose">
+        <h3 class="cs-subhead">The coded prototype</h3>
         <p>I built a coded version of InsightCuts in v0, an AI-assisted app builder, so the team and our mentor could click through it before visual design.</p>
-        <p>The prototype is a UX research media library. A researcher moves through five steps across the top of the screen: select clips, annotate, assemble, preview, and share. Sessions are organized by project and sprint, and every clip carries a thumbnail, its length, basic participant info, and semantic tags like “safety signal” or “glance duration,” so a researcher isn’t scrubbing through raw footage blind.</p>
+        <p>The prototype is a UX research media library. A researcher moves through five steps across the top of the screen: select clips, annotate, assemble, preview, and share. Sessions are organized by project and sprint, and every clip carries a thumbnail, its length, basic participant info, and semantic tags like “safety signal” or “glance duration,” so a researcher isn’t scrubbing through raw footage blind. In this version, the researcher still picks and tags each moment by hand.</p>
         <!-- v0-select: screenshot of the live prototype at 1440×770, 2x. v0-preview: Figma InsightCuts-Ford › Page 3 › "image 15". -->
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:1920/1027">
@@ -210,7 +228,13 @@
             <figcaption class="cs-caption">Preview</figcaption>
           </figure>
         </div>
-        <p>The team and our mentor responded well to the coded prototype and the video, and both kept coming up in the team’s Slack channel afterward. Kelly designed the final UI and user journey from there.</p>
+        <p>The team and our mentor responded well to the coded prototype, and it kept coming up in the team’s Slack channel afterward.</p>
+
+        <h3 class="cs-subhead">From manual flags to CueDetector</h3>
+        <p>Researchers already leave cues while they record, such as the paper held up to the camera in the quote above. Detecting those cues was part of the idea from the start. CueDetector keeps the same workflow as the prototype and finds the cues for the researcher, while manual selection stays available for anyone who wants to choose and tag every clip themselves.</p>
+
+        <h3 class="cs-subhead">The final flow</h3>
+        <p>Kelly designed the final UI and user journey, with the researcher at the center of each step.</p>
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:16/9">
             <img src="assets/images/journey-1.webp" width="1920" height="1080" alt="User journey, steps 1 to 3: conduct a user test, the researcher writes a report from their own insights, then goes to InsightCuts to clip video evidence" loading="lazy">
@@ -219,10 +243,8 @@
             <img src="assets/images/journey-2.webp" width="1920" height="1080" alt="User journey, steps 4 to 6: the final video is ready in minutes, stakeholders get insights faster, and the researcher stays in control" loading="lazy">
           </figure>
         </div>
-
-        <h3 class="cs-subhead">The final flow</h3>
-        <p>A researcher uploads session videos, and CueDetector analyzes them for common patterns, such as a red paper appearing on camera or moments with extended glance duration. It also picks up markers researchers already use to flag moments on camera, such as the paper held up in the quote above. A researcher can also describe what to look for, such as a gesture or a reaction, and CueDetector finds it across the clips.</p>
-        <p>Wrap Up turns the selected moments into scene cuts. In the AI Editor, the researcher reviews the result and can flag inaccuracies, ask for more detail, or have a scene analyzed again.</p>
+        <p>A researcher uploads session videos, and CueDetector, the detection step, analyzes them for common patterns, such as a red paper appearing on camera or moments with extended glance duration. A researcher can also describe what to look for, such as a gesture or a reaction, and CueDetector finds it across the clips.</p>
+        <p>Wrap Up, the editing step, turns the selected moments into scene cuts. In the AI Editor, the researcher reviews the result and can flag inaccuracies, ask for more detail, or have a scene analyzed again.</p>
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:1099/788">
             <img src="assets/images/final-cuedetector.webp" width="1099" height="788" alt="CueDetector: four uploaded test videos on the left, and suggested patterns to explore, such as “Red paper appears,” above a prompt box and a Wrap Up button" loading="lazy">
@@ -233,9 +255,13 @@
             <figcaption class="cs-caption">Wrap Up</figcaption>
           </figure>
         </div>
+        <p>The Insights panel answers the need for quantitative backing. It extracts findings and their numbers from uploaded research files, such as PDFs and spreadsheets, and a researcher can add a finding to a scene, where it appears as a caption over the footage.</p>
+        <figure class="cs-media" style="--ratio:1099/788">
+          <img src="assets/images/decision-trace.webp" width="1099" height="788" alt="Insights panel: a finding from User Survey Results Q1 2026.pdf, “67% of users struggled with navigation,” placed on scene 3 as a caption, with Remove from current scene and Ask AI buttons" loading="lazy">
+        </figure>
 
-        <h3 class="cs-subhead">The video</h3>
-        <p>Before the interface existed, I made the team’s first exploratory video, “Searching for Control: Ford EV UX Research,” in Google Vids. Once the concept settled on InsightCuts, the team produced two final videos for the pitch, one by me and one by Kelly. Mine simulated a video InsightCuts would produce from a clinic’s footage and research data. The video was inspired by Spotify Wrapped, and its graphics by the Wrapped 2025 theme, with bold type, halftone patterns, and one large number per frame, to make the findings youthful and engaging.</p>
+        <h3 class="cs-subhead">The pitch video</h3>
+        <p>Once the concept settled on InsightCuts, the team produced two final videos for the pitch, one by me and one by Kelly. Mine simulated a brief InsightCuts would produce from a clinic’s footage and research data. The video was inspired by Spotify Wrapped, and its graphics by the Wrapped 2025 theme, with bold type, halftone patterns, and one large number per frame, to make the findings youthful and engaging.</p>
         <!-- The two moving tiles play over the still, placed by % of the 1920×1157 image
              (Wrapped panel 81,181 512×908; kitchen tile 953,181 578×325). With reduced motion the still shows alone. -->
         <figure class="cs-media cs-mood">
@@ -253,30 +279,11 @@
       </div>
     </section>
 
-    <section class="cs-sec" id="decisions">
-      <div class="sec-head"><h2 class="sec-label">Key <span class="aw">Decisions</span></h2></div>
-      <div class="cs-decision cs-prose">
-        <h3>Quantitative backing</h3>
-        <p>Concept validation with one of Ford’s lead researchers raised a weakness early: engineers won’t trust a highlighted clip without a number behind it, such as how many people failed the step and whether it was one outlier or a pattern. Quantitative backing became a requirement of the tool. Ford’s leadership had also banned the word “intuitive” internally, since it describes a feeling without saying what to fix.</p>
-        <p>In the final UI, the Insights panel also extracts findings and their numbers from uploaded research files, such as PDFs and spreadsheets. A researcher can add a finding to a scene, where it appears as a caption over the footage.</p>
-        <figure class="cs-media" style="--ratio:1099/788">
-          <img src="assets/images/decision-trace.webp" width="1099" height="788" alt="Insights panel: a finding from User Survey Results Q1 2026.pdf, “67% of users struggled with navigation,” placed on scene 3 as a caption, with Remove from current scene and Ask AI buttons" loading="lazy">
-        </figure>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>Trace route to source footage</h3>
-        <p>A Ford functional lead said trust in an AI-generated output depends on being able to see where it came from, so every clip and tag InsightCuts surfaces needed to link back to its source footage.</p>
-      </div>
-      <div class="cs-decision cs-prose">
-        <h3>Licensing the video pipeline</h3>
-        <p>Full in-house video processing and storage carries cost and data-privacy risk. My feasibility analysis recommended licensing or partnering for the video infrastructure, and keeping in-house engineering for the parts of the concept without that risk.</p>
-      </div>
-    </section>
-
-    <section class="cs-sec" id="outcome">
-      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+    <section class="cs-sec" id="feasibility">
+      <div class="sec-head"><h2 class="sec-label">Build <span class="aw">Strategy</span></h2></div>
       <div class="cs-prose">
-        <p>We presented InsightCuts at the program’s final gate review on March 6, 2026, to a Ford director and a panel of gate jurors, including the feasibility section I researched and wrote.</p>
+        <p>I researched and wrote the feasibility analysis, which compared the features we planned with tools already on the market. Full in-house video processing and storage would be technically complex and carry high data-privacy risk, and tools like NotebookLM, Grain, and Dovetail already covered parts of the concept.</p>
+        <p>The feasibility assessment:</p>
         <!-- Feasibility, rebuilt from the deck's table (slide 25) as HTML so it follows the theme. -->
         <div class="cs-table-wrap" role="region" aria-label="InsightCuts feasibility" tabindex="0">
           <table class="cs-table">
@@ -291,6 +298,15 @@
             </tbody>
           </table>
         </div>
+        <p>I recommended licensing or partnering for the video infrastructure, and keeping in-house engineering for the parts of the concept without that risk.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-prose">
+        <p>On March 6, 2026, we presented InsightCuts at the program’s final gate review to a Ford director and a panel of gate jurors. The gate review asked each team for a build-or-buy recommendation, based on the features planned and the tools already on the market.</p>
+        <p>We recommended that Ford buy. Established tools already covered much of the concept, and licensing the video layer played to Ford’s strengths. The team handed over the coded prototype, the final UI and prototype, two pitch videos, and the feasibility report.</p>
       </div>
     </section>
 
@@ -300,7 +316,7 @@
         <p>The biggest thing I took from this project was storytelling, because everything else depended on it. The concept, the prototype, the video, and the pitch all had to make sense to very different people. Over the sprint we presented to Ford’s design leadership, lead UX researchers, human factors and ergonomics specialists, design and program managers, and senior designers from Microsoft AI and AWS, and the same idea had to land with each of them.</p>
         <p>People value what you can show them. A clickable prototype and a finished video gave the team and our reviewers something concrete to react to, which a description of the idea could not.</p>
         <p>From the start, we were told not to hold back because we were students. Companies bring in teams like ours for a fresh view of problems they see every day, so we were encouraged to work outside Ford’s design style and system. Ford’s researchers and designers engaged seriously with what we brought them, and it showed me that an outside view is something I bring to a team, whatever my seniority.</p>
-        <p>The feasibility research had me argue against building part of my own concept. In-house video processing carried high data-privacy risk and cost significantly more than licensing, and tools like NotebookLM, Grain, and Dovetail already covered parts of it. I recommended Ford license that layer and keep in-house engineering for the rest. It showed me that deciding what not to build is part of designing a product.</p>
+        <p>The feasibility research had me argue against building part of my own concept, which showed me that deciding what not to build is part of designing a product.</p>
       </div>
     </section>
   </article>
