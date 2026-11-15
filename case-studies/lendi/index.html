@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lendi, Settling-In Companion | Shalom Donga</title>
+  <meta name="description" content="A case study on Lendi, a quest-based companion helping international and study-abroad students navigate life in a new country.">
+  <meta name="theme-color" content="#F5F1E8">
+  <!-- Copied unchanged from index.html so the theme carries across pages -->
+  <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://shalomdee.github.io/case-studies/lendi/">
+
+  <!-- Share previews. Swap og:image for a case study cover once one exists (absolute URL, 1200×630). -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shalomdee.github.io/case-studies/lendi/">
+  <meta property="og:title" content="Lendi, Settling-In Companion | Shalom Donga">
+  <meta property="og:description" content="A quest-based companion helping international and study-abroad students navigate life in a new country.">
+  <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Open Graph preview for Shalom Donga’s portfolio, featuring The Maker’s Times masthead, her name and Design Engineer title, and an illustrated tug-of-war between design and engineering.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <!-- Same ?v= as index.html; bump all three together -->
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-14k">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-14k">
+  <script src="../../assets/js/main.js?v=2026-11-14k" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="../../#about">About</a>
+  <a href="../../#projects">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<!-- Back button: left end of both sticky bars, mirroring the theme toggle and menu button -->
+<div class="mast-top">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<header>
+  <div class="mast-title">
+    <p class="mast-name"><a href="../../">The Maker’s Times</a></p>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">“Where Code<br>Meets Canvas”</span>
+    </div>
+    <div class="mast-center">
+      <p class="mast-name"><a href="../../">The Maker’s Times</a></p>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Case Study</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <nav class="nav-ticker" aria-label="Sections">
+    <a href="../../#about">About</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#projects" class="active">Projects</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#experience">Experience</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#skills">Skills</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#editorials">Editorial</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  </nav>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="cs-hero wrap" aria-labelledby="cs-title">
+  <p class="cs-crumb"><a href="../../#projects">Selected Builds</a> / Lendi</p>
+  <div class="animate-in">
+    <span class="kicker">Fall 2026</span>
+    <h1 class="cs-title" id="cs-title">Lendi</h1>
+    <p class="cs-deck">A quest-based companion helping international and study-abroad students navigate life in a new country.</p>
+    <p class="cs-role"><span class="cs-role-title">Product Designer</span><span class="cs-role-meta">PROPEL Center × Apple × AfroTech<span class="cs-sep" aria-hidden="true">|</span>October&nbsp;2026</span></p>
+  </div>
+  <!-- Three final screens (Home map, quest in progress, quest cleared) on a transparent background, from Figma › Lendi › Final screens -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1845/1356">
+    <img src="assets/images/hero.webp" width="1845" height="1356" alt="Three Lendi screens: the Home map with quests grouped by topic, the Banking &amp; Payments quest at 3 of 6 steps, and the Quest Cleared screen with the kit and two new items" fetchpriority="high">
+  </figure>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<div class="cs-story wrap">
+  <nav class="cs-toc" aria-label="On this page">
+    <p class="cs-box-title">On This Page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#role">My Role</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#concept">The Concept</a></li>
+      <li><a href="#ia">Information Architecture</a></li>
+      <li><a href="#wireframes">The Wireframes</a></li>
+      <li><a href="#visual">Visual Design</a></li>
+      <li><a href="#quest">The Banking Quest</a></li>
+      <li><a href="#outcome">Outcome</a></li>
+      <li><a href="#learned">What I Learned</a></li>
+    </ol>
+    <p class="cs-box-title">Project Links</p>
+    <div class="pa-links"><a href="https://lendi.delightnyanhete2023.workers.dev/" class="pa-link pa-link--code" target="_blank" rel="noopener noreferrer">View MVP ↗</a></div>
+  </nav>
+
+  <!-- Built from Shalom's Lendi docs (research brief, wireframe decisions, visual decisions,
+       strategy brief) and the final pitch deck. -->
+  <article>
+    <section class="cs-sec" id="overview">
+      <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
+      <div class="cs-prose">
+        <p>Moving from Zimbabwe to the United States for university meant learning how to navigate everyday life all over again. Things as simple as opening a bank account, getting a phone number, or finding my way around suddenly came with unfamiliar steps and no clear place to start. Despite moving to different countries, my sisters experienced much the same when they went to Malaysia and Italy.</p>
+        <p>Lendi grew out of these shared experiences. It’s a quest-based companion that helps international and study-abroad students navigate everyday tasks when settling into a new country, with guidance from students who have already been through them. While the first version focuses on students, the longer-term vision is to support anyone settling into an unfamiliar place for an extended stay.</p>
+        <p>I developed Lendi for the Future of XYZ Challenge, an HBCU innovation challenge run by the PROPEL Center in partnership with Apple and in conjunction with AfroTech. The challenge asked teams to identify a problem facing a Gen Z community, develop a technology-enabled solution, and demonstrate demand for it. Over four weeks, we conducted research, developed a pitch deck and video, and built an MVP demonstrating one quest, Banking &amp; Payments.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
+      <div class="cs-prose">
+        <p>I led the project from research through visual design. I wrote the secondary research synthesis and the arrival survey, set the product direction and the information architecture, and designed the wireframes, the visual system, and the logo.</p>
+        <p>Delight Nyanhete built and deployed the MVP, made the presentation video, and helped recruit survey respondents. Delight and I each had a mentor from Apple: Abeni Ofunniyin mentored me and reviewed the project at the dry run, and Rashida mentored Delight.</p>
+        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Figma</span><span class="stag">Claude Design</span><span class="stag">Google Forms</span></div></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Problem</span></h2></div>
+      <div class="cs-prose">
+        <p>Moving abroad for university means relearning ordinary tasks: opening a bank account, getting a working phone number, getting around, and sorting out school paperwork. Many of these tasks depend on each other, and the information is spread across university emails, provider websites, group chats, and whoever a student happens to know. Students struggle to know what to expect, what to do next, and where to turn when something goes wrong.</p>
+
+        <h3 class="cs-subhead">Secondary research</h3>
+        <p>Before the survey, I reviewed published studies, enrollment data, and existing products.</p>
+        <ul class="cs-list">
+          <li>277,118 international students arrived in the United States for the first time in 2024/25 (<a href="https://www.iie.org/news/open-doors-2025-press-release/" target="_blank" rel="noopener noreferrer">IIE Open Doors</a>).</li>
+          <li>Without a US bank account or mobile data, new students could not book a ride from the airport, and some accepted rides and rooms from strangers (<a href="https://ojed.org/jis/article/view/9432" target="_blank" rel="noopener noreferrer">Sharma, 2026</a>).</li>
+          <li>Students rely on peers and family more than on university services (<a href="https://www.oecd.org/en/publications/international-students-in-higher-education_005ff28d-en/full-report/life-in-a-new-country-and-integration_5a77bfc6.html" target="_blank" rel="noopener noreferrer">OECD, 2026</a>), and many questions on student forums go unanswered (<a href="https://doi.org/10.1371/journal.pone.0341314" target="_blank" rel="noopener noreferrer">Youm et al., 2026</a>).</li>
+          <li>Arrival apps such as <a href="https://joinsettl.com/" target="_blank" rel="noopener noreferrer">Settl</a> and <a href="https://uni-list.com/" target="_blank" rel="noopener noreferrer">Uni-List</a> only cover students moving to the UK.</li>
+        </ul>
+        <p><strong>The key finding:</strong> across studies and products, the most reliable help was a person who had already done the task. That became the Grapevine.</p>
+
+        <h3 class="cs-subhead">The arrival survey</h3>
+        <p>The survey never mentioned Lendi or a solution, so answers described what happened to people. It asked which tasks were hard, which was hardest, how long it took, and who finally helped.</p>
+
+        <div class="cs-source">
+          <h4 class="kicker">Arrival survey</h4>
+          <!-- Built in HTML so it follows the theme. Figures from the final deck: 52 responses, 50 qualifying.
+               Bars scale to the 50 qualifying respondents (--n:50). -->
+          <div class="cs-survey" style="--n:50">
+            <div class="cs-stats">
+              <figure class="cs-chart cs-stat">
+                <figcaption class="cs-chart-q">Before you arrived, did you know anyone in that city who could help with practical things?</figcaption>
+                <p class="cs-stat-val">72% <span>of 50</span></p>
+                <p class="cs-stat-label">arrived with little or no reliable local support</p>
+                <span class="cs-meter" aria-hidden="true"><span style="--v:36"></span></span>
+              </figure>
+              <figure class="cs-chart cs-stat">
+                <figcaption class="cs-chart-q">Who or what finally helped you get that task done?</figcaption>
+                <p class="cs-stat-val">48% <span>of 50</span></p>
+                <p class="cs-stat-label">got help from experienced students or group chats</p>
+                <span class="cs-meter" aria-hidden="true"><span style="--v:24"></span></span>
+              </figure>
+            </div>
+            <figure class="cs-chart">
+              <figcaption class="cs-chart-q">In your first few weeks, which of these were hard to sort out?</figcaption>
+              <div class="cs-bar-row"><span class="cs-bar-label">Getting around (airport, buses, rides, stores)</span><span class="cs-bar"><span class="cs-bar-fill" style="--v:29"></span><span class="cs-bar-val">58%</span></span></div>
+              <div class="cs-bar-row"><span class="cs-bar-label">Money (bank account, card, paying for things)</span><span class="cs-bar"><span class="cs-bar-fill cs-bar-fill--acc" style="--v:27"></span><span class="cs-bar-val">54%</span></span></div>
+              <p class="cs-chart-src">More than one answer allowed.</p>
+            </figure>
+            <p class="cs-caption cs-caption--note">52 responses, 50 qualifying respondents, from a voluntary sample.</p>
+          </div>
+        </div>
+        <p>Transport and banking led, most students had little or no one locally to ask, and nearly half got help from students who had already done the task. The product needed a clear order for each task and a way to hear from someone who had done it before.</p>
+        <p>I mapped the research onto a student’s journey, from acceptance to the first weeks after arrival. Three points stood out where help was missing:</p>
+        <ul class="cs-list">
+          <li>Before leaving, students could not tell which tasks applied to them or in what order.</li>
+          <li>Everyday setup, such as payments, documents, and transport, broke down because one task depended on another.</li>
+          <li>When something went wrong, getting unstuck depended on who a student happened to know.</li>
+        </ul>
+        <!-- Drawn as inline SVG so it follows the theme. Wide layout from 1200px, stacked below. Styles: .cs-flow in case-study.css. -->
+        <figure class="cs-media cs-media--diagram">
+          <svg class="cs-flow cs-flow--wide" viewBox="0 0 900 96" role="img" aria-label="A student’s move abroad: accepted, planning essentials, travel and arrival, university setup, everyday setup, and getting unstuck."><defs><marker id="lendi-jr-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M1 1 L9 5 L1 9"/></marker></defs><path class="e" d="M136 48 H156" marker-end="url(#lendi-jr-ah)"/><path class="e" d="M287 48 H307" marker-end="url(#lendi-jr-ah)"/><path class="e" d="M439 48 H459" marker-end="url(#lendi-jr-ah)"/><path class="e" d="M591 48 H611" marker-end="url(#lendi-jr-ah)"/><path class="e" d="M742 48 H762" marker-end="url(#lendi-jr-ah)"/><g class="n"><rect x="6" y="20" width="130" height="56"/><text x="71" y="48" dominant-baseline="central" font-size="12">Accepted</text></g><g class="n"><rect x="158" y="20" width="130" height="56"/><text x="222" y="48" dominant-baseline="central" font-size="12"><tspan x="222" y="40.5">Planning</tspan><tspan x="222" y="55.5">essentials</tspan></text></g><g class="n"><rect x="309" y="20" width="130" height="56"/><text x="374" y="48" dominant-baseline="central" font-size="12"><tspan x="374" y="40.5">Travel and</tspan><tspan x="374" y="55.5">arrival</tspan></text></g><g class="n"><rect x="461" y="20" width="130" height="56"/><text x="526" y="48" dominant-baseline="central" font-size="12"><tspan x="526" y="40.5">University</tspan><tspan x="526" y="55.5">setup</tspan></text></g><g class="n"><rect x="613" y="20" width="130" height="56"/><text x="678" y="48" dominant-baseline="central" font-size="12">Everyday setup</text></g><g class="n"><rect x="764" y="20" width="130" height="56"/><text x="829" y="48" dominant-baseline="central" font-size="12"><tspan x="829" y="40.5">Getting</tspan><tspan x="829" y="55.5">unstuck</tspan></text></g></svg>
+          <svg class="cs-flow cs-flow--tall cs-flow--narrow" viewBox="0 0 240 450" role="img" aria-label="A student’s move abroad: accepted, planning essentials, travel and arrival, university setup, everyday setup, and getting unstuck."><defs><marker id="lendi-jr-ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M1 1 L9 5 L1 9"/></marker></defs><path class="e" d="M120 62 V90" marker-end="url(#lendi-jr-ahm)"/><path class="e" d="M120 136 V164" marker-end="url(#lendi-jr-ahm)"/><path class="e" d="M120 210 V238" marker-end="url(#lendi-jr-ahm)"/><path class="e" d="M120 284 V312" marker-end="url(#lendi-jr-ahm)"/><path class="e" d="M120 358 V386" marker-end="url(#lendi-jr-ahm)"/><g class="n"><rect x="30" y="18" width="180" height="44"/><text x="120" y="40" dominant-baseline="central" font-size="12">Accepted</text></g><g class="n"><rect x="30" y="92" width="180" height="44"/><text x="120" y="114" dominant-baseline="central" font-size="12">Planning essentials</text></g><g class="n"><rect x="30" y="166" width="180" height="44"/><text x="120" y="188" dominant-baseline="central" font-size="12">Travel and arrival</text></g><g class="n"><rect x="30" y="240" width="180" height="44"/><text x="120" y="262" dominant-baseline="central" font-size="12">University setup</text></g><g class="n"><rect x="30" y="314" width="180" height="44"/><text x="120" y="336" dominant-baseline="central" font-size="12">Everyday setup</text></g><g class="n"><rect x="30" y="388" width="180" height="44"/><text x="120" y="410" dominant-baseline="central" font-size="12">Getting unstuck</text></g></svg>
+          <figcaption class="cs-caption">The move abroad, from acceptance to the first four weeks</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="concept">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Concept</span></h2></div>
+      <div class="cs-prose">
+        <p>Each finding pointed to a part of the product.</p>
+        <!-- Research to design, as a table so it follows the theme -->
+        <div class="cs-table-wrap" role="region" aria-label="From research to design" tabindex="0">
+          <table class="cs-table cs-table--left">
+            <thead><tr><th scope="col">What students faced</th><th scope="col">Design response</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Not knowing what came next</th><td>Quests break each task into ordered steps, with what to bring and who to contact</td></tr>
+              <tr><th scope="row">Requirements that surprised them halfway</th><td>I’m stuck gives help inside the step, without leaving the task</td></tr>
+              <tr><th scope="row">Relying on people who had done it before</th><td>The Grapevine ties questions and tips to the exact quest and step</td></tr>
+              <tr><th scope="row">Little or no local support (72% of respondents)</th><td>Each step carries its contacts and an official source with a reviewed date</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Banking &amp; Payments became the demo quest. It was one of the two tasks students named most, and Abeni works in banking and could check its content. Transport and phone appear on the map as connected quests.</p>
+
+        <h3 class="cs-subhead">Inspiration: Isekai anime and RPGs</h3>
+        <p>Settling into a new country means starting from zero, and the list of things still to sort out can feel heavy. A game turns a similar list into something to look forward to: a new quest, a guild to lean on, and a reward at the end. Isekai anime such as That Time I Got Reincarnated as a Slime follow a character dropped into an unfamiliar world who learns its rules one adventure at a time, the way a player does in a classic RPG like Final Fantasy.</p>
+        <p>A quest turns an overwhelming list into one next step, shows progress as it happens, and gives each finished task a moment of reward. Lendi borrows that structure and keeps the instructions themselves plain.</p>
+
+        <figure class="cs-media" style="--ratio:2400/932">
+          <img src="assets/images/moodboard.webp" width="2400" height="932" alt="Moodboard: anime landscapes and a floating island world, an early Lendi brand board, RPG and strategy game maps, game quest screens, Log Horizon artwork, and green map-style Lendi posters" loading="lazy">
+          <figcaption class="cs-caption">Moodboard</figcaption>
+        </figure>
+
+        <h3 class="cs-subhead">Quests as the unit</h3>
+        <p>Every task is a quest made of steps. “Mission” was considered and dropped because quest fits the game framing. The game layer stays light: there are no streaks, coins, or characters to manage, and urgent instructions are never behind a game mechanic.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="ia">
+      <div class="sec-head"><h2 class="sec-label">Information <span class="aw">Architecture</span></h2></div>
+      <div class="cs-prose">
+        <p>Before wireframing, I planned four areas: My Journey, the Grapevine, Resources, and Profile. Resources kept official instructions and contacts in one place, but students need that information in the middle of a step. I moved those sources into each step and turned the fourth tab into Inventory, which holds the kit, notes, and a quest log.</p>
+        <p>The final app has three tabs and an avatar. Home is a map with quests grouped by topic, such as Money, Health, and Getting around, opening on what matters now. The Grapevine collects tips and questions, browsed by quest. Profile and settings sit behind the avatar.</p>
+        <p>The bottom navigation is hidden inside quest and step screens, so those screens stay on the one task.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="wireframes">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Wireframes</span></h2></div>
+      <div class="cs-prose">
+        <p>Over five rounds and 30 low-fidelity screens, the quest screen became a single scroll with the kit as a row of icons, I’m stuck became a sheet of problem tiles, and the map won over a single path or chapters as Home. Each round compared two or three options before one moved forward. I worked in Claude Design and kept the wireframes greyscale so feedback stayed on structure.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/wire-quest.webp" width="390" height="844" alt="Wireframe of a quest in progress: progress bar at 3 of 6 steps, finished steps collapsed into one row, an Up next card and locked steps with the reason they are locked" loading="lazy">
+            <figcaption class="cs-caption">Quest in progress</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/wire-stuck.webp" width="390" height="844" alt="Wireframe of the I’m stuck sheet with problem tiles such as They asked for an SSN and My ID wasn’t accepted" loading="lazy">
+            <figcaption class="cs-caption">I’m stuck</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/wire-home.webp" width="390" height="844" alt="Wireframe of the Home map zoomed in on current quests, with a quest rail and a bottom sheet for the current quest" loading="lazy">
+            <figcaption class="cs-caption">Home map</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="visual">
+      <div class="sec-head"><h2 class="sec-label">Visual <span class="aw">Design</span></h2></div>
+      <div class="cs-prose">
+        <h3 class="cs-subhead">Palette and type</h3>
+        <p>Lendi turns settling in into quests on a map, so the colors come from an old stamped map: parchment for the paper, pine ink for the lines, and a vermilion stamp for actions. The layout stays as clean as Duolingo’s so the theme never makes a screen harder to use. Task screens stay white, with one loud color for the next action, so a stressed student always knows what to tap. Each color has one job, so it keeps the same meaning everywhere. Display type is Baloo 2 and body text is Nunito.</p>
+        <!-- Swatches built in HTML (.cs-swatches in case-study.css); hex values from the final palette, light mode -->
+        <ul class="cs-swatches">
+          <li><span style="--c:#16302C"></span><b>Pine ink</b>Text, softer than black</li>
+          <li><span style="--c:#F4EEDF"></span><b>Parchment</b>Map surfaces only</li>
+          <li><span style="--c:#CF4520"></span><b>Vermilion</b>The one loud color: primary actions</li>
+          <li><span style="--c:#F2B63D"></span><b>Gold</b>Earned moments and rewards</li>
+          <li><span style="--c:#2E9E4F"></span><b>Green</b>Done, always with a check</li>
+          <li><span style="--c:#1F7A6B"></span><b>Teal</b>The Grapevine</li>
+          <li><span style="--c:#3E5C76"></span><b>Slate blue</b>Neutral information</li>
+          <li><span style="--c:#F08A24"></span><b>Amber</b>Deadlines</li>
+        </ul>
+        <p>In onboarding, each item a student already has flies into a chest as it is tapped, and the map appears as the fog over it clears.</p>
+
+        <p>The kit records whether a student has an item, such as a passport, an I-20, or an SSN, and never stores the item itself. The privacy line appears in onboarding, where students first add their items.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/onb-intro.webp" width="390" height="844" alt="Onboarding intro: the Lendi logo above a map card, Find your footing in a new place, and Let’s go" loading="lazy">
+            <figcaption class="cs-caption">Intro</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/onb-where.webp" width="390" height="844" alt="Onboarding question Where are you right now, with Still at home, Just landed, and I’ve been here a while" loading="lazy">
+            <figcaption class="cs-caption">Where are you right now?</figcaption>
+          </figure>
+          <!-- Animated WebP built from the final screens; reduced motion shows the still (.cs-anim / .cs-still in case-study.css) -->
+        <figure class="cs-media" style="--ratio:390/844">
+          <img class="cs-anim" src="assets/images/kit-anim.webp" width="390" height="844" alt="Onboarding question What do you already have: passport, I-20 and student ID are tapped and each flies into a chest, which counts up to 3" loading="lazy">
+          <img class="cs-still" src="assets/images/kit-still.webp" width="390" height="844" alt="" loading="lazy">
+          <figcaption class="cs-caption">Kit fills the chest</figcaption>
+        </figure>
+        <figure class="cs-media" style="--ratio:390/844">
+          <img class="cs-anim" src="assets/images/reveal-anim.webp" width="390" height="844" alt="Fog clears to show the home map, then a sheet slides up: Your map is ready, Start exploring" loading="lazy">
+          <img class="cs-still" src="assets/images/reveal-still.webp" width="390" height="844" alt="" loading="lazy">
+          <figcaption class="cs-caption">Fog clears to the map</figcaption>
+        </figure>
+        </div>
+
+        <h3 class="cs-subhead">Edges and elevation</h3>
+        <p>Anything you can press has a darker edge in its own hue, such as vermilion under primary buttons and teal under Ask. Seals and illustrations get a pine outline instead, so artwork never looks pressable. In dark mode, raised items get darker edges and slabs, never light borders.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/home-dark.webp" width="390" height="844" alt="Home map in dark mode, a night sea with tan land and quest tokens" loading="lazy">
+            <figcaption class="cs-caption">Home map, dark</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/quest-progress-dark.webp" width="390" height="844" alt="Banking &amp; Payments quest before starting, in dark mode" loading="lazy">
+            <figcaption class="cs-caption">Quest, dark</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/cleared-dark.webp" width="390" height="844" alt="Quest Cleared in dark mode, with the gold seal and the kit" loading="lazy">
+            <figcaption class="cs-caption">Quest cleared, dark</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="cs-subhead">The logo</h3>
+        <p>The wordmark is Baloo 2 in pine ink. A gold star lands where the dot of the i would be, at the end of a vermilion orbit that stops just short of it. Directions I dropped included an arrival stamp, which pointed at paperwork, and a guiding star that read as a Christmas tree topper.</p>
+        <div class="cs-gallery cs-gallery--2">
+          <figure class="cs-media" style="--ratio:680/324">
+            <img src="assets/images/logo-light.webp" width="680" height="324" alt="Lendi primary lockup on a light background" loading="lazy">
+            <figcaption class="cs-caption">Light</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:680/324">
+            <img src="assets/images/logo-dark.webp" width="680" height="324" alt="Lendi primary lockup on a dark background" loading="lazy">
+            <figcaption class="cs-caption">Dark</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="quest">
+      <div class="sec-head"><h2 class="sec-label">The Banking <span class="aw">Quest</span></h2></div>
+      <div class="cs-prose">
+        <p>The demo quest has six steps, from comparing banks to knowing the fees. Each step pairs I’m stuck with the main action, and only the student can mark a real-world task done.</p>
+        <figure class="cs-media cs-media--diagram">
+          <svg class="cs-flow cs-flow--wide" viewBox="0 0 900 96" role="img" aria-label="The Banking and Payments demo path: journey, banking quest, requirements, I’m stuck, the Grapevine, ask someone, and quest complete."><defs><marker id="lendi-uf-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M1 1 L9 5 L1 9"/></marker></defs><path class="e" d="M114 48 H134" marker-end="url(#lendi-uf-ah)"/><path class="e" d="M244 48 H264" marker-end="url(#lendi-uf-ah)"/><path class="e" d="M374 48 H394" marker-end="url(#lendi-uf-ah)"/><path class="e" d="M504 48 H524" marker-end="url(#lendi-uf-ah)"/><path class="e" d="M634 48 H654" marker-end="url(#lendi-uf-ah)"/><path class="e" d="M764 48 H784" marker-end="url(#lendi-uf-ah)"/><g class="n"><rect x="6" y="20" width="108" height="56"/><text x="60" y="48" dominant-baseline="central" font-size="12">Journey</text></g><g class="n"><rect x="136" y="20" width="108" height="56"/><text x="190" y="48" dominant-baseline="central" font-size="12">Banking quest</text></g><g class="n"><rect x="266" y="20" width="108" height="56"/><text x="320" y="48" dominant-baseline="central" font-size="12">Requirements</text></g><g class="n"><rect x="396" y="20" width="108" height="56"/><text x="450" y="48" dominant-baseline="central" font-size="12">I’m stuck</text></g><g class="n"><rect x="526" y="20" width="108" height="56"/><text x="580" y="48" dominant-baseline="central" font-size="12">The Grapevine</text></g><g class="n"><rect x="656" y="20" width="108" height="56"/><text x="710" y="48" dominant-baseline="central" font-size="12">Ask someone</text></g><g class="n"><rect x="786" y="20" width="108" height="56"/><text x="840" y="48" dominant-baseline="central" font-size="12">Quest complete</text></g></svg>
+          <svg class="cs-flow cs-flow--tall cs-flow--narrow" viewBox="0 0 240 524" role="img" aria-label="The Banking and Payments demo path: journey, banking quest, requirements, I’m stuck, the Grapevine, ask someone, and quest complete."><defs><marker id="lendi-uf-ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M1 1 L9 5 L1 9"/></marker></defs><path class="e" d="M120 62 V90" marker-end="url(#lendi-uf-ahm)"/><path class="e" d="M120 136 V164" marker-end="url(#lendi-uf-ahm)"/><path class="e" d="M120 210 V238" marker-end="url(#lendi-uf-ahm)"/><path class="e" d="M120 284 V312" marker-end="url(#lendi-uf-ahm)"/><path class="e" d="M120 358 V386" marker-end="url(#lendi-uf-ahm)"/><path class="e" d="M120 432 V460" marker-end="url(#lendi-uf-ahm)"/><g class="n"><rect x="30" y="18" width="180" height="44"/><text x="120" y="40" dominant-baseline="central" font-size="12">Journey</text></g><g class="n"><rect x="30" y="92" width="180" height="44"/><text x="120" y="114" dominant-baseline="central" font-size="12">Banking quest</text></g><g class="n"><rect x="30" y="166" width="180" height="44"/><text x="120" y="188" dominant-baseline="central" font-size="12">Requirements</text></g><g class="n"><rect x="30" y="240" width="180" height="44"/><text x="120" y="262" dominant-baseline="central" font-size="12">I’m stuck</text></g><g class="n"><rect x="30" y="314" width="180" height="44"/><text x="120" y="336" dominant-baseline="central" font-size="12">The Grapevine</text></g><g class="n"><rect x="30" y="388" width="180" height="44"/><text x="120" y="410" dominant-baseline="central" font-size="12">Ask someone</text></g><g class="n"><rect x="30" y="462" width="180" height="44"/><text x="120" y="484" dominant-baseline="central" font-size="12">Quest complete</text></g></svg>
+          <figcaption class="cs-caption">Banking &amp; Payments demo path</figcaption>
+        </figure>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/quest-before.webp" width="390" height="844" alt="Banking &amp; Payments before starting: the kit as a row of circles, the six steps, and connected quests" loading="lazy">
+            <figcaption class="cs-caption">Before starting</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/step-todo.webp" width="390" height="844" alt="The Open your account step: numbered instructions, what to bring, contacts, and I’m stuck beside the main action" loading="lazy">
+            <figcaption class="cs-caption">A step</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="cs-subhead">Celebrations sized to the win</h3>
+        <p>The size of each moment matches the size of the win, and every finish can be undone.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/quest-start.webp" width="390" height="844" alt="Full-screen Quest Started for Banking &amp; Payments, the first time a quest begins" loading="lazy">
+            <figcaption class="cs-caption">First quest started</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/step-done.webp" width="390" height="844" alt="A small Step done toast with Undo after Gather your documents" loading="lazy">
+            <figcaption class="cs-caption">Step done</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/step-item.webp" width="390" height="844" alt="A sheet showing the bank account added to the kit, with Up next and Undo" loading="lazy">
+            <figcaption class="cs-caption">Item earned</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/cleared.webp" width="390" height="844" alt="Full-screen Quest Cleared with the gold seal and the kit with new items" loading="lazy">
+            <figcaption class="cs-caption">Quest cleared</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="cs-subhead">Humor kept out of stressful moments</h3>
+        <p>Humor lives in quest names, celebrations, and waiting screens. Instructions and help stay plain, because that is where students are stressed.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/quest-progress.webp" width="390" height="844" alt="Quest in progress with an Up next card that reads Today’s boss: the bank" loading="lazy">
+            <figcaption class="cs-caption">Up next: “Today’s boss: the bank.”</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/answer-checked.webp" width="390" height="844" alt="A checked answer with short numbered steps and an official source" loading="lazy">
+            <figcaption class="cs-caption">Help: plain steps</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="cs-subhead">When a step goes wrong</h3>
+        <p>I’m stuck opens problem tiles, such as They asked for an SSN. A tile leads to a checked answer, or says plainly that none exists yet and offers contacts.</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/stuck.webp" width="390" height="844" alt="I’m stuck sheet with problem tiles" loading="lazy">
+            <figcaption class="cs-caption">I’m stuck</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/unchecked.webp" width="390" height="844" alt="No checked answer for this yet, with contacts for the bank and the international office" loading="lazy">
+            <figcaption class="cs-caption">No checked answer yet</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="cs-subhead">The Grapevine as a ranked board</h3>
+        <p>Tips and questions sit on a board ranked by helpful votes, with no direct messages. Students only see a first name and school, replies are not guaranteed, and the sent screen keeps the wait light: “Question sent. Fingers crossed.”</p>
+        <div class="cs-gallery cs-gallery--phones cs-gallery--framed">
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/grapevine.webp" width="390" height="844" alt="The Grapevine tab on a step: tips and questions from students, with helpful counts" loading="lazy">
+            <figcaption class="cs-caption">The Grapevine</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/ask.webp" width="390" height="844" alt="Ask someone who’s done this: a prefilled question, who would help most, and a note that they see your first name and school only" loading="lazy">
+            <figcaption class="cs-caption">Ask someone</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:390/844">
+            <img src="assets/images/sent.webp" width="390" height="844" alt="Question sent. Fingers crossed. Replies can take a while, with things to do while you wait" loading="lazy">
+            <figcaption class="cs-caption">Question sent</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-prose">
+        <p>I designed the Banking &amp; Payments flow as 17 final screens plus the Home map, in light and dark mode, and linked them as a clickable prototype. Delight built and deployed a working MVP of the flow, linked under Project Links. Checked answers, official sources, and Grapevine posts use sample content in both; collecting and reviewing real sources is future work.</p>
+        <h3 class="cs-subhead">Early feedback</h3>
+        <p>We shared the MVP with students who had taken the survey. One student’s replies were the most useful: the app was easy to navigate, it needed more languages, and it should connect to ride apps or to students on campus who give rides. That led to a Get a ride concept, which is a design only and not yet tested.</p>
+        <div class="cs-gallery cs-gallery--phones">
+          <figure class="cs-media" style="--ratio:600/1187">
+            <img src="assets/images/testing-1.webp" width="600" height="1187" alt="WhatsApp chat sharing the MVP link with a student, who replies that it is easy to navigate and asks for different languages" loading="lazy">
+            <figcaption class="cs-caption">First feedback</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:600/1187">
+            <img src="assets/images/testing-2.webp" width="600" height="1187" alt="The student’s next messages: connect to ride apps like Uber or Lyft, or to local students who give rides on campus" loading="lazy">
+            <figcaption class="cs-caption">Ride suggestion</figcaption>
+          </figure>
+          <figure class="cs-media" style="--ratio:600/1187">
+            <img src="assets/images/testing-3.webp" width="600" height="1187" alt="Get a ride concept: connect ride apps with the pickup filled in, and campus drivers on the school’s register" loading="lazy">
+            <figcaption class="cs-caption">Get a ride concept</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="learned">
+      <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
+      <div class="cs-prose">
+        <p>Lendi was the first project I took from research to a finished visual system on my own, with AI design tools along the way. It became my main visual design piece. Much of it refined skills I already had, such as wireframing, building a palette, and designing for light and dark mode.</p>
+        <p>It was also my first time mapping a full product as a process flow, from a school’s invitation to a finished quest, with the decisions and fallbacks at each step.</p>
+        <p>Working on a competition entry showed me where business and design processes overlap and where they part. Both rely on research, testing, validation, and diagrams, but they ask different questions of them. The pitch had to show that Lendi was a viable business decision, and the product had to stay a usable experience built around students. Communicating both at once was the hardest part of the project.</p>
+  </article>
+</div>
+<!-- ═══ MORE STORIES ═══
+     Cards copied from the Selected Builds grid in index.html; keep the copy in step. -->
+<section class="cs-more wrap" aria-labelledby="more-title">
+  <div class="sec-head">
+    <h2 class="sec-label" id="more-title">More <span class="aw">Stories</span></h2>
+    <span class="sec-meta"><a href="../../#projects">Selected Builds</a></span>
+  </div>
+  <div class="archive-grid">
+    <article class="pa-card animate-in">
+      <div class="pa-img pa-img--c2"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+                <div class="pa-meta"><span class="pa-tag">Tiffany &amp; Co.</span><span class="pa-tag">E-commerce</span><span class="pa-tag">Research</span><span class="pa-tag">Luxury</span></div>
+        <h3 class="pa-title">Saved Items &amp; Comparison</h3>
+        <p class="pa-desc">A saved-items and comparison experience for Tiffany’s e-commerce platform, shaped through behavioral analytics, consumer research, client segmentation, and in-store observation. I designed the interaction behavior, states, hierarchy, and UX copy within Tiffany’s existing design system.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../tiffany-wishlist/" class="pa-link pa-link--design pa-stretch" aria-label="Saved Items &amp; Comparison case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">UX Research</span><span class="pa-tech">Interaction Design</span><span class="pa-tech">Design Systems</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="pa-card animate-in delay-1">
+      <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Ford Motor Company</span><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span></div>
+        <h3 class="pa-title">InsightCuts</h3>
+        <p class="pa-desc">A research storytelling concept developed with Ford to turn dense UX findings into shorter, narrative-driven formats. I built the first interactive prototype, defined the core interaction flow, tested the concept with Ford researchers and stakeholders, and produced the video simulation used at final review.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../insightcuts/" class="pa-link pa-link--design pa-stretch" aria-label="InsightCuts case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Prototyping</span><span class="pa-tech">Research</span><span class="pa-tech">Video</span><span class="pa-tech">AI</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="pa-card animate-in delay-2">
+      <div class="pa-img pa-img--c3"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span><span class="pa-badge pa-badge--code">Code</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">CORE Futures Lab</span><span class="pa-tag">Mobile</span><span class="pa-tag">Healthcare</span><span class="pa-tag">Speech Therapy</span><span class="pa-tag">AI</span></div>
+        <h3 class="pa-title">Worlds of Hello</h3>
+        <p class="pa-desc">A two-app speech therapy platform for children and clinicians. I designed and built Flutter screens across both experiences, redesigned authentication, implemented custom in-app video capture, and helped build deterministic voice playback using pre-generated cloned audio.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../worlds-of-hello/" class="pa-link pa-link--design pa-stretch" aria-label="Worlds of Hello case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Flutter</span><span class="pa-tech">Supabase</span><span class="pa-tech">Python</span><span class="pa-tech">Figma</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker’s Times</div>
+      <p class="foot-brand-desc">Design, engineering, and the work in between.</p>
+      <p class="foot-brand-quote">“Where Code Meets Canvas”</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="foot-ext-link">Resume (PDF) <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="../../#projects" class="foot-ext-link">Selected Builds</a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <a href="mailto:shalomdonga@gmail.com" class="foot-email">shalomdonga@gmail.com</a>
+      <div class="foot-icon-row">
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

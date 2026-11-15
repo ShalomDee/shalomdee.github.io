@@ -200,8 +200,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-prose > .cs-media,.cs-prose > .cs-gallery,.cs-prose > .cs-phones,
 .cs-source > .cs-media,.cs-source > .cs-gallery{margin-block:var(--sp-lg);}
 .cs-prose strong{color:var(--v85);}
-.cs-prose p a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
-.cs-prose p a:hover{color:var(--v100);}
+.cs-prose p a,.cs-prose li a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+.cs-prose p a:hover,.cs-prose li a:hover{color:var(--v100);}
 .cs-prose > .cs-subhead{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;
   line-height:1.2;color:var(--v100);
@@ -454,3 +454,17 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .sec-head{flex-wrap:wrap;gap:var(--sp-xs) var(--sp-md);}
   .cs-chart,.cs-gallery--framed{padding:var(--sp-md);}
 }
+
+/* Animated screens: an animated WebP with a still copy for reduced motion */
+.cs-media > .cs-still{display:none;}
+@media (prefers-reduced-motion: reduce){.cs-media > .cs-anim{display:none;}.cs-media > .cs-still{display:block;}}
+
+/* Color swatches: a chip, the color name and its job */
+.cs-prose > .cs-swatches{margin-block:var(--sp-lg);}
+.cs-swatches{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--sp-md);}
+.cs-prose .cs-swatches li{text-align:left;hyphens:manual;}
+.cs-swatches li{display:grid;grid-template-columns:40px 1fr;column-gap:var(--sp-sm);align-items:center;font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.35;color:var(--v70);}
+.cs-swatches span{grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--c);border:1px solid var(--v20);}
+.cs-swatches b{font-size:var(--sz-sm);font-weight:600;color:var(--v100);}
+/* Text-heavy tables read better left-aligned */
+.cs-table--left th,.cs-table--left td{text-align:left;}
