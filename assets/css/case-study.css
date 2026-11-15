@@ -113,6 +113,8 @@
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
+/* Black phone bodies disappear on the dark page, so a thin light rim traces their outline */
+[data-theme="dark"] .cs-hero .cs-media--rim > img{filter:drop-shadow(0 0 1px rgba(217,206,178,0.7)) drop-shadow(0 0 1px rgba(217,206,178,0.5)) drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
 /* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
 [data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
 .cs-ph{
@@ -233,6 +235,8 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-gallery--phones{grid-auto-flow:column;grid-auto-columns:minmax(0,220px);justify-content:center;}
 /* Phones that would leave empty space either side get a frame, drawn like the survey charts */
 .cs-gallery--framed{padding:var(--sp-lg);border:2px solid var(--v20);border-radius:3px;}
+/* On the dark page the 20% rule nearly vanished, so Night Edition draws it stronger over a faint panel */
+[data-theme="dark"] .cs-gallery--framed{border-color:var(--v35);background:rgba(217,206,178,0.05);}
 
 /* Key decisions: spacing alone separates one from the next */
 .cs-decision{padding:var(--sp-lg) 0;}
