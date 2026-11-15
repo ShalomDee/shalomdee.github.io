@@ -113,8 +113,10 @@
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
-/* Black phone bodies disappear on the dark page, so a thin light rim traces their outline */
-[data-theme="dark"] .cs-hero .cs-media--rim > img{filter:drop-shadow(0 0 1px rgba(217,206,178,0.7)) drop-shadow(0 0 1px rgba(217,206,178,0.5)) drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
+/* Images drawn twice, one per theme (e.g. black phones in Day Edition, light phones in Night Edition) */
+.cs-theme-dark{display:none;}
+[data-theme="dark"] .cs-media > img.cs-theme-light{display:none;}
+[data-theme="dark"] .cs-media > img.cs-theme-dark{display:block;}
 /* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
 [data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
 .cs-ph{
