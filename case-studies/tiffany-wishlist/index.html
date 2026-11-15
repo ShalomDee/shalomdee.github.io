@@ -153,7 +153,7 @@
     <section class="cs-sec" id="overview">
       <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
       <div class="cs-prose">
-        <p>Tiffany’s e-flagship platform had no persistent wishlist, while the legacy sites do. I was asked to explore how persistent saving could work across the modern e-flagship sites, with entry points on product pages, category pages, search, and cart, and a brief that also included account-based persistence, multiple lists, sharing, and recommendations.</p>
+        <p>Tiffany runs two generations of websites: the older legacy sites and the newer e-flagship platform. The legacy sites have a wishlist, and e-flagship had none. I was asked to explore how persistent saving could work across the e-flagship sites, with entry points on product pages, category pages, search, and cart, and a brief that also included account-based persistence, multiple lists, sharing, and recommendations.</p>
 
         <div class="cs-gallery cs-gallery--2">
           <figure class="cs-media" style="--ratio:3/1">
@@ -165,7 +165,7 @@
             <figcaption class="cs-caption">E-flagship site</figcaption>
           </figure>
         </div>
-        <p>My work was an early phase of that larger effort. Rather than designing every capability end to end, I investigated how customers approached saving and consideration, determined which capabilities had the strongest basis for development, and turned that into a focused design direction: a saved-items experience paired with a dedicated comparison flow.</p>
+        <p>My work was an early phase of that larger effort. I investigated how customers approached saving and consideration, determined which capabilities had the strongest basis for development, and turned that into a focused design direction.</p>
       </div>
     </section>
 
@@ -192,46 +192,13 @@
         <p>Each source answered a different part of the problem.</p>
 
         <div class="cs-source">
-          <h4 class="kicker">Existing experience</h4>
-
-          <!-- ContentSquare zoning: click rate by zone, page-view level, desktop, all users, 30-day window -->
-          <div class="cs-gallery cs-gallery--2">
-            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-home.webp" width="1200" height="688" alt="ContentSquare zone overlay on the homepage: 26.9% on the header and navigation, 0.65% on the hero, 0.53% on the promo banner" loading="lazy"><figcaption class="cs-caption cs-caption--note">Homepage: most clicks landed in the header and navigation, where people go to move around the site.</figcaption></figure>
-            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-pdp.webp" width="1200" height="688" alt="ContentSquare zone overlay on a product page: 27.5% on the product details and buttons, 2.65% on the product images" loading="lazy"><figcaption class="cs-caption cs-caption--note">Product page: the details panel drew about ten times the clicks of the images, so the save control could sit there, where customers already interact.</figcaption></figure>
-          </div>
-          <p class="cs-media-note">ContentSquare zoning: click rate by page section, desktop, all visitors, 30 days.</p>
-          <p>ContentSquare showed how customers used product and commerce pages, and later informed where new controls could sit without disrupting established behavior. The cart already kept products indefinitely, so persistence alone would not differentiate a dedicated saved-items experience.</p>
-        </div>
-
-        <div class="cs-source">
-          <h4 class="kicker">Competitive analysis</h4>
-          <!-- Competitive audit, rebuilt from Shalom's grid as an HTML table so it reads at column width and
-               follows the theme. Scrolls sideways inside its frame on narrow screens, brand column pinned. -->
-          <div class="cs-table-wrap" role="region" aria-label="Saved-items features across 11 retailers" tabindex="0">
-            <table class="cs-table">
-              <thead><tr><th scope="col"><span class="cs-vh">Brand</span></th><th scope="col">Heart icon</th><th scope="col">On homepage</th><th scope="col">Icon on PLP</th><th scope="col">Icon on PDP</th><th scope="col">Size prompt</th><th scope="col">Guest access</th><th scope="col">Sub-lists</th><th scope="col">Sharing</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Cartier</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
-                <tr><th scope="row">Chanel</th><td>Star</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">Louis Vuitton</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">Dior</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
-                <tr><th scope="row">Prada</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
-                <tr><th scope="row">Van Cleef</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
-                <tr><th scope="row">Nordstrom</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>With text in box</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">Nike</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td>With text in pillbox</td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">Amazon</th><td>Text</td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td>Preselected default</td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">Target</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>Preselected default</td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
-                <tr><th scope="row">FashionNova</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td>Individual items</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="cs-table-hint" aria-hidden="true">Scroll sideways to see every feature.</p>
-          <p>Among luxury competitors, saved-item organization was generally limited. Multiple lists and folders appeared more often in mass-market experiences, which showed where Tiffany’s brief extended beyond common luxury implementations.</p>
+          <h4 class="kicker">Existing behavior</h4>
+          <p>The cart already kept products for months on the same browser and device, so persistence alone would not set a saved-items experience apart.</p>
         </div>
 
         <div class="cs-source">
           <h4 class="kicker">Published research</h4>
-          <p>Industry research from <a href="https://bizrateinsights.com/consumer-insights-wishlist/" target="_blank" rel="noopener noreferrer">Bizrate Insights</a> found that about half of shoppers don’t use wishlists, and that having to register or sign in is one of the main reasons. <a href="https://rbr.business.rutgers.edu/sites/default/files/documents/rbr-060105.pdf" target="_blank" rel="noopener noreferrer">Academic research on wish lists</a> found they can lower the chance of an eventual purchase, because customers judge a saved item on different qualities when they return to it than when they first saved it. Together, these shaped where account creation should enter the journey, and why returning to saved items needed support for re-evaluating them, not just storage.</p>
+          <p>Industry research from <a href="https://bizrateinsights.com/consumer-insights-wishlist/" target="_blank" rel="noopener noreferrer">Bizrate Insights</a> found that about half of shoppers don’t use wishlists, and that having to register or sign in is one of the main reasons. <a href="https://rbr.business.rutgers.edu/sites/default/files/documents/rbr-060105.pdf" target="_blank" rel="noopener noreferrer">Academic research on wish lists</a> found they can lower the chance of an eventual purchase, because customers judge a saved item on different qualities when they return to it than when they first saved it. Saving on its own did not help people decide: when customers came back to a saved item, they needed help weighing it again. Together, these findings shaped where sign-in should enter the journey and pointed toward comparison.</p>
         </div>
 
         <div class="cs-source">
@@ -278,7 +245,7 @@
           <p>I designed and fielded a survey to 36 respondents from Tiffany’s client base, revising it so respondents who did not save or share products could still answer relevant questions rather than being filtered out. Side-by-side comparison emerged as a stronger unmet need than saving alone. Sharing ranked substantially lower than the other behaviors, despite its prominence in the brief.</p>
         </div>
 
-        <p>Together, these gave me a hierarchy of needs. Persistence already existed in partial form through the cart and external tools. Comparison had support in both qualitative and quantitative research. Sharing had comparatively weak support. Early sign-in introduced friction that had to be weighed against the business goal of increasing account creation.</p>
+        <p>Together, these gave me a hierarchy of needs. Persistence already existed in partial form through the cart and external tools. Comparison had support in both qualitative and quantitative research. Sharing had comparatively weak support. Early sign-in added friction, but account creation was a business goal, so sign-in had to appear somewhere in the journey.</p>
       </div>
     </section>
 
@@ -286,7 +253,7 @@
       <div class="sec-head"><h2 class="sec-label">The <span class="aw">Solution</span></h2></div>
       <div class="cs-prose">
         <p>The clearest gap was what happened between discovering a product and deciding whether to purchase it. Some customers need a way to return to products they have seen; others need support evaluating a smaller set of options before deciding. That shifted the project away from recreating a traditional wishlist and toward supporting consideration over time.</p>
-        <p>I explored three levels of intent: Recently Viewed, Compare, and Save. Recently Viewed asked nothing of the customer and helped people return to something they had already seen. Compare asked for a little effort from customers narrowing a decision between a few products. Save, potentially paired with stock or price alerts, was a longer-term commitment to tracking an item. No single wishlist could serve all three. Tiffany also did not yet have the personalization system that Recently Viewed and the brief’s recommendation concepts relied on, so I prioritized Compare and Save, which would stay useful without it.</p>
+        <p>To think about how committed a customer was, I mapped three levels of intent: Recently Viewed, Compare, and Save. Recently Viewed asked nothing of the customer and helped people return to something they had already seen. Compare asked for a little effort from customers narrowing a decision between a few products. Save, potentially paired with stock or price alerts, was a longer-term commitment to tracking an item. No single wishlist could serve all three. Tiffany also did not yet have the personalization system that Recently Viewed and the brief’s recommendation concepts relied on, so I prioritized Compare and Save, which would stay useful without it. In the final flow, customers save pieces as they browse, then pick two or three of them in Saved Items to compare side by side.</p>
         <!-- Recently Viewed was set aside (no personalization system), so it has no image.
 -->
         <div class="cs-gallery cs-gallery--2">
@@ -299,6 +266,45 @@
             <figcaption class="cs-caption">Save</figcaption>
           </figure>
         </div>
+        <h3 class="cs-subhead">Placement and scope</h3>
+        <div class="cs-source">
+          <h4 class="kicker">Click behavior</h4>
+
+          <!-- ContentSquare zoning: click rate by zone, page-view level, desktop, all users, 30-day window -->
+          <div class="cs-gallery cs-gallery--2">
+            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-home.webp" width="1200" height="688" alt="ContentSquare zone overlay on the homepage: 26.9% on the header and navigation, 0.65% on the hero, 0.53% on the promo banner" loading="lazy"><figcaption class="cs-caption cs-caption--note">Homepage: most clicks landed in the header and navigation, where people go to move around the site.</figcaption></figure>
+            <figure class="cs-media" style="--ratio:1200/688"><img src="assets/images/content-square-pdp.webp" width="1200" height="688" alt="ContentSquare zone overlay on a product page: 27.5% on the product details and buttons, 2.65% on the product images" loading="lazy"><figcaption class="cs-caption cs-caption--note">Product page: the details panel drew about ten times the clicks of the images, so the save control could sit there, where customers already interact.</figcaption></figure>
+          </div>
+          <p class="cs-media-note">ContentSquare zoning: click rate by page section, desktop, all visitors, 30 days.</p>
+          <p>ContentSquare, Tiffany’s behavioral analytics tool, showed where customers already clicked on the homepage and product pages, which set where the save control could sit without disrupting established behavior.</p>
+        </div>
+
+        <div class="cs-source">
+          <h4 class="kicker">Competitive analysis</h4>
+          <!-- Competitive audit, rebuilt from Shalom's grid as an HTML table so it reads at column width and
+               follows the theme. Scrolls sideways inside its frame on narrow screens, brand column pinned. -->
+          <div class="cs-table-wrap" role="region" aria-label="Saved-items features across 11 retailers" tabindex="0">
+            <table class="cs-table">
+              <thead><tr><th scope="col"><span class="cs-vh">Brand</span></th><th scope="col">Heart icon</th><th scope="col">On homepage</th><th scope="col">On category page</th><th scope="col">On product page</th><th scope="col">Size prompt</th><th scope="col">Guest access</th><th scope="col">Sub-lists</th><th scope="col">Sharing</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Cartier</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
+                <tr><th scope="row">Chanel</th><td>Star</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">Louis Vuitton</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">Dior</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>On hover</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
+                <tr><th scope="row">Prada</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
+                <tr><th scope="row">Van Cleef</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td></tr>
+                <tr><th scope="row">Nordstrom</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>With text in box</td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">Nike</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td>With text in pillbox</td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">Amazon</th><td>Text</td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td><span class="cs-vh">No</span></td><td>Preselected default</td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">Target</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td>Preselected default</td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td></tr>
+                <tr><th scope="row">FashionNova</th><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td><span class="cs-yes" role="img" aria-label="Yes"></span></td><td><span class="cs-vh">No</span></td><td>Individual items</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cs-table-hint" aria-hidden="true">Scroll sideways to see every feature.</p>
+          <p>Among luxury competitors, saved-item organization was generally limited. Multiple lists and folders appeared more often in mass-market experiences, which showed where Tiffany’s brief extended beyond common luxury implementations. Together with the survey, this kept multiple lists and sharing out of the first version.</p>
+        </div>
+
         <p>The final direction combined a persistent saved-items experience with a dedicated comparison flow, designed within Tiffany’s existing visual language, grids, and component system.</p>
       </div>
     </section>
@@ -307,7 +313,7 @@
       <div class="sec-head"><h2 class="sec-label">Key <span class="aw">Decisions</span></h2></div>
       <div class="cs-decision cs-prose">
         <h3>Save first, sign in at Compare</h3>
-        <p>Account creation was a business objective and a KPI on the original brief, but the research showed that requiring authentication before customers got any value from saving added friction. I separated the two. Customers could save without signing in, and account creation entered when they chose to use Compare, connecting a higher-intent behavior to the account-creation goal.</p>
+        <p>Account creation was a business objective and a KPI on the original brief, but the research showed that requiring authentication before customers got any value from saving added friction. I separated the two. Customers can save items and select them for comparison without an account. The sign-in prompt appears when they open the comparison view, which ties account creation to a higher-intent step. The tradeoff is that customers who only save never get asked for an account.</p>
         <figure class="cs-media"><img src="assets/images/sign-in-pc.webp" width="1440" height="900" alt="Wireframe: a sign-in prompt over Saved Items, reading “Sign in to continue to your side-by-side comparison”" loading="lazy"></figure>
       </div>
       <div class="cs-decision cs-prose">
@@ -317,7 +323,7 @@
       </div>
       <div class="cs-decision cs-prose">
         <h3>Take one journey all the way through</h3>
-        <p>The brief covered several journeys and capabilities. I focused detailed design on one primary consideration journey and set aside a separate post-purchase direction, taking the strongest research-backed opportunity into interaction and interface design rather than spreading the remaining time across several unfinished journeys.</p>
+        <p>The brief covered several journeys and capabilities. I focused detailed design on one primary consideration journey and set aside a separate post-purchase direction, which looked at how saved items appear during checkout and after a purchase, taking the strongest research-backed opportunity into interaction and interface design rather than spreading the remaining time across several unfinished journeys.</p>
         <!-- User flow, redrawn from Shalom's Figma flow chart as inline SVG so it reads at column width and
              follows the theme. Wide layout from 1200px, stacked below. Styles: .cs-flow in case-study.css. -->
         <figure class="cs-media cs-flow-fig">
@@ -352,7 +358,8 @@
           </div>
           <figcaption class="cs-caption">On mobile</figcaption>
         </figure>
-        <p>By the final day of the internship, I had completed the focused customer journey, comparison-table design, and mobile comparison behavior, and handed the designs, supporting research, and decision rationale to my manager for continued development.</p>
+        <p>By the final day of the internship, I had completed the focused customer journey, comparison-table design, and mobile comparison behavior, and handed the designs, supporting research, and decision rationale to my manager.</p>
+        <p>The brief asked for persistent saving across the e-flagship sites, with multiple lists, sharing, and recommendations. The handoff covers saving and comparison on desktop and mobile, and the research shows which of the other capabilities had weaker support or depended on systems Tiffany did not yet have. The work now sits with my manager as the foundation for the broader saved-items experience.</p>
       </div>
     </section>
 
@@ -360,8 +367,7 @@
       <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
       <div class="cs-prose">
         <p>The project started with a feature brief and became an exercise in defining what the feature needed to accomplish before deciding what it should look like. Along the way I found myself working in three modes. Think within the box: understand the existing system, its constraints, and why they exist. Think outside the box: explore beyond the patterns already established. Question the box: is the problem framed correctly, and is the proposed solution solving the right problem? Asking why the old wishlist had not carried over was the third mode, and it shaped the research that followed. I have carried the three modes into my work since.</p>
-        <p>I was also working within an established design system, business constraints, and technical limitations, producing work clear enough for someone else to continue after I left. That meant designing for continuity, not just presentation. With this project running alongside other UX work, I got faster at telling apart decisions that needed deeper investigation from those where an existing pattern was sufficient.</p>
-        <p>The work now sits with my manager as the foundation for the broader saved-items experience.</p>
+        <p>I was also working within an established design system, business constraints, and technical limitations, producing work clear enough for someone else to continue after I left. With this project running alongside other UX work, I got faster at telling apart decisions that needed deeper investigation from those where an existing pattern was sufficient.</p>
       </div>
     </section>
   </article>
