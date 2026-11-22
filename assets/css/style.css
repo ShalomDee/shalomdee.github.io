@@ -318,7 +318,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .nav-ticker a:not(.nav-cta):hover,
 .nav-ticker a:not(.nav-cta).active{color:var(--v100);border-bottom-color:var(--gold);}
 /* Big enough to read as a four-point star, faint enough to stay behind the links */
-.nav-sep{color:var(--v35);font-size:11px;line-height:1;user-select:none;}
+.nav-sep{color:var(--v35);font-size:var(--sz-xs);line-height:1;user-select:none;}
 
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
@@ -356,9 +356,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--v55);border:none;padding:0;
 }
 [data-theme="light"] .drawer{background:rgba(245,241,232,0.98);}
-[data-theme="light"] .drawer a{color:var(--v85);}
-[data-theme="light"] .drawer a:hover{color:var(--gold);}
-[data-theme="light"] .drawer-close{color:var(--v55);}
 
 /* Resume button in the nav and drawer. Sits after both so it wins
    over .nav-ticker a and .drawer a without !important. */
@@ -540,7 +537,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .wire-logo{
   width:96px;
-  background:var(--v08);border:1px solid var(--v20);border-radius:5px;
+  background:var(--v08);border:1px solid var(--v20);border-radius:4px;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-hd);font-weight:900;font-size:var(--sz-base);
   color:var(--v55);flex-shrink:0;overflow:hidden;
@@ -583,28 +580,28 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .stag-amber {background:rgba(201,169,110,.12);border-color:rgba(201,169,110,.35);color:rgba(217,206,178,.90);}
 
 /* ─── Engineering and Tools: solid filled pills ─── */
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag         { color: var(--vellum); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber   { background: rgba(195,158,85,0.55); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-purple  { background: rgba(60,110,175,0.52); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-teal    { background: rgba(45,170,135,0.48); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-indigo  { background: rgba(185,80,135,0.48); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-olive   { background: rgba(148,158,55,0.50); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-cyan    { background: rgba(40,185,205,0.44); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-violet  { background: rgba(128,80,188,0.46); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-coral   { background: rgba(205,100,60,0.50); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber { background: rgba(195,158,85,0.44); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-olive { background: rgba(148,158,55,0.46); }
+#skills .classifieds-frame > .classified-category--solid .stag         { color: var(--vellum); }
+#skills .classifieds-frame > .classified-category--solid .stag-amber   { background: rgba(195,158,85,0.55); }
+#skills .classifieds-frame > .classified-category--solid .stag-purple  { background: rgba(60,110,175,0.52); }
+#skills .classifieds-frame > .classified-category--solid .stag-teal    { background: rgba(45,170,135,0.48); }
+#skills .classifieds-frame > .classified-category--solid .stag-indigo  { background: rgba(185,80,135,0.48); }
+#skills .classifieds-frame > .classified-category--solid .stag-olive   { background: rgba(148,158,55,0.50); }
+#skills .classifieds-frame > .classified-category--solid .stag-cyan    { background: rgba(40,185,205,0.44); }
+#skills .classifieds-frame > .classified-category--solid .stag-violet  { background: rgba(128,80,188,0.46); }
+#skills .classifieds-frame > .classified-category--solid .stag-coral   { background: rgba(205,100,60,0.50); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-amber { background: rgba(195,158,85,0.44); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-olive { background: rgba(148,158,55,0.46); }
 
 /* ─── Design and Research: outline pills ─── */
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(1) .stag { background: rgba(0,0,0,0.40); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-amber   { border-color: rgba(195,158,85,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-purple  { border-color: rgba(60,110,175,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-indigo  { border-color: rgba(185,80,135,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-coral   { border-color: rgba(205,100,60,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-cyan    { border-color: rgba(40,185,205,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-olive   { border-color: rgba(148,158,55,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-teal    { border-color: rgba(45,170,135,1); }
+#skills .classifieds-frame > .classified-category--outline .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--outline .stag { background: rgba(0,0,0,0.40); }
+#skills .classifieds-frame > .classified-category--outline .stag-amber   { border-color: rgba(195,158,85,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-purple  { border-color: rgba(60,110,175,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-indigo  { border-color: rgba(185,80,135,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-coral   { border-color: rgba(205,100,60,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-cyan    { border-color: rgba(40,185,205,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-olive   { border-color: rgba(148,158,55,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-teal    { border-color: rgba(45,170,135,1); }
 
 /* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══ */
 .editorial-section{
@@ -747,7 +744,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   display:flex;gap:4px;
 }
 .pa-badge{
-  font-family:var(--font-ui);font-size:10px;font-weight:700;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:700;
   text-transform:uppercase;letter-spacing:0.1em;
   padding:3px 8px;border-radius:2px;
 }
@@ -758,7 +755,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-body{padding:var(--sp-md);--pa-rule-gap:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
 .pa-tag{
-  font-family:var(--font-ui);font-size:10px;font-weight:500;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:500;
   text-transform:uppercase;letter-spacing:0.08em;
   color:var(--v45);background:var(--v08);padding:2px 8px;border-radius:2px;
 }
@@ -805,7 +802,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-techs{display:flex;gap:4px;flex-wrap:wrap;}
 .pa-tech{
-  font-family:var(--font-ui);font-size:9px;font-weight:500;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:500;
   text-transform:uppercase;letter-spacing:0.05em;
   color:var(--v45);padding:2px 6px;
   border:1px solid var(--v15);border-radius:2px;
