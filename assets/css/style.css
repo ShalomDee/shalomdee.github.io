@@ -732,7 +732,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-img--c2{background:#2A3D38 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 .pa-img--c3{background:#3D3525 url('../images/projs/card-woh.webp') center/cover no-repeat;}
 .pa-img--c4{background:#1E2A3D url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
-.pa-img--c5{background:#2A2540 url('../images/projs/card-recaps.webp') center/cover no-repeat;}
+.pa-img--c5{background:#2A2540 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
 .pa-img--c7{background:#1A1816 url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c7{background:#F4EEDF url('../images/projs/card-lendi.webp') center/cover no-repeat;}
@@ -741,7 +741,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 [data-theme="light"] .pa-img--c2{background:#A3BDB9 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/card-woh.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c5{background:#A898B8 url('../images/projs/card-recaps.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c5{background:#A898B8 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-badges{
   position:absolute;top:8px;right:8px;
   display:flex;gap:4px;

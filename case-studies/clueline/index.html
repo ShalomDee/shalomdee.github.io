@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clueline | Shalom Donga</title>
+  <meta name="description" content="A case study on Clueline, a story-check editor that helps mystery writers track clues, connect events and catch plot inconsistencies.">
+  <meta name="theme-color" content="#F5F1E8">
+  <!-- Copied unchanged from index.html so the theme carries across pages -->
+  <script>(function(){var s=null,t='light';try{s=localStorage.getItem('theme');}catch(e){}try{t=s==='dark'||s==='light'?s:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){}document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.querySelector('meta[name="theme-color"]').content='#121417';})();</script>
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="canonical" href="https://shalomdee.github.io/case-studies/clueline/">
+
+  <!-- Share previews. Swap og:image for a case study cover once one exists (absolute URL, 1200×630). -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shalomdee.github.io/case-studies/clueline/">
+  <meta property="og:title" content="Clueline | Shalom Donga">
+  <meta property="og:description" content="A story-check editor that helps mystery writers track clues, connect events and catch plot inconsistencies.">
+  <meta property="og:image" content="https://shalomdee.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Open Graph preview for Shalom Donga’s portfolio, featuring The Maker’s Times masthead, her name and Design Engineer title, and an illustrated tug-of-war between design and engineering.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <!-- Same ?v= as index.html; bump all three together -->
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-22a">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-22a">
+  <script src="../../assets/js/main.js?v=2026-11-22a" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ MOBILE DRAWER ═══ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Menu">
+  <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  <a href="../../#about">About</a>
+  <a href="../../#projects">Projects</a>
+  <a href="../../#experience">Experience</a>
+  <a href="../../#skills">Skills</a>
+  <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  <div class="drawer-foot">
+    <a href="https://github.com/shalomdee" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://linkedin.com/in/shalom-donga" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="mailto:shalomdonga@gmail.com">Email</a>
+  </div>
+</nav>
+
+<!-- ═══ MASTHEAD ═══ -->
+<!-- Back button: left end of both sticky bars, mirroring the theme toggle and menu button -->
+<div class="mast-top">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <div class="mast-actions">
+    <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+      <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<header>
+  <div class="mast-title">
+    <p class="mast-name"><a href="../../">The Maker’s Times</a></p>
+    <p class="mast-edition">Where Code Meets Canvas</p>
+  </div>
+
+  <div class="mast-desktop">
+    <div class="mast-quote-box">
+      <span class="mast-quote-text">“Where Code<br>Meets Canvas”</span>
+    </div>
+    <div class="mast-center">
+      <p class="mast-name"><a href="../../">The Maker’s Times</a></p>
+      <span class="mast-edition">Design. Engineer. Make.</span>
+    </div>
+    <div class="mast-edition-info">
+      <strong class="mast-ed-label">Portfolio Edition</strong>
+      <p class="mast-ed-blurb">Case Study</p>
+    </div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <a href="../../#projects" class="back-btn" aria-label="Back to Selected Builds" title="Back to Selected Builds"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+  <nav class="nav-ticker" aria-label="Sections">
+    <a href="../../#about">About</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#projects" class="active">Projects</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#experience">Experience</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#skills">Skills</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../#editorials">Editorial</a>
+    <span class="nav-sep" aria-hidden="true">✦</span>
+    <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="nav-cta">Resume</a>
+  </nav>
+  <button type="button" class="theme-btn" aria-label="Night Edition" data-label-light="Night Edition" data-label-dark="Day Edition">
+    <svg class="theme-icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="theme-icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="cs-hero wrap" aria-labelledby="cs-title" style="--hero-cols:minmax(0,1.2fr) minmax(0,1fr);--deck-max:54ch">
+  <p class="cs-crumb"><a href="../../#projects">Selected Builds</a> / Clueline</p>
+  <div class="animate-in">
+    <span class="kicker">Fall 2026</span>
+    <h1 class="cs-title" id="cs-title">Clueline</h1>
+    <p class="cs-deck">A story-check editor that helps mystery writers track clues, connect events and catch plot inconsistencies.</p>
+    <p class="cs-role"><span class="cs-role-title">Product Designer</span><span class="cs-role-meta">SVSD Storytelling Competition<span class="cs-sep" aria-hidden="true">|</span>October&nbsp;2026</span></p>
+  </div>
+  <!-- Final editor after Analyze story (Figma › SVSD-Comp › App · Editor), set into the iMac mockup from the device screen mockups folder -->
+  <figure class="cs-media cs-media--bare animate-in delay-1" style="--ratio:1500/1243">
+    <img class="cs-theme-light" src="assets/images/hero.webp" width="1500" height="1243" alt="An iMac showing the Clueline editor open on The Larkspur Necklace: chapter list on the left, the manuscript with one highlighted clue in the middle, and two issues on the right, Revealed too early and Sarah cannot be in two places" fetchpriority="high">
+    <img class="cs-theme-dark" src="assets/images/hero-dark.webp" width="1500" height="1243" alt="An iMac showing the Clueline editor open on The Larkspur Necklace: chapter list on the left, the manuscript with one highlighted clue in the middle, and two issues on the right, Revealed too early and Sarah cannot be in two places" loading="lazy">
+  </figure>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<div class="cs-story wrap">
+  <nav class="cs-toc" aria-label="On this page">
+    <p class="cs-box-title">On This Page</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#role">My Role</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#concept">The Concept</a></li>
+      <li><a href="#experience">Experience Design</a></li>
+      <li><a href="#visual">Visual Design</a></li>
+      <li><a href="#outcome">Outcome</a></li>
+      <li><a href="#learned">What I Learned</a></li>
+    </ol>
+    <p class="cs-box-title">Project Links</p>
+    <div class="pa-links"><a href="https://clueline-pi.vercel.app/" class="pa-link pa-link--code" target="_blank" rel="noopener noreferrer">View Prototype ↗</a></div>
+  </nav>
+
+  <!-- Built from the final presentation deck, the SVSD-Comp design system file (Case study visuals,
+       App screens, Design system boards) and Shalom's edits. Images exported from those Figma files. -->
+  <article>
+    <section class="cs-sec" id="overview">
+      <div class="sec-head"><h2 class="sec-label"><em>Overview</em></h2></div>
+      <div class="cs-prose">
+        <p>Clueline is designed for mystery writers, particularly pantsers who discover their stories as they write.</p>
+        <p>It combines a familiar word-processing experience with tools for marking clues, red herrings and reveals. Writers can check their stories whenever they choose, whether during drafting or revision, to catch inconsistencies like premature reveals or characters appearing in two places at once.</p>
+        <p>We designed Clueline in under a week for the SVSD Storytelling Competition, which challenged teams to choose a specific audience and create a product they’d love, centered on storytelling. We explored several approaches before developing our concept and presenting the prototype through a video submission.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <div class="sec-head"><h2 class="sec-label">My <span class="aw">Role</span></h2></div>
+      <div class="cs-prose">
+        <p>I worked alongside Chavi Sharma and Kelly Ramos Pereira as a co-designer, with most product decisions made collaboratively. I focused on the experience design and information architecture, shaping how writers navigate between the manuscript, the Story map and the Reader’s view. Kelly developed the visual identity and interface polish, while Chavi built the prototype screens in Claude Design.</p>
+        <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Figma</span><span class="stag">Claude Design</span></div></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Problem</span></h2></div>
+      <div class="cs-prose">
+        <p>A mystery is two stories at once. One is what actually happened in the fictional world, including who committed the crime, how and why. The other is how those events unfold for the reader, including what they discover, what they suspect and when they learn the truth.</p>
+        <p>The challenge is keeping both consistent as a change to one can unintentionally unravel the other.</p>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/two-stories.webp" width="1600" height="840" alt="Two red strings: the fictional world, who committed the crime, how and why, and the order of the storytelling, what the reader discovers, suspects and learns. The strings meet and are broken in the middle." loading="lazy">
+          <figcaption class="cs-caption">The two stories of a mystery</figcaption>
+        </figure>
+        <p>Writers and readers describe the same failures from opposite sides.</p>
+        <div class="cs-table-wrap" role="region" aria-label="What writers and readers run into" tabindex="0">
+          <table class="cs-table cs-table--left">
+            <thead><tr><th scope="col">Writers</th><th scope="col">Readers</th></tr></thead>
+            <tbody>
+              <tr><td>Events and timelines become inconsistent during revisions.</td><td>The chronology becomes confusing or contradictory.</td></tr>
+              <tr><td>Characters know things they haven’t yet discovered.</td><td>A detective seems to know something the reader was never shown.</td></tr>
+              <tr><td>Clues and reveals shift as scenes move.</td><td>A reveal feels premature, unfair or unsupported.</td></tr>
+              <tr><td>Keeping track requires notes, outlines and repeated read-throughs.</td><td>Unresolved details weaken the mystery.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Mystery author <a href="https://elizabethspanncraig.com/mystery-writing-tips/keeping-timelines-straight/" target="_blank" rel="noopener noreferrer">Elizabeth Spann Craig</a> describes how easily chronology errors slip through ordinary editing, while author <a href="https://www.writersdigest.com/catching-continuity-errors-in-3-easy-steps" target="_blank" rel="noopener noreferrer">Andrew Welsh-Huggins</a> has written about avoiding continuity mistakes in fiction.</p>
+        <p>Writers who outline have a plan to check against, while pantsers develop their plots through the manuscript itself, an approach favored by 64% of respondents in an informal <a href="https://www.writerscentre.com.au/?p=127101" target="_blank" rel="noopener noreferrer">Australian Writers’ Centre poll</a>.</p>
+        <p>For these writers, keeping track of the story often means reconstructing connections from what they’ve already written.</p>
+        <p>Writers track all of this with tools like Scrivener and murder-mystery spreadsheets, which hold the information without checking it.</p>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/what-writers-use.webp" width="1600" height="840" alt="Scrivener beside a murder mystery novel spreadsheet with rows of colored cells" loading="lazy">
+          <figcaption class="cs-caption">What writers use</figcaption>
+        </figure>
+        <p>We compared five writing tools to understand how they help authors manage story structure and continuity.</p>
+        <div class="cs-table-wrap" role="region" aria-label="What we found in five writing tools" tabindex="0">
+          <table class="cs-table cs-table--left">
+            <thead><tr><th scope="col">Tool</th><th scope="col">What we found</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Scrivener</th><td>Organizes manuscripts, notes and research</td></tr>
+              <tr><th scope="row">Plottr</th><td>Helps writers plan plots and timelines</td></tr>
+              <tr><th scope="row">Campfire</th><td>Supports worldbuilding and story organization</td></tr>
+              <tr><th scope="row">Novelcrafter</th><td>Provides story planning and contextual tools</td></tr>
+              <tr><th scope="row">Aeon Timeline</th><td>Can flag contradictions against relationships and constraints configured by the writer</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Across the tools we reviewed, we saw an opportunity to make continuity checking part of the writing experience without requiring writers to build a detailed story structure beforehand.</p>
+        <blockquote class="cs-quote"><p>Our opportunity was to <strong>help writers keep their mysteries consistent</strong> without taking away the freedom to discover the story as they go.</p></blockquote>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="concept">
+      <div class="sec-head"><h2 class="sec-label">The <span class="aw">Concept</span></h2></div>
+      <div class="cs-prose">
+        <p>Clueline is built on one idea. A system can check what the text says, but it can only guess what a reader will infer, so Clueline checks order, timing and who knows what, and leaves the question of whether the mystery works to the writer.</p>
+        <figure class="cs-media" style="--ratio:860/500">
+          <img src="assets/images/core-insight.webp" width="860" height="500" alt="Two panels. One, what the text says: a magnifying glass over a page with a red string joining two highlighted lines, captioned Does my story make sense? A system can check what the text says. Two, what the reader infers: a figure thinking of three question-marked notes, captioned Does my mystery work? A system can only guess what a reader will infer." loading="lazy">
+          <figcaption class="cs-caption">What a system can check, and what it can only guess</figcaption>
+        </figure>
+        <p>How Clueline works:</p>
+        <ul class="cs-list">
+          <li>The writer marks passages as a clue, a red herring or a reveal, and the marks are grouped by the secret they build toward, such as “Who stole the necklace?”</li>
+          <li>When the writer asks for a check, Clueline compares the marks and events with the text.</li>
+          <li>It lists what might not hold together and the writer decides what to do. Nothing writes the story for the author.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="experience">
+      <div class="sec-head"><h2 class="sec-label">Experience <span class="aw">Design</span></h2></div>
+      <div class="cs-prose">
+        <h3 class="cs-subhead" id="flow">01. Writing Flow</h3>
+        <p><strong>How might we let writers investigate their story without interrupting their creative flow?</strong></p>
+        <p>Our first exploration put warnings inside the draft as the writer typed. The insight was that while a story is still changing, warnings appear too early and interrupt, so in the next exploration the writer decides when to create and when to step back and review.</p>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/dq1-exploration-1.webp" width="1600" height="840" alt="Slide for the first exploration: the manuscript with a highlighted clue and a small warning marker inside the text, and the insight that if the story is still changing, warnings might appear too early and interrupt the writer’s flow" loading="lazy">
+          <figcaption class="cs-caption">First exploration, warnings inside the draft</figcaption>
+        </figure>
+        <p>Clueline stays quiet while the writer drafts. Marking a passage takes one click from the toolbar, a check runs when the writer asks, and the bar at the bottom shows how many things are left to check.</p>
+        <figure class="cs-media" style="--ratio:1440/900">
+          <img src="assets/images/write.webp" width="1440" height="900" alt="The Clueline editor before a check: a Clue mark on the study safe line, a Clues panel grouped by secret, and a message reading Nothing is checked yet. Press Analyze story when you want Clueline to look for problems." loading="lazy">
+          <figcaption class="cs-caption">Write mode before a check</figcaption>
+        </figure>
+
+        <h3 class="cs-subhead" id="connections">02. Story Connections</h3>
+        <p><strong>How might we make the relationships between clues, characters and events easy to understand?</strong></p>
+        <p>We tried three versions. The first put a timeline beneath the editor, and the open question was what a writer most needs to see at that moment. The second organized the timeline by character, which showed more but still left the pieces unconnected. The third was the Story map, where every clue, event, character and reveal is connected.</p>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/dq2-exploration-1.webp" width="1600" height="840" alt="Slide for the first exploration: the manuscript with a chapter list, a reader panel and a timeline of events along the bottom, captioned See timeline as you edit" loading="lazy">
+          <figcaption class="cs-caption">First exploration, a timeline while editing</figcaption>
+        </figure>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/dq2-exploration-2.webp" width="1600" height="840" alt="Slide for the second exploration: an event map organized by character, captioned A timeline organized by character, more information, still not very connected" loading="lazy">
+          <figcaption class="cs-caption">Second exploration, a timeline by character</figcaption>
+        </figure>
+        <p>The map puts both stories on one screen. The top row is the book, chapter by chapter, with marks as colored dots, and the bottom row is what really happened in time order, with strings running between them. A red dashed string means a clue comes after its reveal. Selecting an event shows when, where and who, explains what’s wrong in plain words and shows what a fix would change, such as moving the time to 10:00 pm so Sarah can make it.</p>
+        <figure class="cs-media" style="--ratio:1440/900">
+          <img src="assets/images/story-map.webp" width="1440" height="900" alt="The Story map with the 9:30 pm event Sarah at the station selected: strings run from chapters on the top row to events on the bottom row, and the side panel explains that Sarah cannot reach the hall by 9:45 pm and what moving the time would change" loading="lazy">
+          <figcaption class="cs-caption">The Story map</figcaption>
+        </figure>
+
+        <h3 class="cs-subhead" id="reader">03. Reader Perspective</h3>
+        <p><strong>Can writers see their story through the reader’s eyes?</strong></p>
+        <p>We first explored charts of which suspects readers might suspect at different points in the story, and moved away from them because a chart of suspicion is a guess.</p>
+        <figure class="cs-media" style="--ratio:1600/840">
+          <img src="assets/images/dq3-exploration-1.webp" width="1600" height="840" alt="Slide for the first exploration: a chart of who readers suspect, chapter by chapter, with a list of what readers are wondering" loading="lazy">
+          <figcaption class="cs-caption">First exploration, who readers suspect</figcaption>
+        </figure>
+        <p>The second exploration goes chapter by chapter and lists what the reader has been told so far, flags what’s new in that chapter and shows how many secrets are still hidden. Writers see what the page shows and decide what the reader will make of it.</p>
+        <figure class="cs-media" style="--ratio:1440/900">
+          <img src="assets/images/readers-view.webp" width="1440" height="900" alt="The Reader’s view after Chapter 4: a list of what the reader has been told in chapters 1, 3 and 4, what is new in this chapter, two secrets still hidden, and a Revealed too early flag" loading="lazy">
+          <figcaption class="cs-caption">The Reader’s view</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="visual">
+      <div class="sec-head"><h2 class="sec-label">Visual <span class="aw">Design</span></h2></div>
+      <div class="cs-prose">
+        <p>The central design tension was making a complex investigation tool feel familiar enough to write in. We wanted the manuscript to remain the focus, with the investigative features available when needed rather than competing for attention.</p>
+        <figure class="cs-media cs-media--device" style="--ratio:860/1096">
+          <img src="assets/images/board-colour.webp" width="860" height="1096" alt="The Colour board of the Clueline design system. The palette is warm paper with a single red reserved for the string that marks a contradiction. Clues, red herrings, alibis, reveals and questions each get their own soft color, shown for light and dark themes with status colors and shade scales." loading="lazy">
+          <figcaption class="cs-caption">Colour</figcaption>
+        </figure>
+        <figure class="cs-media cs-media--device" style="--ratio:860/1180">
+          <img src="assets/images/board-foundations.webp" width="860" height="1180" alt="The Foundations board of the Clueline design system: 98 primitives, 41 color tokens and 37 components, a spacing scale, radii, control heights, and elevation and focus styles. Type uses three voices. SF Pro is for the interface, EB Garamond for headings and the brand, and Lora only for the manuscript." loading="lazy">
+          <figcaption class="cs-caption">Foundations</figcaption>
+        </figure>
+        <p>Kelly carried the detective theme into the visual identity through the string connecting evidence on an investigation board. Four string states communicate whether a connection holds, needs attention, has broken or has been repaired.</p>
+        <figure class="cs-media cs-media--diagram" style="--ratio:1440/628">
+          <img src="assets/images/strings.webp" width="1440" height="628" alt="Four strings between two pins: taut, sagging, snapped and tied" loading="lazy">
+          <figcaption class="cs-caption">String states</figcaption>
+        </figure>
+        <p>The detective mascot has its own set of expressions, with eyes that move from curious to suspicious to alarmed, and it appears in the top bar and in empty states.</p>
+        <figure class="cs-media cs-media--diagram" style="--ratio:1680/360">
+          <img src="assets/images/logo.webp" width="1680" height="360" alt="The Clueline logo: a detective in a hat with wide eyes beside the wordmark ClueLine" loading="lazy">
+          <figcaption class="cs-caption">Logo</figcaption>
+        </figure>
+        <figure class="cs-media cs-media--diagram" style="--ratio:1422/792">
+          <img src="assets/images/mascot-expressions.webp" width="1422" height="792" alt="Six expressions of the detective mascot: alarmed with a red exclamation mark, curious with eyes to the side, looking closely through a magnifying glass, pleased with closed eyes and a green check, suspicious with narrowed eyes, and thinking with eyes turned up toward two small bubbles" loading="lazy">
+          <figcaption class="cs-caption">The detective’s expressions</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="outcome">
+      <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
+      <div class="cs-prose">
+        <p>We submitted a video that opened with The Last Toast, a short film illustrating how plot inconsistencies can undermine a mystery. From there, we introduced the problem, walked through our design process and demonstrated Clueline using a fictional mystery, The Larkspur Necklace.</p>
+        <p>The prototype used predefined clues and events to show how writers could investigate story connections and review the reader’s perspective. While it demonstrated the intended experience, we hadn’t yet tested it with a full-length manuscript. You can <a href="https://clueline-pi.vercel.app/" target="_blank" rel="noopener noreferrer">try the prototype</a>.</p>
+        <figure class="cs-media" style="--ratio:16/9">
+          <video src="assets/video/the-last-toast.mp4" width="1920" height="1080" poster="assets/images/last-toast-film.webp" controls playsinline preload="none" aria-label="The Last Toast, the short film that opens the Clueline submission video, about a mystery that falls flat for its reader"></video>
+          <figcaption class="cs-caption">The Last Toast</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="learned">
+      <div class="sec-head"><h2 class="sec-label">What I <span class="aw">Learned</span></h2></div>
+      <div class="cs-prose">
+        <p>This was my first design competition, and we had roughly a week to turn an open-ended brief into a working concept. Building Clueline meant exploring ideas quickly, questioning what we initially thought would work and being willing to change direction. We moved away from features like constant warnings and suspicion charts when we realized they could interrupt writers or make assumptions about their readers.</p>
+        <p>But what stayed with me most was the community. Coming from a Computer Science background, I’m usually surrounded by people who build software, so being in a space full of designers and creatives was a different experience. Between the workshops, portfolio conversations, Discord discussions and office hours with Naheel, I got to see how students from different design backgrounds approached problems, presented their work and challenged each other’s thinking.</p>
+        <p>It was my first time being part of that kind of design community, and I enjoyed it just as much as the competition itself.</p>
+        <p>If I continued developing Clueline, I’d want to test it with mystery writers using real manuscripts to see which connections they find useful, where the system mistakes intentional misdirection for an error and whether its findings actually help during revision.</p>
+      </div>
+    </section>
+  </article>
+</div>
+<!-- ═══ MORE STORIES ═══
+     Cards copied from the Selected Builds grid in index.html; keep the copy in step. -->
+<section class="cs-more wrap" aria-labelledby="more-title">
+  <div class="sec-head">
+    <h2 class="sec-label" id="more-title">More <span class="aw">Stories</span></h2>
+    <span class="sec-meta"><a href="../../#projects">Selected Builds</a></span>
+  </div>
+  <div class="archive-grid">
+    <article class="pa-card animate-in">
+      <div class="pa-img pa-img--c2"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+                <div class="pa-meta"><span class="pa-tag">Tiffany &amp; Co.</span><span class="pa-tag">E-commerce</span><span class="pa-tag">Research</span><span class="pa-tag">Luxury</span></div>
+        <h3 class="pa-title">Saved Items &amp; Comparison</h3>
+        <p class="pa-desc">A saved-items and comparison experience for Tiffany’s e-commerce platform, shaped through behavioral analytics, consumer research, client segmentation, and in-store observation. I designed the interaction behavior, states, hierarchy, and UX copy within Tiffany’s existing design system.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../tiffany-wishlist/" class="pa-link pa-link--design pa-stretch" aria-label="Saved Items &amp; Comparison case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">UX Research</span><span class="pa-tech">Interaction Design</span><span class="pa-tech">Design Systems</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="pa-card animate-in delay-1">
+      <div class="pa-img pa-img--c4"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">Ford Motor Company</span><span class="pa-tag">AI</span><span class="pa-tag">Research Tooling</span><span class="pa-tag">Storytelling</span></div>
+        <h3 class="pa-title">InsightCuts</h3>
+        <p class="pa-desc">A research storytelling concept developed with Ford to turn dense UX findings into shorter, narrative-driven formats. I built the first interactive prototype, defined the core interaction flow, tested the concept with Ford researchers and stakeholders, and produced the video simulation used at final review.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../insightcuts/" class="pa-link pa-link--design pa-stretch" aria-label="InsightCuts case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Prototyping</span><span class="pa-tech">Research</span><span class="pa-tech">Video</span><span class="pa-tech">AI</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="pa-card animate-in delay-2">
+      <div class="pa-img pa-img--c7"><div class="pa-badges"><span class="pa-badge pa-badge--ux">UX</span></div></div>
+      <div class="pa-body">
+        <div class="pa-meta"><span class="pa-tag">PROPEL Center × Apple</span><span class="pa-tag">Mobile</span><span class="pa-tag">Research</span></div>
+        <h3 class="pa-title">Lendi</h3>
+        <p class="pa-desc">A quest-based companion helping international and study-abroad students navigate life in a new country. I led the research, information architecture, wireframes, visual system, and logo, and a teammate built the MVP.</p>
+        <div class="pa-footer">
+          <div class="pa-links">
+            <a href="../lendi/" class="pa-link pa-link--design pa-stretch" aria-label="Lendi case study"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>Case Study</a>
+          </div>
+          <div class="pa-techs"><span class="pa-tech">Figma</span><span class="pa-tech">Claude Design</span><span class="pa-tech">UX Research</span><span class="pa-tech">Visual Design</span></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" id="contact">
+  <div class="foot-inner wrap">
+    <div class="foot-brand">
+      <div class="foot-logotype">The Maker’s Times</div>
+      <p class="foot-brand-desc">Design, engineering, and the work in between.</p>
+      <p class="foot-brand-quote">“Where Code Meets Canvas”</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Quick Links</div>
+      <a href="../../assets/Shalom_Donga_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)" class="foot-ext-link">Resume (PDF) <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="../../#projects" class="foot-ext-link">Selected Builds</a>
+    </div>
+    <div class="foot-col foot-col--connect">
+      <div class="foot-col-title">Connect</div>
+      <a href="mailto:shalomdonga@gmail.com" class="foot-email">shalomdonga@gmail.com</a>
+      <div class="foot-icon-row">
+        <a href="https://linkedin.com/in/shalom-donga" class="foot-icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+  </div>
+  <div class="foot-bottom wrap">
+    <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

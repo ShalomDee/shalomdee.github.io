@@ -85,7 +85,7 @@
 .cs-deck{
   font-family:var(--font-bd);font-style:italic;
   font-size:var(--sz-lg);line-height:1.5;color:var(--v100);
-  margin-top:var(--sp-2xl);max-width:40ch;
+  margin-top:var(--sp-2xl);max-width:var(--deck-max,40ch);
 }
 /* Role line: title, then company and length. The deck sits midway between
    the title and this line, so its margins above and below match. */
@@ -424,7 +424,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
 
 @media(min-width:960px){
   .cs-hero{
-    grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+    grid-template-columns:var(--hero-cols,minmax(0,1fr) minmax(0,1.1fr));
     align-items:center;gap:0 var(--sp-3xl);
     padding-top:var(--sp-xl);padding-bottom:var(--sp-2xl);
   }
