@@ -462,12 +462,13 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ms-body-text p + p { margin-top: 0.75em; }
 .ms-byline {
   font-family: var(--font-ui); font-size: var(--sz-xs);
+  line-height: 1.5;
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--v45);
   margin-top: var(--sp-md); margin-bottom: var(--sp-md);
 }
 .ms-byline-name { color: var(--terra); font-weight: 700; letter-spacing: 0.12em; }
 .ms-byline-note {
-  display: block;
+  display: block; margin-top: var(--sp-xs);
   font-family: var(--font-bd); font-size: var(--sz-xs);
   font-style: italic; color: var(--v45); text-transform: none; letter-spacing: 0;
 }
