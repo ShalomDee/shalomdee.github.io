@@ -277,7 +277,16 @@ article > .cs-sec:last-child{padding-bottom:0;}
   padding-left:var(--sp-md);
 }
 /* Brand column stays put while the rest scrolls */
-.cs-table th:first-child{position:sticky;left:0;z-index:1;background:var(--ink);}
+.cs-table th:first-child{
+  position:sticky;left:0;z-index:1;background:var(--ink);
+  /* The divider is drawn on the pinned cell itself, so it travels with it instead of scrolling away,
+     and the extra right padding keeps the text clear of the line */
+  box-shadow:inset -1px 0 0 var(--v15);padding-right:var(--sp-sm);
+}
+.cs-table th:first-child + td,.cs-table th:first-child + th{border-left:0;}
+/* Tables whose first column is a heading, not a row label (e.g. Writers and Readers), scroll as a whole */
+.cs-table--plain th:first-child{position:static;background:none;box-shadow:none;padding-right:6px;}
+.cs-table--plain th:first-child + th{border-left:1px solid var(--v15);}
 .cs-yes{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);vertical-align:middle;}
 .cs-prose .cs-table-hint{display:none;font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
 @media(max-width:767.98px){.cs-prose .cs-table-hint{display:block;}}
