@@ -174,11 +174,12 @@ if (liveBlurb) {
 
 /* ─── Main story images: reveal when section in view ─── */
 const mainStory = document.querySelector('.main-story');
-if (mainStory) {
+const mainPortrait = document.querySelector('.ms-portrait');
+if (mainStory && mainPortrait) {
   const storyObserver = new IntersectionObserver(entries => {
     mainStory.classList.toggle('in-view', entries[0].isIntersecting);
   }, { threshold: 0.6 });
-  storyObserver.observe(mainStory);
+  storyObserver.observe(mainPortrait);
 }
 
 /* ─── Editorial colour reveal ─── */
