@@ -343,25 +343,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Big enough to read as a four-point star, faint enough to stay behind the links */
 .nav-sep{color:var(--v35);font-size:var(--sz-xs);line-height:1;user-select:none;}
 
-/* Home button in both sticky bars: a way back to the top, drawn like the
-   theme button. It appears once the masthead title has scrolled out of view
-   (main.js sets .show-mark on <html>), and sits on the left, out of the flow,
-   so it cannot move the links. */
-.nav-mark{
-  width:30px;height:30px;border:1px solid var(--v20);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  color:var(--v55);text-decoration:none;position:relative;align-self:center;
-  opacity:0;visibility:hidden;
-  transition:opacity var(--t),visibility 0s linear 0.25s,color var(--t),border-color var(--t);
-}
-.show-mark .nav-mark{opacity:1;visibility:visible;transition:opacity var(--t),color var(--t),border-color var(--t);}
-.nav-mark::before{content:'';position:absolute;inset:-8px;}
-.nav-mark:hover{border-color:var(--gold);color:var(--gold);}
-.nav-bar .nav-mark{
-  position:absolute;top:50%;transform:translateY(-50%);
-  left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
-}
-
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.6);
@@ -492,7 +473,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   border-bottom: 2px solid var(--gold);
 }
 
-/* Headline: --v100 is the text colour in both themes, so the rules are always the dark ink of Day Edition */
+/* Headline, at the top of the text column: --v100 is the text colour in both themes, so the rules are always the dark ink of Day Edition */
 .ms-banner::before {
   content: ''; display: block; height: 7px; margin-bottom: var(--sp-md);
   background: linear-gradient(to bottom, var(--v100) 0 3px, transparent 3px 6px, var(--v100) 6px 7px);
@@ -505,11 +486,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   text-transform: uppercase;
 }
 .ms-headline > span { display: block; }
-.ms-headline .hl { font-style: italic; font-weight: 400; color: var(--terra); }
 /* Phones: "Designs." and "Codes." each take a line, with the rest of the sentence above */
 .ms-headline .hl-line { display: block; }
 
-.ms-grid { display: grid; margin-top: var(--sp-lg); row-gap: var(--sp-lg); }
+.ms-grid { display: grid; row-gap: var(--sp-lg); }
 .ms-text { display: contents; }
 .ms-byline  { order: 1; }
 .ms-portrait-col { order: 2; }
@@ -562,13 +542,13 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
 /* ── Desktop: 12 columns ── */
 @media (min-width: 1024px) {
-  .ms-headline { font-size: clamp(2.6rem, 4.7vw, 4.4rem); }
+  .ms-headline { font-size: clamp(2rem, 3.4vw, 3.1rem); }
   .ms-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 0; row-gap: 0;
-    margin-top: var(--sp-lg);
     align-items: start;
   }
+  .ms-banner { margin-bottom: var(--sp-md); }
   .ms-text { display: block; grid-column: 5 / 13; grid-row: 1; padding-left: 28px; }
   .ms-byline, .ms-portrait-col, .ms-body { order: 0; }
   .ms-byline { margin-bottom: var(--sp-md); }
@@ -1092,7 +1072,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .ed-ic{width:14px;height:14px;fill:currentColor;}
   .ed-ic-play,.ed-bar.is-paused .ed-ic-pause{display:none;}
   .ed-bar.is-paused .ed-ic-play{display:block;}
-  .mast-top{justify-content:space-between;padding:8px var(--pad);}
+  .mast-top{justify-content:flex-end;padding:8px var(--pad);}
 }
 
 @media(max-width:959.98px){
