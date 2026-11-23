@@ -276,10 +276,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
 /* Folio row: edition line, today's date and price between two rules.
    Under 640px only the date shows. */
-.mast-folio{padding-top:0;padding-bottom:0;}
 .mast-folio-row{
   display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-  padding:7px 0;
+  padding:7px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
   border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);
   font-family:var(--font-bd);font-style:italic;font-size:14px;line-height:1.3;
   color:var(--v70);
@@ -344,27 +343,23 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Big enough to read as a four-point star, faint enough to stay behind the links */
 .nav-sep{color:var(--v35);font-size:var(--sz-xs);line-height:1;user-select:none;}
 
-/* Wordmark in both sticky bars: a way back to the top, shown only once the
-   masthead's own title has scrolled out of view (main.js sets .show-mark on
-   <html>), so the title never appears twice. It sits on the left, out of the
-   flow, so it cannot move the links. */
+/* Home button in both sticky bars: a way back to the top, drawn like the
+   theme button. It appears once the masthead title has scrolled out of view
+   (main.js sets .show-mark on <html>), and sits on the left, out of the flow,
+   so it cannot move the links. */
 .nav-mark{
-  position:relative;
-  font-family:var(--font-bl);font-size:22px;font-weight:400;line-height:1;
-  color:var(--v100);white-space:nowrap;text-decoration:none;
-  align-self:center;
+  width:30px;height:30px;border:1px solid var(--v20);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--v55);text-decoration:none;position:relative;align-self:center;
   opacity:0;visibility:hidden;
-  transition:opacity var(--t),visibility 0s linear 0.25s,color var(--t);
+  transition:opacity var(--t),visibility 0s linear 0.25s,color var(--t),border-color var(--t);
 }
-.show-mark .nav-mark{opacity:1;visibility:visible;transition:opacity var(--t),color var(--t);}
-/* The links centre in the bar and are about 650px wide: below 1280px the wordmark would run into them, so it waits for a wider bar */
-@media(min-width:768px) and (max-width:1279.98px){.nav-bar .nav-mark{display:none;}}
-.nav-mark::before{content:'';position:absolute;inset:-10px -6px;}
-.nav-mark:hover{color:var(--gold);}
+.show-mark .nav-mark{opacity:1;visibility:visible;transition:opacity var(--t),color var(--t),border-color var(--t);}
+.nav-mark::before{content:'';position:absolute;inset:-8px;}
+.nav-mark:hover{border-color:var(--gold);color:var(--gold);}
 .nav-bar .nav-mark{
   position:absolute;top:50%;transform:translateY(-50%);
   left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
-  font-size:25px;
 }
 
 /* ═══ MOBILE DRAWER ═══ */
