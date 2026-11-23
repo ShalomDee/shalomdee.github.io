@@ -496,6 +496,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ms-body    { order: 3; }
 
 .ms-portrait img { width: 100%; height: auto; }
+/* Tablet: a full-width portrait would be taller than the screen, so it stays a centred 400px */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .ms-portrait-col { width: 100%; max-width: 400px; margin-inline: auto; }
+}
 
 /* Byline: centred at the top of the text column, hairline under it */
 .ms-byline {
