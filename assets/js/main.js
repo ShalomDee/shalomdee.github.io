@@ -172,6 +172,32 @@ if (liveFolio) {
 }
 
 
+/* ─── Wordmark in the sticky bars ───
+   Shown once the masthead title has scrolled up under the bar. Only the
+   title that is displayed counts: the phone and desktop mastheads share
+   markup, and one of them is always display:none. */
+{
+  const titles = document.querySelectorAll('.mast-title .mast-name, .mast-desktop .mast-name');
+  const bars = document.querySelectorAll('.mast-top, .nav-bar');
+  const root = document.documentElement;
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const bar = [...bars].find(b => b.getClientRects().length);
+    const title = [...titles].find(n => n.getClientRects().length);
+    if (!bar || !title) return;
+    root.classList.toggle('show-mark', title.getBoundingClientRect().bottom <= bar.offsetHeight);
+  };
+  const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
+  document.querySelectorAll('.nav-mark').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0 });
+  }));
+}
+
 /* ─── Main story images: reveal when section in view ─── */
 const mainStory = document.querySelector('.main-story');
 const mainPortrait = document.querySelector('.ms-portrait');

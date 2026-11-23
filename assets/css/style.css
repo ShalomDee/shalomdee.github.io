@@ -344,6 +344,29 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Big enough to read as a four-point star, faint enough to stay behind the links */
 .nav-sep{color:var(--v35);font-size:var(--sz-xs);line-height:1;user-select:none;}
 
+/* Wordmark in both sticky bars: a way back to the top, shown only once the
+   masthead's own title has scrolled out of view (main.js sets .show-mark on
+   <html>), so the title never appears twice. It sits on the left, out of the
+   flow, so it cannot move the links. */
+.nav-mark{
+  position:relative;
+  font-family:var(--font-bl);font-size:22px;font-weight:400;line-height:1;
+  color:var(--v100);white-space:nowrap;text-decoration:none;
+  align-self:center;
+  opacity:0;visibility:hidden;
+  transition:opacity var(--t),visibility 0s linear 0.25s,color var(--t);
+}
+.show-mark .nav-mark{opacity:1;visibility:visible;transition:opacity var(--t),color var(--t);}
+/* The links centre in the bar and are about 650px wide: below 1280px the wordmark would run into them, so it waits for a wider bar */
+@media(min-width:768px) and (max-width:1279.98px){.nav-bar .nav-mark{display:none;}}
+.nav-mark::before{content:'';position:absolute;inset:-10px -6px;}
+.nav-mark:hover{color:var(--gold);}
+.nav-bar .nav-mark{
+  position:absolute;top:50%;transform:translateY(-50%);
+  left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+  font-size:25px;
+}
+
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,0.6);
@@ -1074,7 +1097,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .ed-ic{width:14px;height:14px;fill:currentColor;}
   .ed-ic-play,.ed-bar.is-paused .ed-ic-pause{display:none;}
   .ed-bar.is-paused .ed-ic-play{display:block;}
-  .mast-top{justify-content:flex-end;padding:8px var(--pad);}
+  .mast-top{justify-content:space-between;padding:8px var(--pad);}
 }
 
 @media(max-width:959.98px){
