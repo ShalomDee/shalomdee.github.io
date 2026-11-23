@@ -162,7 +162,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   html{scroll-behavior:auto;}
   .animate-in{opacity:1;animation:none;}
   *,*::before,*::after{transition-duration:0.01ms!important;}
-  .pa-card:hover,.ed-tile:hover .ed-img img{transform:none;}
+  .pa-card:hover,.pa-card:has(.pa-stretch:focus-visible),.ed-tile:hover .ed-img img{transform:none;}
   .editorial-grid{transition:none;}
 }
 
@@ -764,15 +764,17 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-card{
   background:var(--v05);border:1px solid var(--v35);
   border-radius:4px;overflow:hidden;
-  transition:border-color var(--t),box-shadow var(--t),transform var(--t);
+  transition:border-color .2s ease-out,box-shadow .2s ease-out,transform .2s ease-out;
 }
-.pa-card:hover{
+/* Hover or keyboard focus lifts the card 2px, like a clipping off a desk */
+.pa-card:hover,.pa-card:has(.pa-stretch:focus-visible){
   border-color:var(--gold);
-  transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 3px 10px rgba(0,0,0,0.22);
 }
+.pa-card--lead:hover,.pa-card--lead:has(.pa-stretch:focus-visible){transform:translateY(-1px);}
 [data-theme="light"] .pa-card{background:#FAFAF8;}
-[data-theme="light"] .pa-card:hover{box-shadow:0 8px 24px rgba(13,17,23,0.10);}
+[data-theme="light"] .pa-card:hover,[data-theme="light"] .pa-card:has(.pa-stretch:focus-visible){box-shadow:0 3px 10px rgba(13,17,23,0.08);}
 .pa-img{
   width:100%;aspect-ratio:16/9;position:relative;
   display:flex;align-items:center;justify-content:center;overflow:hidden;
@@ -833,9 +835,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
   text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);
   display:inline-flex;align-items:center;gap:4px;
-  transition:gap var(--t),color var(--t);
+  transition:gap .2s ease-out,color .2s ease-out;
 }
-.pa-link:hover{gap:8px;color:var(--gold);}
+.pa-link:hover{gap:8px;color:color-mix(in srgb,var(--gold) 75%,var(--v100));}
 .pa-link svg{flex-shrink:0;}
 /* Card-wide link: a .pa-stretch link's hit area covers its whole card, so a
    tap anywhere on the card opens the case study. Other links in the card
@@ -845,7 +847,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-link.pa-stretch::before{content:none;}
 .pa-stretch::after{content:'';position:absolute;inset:0;z-index:1;}
 .pa-card .pa-link:not(.pa-stretch){z-index:2;}
-.pa-card:hover .pa-stretch{gap:8px;}
+.pa-card:hover .pa-stretch,.pa-card:has(.pa-stretch:focus-visible) .pa-stretch{gap:8px;color:color-mix(in srgb,var(--gold) 75%,var(--v100));}
 /* The ring goes round the card, since the whole card is the link. Browsers
    without :has() keep the ring on the link itself. */
 @supports selector(:has(*)){
