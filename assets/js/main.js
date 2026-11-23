@@ -160,15 +160,15 @@ if (document.documentElement.classList.contains('press')) {
 }
 
 /* ─── Live masthead ───
-   Today's date is added as the first line of the edition box.
-   Without JavaScript the static copy in index.html stays. */
-const liveBlurb = document.querySelector('.mast-ed-blurb[data-live]');
-if (liveBlurb) {
+   Today's date follows "USA" in the folio row, in the visitor's own day.
+   Without JavaScript the static "USA" stays. */
+const liveFolio = document.querySelector('.mast-folio-c[data-live]');
+if (liveFolio) {
   const today = new Date();
   const date = document.createElement('time');
   date.dateTime = today.toISOString().slice(0, 10);
   date.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  liveBlurb.prepend(date, document.createElement('br'));
+  liveFolio.append(', ', date);
 }
 
 
