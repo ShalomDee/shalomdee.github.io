@@ -474,11 +474,11 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 
 /* Headline, at the top of the text column: --v100 is the text colour in both themes, so the rules are always the dark ink of Day Edition */
-.ms-banner::before {
-  content: ''; display: block; height: 7px; margin-bottom: var(--sp-md);
-  background: linear-gradient(to bottom, var(--v100) 0 3px, transparent 3px 6px, var(--v100) 6px 7px);
+/* Short centred rules, as the Times sets between a headline and its summary: one under the headline, one under the byline */
+.ms-banner::after, .ms-byline::after {
+  content: ''; display: block; width: 56px; height: 1px;
+  margin: var(--sp-md) auto 0; background: var(--v100);
 }
-.ms-banner { padding-bottom: var(--sp-md); border-bottom: 1px solid var(--v100); }
 .ms-headline {
   font-family: Georgia, serif; font-weight: 900;
   font-size: clamp(2.1rem, 9vw, 2.6rem);
@@ -503,8 +503,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   line-height: 1.3;
   text-align: center;
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--v45);
-  padding-bottom: var(--sp-md);
-  border-bottom: 1px solid var(--v15);
 }
 .ms-byline-name { color: var(--terra); font-weight: 700; letter-spacing: 0.12em; }
 .ms-byline-note {
