@@ -864,11 +864,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
    One lead story, two second stories, then short items. Short items show
    only the first sentence of their description (.pa-more stays in the HTML,
    hidden) and drop the tool pills. */
-.pa-kicker{
-  display:block;margin-bottom:var(--sp-sm);
-  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.12em;color:var(--terra);
-}
 .pa-card--lead .pa-title{font-family:var(--font-hd);font-weight:900;font-size:var(--sz-3xl);line-height:1.1;}
 .pa-card--short .pa-more,.pa-card--short .pa-techs{display:none;}
 
