@@ -32,10 +32,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- When style.css or main.js changes, set ?v= on both lines, and on every case-studies/*/index.html, to the deploy date (YYYY-MM-DD, plus b, c… for a second deploy that day) so returning visitors get the new files -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-22b">
-  <script src="./assets/js/main.js?v=2026-11-22b" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-22p">
+  <script src="./assets/js/main.js?v=2026-11-22p" defer></script>
 </head>
 <body>
 
@@ -71,7 +71,7 @@
   </div>
 </div>
 
-<header>
+<header class="has-folio">
   <!-- Mobile title (hidden on desktop) -->
   <div class="mast-title">
     <p class="mast-name">The Maker’s Times</p>
@@ -89,7 +89,16 @@
     </div>
     <div class="mast-edition-info">
       <strong class="mast-ed-label">Portfolio Edition</strong>
-      <p class="mast-ed-blurb" data-live>USA · Est. 2024<br>Price: Free Press</p>
+      <p class="mast-ed-blurb">Open to Summer 2027 internships<br>&amp; 2028 new grad roles.</p>
+    </div>
+  </div>
+
+  <!-- Folio row: all widths; under 640px only the date shows. main.js adds today's date after "USA" -->
+  <div class="mast-folio">
+    <div class="mast-folio-row">
+      <span class="mast-folio-l">Est. 2024</span>
+      <span class="mast-folio-c" data-live>USA</span>
+      <span class="mast-folio-r">Price: Free Press</span>
     </div>
   </div>
 </header>
@@ -149,29 +158,33 @@
 
 <!-- ═══ MAIN STORY ═══ -->
 <section class="main-story wrap" id="about">
-  <div class="ms-portrait-col">
-    <div class="ms-portrait">
-      <img src="./assets/images/portrait.webp" width="504" height="504" alt="Portrait of Shalom Donga" class="alive-reveal" loading="lazy">
+  <div class="ms-grid">
+    <div class="ms-portrait-col">
+      <div class="ms-portrait">
+        <img src="./assets/images/portrait.webp" width="504" height="504" alt="Portrait of Shalom Donga" class="alive-reveal" loading="lazy">
+      </div>
     </div>
-  </div>
-  <div class="ms-banner animate-in">
-    <div class="ms-headline">
-      <span>Engineer Who <span class="hl">Designs</span>.</span>
-      <span>Designer Who <span class="hl">Codes</span>.</span>
-    </div>
-    <p class="ms-byline animate-in delay-2">
-      <span class="ms-byline-text">By <span class="ms-byline-name">SHALOM DONGA</span></span>
-      <em class="ms-byline-note">Special to The Maker’s Times</em>
-    </p>
-  </div>
-  <div class="ms-body animate-in delay-1">
-    <div class="ms-body-text">
-      <p>Hi, I’m Shalom, a design engineer 👋</p>
-      <p>What does that mean?</p>
-      <p>Design engineering sits between product design and frontend engineering, combining the thinking behind an experience with the technical work of building it.</p>
-      <p>For me, curiosity and creativity have always been closely connected. They show up in different ways depending on what I’m working on, but I keep returning to the same process: questioning what exists, exploring what could be different, and turning those ideas into something tangible.</p>
-      <p>Design engineering gives that process a place to take shape. I can think, question, build, and refine without treating design and code as separate disciplines.</p>
-      <p>The products I create reflect that. They are intentional in how they feel and rigorous in how they function.</p>
+    <div class="ms-text">
+      <div class="ms-banner animate-in">
+        <div class="ms-headline">
+          <span>Engineer Who <span class="hl-line">Designs.</span></span>
+          <span>Designer Who <span class="hl-line">Codes.</span></span>
+        </div>
+      </div>
+      <p class="ms-byline animate-in delay-2">
+        <span class="ms-byline-text">By <span class="ms-byline-name">SHALOM DONGA</span></span>
+        <em class="ms-byline-note">Special to The Maker’s Times</em>
+      </p>
+      <div class="ms-body animate-in delay-1">
+        <div class="ms-body-text">
+          <p>Hi, I’m Shalom, a design engineer</p>
+          <h3 class="ms-subhead">What does that mean?</h3>
+          <p>I work across product design and engineering, from understanding what an experience should provide to figuring out how to build it.</p>
+          <p>Curiosity and creativity have always been part of how I approach things. I like asking questions, exploring different ideas, and seeing what happens when I put them into practice.</p>
+          <p>Along the way, I’ve worked on everything from digital products to AI-driven tools, sometimes designing the experience, sometimes building it, and sometimes figuring out what the product should do in the first place.</p>
+          <p>What I love most is the freedom to think, tinker, and create. The work below is a little bit of all three.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -352,7 +365,7 @@
     </div>
     <div class="classifieds-frame animate-in">
 
-      <div class="classified-category">
+      <div class="classified-category classified-category--outline">
         <div class="cat-header">
           <h3 class="cat-title">Design and Research</h3>
         </div>
@@ -369,7 +382,7 @@
         </div>
       </div>
 
-      <div class="classified-category">
+      <div class="classified-category classified-category--solid">
         <div class="cat-header">
           <h3 class="cat-title">Engineering and Tools</h3>
         </div>
@@ -528,7 +541,7 @@
         <a href="https://github.com/shalomdee" class="foot-icon-btn" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
       </div>
     </div>
-    <p class="foot-connect-note">Open to Summer 2027 internships and new grad roles in design engineering, product design, UI/UX, and frontend.</p>
+    <p class="foot-connect-note">Open to Summer 2027 internships and 2028 new grad roles.</p>
   </div>
   <div class="foot-bottom wrap">
     <p class="foot-copy">© 2026 Shalom Donga. All rights reserved.</p>

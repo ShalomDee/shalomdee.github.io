@@ -235,37 +235,60 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Desktop broadsheet (visible ≥ 960) */
 .mast-desktop{
   display:none;
-  grid-template-columns:160px 1fr 240px;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;gap:var(--sp-xl);
   padding:var(--sp-lg) max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad))) var(--sp-md);
   border-bottom:3px double var(--v20);
 }
+/* The folio row below closes the masthead, so the double rule gives way to it.
+   The rules use --v100, the text colour: --ink is the page background. */
+.has-folio .mast-title,.has-folio .mast-desktop{border-bottom:0;}
 .mast-desktop .mast-name{font-size:clamp(2.5rem,4.5vw,3.75rem);}
 .mast-center{text-align:center;}
+/* Left ear: a box that fits its text. justify-self puts each ear on its own
+   edge so the logo, the middle track, sits on the true centre. */
 .mast-quote-box{
-  border:1px solid var(--v35);
-  padding:var(--sp-md) var(--sp-md);
+  justify-self:start;
+  border:1.5px solid var(--v100);
+  padding:12px 20px;
   display:flex;align-items:center;justify-content:center;
-  min-height:90px;
 }
 .mast-quote-text{
-  font-family:var(--font-bd);font-size:var(--sz-sm);
-  font-style:italic;color:var(--v55);
-  text-align:center;line-height:1.6;
+  font-family:var(--font-bd);font-size:17px;
+  font-style:normal;color:var(--v100);
+  text-align:center;line-height:1.3;
 }
 .mast-edition-info{
+  justify-self:end;
   text-align:right;display:flex;flex-direction:column;
   align-items:flex-end;gap:4px;
 }
 .mast-ed-label{
-  font-family:var(--font-ui);font-size:var(--sz-2xs);
-  font-weight:700;text-transform:uppercase;letter-spacing:0.14em;
-  color:var(--v85);display:block;
+  font-family:var(--font-ui);font-size:17px;
+  font-weight:700;text-transform:uppercase;letter-spacing:0.02em;
+  color:var(--v100);display:block;
 }
 .mast-ed-blurb{
-  font-family:var(--font-bd);font-size:var(--sz-sm);
-  font-style:italic;color:var(--v55);line-height:1.6;
+  font-family:var(--font-bd);font-size:13px;
+  font-style:normal;color:var(--v70);line-height:1.4;
   text-align:right;margin-bottom:var(--sp-xs);
+}
+
+/* Folio row: edition line, today's date and price between two rules.
+   Under 640px only the date shows. */
+.mast-folio-row{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:9px max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
+  border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);
+  font-family:var(--font-bd);font-style:italic;font-size:13px;line-height:1.3;
+  color:var(--v70);
+}
+.mast-folio-l{justify-self:start;}
+.mast-folio-c{justify-self:center;text-transform:uppercase;}
+.mast-folio-r{justify-self:end;}
+@media(max-width:639.98px){
+  .mast-folio-row{grid-template-columns:1fr;}
+  .mast-folio-l,.mast-folio-r{display:none;}
 }
 
 /* Masthead typewriter: html.press is set by a head script in index.html,
@@ -318,7 +341,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .nav-ticker a:not(.nav-cta):hover,
 .nav-ticker a:not(.nav-cta).active{color:var(--v100);border-bottom-color:var(--gold);}
 /* Big enough to read as a four-point star, faint enough to stay behind the links */
-.nav-sep{color:var(--v35);font-size:11px;line-height:1;user-select:none;}
+.nav-sep{color:var(--v35);font-size:var(--sz-xs);line-height:1;user-select:none;}
 
 /* ═══ MOBILE DRAWER ═══ */
 .drawer-overlay{
@@ -356,9 +379,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--v55);border:none;padding:0;
 }
 [data-theme="light"] .drawer{background:rgba(245,241,232,0.98);}
-[data-theme="light"] .drawer a{color:var(--v85);}
-[data-theme="light"] .drawer a:hover{color:var(--gold);}
-[data-theme="light"] .drawer-close{color:var(--v55);}
 
 /* Resume button in the nav and drawer. Sits after both so it wins
    over .nav-ticker a and .drawer a without !important. */
@@ -442,77 +462,106 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   filter:brightness(0.95) contrast(1.05);
 }
 
-/* ═══ MAIN STORY ═══ */
+/* ═══ MAIN STORY ═══
+   Headline across the full width between a double rule above and a single
+   rule below. Under it, from 1024px, a 12-column grid: photo in 4 columns
+   with a hairline on its right, byline and two-column body in the other 8.
+   Below 1024px everything stacks: byline, photo, body. The body keeps two
+   columns from 640px and is one left-aligned column on phones. */
 .main-story {
   padding-top: var(--sp-3xl); padding-bottom: var(--sp-2xl);
   border-bottom: 2px solid var(--gold);
 }
 
-/* ── Mobile: single column stack ── */
-.ms-portrait-col { display: none; }
-
+/* Headline, at the top of the text column: --v100 is the text colour in both themes, so the rules are always the dark ink of Day Edition */
+/* Short centred rules, as the Times sets between a headline and its summary: one under the headline, one under the byline */
+.ms-banner::after, .ms-byline::after {
+  content: ''; display: block; width: 156px; max-width: 100%; height: 1px;
+  margin: var(--sp-md) auto 0; background: var(--v100);
+}
 .ms-headline {
   font-family: Georgia, serif; font-weight: 900;
-  line-height: 1.0; color: var(--v100); margin-bottom: var(--sp-sm);
+  font-size: clamp(2.1rem, 9vw, 2.6rem);
+  line-height: 1.0; color: var(--v100);
+  text-transform: uppercase;
 }
-.ms-headline span { font-size: clamp(1.6rem,2.6vw,2.7rem); text-transform: uppercase; }
-.ms-headline .hl { font-style: normal; color: inherit; }
-.ms-body-text {
-  font-family: var(--font-bd); font-size: var(--sz-base);
-  line-height: 1.55; color: var(--v70);
-  text-align: justify; hyphens: auto;
+.ms-headline > span { display: block; }
+/* Phones: "Designs." and "Codes." each take a line, with the rest of the sentence above */
+.ms-headline .hl-line { display: block; }
+
+.ms-grid { display: grid; row-gap: var(--sp-lg); }
+.ms-text { display: contents; }
+.ms-byline  { order: 1; }
+.ms-portrait-col { order: 2; }
+.ms-body    { order: 3; }
+
+.ms-portrait img { width: 100%; height: auto; }
+/* Tablet: a full-width portrait would be taller than the screen, so it stays a centred 400px */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .ms-portrait-col { width: 100%; max-width: 400px; margin-inline: auto; }
 }
-.ms-body-text p + p { margin-top: 0.75em; }
+
+/* Byline: centred at the top of the text column, hairline under it */
 .ms-byline {
   font-family: var(--font-ui); font-size: var(--sz-xs);
+  line-height: 1.3;
+  text-align: center;
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--v45);
-  margin-top: var(--sp-md); margin-bottom: var(--sp-md);
 }
 .ms-byline-name { color: var(--terra); font-weight: 700; letter-spacing: 0.12em; }
 .ms-byline-note {
-  display: block;
+  display: block; margin-top: 2px;
   font-family: var(--font-bd); font-size: var(--sz-xs);
   font-style: italic; color: var(--v45); text-transform: none; letter-spacing: 0;
 }
-/* ── 768px and up: portrait beside the story ── */
-@media (min-width: 768px) {
-  .main-story {
-    display: grid;
-    grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;
-    column-gap: var(--sp-lg);
-    grid-template-areas:
-      "portrait banner"
-      "portrait body";
+
+/* Body */
+.ms-body-text {
+  font-family: var(--font-bd); font-size: var(--sz-base);
+  line-height: 1.55; color: var(--v70);
+}
+.ms-body-text p + p { margin-top: 0.75em; }
+.ms-subhead {
+  font-family: var(--font-hd); font-size: var(--sz-lg); font-weight: 700;
+  line-height: 1.2; color: var(--v100);
+  margin: 0.9em 0 0.5em;
+  break-after: avoid;
+}
+
+/* ── Tablet: photo full width, body in two justified columns ── */
+@media (min-width: 640px) {
+  .ms-headline { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+  .ms-headline .hl-line { display: inline; }
+  .ms-body-text {
+    column-count: 2; column-gap: 28px; column-rule: 1px solid var(--v20);
+    text-align: justify; hyphens: auto;
   }
+  .ms-body-text p + p { margin-top: 0; }
+  .ms-body-text p { text-indent: 1.2em; }
+  .ms-body-text p:first-child,
+  .ms-subhead + p { text-indent: 0; }
+}
 
-  .ms-portrait-col { grid-area: portrait; display: block; }
-  .ms-banner       { grid-area: banner; max-width: 52rem; }
-  .ms-body         { grid-area: body; }
-
+/* ── Desktop: 12 columns ── */
+@media (min-width: 1024px) {
+  .ms-headline { font-size: clamp(2rem, 3.4vw, 3.1rem); }
+  .ms-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 0; row-gap: 0;
+    align-items: start;
+  }
+  .ms-banner { margin-bottom: var(--sp-md); }
+  .ms-text { display: block; grid-column: 5 / 13; grid-row: 1; padding-left: 28px; }
+  .ms-byline, .ms-portrait-col, .ms-body { order: 0; }
+  .ms-byline { margin-bottom: var(--sp-md); }
   .ms-portrait-col {
-    min-height: 400px;
-    overflow: hidden;
-    border: 3px solid var(--gold);
-  }
-  .ms-portrait {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 0;
-  }
-  .ms-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .ms-headline span {
-    font-size: clamp(1.6rem, 2.4vw, 2.7rem);
+    grid-column: 1 / 5; grid-row: 1;
+    padding-right: 28px; border-right: 1px solid var(--v20);
   }
 }
 
-/* Portrait alive-reveal responds to section being in view */
+/* Portrait alive-reveal responds to the portrait being in view */
+.ms-portrait img { transition: filter 0.65s var(--ease); }
 [data-theme="light"] .main-story.in-view .ms-portrait img.alive-reveal { filter: none; }
 [data-theme="dark"] .ms-portrait img.alive-reveal {
   filter: grayscale(1) brightness(0.88) saturate(0) contrast(1.15) sepia(0.2);
@@ -540,7 +589,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .wire-logo{
   width:96px;
-  background:var(--v08);border:1px solid var(--v20);border-radius:5px;
+  background:var(--v08);border:1px solid var(--v20);border-radius:4px;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-hd);font-weight:900;font-size:var(--sz-base);
   color:var(--v55);flex-shrink:0;overflow:hidden;
@@ -583,28 +632,28 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .stag-amber {background:rgba(201,169,110,.12);border-color:rgba(201,169,110,.35);color:rgba(217,206,178,.90);}
 
 /* ─── Engineering and Tools: solid filled pills ─── */
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag         { color: var(--vellum); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber   { background: rgba(195,158,85,0.55); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-purple  { background: rgba(60,110,175,0.52); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-teal    { background: rgba(45,170,135,0.48); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-indigo  { background: rgba(185,80,135,0.48); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-olive   { background: rgba(148,158,55,0.50); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-cyan    { background: rgba(40,185,205,0.44); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-violet  { background: rgba(128,80,188,0.46); }
-#skills .classifieds-frame > .classified-category:nth-child(2) .stag-coral   { background: rgba(205,100,60,0.50); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-amber { background: rgba(195,158,85,0.44); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(2) .stag-olive { background: rgba(148,158,55,0.46); }
+#skills .classifieds-frame > .classified-category--solid .stag         { color: var(--vellum); }
+#skills .classifieds-frame > .classified-category--solid .stag-amber   { background: rgba(195,158,85,0.55); }
+#skills .classifieds-frame > .classified-category--solid .stag-purple  { background: rgba(60,110,175,0.52); }
+#skills .classifieds-frame > .classified-category--solid .stag-teal    { background: rgba(45,170,135,0.48); }
+#skills .classifieds-frame > .classified-category--solid .stag-indigo  { background: rgba(185,80,135,0.48); }
+#skills .classifieds-frame > .classified-category--solid .stag-olive   { background: rgba(148,158,55,0.50); }
+#skills .classifieds-frame > .classified-category--solid .stag-cyan    { background: rgba(40,185,205,0.44); }
+#skills .classifieds-frame > .classified-category--solid .stag-violet  { background: rgba(128,80,188,0.46); }
+#skills .classifieds-frame > .classified-category--solid .stag-coral   { background: rgba(205,100,60,0.50); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-amber { background: rgba(195,158,85,0.44); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-olive { background: rgba(148,158,55,0.46); }
 
 /* ─── Design and Research: outline pills ─── */
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category:nth-child(1) .stag { background: rgba(0,0,0,0.40); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-amber   { border-color: rgba(195,158,85,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-purple  { border-color: rgba(60,110,175,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-indigo  { border-color: rgba(185,80,135,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-coral   { border-color: rgba(205,100,60,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-cyan    { border-color: rgba(40,185,205,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-olive   { border-color: rgba(148,158,55,1); }
-#skills .classifieds-frame > .classified-category:nth-child(1) .stag-teal    { border-color: rgba(45,170,135,1); }
+#skills .classifieds-frame > .classified-category--outline .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
+[data-theme="dark"] #skills .classifieds-frame > .classified-category--outline .stag { background: rgba(0,0,0,0.40); }
+#skills .classifieds-frame > .classified-category--outline .stag-amber   { border-color: rgba(195,158,85,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-purple  { border-color: rgba(60,110,175,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-indigo  { border-color: rgba(185,80,135,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-coral   { border-color: rgba(205,100,60,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-cyan    { border-color: rgba(40,185,205,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-olive   { border-color: rgba(148,158,55,1); }
+#skills .classifieds-frame > .classified-category--outline .stag-teal    { border-color: rgba(45,170,135,1); }
 
 /* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══ */
 .editorial-section{
@@ -747,7 +796,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   display:flex;gap:4px;
 }
 .pa-badge{
-  font-family:var(--font-ui);font-size:10px;font-weight:700;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:700;
   text-transform:uppercase;letter-spacing:0.1em;
   padding:3px 8px;border-radius:2px;
 }
@@ -758,7 +807,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-body{padding:var(--sp-md);--pa-rule-gap:var(--sp-md);}
 .pa-meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:var(--sp-sm);}
 .pa-tag{
-  font-family:var(--font-ui);font-size:10px;font-weight:500;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:500;
   text-transform:uppercase;letter-spacing:0.08em;
   color:var(--v45);background:var(--v08);padding:2px 8px;border-radius:2px;
 }
@@ -805,7 +854,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-techs{display:flex;gap:4px;flex-wrap:wrap;}
 .pa-tech{
-  font-family:var(--font-ui);font-size:9px;font-weight:500;
+  font-family:var(--font-ui);font-size:var(--sz-2xs);font-weight:500;
   text-transform:uppercase;letter-spacing:0.05em;
   color:var(--v45);padding:2px 6px;
   border:1px solid var(--v15);border-radius:2px;
@@ -959,15 +1008,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .hero-socials{justify-content:flex-start;}
   .hero-illo{max-width:none;flex:0.75;}
 
-  /* Main Story: wider story column */
-  .main-story{
-    grid-template-columns:1fr 1.5fr;
-    column-gap:var(--sp-xl);row-gap:0;
-  }
-  .ms-portrait-col{display:flex;flex-direction:column;}
-  .ms-portrait{flex:1;border:none;min-height:320px;}
-  .ms-portrait img{transition:filter 0.65s var(--ease);}
-
   /* Wire + Classifieds side-by-side */
   .wire-classifieds-row{
     display:grid;grid-template-columns:2fr 1fr;gap:var(--sp-3xl);
@@ -999,10 +1039,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 
 @media(min-width:1200px){
-  /* Main Story: wider still */
-  .main-story{grid-template-columns:1fr 1.8fr;}
-  .ms-headline span { font-size: clamp(2rem, 3vw, 3rem); white-space: nowrap; }
-
 }
 
 /* ── Phones: hamburger visible ── */
