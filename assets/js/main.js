@@ -111,6 +111,30 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
+/* Highlighted passages in Experience: marked once, when most of the passage is on screen */
+const markObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-marked');
+      markObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.hl').forEach(el => markObserver.observe(el));
+
+/* Stamped dates: set down once the date is about a fifth of the way up the screen */
+const stampObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-stamped');
+      stampObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 1, rootMargin: '0px 0px -20% 0px' });
+
+document.querySelectorAll('.stamp').forEach(el => stampObserver.observe(el));
+
 /* ─── Masthead typewriter ───
    Runs when the head script in index.html set html.press (first home page
    load of a visit, motion allowed). The full text stays readable to screen
