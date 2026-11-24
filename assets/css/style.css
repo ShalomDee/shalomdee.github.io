@@ -40,7 +40,7 @@
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
-  --hl: rgba(170,60,66,.42);
+  --hl: rgba(170,60,66,.32);
   --foot:  #050608;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
@@ -72,7 +72,7 @@
   --vellum:#0D1117;
   --gold:  #3C6997;
   --terra: #90323D;
-  --hl: rgba(144,50,61,.26);
+  --hl: rgba(200,80,72,.24);
   --foot:  #E0DDD8;
 
   --bar-bg: var(--ink);
