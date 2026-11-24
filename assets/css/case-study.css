@@ -432,6 +432,19 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-intent-status{margin-top:var(--sp-xs);font-size:var(--sz-xs);font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--v45);}
 @media(min-width:640px){.cs-intent-list{grid-template-columns:repeat(3,minmax(0,1fr));}}
 
+/* ═══ COST SCALE ═══
+   Two bars on one $0 to $500K scale (InsightCuts feasibility). --from and --to are
+   percentages of the track; the open-ended bar squares its right edge to read as "over". */
+.cs-prose > .cs-cost{margin-block:var(--sp-lg);}
+.cs-cost-row{display:grid;gap:6px;}
+.cs-cost-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px var(--sp-md);}
+.cs-cost-track{display:block;height:14px;border-radius:7px;background:var(--v15);overflow:hidden;}
+.cs-cost-fill{display:block;height:100%;width:calc(var(--to) * 1%);border-radius:7px;background:var(--v45);}
+.cs-cost-fill--acc{background:var(--gold);}
+.cs-cost-fill--open{border-radius:7px 0 0 7px;}
+.cs-cost-val{font-family:var(--font-ui);font-size:var(--sz-sm);font-weight:600;color:var(--v100);}
+.cs-cost .cs-chart-src{font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
+
 /* Read by screen readers only */
 .cs-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
