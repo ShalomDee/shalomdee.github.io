@@ -341,23 +341,15 @@ if (edStrip && edBar) {
 }
 
 /* ─── Sticky bars: raise them once the masthead has scrolled away ───
-   The top margin is the phone bar's height (0 when it is hidden from
-   768px), so the class lands as the masthead slides fully under it. */
+   At every width the masthead comes first and the sticky bar sits below it,
+   so the bar is raised as soon as the masthead has left the screen. */
 const mastHeader = document.querySelector('header');
 const stickyBars = document.querySelectorAll('.mast-top, .nav-bar');
-const mastTop = document.querySelector('.mast-top');
-let stuckObserver;
-function watchMasthead() {
-  if (stuckObserver) stuckObserver.disconnect();
-  stuckObserver = new IntersectionObserver(entries => {
+if (mastHeader) {
+  new IntersectionObserver(entries => {
     const stuck = !entries[0].isIntersecting;
     stickyBars.forEach(bar => bar.classList.toggle('is-stuck', stuck));
-  }, { rootMargin: `-${mastTop ? mastTop.offsetHeight : 0}px 0px 0px 0px` });
-  stuckObserver.observe(mastHeader);
-}
-if (mastHeader) {
-  watchMasthead();
-  window.matchMedia('(min-width: 768px)').addEventListener('change', watchMasthead);
+  }).observe(mastHeader);
 }
 
 /* ─── Nav scroll spy ───
