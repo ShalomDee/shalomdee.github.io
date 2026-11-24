@@ -40,7 +40,7 @@
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
-  --hl: rgba(201,169,110,.30);
+  --hl: rgba(196,105,95,.26);
   --foot:  #050608;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
@@ -72,7 +72,7 @@
   --vellum:#0D1117;
   --gold:  #3C6997;
   --terra: #90323D;
-  --hl: rgba(214,166,70,.34);
+  --hl: rgba(144,50,61,.15);
   --foot:  #E0DDD8;
 
   --bar-bg: var(--ink);
@@ -600,16 +600,16 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .wire-role-row{display:flex;align-items:center;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:2px;}
 .wire-role{font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;color:var(--v100);line-height:1.2;}
 .wire-org{font-family:var(--font-ui);font-size:var(--sz-xs);text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);margin-bottom:var(--sp-sm);}
-/* Dates are stamped: outlined, slightly tilted, set down once when the entry first scrolls in */
+/* Dates are stamped: red ink, outlined, set down once (with a slight twist) when the entry first scrolls in */
 .stamp{
   display:inline-block;padding:2px 8px;margin-bottom:6px;
-  border:1px solid currentColor;border-radius:2px;
-  transform:rotate(-1.5deg);transform-origin:left center;
+  color:var(--terra);border:1px solid currentColor;border-radius:2px;
+  transform-origin:left center;
 }
 @keyframes stampDown{
-  from{opacity:0;transform:translateY(-6px) scale(1.16) rotate(-3.5deg);}
-  70%{opacity:1;transform:translateY(0) scale(.98) rotate(-1.3deg);}
-  to{opacity:1;transform:translateY(0) scale(1) rotate(-1.5deg);}
+  from{opacity:0;transform:translateY(-4px) scale(1.1) rotate(-2.5deg);}
+  70%{opacity:1;transform:translateY(0) scale(.99) rotate(.4deg);}
+  to{opacity:1;transform:translateY(0) scale(1) rotate(0);}
 }
 @media (scripting: enabled){
   .wire-item.is-visible .stamp{animation:stampDown .34s var(--ease) .3s backwards;}
