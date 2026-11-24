@@ -40,7 +40,7 @@
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
-  --hl: rgba(196,105,95,.26);
+  --hl: rgba(201,169,110,.24);
   --foot:  #050608;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
@@ -72,7 +72,7 @@
   --vellum:#0D1117;
   --gold:  #3C6997;
   --terra: #90323D;
-  --hl: rgba(144,50,61,.15);
+  --hl: rgba(144,50,61,.26);
   --foot:  #E0DDD8;
 
   --bar-bg: var(--ink);
@@ -611,8 +611,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   70%{opacity:1;transform:translateY(0) scale(.99) rotate(.4deg);}
   to{opacity:1;transform:translateY(0) scale(1) rotate(0);}
 }
+/* Hidden until the date has scrolled a little way up the screen (see main.js), so it is seen landing, not at the screen edge */
 @media (scripting: enabled){
-  .wire-item.is-visible .stamp{animation:stampDown .34s var(--ease) .3s backwards;}
+  .stamp{opacity:0;}
+  .stamp.is-stamped{opacity:1;animation:stampDown .34s var(--ease) backwards;}
 }
 /* Editor's highlighter: one passage per entry, marked left to right once, then it stays.
    Each wrapped line gets its own band (box-decoration-break), so multi-line passages stay tidy */
@@ -623,11 +625,11 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   padding:0 .12em;margin:0 -.12em;
 }
 @media (scripting: enabled){
-  .hl{background-size:0% 100%;transition:background-size .55s var(--ease) .15s;}
+  .hl{background-size:0% 100%;transition:background-size .55s var(--ease) .4s;}
   .hl.is-marked{background-size:100% 100%;}
 }
 @media (prefers-reduced-motion: reduce){
-  .wire-item.is-visible .stamp{animation:none;}
+  .stamp,.stamp.is-stamped{opacity:1;animation:none;}
   .hl{background-size:100% 100%;transition:none;}
 }
 .wire-desc{font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.55;color:var(--v70);text-align:left;}
