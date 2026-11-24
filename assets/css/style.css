@@ -627,12 +627,16 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   border-radius:4px;color:var(--v85);letter-spacing:0.02em;transition:all var(--t);
 }
 
-/* ─── Skills: two colours, one per side of the headline. Warm = design and product, blue = engineering and AI.
+/* ─── Skills: one colour per group, cooling in order down the box: terracotta, plum, blue, green.
    Every tag in a group has the same shade (shade differences would imply a level of skill) ─── */
-.classified-category--design,.classified-category--product{--fam:196,105,70;}
-.classified-category--eng,.classified-category--ai{--fam:60,110,175;}
-[data-theme="dark"] .classified-category--design,[data-theme="dark"] .classified-category--product{--fam:224,130,95;}
-[data-theme="dark"] .classified-category--eng,[data-theme="dark"] .classified-category--ai{--fam:105,155,220;}
+.classified-category--design {--fam:196,105,70;}
+.classified-category--product{--fam:158,92,150;}
+.classified-category--eng    {--fam:60,110,175;}
+.classified-category--ai     {--fam:62,150,98;}
+[data-theme="dark"] .classified-category--design {--fam:224,130,95;}
+[data-theme="dark"] .classified-category--product{--fam:196,140,188;}
+[data-theme="dark"] .classified-category--eng    {--fam:105,155,220;}
+[data-theme="dark"] .classified-category--ai     {--fam:112,198,134;}
 .classified-category .stag{
   background:rgba(var(--fam),.2);
   border:1px solid rgba(var(--fam),.65);
