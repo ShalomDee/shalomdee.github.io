@@ -409,6 +409,29 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-legend .cs-seg--3{--c:var(--c3);}
 .cs-survey .cs-chart-src{font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
 
+/* ═══ INTENT LEVELS ═══
+   Three steps in a framed figure (Tiffany: Recently Viewed, Compare, Save). The meter
+   fills one, two, three segments with how much each asks of the customer. A set-aside
+   step is dashed with a grey meter. Stacked on phones, three columns from 640px. */
+.cs-prose > .cs-intent{margin-block:var(--sp-lg);}
+.cs-intent-list{list-style:none;display:grid;gap:var(--sp-sm);}
+.cs-prose .cs-intent-step{
+  display:grid;align-content:start;gap:6px;
+  padding:var(--sp-md);border:1px solid var(--v20);border-radius:3px;
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.4;color:var(--v70);text-align:left;
+}
+.cs-prose .cs-intent-step--off{border-style:dashed;}
+.cs-intent-meter{display:flex;gap:3px;margin-bottom:var(--sp-xs);}
+.cs-intent-meter i{display:block;width:28px;height:6px;border-radius:3px;background:var(--v15);}
+.cs-intent-step--1 .cs-intent-meter i:nth-child(-n+1),
+.cs-intent-step--2 .cs-intent-meter i:nth-child(-n+2),
+.cs-intent-step--3 .cs-intent-meter i{background:var(--gold);}
+.cs-intent-step--off .cs-intent-meter i:nth-child(1){background:var(--v35);}
+.cs-intent-name{font-size:var(--sz-base);font-weight:600;color:var(--v100);}
+.cs-intent-ask{font-weight:600;color:var(--v85);}
+.cs-intent-status{margin-top:var(--sp-xs);font-size:var(--sz-xs);font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--v45);}
+@media(min-width:640px){.cs-intent-list{grid-template-columns:repeat(3,minmax(0,1fr));}}
+
 /* Read by screen readers only */
 .cs-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
