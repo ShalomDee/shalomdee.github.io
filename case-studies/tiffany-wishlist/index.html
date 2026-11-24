@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24i">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24i">
-  <script src="../../assets/js/main.js?v=2026-11-24i" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24j">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24j">
+  <script src="../../assets/js/main.js?v=2026-11-24j" defer></script>
 </head>
 <body>
 
@@ -253,7 +253,35 @@
       <div class="sec-head"><h2 class="sec-label">The <span class="aw">Solution</span></h2></div>
       <div class="cs-prose">
         <p>The clearest gap was what happened between discovering a product and deciding whether to purchase it. Some customers need a way to return to products they have seen; others need support evaluating a smaller set of options before deciding. That shifted the project away from recreating a traditional wishlist and toward supporting consideration over time.</p>
-        <p>To think about how committed a customer was, I mapped three levels of intent: Recently Viewed, Compare, and Save. Recently Viewed asked nothing of the customer and helped people return to something they had already seen. Compare asked for a little effort from customers narrowing a decision between a few products. Save, potentially paired with stock or price alerts, was a longer-term commitment to tracking an item. No single wishlist could serve all three. Tiffany also did not yet have the personalization system that Recently Viewed and the brief’s recommendation concepts relied on, so I prioritized Compare and Save, which would stay useful without it. In the final flow, customers save pieces as they browse, then pick two or three of them in Saved Items to compare side by side.</p>
+        <p>To think about how committed a customer was, I mapped three levels of intent.</p>
+        <!-- The three levels of intent, drawn in HTML. Styles: .cs-intent in case-study.css. -->
+        <figure class="cs-chart cs-intent">
+          <figcaption class="cs-chart-q">Three levels of intent, from low friction to high commitment</figcaption>
+          <ol class="cs-intent-list">
+            <li class="cs-intent-step cs-intent-step--1 cs-intent-step--off">
+              <span class="cs-intent-meter" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="cs-intent-name">Recently Viewed</span>
+              <span class="cs-intent-ask">Asks nothing of the customer</span>
+              <span class="cs-intent-use">Helps people return to something they have already seen.</span>
+              <span class="cs-intent-status">Set aside due to constraints</span>
+            </li>
+            <li class="cs-intent-step cs-intent-step--2">
+              <span class="cs-intent-meter" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="cs-intent-name">Compare</span>
+              <span class="cs-intent-ask">A little effort</span>
+              <span class="cs-intent-use">For narrowing a decision between a few products.</span>
+              <span class="cs-intent-status">Designed</span>
+            </li>
+            <li class="cs-intent-step cs-intent-step--3">
+              <span class="cs-intent-meter" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="cs-intent-name">Save</span>
+              <span class="cs-intent-ask">A longer-term commitment</span>
+              <span class="cs-intent-use">For tracking an item over time, possibly with stock or price alerts.</span>
+              <span class="cs-intent-status">Designed</span>
+            </li>
+          </ol>
+        </figure>
+        <p>No single wishlist could serve all three. Tiffany also did not yet have the personalization system that Recently Viewed and the brief’s recommendation concepts relied on, so I prioritized Compare and Save, which would stay useful without it. In the final flow, customers save pieces as they browse, then pick two or three of them in Saved Items to compare side by side.</p>
         <!-- Recently Viewed was set aside (no personalization system), so it has no image.
 -->
         <div class="cs-gallery cs-gallery--2">
