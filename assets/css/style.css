@@ -40,6 +40,7 @@
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
+  --hl: rgba(201,169,110,.30);
   --foot:  #050608;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
@@ -71,6 +72,7 @@
   --vellum:#0D1117;
   --gold:  #3C6997;
   --terra: #90323D;
+  --hl: rgba(214,166,70,.34);
   --foot:  #E0DDD8;
 
   --bar-bg: var(--ink);
@@ -598,6 +600,36 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .wire-role-row{display:flex;align-items:center;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:2px;}
 .wire-role{font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;color:var(--v100);line-height:1.2;}
 .wire-org{font-family:var(--font-ui);font-size:var(--sz-xs);text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);margin-bottom:var(--sp-sm);}
+/* Dates are stamped: outlined, slightly tilted, set down once when the entry first scrolls in */
+.stamp{
+  display:inline-block;padding:2px 8px;margin-bottom:6px;
+  border:1px solid currentColor;border-radius:2px;
+  transform:rotate(-1.5deg);transform-origin:left center;
+}
+@keyframes stampDown{
+  from{opacity:0;transform:translateY(-6px) scale(1.16) rotate(-3.5deg);}
+  70%{opacity:1;transform:translateY(0) scale(.98) rotate(-1.3deg);}
+  to{opacity:1;transform:translateY(0) scale(1) rotate(-1.5deg);}
+}
+@media (scripting: enabled){
+  .wire-item.is-visible .stamp{animation:stampDown .34s var(--ease) .3s backwards;}
+}
+/* Editor's highlighter: one passage per entry, marked left to right once, then it stays.
+   Each wrapped line gets its own band (box-decoration-break), so multi-line passages stay tidy */
+.hl{
+  color:inherit;
+  background:linear-gradient(transparent 8%,var(--hl) 8%,var(--hl) 94%,transparent 94%) no-repeat 0 0 / 100% 100%;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  padding:0 .12em;margin:0 -.12em;
+}
+@media (scripting: enabled){
+  .hl{background-size:0% 100%;transition:background-size .55s var(--ease) .15s;}
+  .hl.is-marked{background-size:100% 100%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .wire-item.is-visible .stamp{animation:none;}
+  .hl{background-size:100% 100%;transition:none;}
+}
 .wire-desc{font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.55;color:var(--v70);text-align:left;}
 
 /* ─── Classifieds ─── */

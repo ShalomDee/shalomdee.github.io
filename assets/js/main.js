@@ -111,6 +111,18 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 
+/* Highlighted passages in Experience: marked once, when most of the passage is on screen */
+const markObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-marked');
+      markObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.hl').forEach(el => markObserver.observe(el));
+
 /* ─── Masthead typewriter ───
    Runs when the head script in index.html set html.press (first home page
    load of a visit, motion allowed). The full text stays readable to screen
