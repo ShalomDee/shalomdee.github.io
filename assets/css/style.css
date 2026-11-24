@@ -511,8 +511,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ms-byline-name { color: var(--terra); font-weight: 700; letter-spacing: 0.12em; }
 .ms-byline-note {
   display: block; margin-top: 2px;
-  font-family: var(--font-bd); font-size: var(--sz-xs);
-  font-style: italic; color: var(--v45); text-transform: none; letter-spacing: 0;
+  font-family: var(--font-bd); font-size: var(--sz-sm);
+  font-style: italic; color: var(--v70); text-transform: none; letter-spacing: 0;
 }
 
 /* Body */
@@ -598,7 +598,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .wire-role-row{display:flex;align-items:center;gap:var(--sp-sm);flex-wrap:wrap;margin-bottom:2px;}
 .wire-role{font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;color:var(--v100);line-height:1.2;}
 .wire-org{font-family:var(--font-ui);font-size:var(--sz-xs);text-transform:uppercase;letter-spacing:0.07em;color:var(--v55);margin-bottom:var(--sp-sm);}
-.wire-desc{font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.55;color:var(--v70);text-align:justify;hyphens:auto;}
+.wire-desc{font-family:var(--font-bd);font-size:var(--sz-base);line-height:1.55;color:var(--v70);text-align:left;}
 
 /* ─── Classifieds ─── */
 .classifieds-col{margin-top:var(--sp-2xl);}
@@ -626,34 +626,22 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   padding:5px 11px;background:var(--v08);border:1px solid var(--v20);
   border-radius:4px;color:var(--v85);letter-spacing:0.02em;transition:all var(--t);
 }
-.stag-purple{background:rgba(139,92,246,.10);border-color:rgba(139,92,246,.30);color:rgba(196,181,253,.85);}
-.stag-indigo{background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.30);color:rgba(199,210,254,.85);}
-.stag-teal  {background:rgba(20,184,166,.10);border-color:rgba(20,184,166,.30);color:rgba(153,246,228,.80);}
-.stag-amber {background:rgba(201,169,110,.12);border-color:rgba(201,169,110,.35);color:rgba(217,206,178,.90);}
 
-/* ─── Engineering and Tools: solid filled pills ─── */
-#skills .classifieds-frame > .classified-category--solid .stag         { color: var(--vellum); }
-#skills .classifieds-frame > .classified-category--solid .stag-amber   { background: rgba(195,158,85,0.55); }
-#skills .classifieds-frame > .classified-category--solid .stag-purple  { background: rgba(60,110,175,0.52); }
-#skills .classifieds-frame > .classified-category--solid .stag-teal    { background: rgba(45,170,135,0.48); }
-#skills .classifieds-frame > .classified-category--solid .stag-indigo  { background: rgba(185,80,135,0.48); }
-#skills .classifieds-frame > .classified-category--solid .stag-olive   { background: rgba(148,158,55,0.50); }
-#skills .classifieds-frame > .classified-category--solid .stag-cyan    { background: rgba(40,185,205,0.44); }
-#skills .classifieds-frame > .classified-category--solid .stag-violet  { background: rgba(128,80,188,0.46); }
-#skills .classifieds-frame > .classified-category--solid .stag-coral   { background: rgba(205,100,60,0.50); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-amber { background: rgba(195,158,85,0.44); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category--solid .stag-olive { background: rgba(148,158,55,0.46); }
-
-/* ─── Design and Research: outline pills ─── */
-#skills .classifieds-frame > .classified-category--outline .stag         { background: rgba(255,255,255,0.40); border: 1.5px solid; color: var(--vellum); }
-[data-theme="dark"] #skills .classifieds-frame > .classified-category--outline .stag { background: rgba(0,0,0,0.40); }
-#skills .classifieds-frame > .classified-category--outline .stag-amber   { border-color: rgba(195,158,85,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-purple  { border-color: rgba(60,110,175,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-indigo  { border-color: rgba(185,80,135,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-coral   { border-color: rgba(205,100,60,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-cyan    { border-color: rgba(40,185,205,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-olive   { border-color: rgba(148,158,55,1); }
-#skills .classifieds-frame > .classified-category--outline .stag-teal    { border-color: rgba(45,170,135,1); }
+/* ─── Skills: one colour family per group, three shades stepping across its tags ─── */
+.classified-category--design{--fam:196,105,70;}
+.classified-category--eng   {--fam:60,110,175;}
+.classified-category--ai    {--fam:45,150,115;}
+[data-theme="dark"] .classified-category--design{--fam:224,130,95;}
+[data-theme="dark"] .classified-category--eng   {--fam:105,155,220;}
+[data-theme="dark"] .classified-category--ai    {--fam:85,188,152;}
+.classified-category .stag{
+  background:rgba(var(--fam),var(--a,.16));
+  border:1px solid rgba(var(--fam),.65);
+  color:var(--vellum);
+}
+.classified-category .stag:nth-child(3n+1){--a:.14;}
+.classified-category .stag:nth-child(3n+2){--a:.28;}
+.classified-category .stag:nth-child(3n)  {--a:.42;}
 
 /* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══ */
 .editorial-section{
@@ -756,7 +744,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* ═══ PRESS ARCHIVE ═══ */
 .press-archive{
   padding-top:var(--sp-2xl);padding-bottom:var(--sp-2xl);
-  border-bottom:1px solid var(--v15);
 }
 .archive-grid{
   display:grid;grid-template-columns:1fr;gap:var(--sp-lg);
@@ -1092,7 +1079,3 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .pa-card--short .pa-footer{border-top:0;padding-top:0;}
 }
 
-/* Phones: justified Experience text leaves wide gaps in the narrow column */
-@media(max-width:639.98px){
-  .wire-desc{text-align:left;hyphens:manual;}
-}
