@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24n">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24n">
-  <script src="../../assets/js/main.js?v=2026-11-24n" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24o">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24o">
+  <script src="../../assets/js/main.js?v=2026-11-24o" defer></script>
 </head>
 <body>
 
@@ -265,6 +265,39 @@
       <div class="cs-prose">
         <p>Before wireframing, I planned four areas: My Journey, the Grapevine, Resources, and Profile. Resources kept official instructions and contacts in one place, but students need that information in the middle of a step. I moved those sources into each step and turned the fourth tab into Inventory, which holds the kit, notes, and a quest log.</p>
         <p>The final app has three tabs and an avatar. Home is a map with quests grouped by topic, such as Money, Health, and Getting around, opening on what matters now. The Grapevine collects tips and questions, browsed by quest. Profile and settings sit behind the avatar.</p>
+        <!-- Planned four tabs against the final three tabs and avatar. Each row is one planned tab and where it went.
+             Styles: .cs-ia in case-study.css. -->
+        <figure class="cs-chart cs-ia">
+          <figcaption class="cs-chart-q">Information architecture: planned and final</figcaption>
+          <div class="cs-ia-head" aria-hidden="true"><span>Planned: four tabs</span><span></span><span>Final: three tabs and an avatar</span></div>
+          <ol class="cs-ia-list">
+            <li class="cs-ia-row">
+              <span class="cs-ia-from" data-label="Planned"><b>My Journey</b></span>
+              <span class="cs-ia-arrow" aria-hidden="true"></span><span class="cs-vh">became</span>
+              <span class="cs-ia-to" data-label="Final"><b>Home</b><small>A map of quests, grouped by topic</small></span>
+            </li>
+            <li class="cs-ia-row">
+              <span class="cs-ia-from" data-label="Planned"><b>The Grapevine</b></span>
+              <span class="cs-ia-arrow" aria-hidden="true"></span><span class="cs-vh">stayed as</span>
+              <span class="cs-ia-to" data-label="Final"><b>The Grapevine</b><small>Tips and questions, browsed by quest</small></span>
+            </li>
+            <li class="cs-ia-row cs-ia-row--move">
+              <span class="cs-ia-from" data-label="Planned"><b>Resources</b></span>
+              <span class="cs-ia-arrow" aria-hidden="true"></span><span class="cs-vh">moved into</span>
+              <span class="cs-ia-to" data-label="Final"><b>Inside every step</b><small>Official sources and contacts, where students need them</small></span>
+            </li>
+            <li class="cs-ia-row">
+              <span class="cs-ia-from" data-label="Planned"><b>Profile</b></span>
+              <span class="cs-ia-arrow" aria-hidden="true"></span><span class="cs-vh">moved behind</span>
+              <span class="cs-ia-to" data-label="Final"><b>The avatar</b><small>Profile and settings</small></span>
+            </li>
+            <li class="cs-ia-row cs-ia-row--new">
+              <span class="cs-ia-from" aria-hidden="true"></span>
+              <span class="cs-ia-arrow" aria-hidden="true"></span><span class="cs-vh">added</span>
+              <span class="cs-ia-to" data-label="Final"><b>Inventory <i>New</i></b><small>The kit, notes and a quest log</small></span>
+            </li>
+          </ol>
+        </figure>
         <p>The bottom navigation is hidden inside quest and step screens, so those screens stay on the one task.</p>
       </div>
     </section>

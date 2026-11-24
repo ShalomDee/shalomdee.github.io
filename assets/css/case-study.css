@@ -445,6 +445,47 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-cost-val{font-family:var(--font-ui);font-size:var(--sz-sm);font-weight:600;color:var(--v100);}
 .cs-cost .cs-chart-src{font-family:var(--font-ui);font-size:var(--sz-xs);color:var(--v45);text-align:left;}
 
+/* ═══ INFORMATION ARCHITECTURE ═══
+   Rows of planned tab, arrow, final home (Lendi). Stacked on phones with a small
+   Planned / Final label on each card; three columns from 640px with a header row. */
+.cs-prose > .cs-ia{margin-block:var(--sp-lg);}
+.cs-ia-list{list-style:none;display:grid;gap:var(--sp-md);}
+.cs-ia-head{display:none;}
+.cs-prose .cs-ia-row{
+  display:grid;gap:var(--sp-xs);justify-items:stretch;
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.4;color:var(--v70);text-align:left;
+}
+.cs-ia-from,.cs-ia-to{
+  display:grid;gap:2px;align-content:center;
+  padding:var(--sp-sm) var(--sp-md);border:1px solid var(--v20);border-radius:3px;
+}
+.cs-ia-from::before,.cs-ia-to::before{
+  content:attr(data-label);font-size:var(--sz-2xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--v45);
+}
+.cs-ia-from b,.cs-ia-to b{font-size:var(--sz-base);font-weight:600;color:var(--v100);}
+.cs-ia-to b i{
+  font-style:normal;font-size:var(--sz-2xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold);border-radius:2px;padding:1px 5px;margin-left:var(--sp-xs);vertical-align:middle;
+}
+.cs-ia-from{border-style:dashed;}
+.cs-ia-arrow{display:block;text-align:center;color:var(--v45);line-height:1;}
+.cs-ia-arrow::before{content:"\2193";font-size:1.25rem;}
+.cs-ia-row--move .cs-ia-to{border-color:var(--gold);border-width:2px;}
+.cs-ia-row--move .cs-ia-arrow{color:var(--gold);}
+.cs-ia-row--move .cs-ia-arrow::before{font-weight:700;}
+.cs-ia-row--new .cs-ia-from,.cs-ia-row--new .cs-ia-arrow{display:none;}
+@media(min-width:640px){
+  .cs-ia-head,.cs-prose .cs-ia-row{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1.5fr);align-items:stretch;gap:0;}
+  .cs-ia-head{
+    padding-bottom:var(--sp-xs);margin-bottom:var(--sp-xs);
+    font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--v45);
+  }
+  .cs-ia-from::before,.cs-ia-to::before{display:none;}
+  .cs-ia-arrow{align-self:center;}
+  .cs-ia-arrow::before{content:"\2192";}
+  .cs-ia-row--new .cs-ia-from,.cs-ia-row--new .cs-ia-arrow{display:block;visibility:hidden;}
+}
+
 /* Read by screen readers only */
 .cs-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
