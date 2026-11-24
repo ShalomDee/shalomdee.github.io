@@ -666,7 +666,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* ─── Skills: one accent for every group (the rule colour: blue in Day, gold in Night), so the red in Experience is the only other colour.
    The headings do the grouping, and every tag has the same shade (shade differences would imply a level of skill) ─── */
 .classified-category{--fam:60,105,151;}
-[data-theme="dark"] .classified-category{--fam:201,169,110;}
+/* Night Edition: the quiet neutral pill the AI group always had, since a gold tint made the box too light against the dark page */
+[data-theme="dark"] .classified-category .stag{background:var(--v08);border:1px solid var(--v20);color:var(--v85);}
 .classified-category .stag{
   background:rgba(var(--fam),.2);
   border:1px solid rgba(var(--fam),.65);
