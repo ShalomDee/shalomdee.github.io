@@ -627,21 +627,20 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   border-radius:4px;color:var(--v85);letter-spacing:0.02em;transition:all var(--t);
 }
 
-/* ─── Skills: one colour family per group, three shades stepping across its tags ─── */
+/* ─── Skills: one colour per group, the same shade on every tag (shade differences would imply a level of skill) ─── */
 .classified-category--design{--fam:196,105,70;}
 .classified-category--eng   {--fam:60,110,175;}
+.classified-category--product{--fam:140,100,190;}
 .classified-category--ai    {--fam:45,150,115;}
 [data-theme="dark"] .classified-category--design{--fam:224,130,95;}
 [data-theme="dark"] .classified-category--eng   {--fam:105,155,220;}
+[data-theme="dark"] .classified-category--product{--fam:178,148,228;}
 [data-theme="dark"] .classified-category--ai    {--fam:85,188,152;}
 .classified-category .stag{
-  background:rgba(var(--fam),var(--a,.16));
+  background:rgba(var(--fam),.2);
   border:1px solid rgba(var(--fam),.65);
   color:var(--vellum);
 }
-.classified-category .stag:nth-child(3n+1){--a:.14;}
-.classified-category .stag:nth-child(3n+2){--a:.28;}
-.classified-category .stag:nth-child(3n)  {--a:.42;}
 
 /* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══ */
 .editorial-section{
