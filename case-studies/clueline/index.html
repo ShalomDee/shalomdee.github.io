@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24o">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24o">
-  <script src="../../assets/js/main.js?v=2026-11-24o" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24p">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24p">
+  <script src="../../assets/js/main.js?v=2026-11-24p" defer></script>
 </head>
 <body>
 
@@ -230,6 +230,33 @@
     <section class="cs-sec" id="experience">
       <div class="sec-head"><h2 class="sec-label">Experience <span class="aw">Design</span></h2></div>
       <div class="cs-prose">
+        <!-- The three views behind the top-bar mode switch (Figma: App - Story map & Reader's view, Top bar > Mode switch),
+             each tied to its design question. Styles: .cs-modes in case-study.css. -->
+        <figure class="cs-chart cs-modes">
+          <figcaption class="cs-chart-q">One manuscript, three views</figcaption>
+          <ol class="cs-modes-list">
+            <li class="cs-modes-card">
+              <span class="cs-modes-q">01 · Writing Flow</span>
+              <span class="cs-modes-name">Write</span>
+              <span class="cs-modes-use">Draft the story and mark clues, red herrings and reveals, with nothing interrupting until the writer asks for a check.</span>
+            </li>
+            <li class="cs-modes-card">
+              <span class="cs-modes-q">02 · Story Connections</span>
+              <span class="cs-modes-name">Story map</span>
+              <span class="cs-modes-use">The book, chapter by chapter, above what really happened in time order, with strings between them.</span>
+            </li>
+            <li class="cs-modes-card">
+              <span class="cs-modes-q">03 · Reader Perspective</span>
+              <span class="cs-modes-name">Reader’s view</span>
+              <span class="cs-modes-use">What the reader has been told so far, what is new in the chapter and how many secrets are still hidden.</span>
+            </li>
+          </ol>
+          <ul class="cs-modes-shared" aria-label="In every view">
+            <li>Switch views from the top bar</li>
+            <li>A check runs when the writer asks</li>
+            <li>The bottom bar counts what is left to check</li>
+          </ul>
+        </figure>
         <h3 class="cs-subhead" id="flow">01. Writing Flow</h3>
         <p><strong>How might we let writers investigate their story without interrupting their creative flow?</strong></p>
         <p>Our first exploration put warnings inside the draft as the writer typed. The insight was that while a story is still changing, warnings appear too early and interrupt, so in the next exploration the writer decides when to create and when to step back and review.</p>
