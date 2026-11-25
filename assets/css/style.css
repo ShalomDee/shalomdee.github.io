@@ -795,7 +795,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-card{
   background:var(--v08);border:1px solid var(--v35);
   border-radius:4px;overflow:hidden;
-  transition:border-color var(--t),box-shadow var(--t),transform var(--t);
+  transition:border-color .35s var(--ease),box-shadow .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);
 }
 .pa-card:hover{
   border-color:var(--gold);
