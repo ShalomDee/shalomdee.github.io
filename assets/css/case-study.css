@@ -513,6 +513,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
    Headline numbers (Worlds of Hello Outcome): one frame, three figures, each with its label and
    where it came from. Stacked on phones, three columns from 720px. */
 .cs-prose > .cs-results{margin-block:var(--sp-lg);}
+.cs-results{gap:var(--sp-xl);}
 .cs-results-list{list-style:none;display:grid;gap:var(--sp-lg);}
 .cs-prose .cs-results-list li{
   display:grid;gap:6px;align-content:start;
