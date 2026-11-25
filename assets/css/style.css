@@ -618,7 +618,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Dates are stamped: red ink, outlined, set down once (with a slight twist) when the entry first scrolls in */
 .stamp{
   display:inline-block;padding:2px 8px;margin-bottom:6px;
-  color:var(--v85);border:1px solid currentColor;border-radius:2px;
+  color:var(--stamp);border:1px solid currentColor;border-radius:2px;
   transform-origin:left center;
 }
 @keyframes stampDown{
