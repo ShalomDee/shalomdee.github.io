@@ -75,8 +75,8 @@
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
   margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
 }
-.cs-hero .kicker{margin-bottom:var(--sp-sm);}
-.cs-crumb a{color:var(--gold);}
+.cs-hero .kicker{margin-bottom:var(--sp-sm);color:var(--v70);}
+.cs-crumb a{color:var(--terra);}
 .cs-crumb a:hover{color:var(--v100);}
 .cs-title{
   font-family:var(--font-hd);font-weight:900;
@@ -115,10 +115,10 @@
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
+/* Night Edition: product screens are light UIs, so they glare on the dark page; dim them a little */
+[data-theme="dark"] .cs-prose img,[data-theme="dark"] .cs-prose video{filter:brightness(.9);}
 /* Images drawn twice, one per theme (e.g. black phones in Day Edition, light phones in Night Edition) */
 .cs-theme-dark{display:none;}
-[data-theme="dark"] .cs-media > img.cs-theme-light{display:none;}
-[data-theme="dark"] .cs-media > img.cs-theme-dark{display:block;}
 /* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
 [data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
 .cs-ph{
@@ -206,7 +206,7 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-prose > .cs-media,.cs-prose > .cs-gallery,.cs-prose > .cs-phones,
 .cs-source > .cs-media,.cs-source > .cs-gallery{margin-block:var(--sp-lg);}
 .cs-prose strong{color:var(--v85);}
-.cs-prose p a,.cs-prose li a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+.cs-prose p a,.cs-prose li a{color:var(--terra);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
 .cs-prose p a:hover,.cs-prose li a:hover{color:var(--v100);}
 .cs-prose > .cs-subhead{
   font-family:var(--font-hd);font-size:var(--sz-lg);font-weight:700;

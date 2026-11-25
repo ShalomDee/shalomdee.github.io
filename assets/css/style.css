@@ -36,26 +36,26 @@
   --t: 0.25s var(--ease);
 
   /* ── THE FIVE ── */
-  --ink:   #121417;
+  --ink:   #121A28;
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
-  --terra: #C4695F;
+  --terra: #D07A6F;
   --stamp: var(--terra);
-  --hl: rgba(140,65,50,.40);
-  --foot:  #050608;   /* deeper than the page, as in light */
+  --hl: rgba(208,122,111,.28);
+  --foot:  #0A0F18;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
      shows on a near-black page, so in dark the bar is also lifted one
      step lighter than the page. */
-  --bar-bg: #1B1E23;
+  --bar-bg: #1F2B43;
   --bar-shadow: 0 6px 20px rgba(0,0,0,0.9);
 
   /* Vellum steps. v45, v55 and v60 are text greys, raised above their
      names to meet WCAG AA (4.5:1) on every surface. v35 and below are
      for borders and decoration only, never text. */
-  --v100:rgba(217,206,178,1.00); --v85:rgba(217,206,178,0.85);
-  --v70:rgba(217,206,178,0.70);  --v60:rgba(217,206,178,0.68);
-  --v55:rgba(217,206,178,0.66);  --v45:rgba(217,206,178,0.64);
+  --v100:rgba(217,206,178,1.00); --v85:rgba(217,206,178,0.93);
+  --v70:rgba(217,206,178,0.84);  --v60:rgba(217,206,178,0.76);
+  --v55:rgba(217,206,178,0.75);  --v45:rgba(217,206,178,0.74);
   --v35:rgba(217,206,178,0.35);  --v20:rgba(217,206,178,0.20);
   --v15:rgba(217,206,178,0.15);  --v08:rgba(217,206,178,0.08);
   --v06:rgba(217,206,178,0.06);  --v05:rgba(217,206,178,0.05);
@@ -151,7 +151,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 
 /* ─── Animations ─── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;translate:0 14px;}to{opacity:1;translate:0 0;}}
 /* Only hide content for the fade when JS can reveal it again */
 @media (scripting: enabled){
   .animate-in{opacity:0;animation:fadeUp .55s var(--ease) forwards;animation-play-state:paused;}
@@ -166,7 +166,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   html{scroll-behavior:auto;}
   .animate-in{opacity:1;animation:none;}
   *,*::before,*::after{transition-duration:0.01ms!important;}
-  .pa-card:hover,.ed-tile:hover .ed-img img{transform:none;}
+  html .pa-card:hover,html .ed-tile:hover .ed-img img{transform:none;}
   .editorial-grid{transition:none;}
 }
 
@@ -191,7 +191,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .kicker{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
   font-weight:600;text-transform:uppercase;letter-spacing:0.14em;
-  color:var(--gold);display:block;margin-bottom:2px;
+  color:var(--terra);display:block;margin-bottom:2px;
 }
 
 /* ═══ MASTHEAD ═══ */
@@ -368,7 +368,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .drawer-overlay.open{opacity:1;visibility:visible;}
 .drawer{
   position:fixed;top:0;right:0;width:280px;max-width:80vw;height:100%;
-  background:rgba(18,20,23,0.98);z-index:10002;
+  background:rgba(18,26,40,0.98);z-index:10002;
   transform:translateX(100%);visibility:hidden;
   transition:transform 0.35s var(--ease),visibility 0s linear 0.35s;
   padding:var(--sp-xl) var(--sp-lg);display:flex;flex-direction:column;
@@ -767,7 +767,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-family:var(--font-bd);font-size:var(--sz-sm);
   color:var(--v70);line-height:1.4;
 }
-.ed-text--md{font-size:var(--sz-base);}
+.ed-text--md{font-size:var(--sz-base);color:var(--v85);}
 .ed-tile--1 .ed-headline{font-size:var(--sz-lg);line-height:1.2;}
 .ed-subtext{
   font-family:var(--font-bd);font-size:var(--sz-2xs);
@@ -793,13 +793,13 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   display:grid;grid-template-columns:1fr;gap:var(--sp-lg);
 }
 .pa-card{
-  background:var(--v05);border:1px solid var(--v35);
+  background:var(--v08);border:1px solid var(--v35);
   border-radius:4px;overflow:hidden;
-  transition:border-color var(--t),box-shadow var(--t),transform var(--t);
+  transition:border-color .35s var(--ease),box-shadow .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);
 }
 .pa-card:hover{
   border-color:var(--gold);
-  transform:translateY(-3px);
+  transform:translateY(-6px);
   box-shadow:0 8px 24px rgba(0,0,0,0.4);
 }
 [data-theme="light"] .pa-card{background:#FAFAF8;}
@@ -811,16 +811,16 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-img--c1{background:#3D2A2A url('../images/projs/card-classync.webp') center/cover no-repeat;}
 .pa-img--c2{background:#2A3D38 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 .pa-img--c3{background:#3D3525 url('../images/projs/card-woh.webp') center/cover no-repeat;}
-.pa-img--c4{background:#1E2A3D url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+.pa-img--c4{background:#1C3C46 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
 .pa-img--c5{background:#2A2540 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
-.pa-img--c7{background:#1A1816 url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c7{background:#F4EEDF url('../images/projs/card-lendi.webp') center/cover no-repeat;}
+.pa-img--c7{background:#43261C url('../images/projs/card-lendi.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c7{background:#E3C0AA url('../images/projs/card-lendi.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c6{background:#A3BDB9 url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c1{background:#D8C3C1 url('../images/projs/card-classync.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c2{background:#A3BDB9 url('../images/projs/wishlist.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/card-woh.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c3{background:#B5AFA0 url('../images/projs/card-woh.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c4{background:#A7C7CF url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c5{background:#A898B8 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-badges{
   position:absolute;top:8px;right:8px;
@@ -862,7 +862,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-links:empty + .pa-techs{margin-left:auto;}
 .pa-link{
   font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);
+  text-transform:uppercase;letter-spacing:0.08em;color:var(--terra);
   display:inline-flex;align-items:center;gap:4px;
   transition:gap var(--t),color var(--t);
 }
