@@ -75,7 +75,7 @@
   text-transform:uppercase;letter-spacing:0.12em;color:var(--v45);
   margin-bottom:calc(var(--sp-xl) - var(--sp-2xl));
 }
-.cs-hero .kicker{margin-bottom:var(--sp-sm);}
+.cs-hero .kicker{margin-bottom:var(--sp-sm);color:var(--v70);}
 .cs-crumb a{color:var(--terra);}
 .cs-crumb a:hover{color:var(--v100);}
 .cs-title{
@@ -119,8 +119,6 @@
 [data-theme="dark"] .cs-prose img,[data-theme="dark"] .cs-prose video{filter:brightness(.9);}
 /* Images drawn twice, one per theme (e.g. black phones in Day Edition, light phones in Night Edition) */
 .cs-theme-dark{display:none;}
-[data-theme="dark"] .cs-media > img.cs-theme-light{display:none;}
-[data-theme="dark"] .cs-media > img.cs-theme-dark{display:block;}
 /* Day Edition: a silver laptop on cream paper looked flat, so a softer shadow lifts it off the page */
 [data-theme="light"] .cs-hero .cs-media--bare > img{filter:drop-shadow(14px 24px 26px rgba(13,17,23,0.32));}
 .cs-ph{
