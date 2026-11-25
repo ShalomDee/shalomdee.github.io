@@ -36,18 +36,18 @@
   --t: 0.25s var(--ease);
 
   /* ── THE FIVE ── */
-  --ink:   #0F1826;
+  --ink:   #121A28;
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
   --stamp: var(--terra);
   --hl: rgba(140,65,50,.40);
-  --foot:  #080E18;   /* deeper than the page, as in light */
+  --foot:  #0A0F18;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
      shows on a near-black page, so in dark the bar is also lifted one
      step lighter than the page. */
-  --bar-bg: #18243A;
+  --bar-bg: #1A2538;
   --bar-shadow: 0 6px 20px rgba(0,0,0,0.9);
 
   /* Vellum steps. v45, v55 and v60 are text greys, raised above their
@@ -368,7 +368,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .drawer-overlay.open{opacity:1;visibility:visible;}
 .drawer{
   position:fixed;top:0;right:0;width:280px;max-width:80vw;height:100%;
-  background:rgba(15,24,38,0.98);z-index:10002;
+  background:rgba(18,26,40,0.98);z-index:10002;
   transform:translateX(100%);visibility:hidden;
   transition:transform 0.35s var(--ease),visibility 0s linear 0.35s;
   padding:var(--sp-xl) var(--sp-lg);display:flex;flex-direction:column;
@@ -811,16 +811,16 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-img--c1{background:#3D2A2A url('../images/projs/card-classync.webp') center/cover no-repeat;}
 .pa-img--c2{background:#2A3D38 url('../images/projs/wishlist.webp') center/cover no-repeat;}
 .pa-img--c3{background:#3D3525 url('../images/projs/card-woh.webp') center/cover no-repeat;}
-.pa-img--c4{background:#1E2A3D url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+.pa-img--c4{background:#1C3C46 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
 .pa-img--c5{background:#2A2540 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
-.pa-img--c7{background:#141D2D url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c7{background:#F4EEDF url('../images/projs/card-lendi.webp') center/cover no-repeat;}
+.pa-img--c7{background:#43261C url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c7{background:#E3C0AA url('../images/projs/card-lendi.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c6{background:#A3BDB9 url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c1{background:#D8C3C1 url('../images/projs/card-classync.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c2{background:#A3BDB9 url('../images/projs/wishlist.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c3{background:#C4BFA8 url('../images/projs/card-woh.webp') center/cover no-repeat;}
-[data-theme="light"] .pa-img--c4{background:#B5AFA0 url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c3{background:#B5AFA0 url('../images/projs/card-woh.webp') center/cover no-repeat;}
+[data-theme="light"] .pa-img--c4{background:#A7C7CF url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c5{background:#A898B8 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-badges{
   position:absolute;top:8px;right:8px;

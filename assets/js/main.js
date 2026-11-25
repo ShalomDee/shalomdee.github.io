@@ -33,7 +33,7 @@ function applyTheme(theme) {
   if (heroDark) heroDark.media = dark ? 'all' : 'not all';
   // Browser UI colour (mobile address bar) follows the page background
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) themeColor.content = dark ? '#0F1826' : '#F5F1E8';
+  if (themeColor) themeColor.content = dark ? '#121A28' : '#F5F1E8';
 }
 
 // A toggle this visit counts as a choice even when storage can't keep it
