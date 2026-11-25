@@ -486,6 +486,29 @@ article > .cs-sec:last-child{padding-bottom:0;}
   .cs-ia-row--new .cs-ia-from,.cs-ia-row--new .cs-ia-arrow{display:block;visibility:hidden;}
 }
 
+/* ═══ THREE VIEWS ═══
+   Clueline: the three modes behind the top-bar switch, each tied to its design question,
+   with what every view shares underneath. Stacked on phones, three columns from 720px. */
+.cs-prose > .cs-modes{margin-block:var(--sp-lg);}
+.cs-modes-list{list-style:none;display:grid;gap:var(--sp-sm);}
+.cs-prose .cs-modes-card{
+  display:grid;gap:6px;align-content:start;
+  padding:var(--sp-md);border:1px solid var(--v20);border-radius:3px;
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.4;color:var(--v70);text-align:left;
+}
+.cs-modes-q{font-size:var(--sz-2xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+.cs-modes-name{font-size:var(--sz-lg);font-weight:600;line-height:1.2;color:var(--v100);}
+.cs-modes-shared{
+  list-style:none;display:flex;flex-wrap:wrap;gap:var(--sp-xs) var(--sp-lg);
+  padding-top:var(--sp-sm);border-top:1px solid var(--v15);
+}
+.cs-prose .cs-modes-shared li{
+  position:relative;padding-left:var(--sp-md);
+  font-family:var(--font-ui);font-size:var(--sz-xs);line-height:1.4;color:var(--v70);text-align:left;
+}
+.cs-modes-shared li::before{content:"✦";position:absolute;left:0;top:0.15em;font-size:8px;color:var(--gold);}
+@media(min-width:720px){.cs-modes-list{grid-template-columns:repeat(3,minmax(0,1fr));}}
+
 /* Read by screen readers only */
 .cs-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
