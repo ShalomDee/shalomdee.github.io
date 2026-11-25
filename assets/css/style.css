@@ -36,26 +36,26 @@
   --t: 0.25s var(--ease);
 
   /* ── THE FIVE ── */
-  --ink:   #121417;
+  --ink:   #0F1826;
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
   --terra: #C4695F;
   --stamp: var(--terra);
   --hl: rgba(140,65,50,.40);
-  --foot:  #050608;   /* deeper than the page, as in light */
+  --foot:  #080E18;   /* deeper than the page, as in light */
 
   /* Sticky bars, once stuck (.is-stuck, set in main.js). A shadow barely
      shows on a near-black page, so in dark the bar is also lifted one
      step lighter than the page. */
-  --bar-bg: #1B1E23;
+  --bar-bg: #18243A;
   --bar-shadow: 0 6px 20px rgba(0,0,0,0.9);
 
   /* Vellum steps. v45, v55 and v60 are text greys, raised above their
      names to meet WCAG AA (4.5:1) on every surface. v35 and below are
      for borders and decoration only, never text. */
-  --v100:rgba(217,206,178,1.00); --v85:rgba(217,206,178,0.85);
-  --v70:rgba(217,206,178,0.70);  --v60:rgba(217,206,178,0.68);
-  --v55:rgba(217,206,178,0.66);  --v45:rgba(217,206,178,0.64);
+  --v100:rgba(217,206,178,1.00); --v85:rgba(217,206,178,0.93);
+  --v70:rgba(217,206,178,0.84);  --v60:rgba(217,206,178,0.76);
+  --v55:rgba(217,206,178,0.75);  --v45:rgba(217,206,178,0.74);
   --v35:rgba(217,206,178,0.35);  --v20:rgba(217,206,178,0.20);
   --v15:rgba(217,206,178,0.15);  --v08:rgba(217,206,178,0.08);
   --v06:rgba(217,206,178,0.06);  --v05:rgba(217,206,178,0.05);
@@ -368,7 +368,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .drawer-overlay.open{opacity:1;visibility:visible;}
 .drawer{
   position:fixed;top:0;right:0;width:280px;max-width:80vw;height:100%;
-  background:rgba(18,20,23,0.98);z-index:10002;
+  background:rgba(15,24,38,0.98);z-index:10002;
   transform:translateX(100%);visibility:hidden;
   transition:transform 0.35s var(--ease),visibility 0s linear 0.35s;
   padding:var(--sp-xl) var(--sp-lg);display:flex;flex-direction:column;
@@ -814,7 +814,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-img--c4{background:#1E2A3D url('../images/projs/card-insightcuts.webp') center/cover no-repeat;}
 .pa-img--c5{background:#2A2540 url('../images/projs/card-clueline.webp') center/cover no-repeat;}
 .pa-img--c6{background:#1A2A2A url('../images/projs/github.webp') center/cover no-repeat;}
-.pa-img--c7{background:#1A1816 url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
+.pa-img--c7{background:#141D2D url('../images/projs/card-lendi-dark.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c7{background:#F4EEDF url('../images/projs/card-lendi.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c6{background:#A3BDB9 url('../images/projs/github.webp') center/cover no-repeat;}
 [data-theme="light"] .pa-img--c1{background:#D8C3C1 url('../images/projs/card-classync.webp') center/cover no-repeat;}
