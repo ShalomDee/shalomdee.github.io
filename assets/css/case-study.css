@@ -509,6 +509,57 @@ article > .cs-sec:last-child{padding-bottom:0;}
 .cs-modes-shared li::before{content:"✦";position:absolute;left:0;top:0.15em;font-size:8px;color:var(--gold);}
 @media(min-width:720px){.cs-modes-list{grid-template-columns:repeat(3,minmax(0,1fr));}}
 
+/* ═══ RESULTS ═══
+   Headline numbers (Worlds of Hello Outcome): one frame, three figures, each with its label and
+   where it came from. Stacked on phones, three columns from 720px. */
+.cs-prose > .cs-results{margin-block:var(--sp-lg);}
+.cs-results-list{list-style:none;display:grid;gap:var(--sp-lg);}
+.cs-prose .cs-results-list li{
+  display:grid;gap:6px;align-content:start;
+  font-family:var(--font-ui);text-align:left;color:var(--v70);
+}
+.cs-results-val{font-size:2.5rem;font-weight:600;line-height:1;color:var(--v100);}
+.cs-results-label{font-size:var(--sz-sm);line-height:1.4;color:var(--v85);}
+.cs-results-src{font-size:var(--sz-xs);line-height:1.4;color:var(--v45);}
+@media(min-width:720px){
+  .cs-results-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;}
+  .cs-prose .cs-results-list li{padding-inline:var(--sp-lg);border-left:1px solid var(--v15);}
+  .cs-prose .cs-results-list li:first-child{padding-left:0;border-left:0;}
+  .cs-prose .cs-results-list li:last-child{padding-right:0;}
+}
+
+/* ═══ STEP SEQUENCES ═══
+   Rows of boxed steps joined by arrows (Worlds of Hello). A column on phones with down arrows;
+   a row from 720px with right arrows. --seq-n steps share the row. */
+.cs-prose > .cs-seq{margin-block:var(--sp-lg);}
+.cs-seq-start{
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.4;color:var(--v70);text-align:left;
+}
+.cs-seq-row{display:grid;gap:var(--sp-sm);}
+.cs-seq-label{
+  font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);text-align:left;
+}
+.cs-seq-steps{list-style:none;display:grid;gap:var(--sp-lg);}
+.cs-prose .cs-seq-steps li{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  padding:var(--sp-md);border:1px solid var(--v20);border-radius:3px;
+  font-family:var(--font-ui);font-size:var(--sz-sm);line-height:1.4;color:var(--v85);text-align:center;
+}
+.cs-seq-steps li:not(:last-child)::after{
+  content:"\2193";position:absolute;left:50%;bottom:calc(var(--sp-lg) * -1 + 1px);
+  height:var(--sp-lg);display:flex;align-items:center;transform:translateX(-50%);color:var(--v45);line-height:1;
+}
+.cs-seq-row--final .cs-seq-steps li{border-color:var(--gold);}
+@media(min-width:720px){
+  .cs-seq-steps{grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:var(--sp-xl);}
+  .cs-seq-steps li:not(:last-child)::after{
+    content:"\2192";left:auto;bottom:auto;top:50%;right:calc(var(--sp-xl) * -1);
+    width:var(--sp-xl);height:auto;justify-content:center;transform:translateY(-50%);
+  }
+}
+.cs-seq{gap:var(--sp-lg);}
+
 /* Read by screen readers only */
 .cs-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
 
@@ -527,7 +578,9 @@ article > .cs-sec:last-child{padding-bottom:0;}
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:640px){
   .cs-gallery--2{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .cs-gallery--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  /* Three screens: two across and the third centred below, so each stays large enough to read */
+  .cs-gallery--3{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cs-gallery--3 > :last-child:nth-child(odd){grid-column:1 / -1;justify-self:center;width:calc(50% - var(--sp-lg) / 2);}
   .cs-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
   .cs-book{grid-template-columns:minmax(0,1454fr) minmax(0,461fr);}
   .cs-book > .cs-media:last-child{max-width:none;}

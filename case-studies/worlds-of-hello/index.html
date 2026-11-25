@@ -26,9 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- Same ?v= as index.html; bump all three together -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24p">
-  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24p">
-  <script src="../../assets/js/main.js?v=2026-11-24p" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css?v=2026-11-24s">
+  <link rel="stylesheet" href="../../assets/css/case-study.css?v=2026-11-24s">
+  <script src="../../assets/js/main.js?v=2026-11-24s" defer></script>
 </head>
 <body>
 
@@ -178,10 +178,21 @@
         <p>My scope expanded as I became more familiar with the product. I started receiving features that required design work in Figma before I implemented them in Flutter. By later sprints, I was moving between Figma, Flutter development, Supabase voice metadata, and Python scripts supporting the ElevenLabs workflow depending on what the product needed.</p>
         <p>Most of my work was in the family app, from onboarding to parent video recording and the community voice library. Near the end, I also built therapist-side features, including caseload search and session-note actions, although that work had not been merged before the project period ended.</p>
         <div class="cs-tools-row"><span class="kicker">Tools</span><div class="cs-tools"><span class="stag">Flutter</span><span class="stag">Supabase</span><span class="stag">ElevenLabs</span><span class="stag">Python</span><span class="stag">Figma</span></div></div>
-        <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
-          <img src="assets/images/avatar-ipad.webp" width="1302" height="942" alt="Onboarding screen, Select your child’s avatar: a grid of emoji faces across skin tones and animals, with a Take a photo instead button and a Next button" loading="lazy">
-          <figcaption class="cs-caption">Avatar selection</figcaption>
-        </figure>
+        <!-- Why each tool was chosen comes from the project's platform notes; how it was used is from the paragraphs above and below. -->
+        <div class="cs-source">
+          <h4 class="kicker">Why these tools</h4>
+          <div class="cs-table-wrap" role="region" aria-label="Why the project used Flutter, Supabase and ElevenLabs" tabindex="0">
+            <table class="cs-table cs-table--left">
+              <thead><tr><th scope="col">Tool</th><th scope="col">Purpose</th><th scope="col">How I used it</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Flutter</th><td>One codebase for iOS and Android, quick to build and prototype in</td><td>The family app, from onboarding to recording and the home screen</td></tr>
+                <tr><th scope="row">Supabase</th><td>A fast backend for a mobile app, with an option to self-host for data privacy</td><td>Cleaning and correcting the voice metadata</td></tr>
+                <tr><th scope="row">ElevenLabs</th><td>Cloned voices, with audio tags to control emotion and intonation</td><td>Python scripts that generated voice samples and attached their metadata</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cs-table-hint" aria-hidden="true">Scroll sideways to see every column.</p>
+        </div>
       </div>
     </section>
 
@@ -201,6 +212,10 @@
         </div>
         <p>The review process helped me learn the product’s design and engineering conventions quickly. Some of my early revisions involved switching components to the existing design tokens, changing a full-page interaction into a modal, following the project’s established responsive patterns, and adjusting interface details to match updated Figma designs. Those reviews gave me a much clearer sense of how the design system and codebase were meant to work together.</p>
         <p>I later worked on avatar selection and photo capture, the home screen, settings, and SLP connection management. The settings work included child profile settings, a multi-state SLP connection interface, code verification, and confirmation states for destructive actions.</p>
+        <figure class="cs-media cs-media--bare cs-media--device" style="--ratio:1302/942">
+          <img src="assets/images/avatar-ipad.webp" width="1302" height="942" alt="Onboarding screen, Select your child’s avatar: a grid of emoji faces across skin tones and animals, with a Take a photo instead button and a Next button" loading="lazy">
+          <figcaption class="cs-caption">Avatar selection</figcaption>
+        </figure>
         <div class="cs-gallery cs-gallery--3">
           <figure class="cs-media" style="--ratio:1194/834">
             <img src="assets/images/slp-not-connected.webp" width="1194" height="834" alt="Connect SLP screen with a yellow warning icon, Not Connected, and an Enter SLP Code button" loading="lazy">
@@ -228,6 +243,27 @@
       <div class="sec-head"><h2 class="sec-label">Video <span class="aw">Recording</span></h2></div>
       <div class="cs-prose">
         <p>In a lesson, the parent appears in a circular frame and leads the activity, so the child sees a familiar face alongside the gamified lesson content. Parents record those videos in the family app, and the recording flow was one of the most technically demanding frontend features I worked on.</p>
+        <!-- Redrawn from the team's first-time parent flowchart, simplified. Styles: .cs-seq in case-study.css. -->
+        <figure class="cs-chart cs-seq">
+          <figcaption class="cs-chart-q">Where recording fits in a parent’s first-time setup</figcaption>
+          <p class="cs-seq-start">The parent creates the child’s profile and enters the child’s information, then is asked to record their voice.</p>
+          <div class="cs-seq-row">
+            <p class="cs-seq-label">If they record their voice</p>
+            <ol class="cs-seq-steps">
+              <li>Parent records their voice</li>
+              <li>The voice is cloned</li>
+              <li>Parent is onboarded into the app</li>
+            </ol>
+          </div>
+          <div class="cs-seq-row">
+            <p class="cs-seq-label">If they give a short sample instead</p>
+            <ol class="cs-seq-steps">
+              <li>Parent records a short sample</li>
+              <li>Similar voice models are fetched</li>
+              <li>Parent selects the best match</li>
+            </ol>
+          </div>
+        </figure>
         <p>The recording experience had been designed with a specific visual treatment, including a circular camera frame and custom controls that needed to behave differently depending on the recording state. I used CameraAwesome and worked through its documentation to understand how much of the default camera interface I could replace or restructure.</p>
         <p>The final experience supported separate states for recording, pausing, stopping, redoing, and completing a recording. The camera appeared within a circular frame with instructions guiding the parent to keep their face positioned correctly.</p>
         <div class="cs-gallery cs-gallery--2">
@@ -258,12 +294,28 @@
       <div class="cs-prose">
         <p>One of the most important constraints behind the child experience was how much freedom the cloned voice was allowed to have during a lesson.</p>
         <p>The first version was agentic. The app streamed the child’s voice to an agent, ElevenLabs transcribed it, Gemini 2.0 Flash wrote a response, and ElevenLabs spoke that response back in the cloned voice.</p>
-        <!-- Donell Mtabvuri's diagram of the first version (donell.dev), credited at the end -->
-        <figure class="cs-media cs-media--diagram" style="--ratio:1600/1089">
-          <img src="assets/images/agent-flow.webp" width="1600" height="1089" alt="Diagram of the initial agentic voice flow: the mobile app streams the child’s voice to an agent, ElevenLabs transcribes it, Gemini 2.0 Flash generates a response transcript, and ElevenLabs turns it into speech sent back to the app with agentic actions" loading="lazy">
-          <figcaption class="cs-caption">Initial agentic voice flow, before the switch to pre-generated audio</figcaption>
-        </figure>
         <p>The team then moved to pre-generated lines. Each voice was used to produce approved lines ahead of time, then rule-based logic determined which recording played during each part of an activity. Audio was prefetched where possible, with an on-demand fallback when a clip was unavailable. ElevenLabs audio tags helped control the emotion and intonation of those recordings.</p>
+        <!-- The two ways the cloned voice could speak, drawn without vendor names. Styles: .cs-seq in case-study.css. -->
+        <figure class="cs-chart cs-seq">
+          <figcaption class="cs-chart-q">How the child hears the cloned voice: first version and final</figcaption>
+          <div class="cs-seq-row">
+            <p class="cs-seq-label">First version: the model replies live</p>
+            <ol class="cs-seq-steps">
+              <li>The child’s voice is streamed</li>
+              <li>Speech is transcribed</li>
+              <li>A language model writes a reply</li>
+              <li>The reply is spoken in the cloned voice</li>
+            </ol>
+          </div>
+          <div class="cs-seq-row cs-seq-row--final">
+            <p class="cs-seq-label">Final: approved lines made ahead of time</p>
+            <ol class="cs-seq-steps">
+              <li>Approved lines are generated for each voice</li>
+              <li>Rule-based logic picks the line for each part of the activity</li>
+              <li>The app plays it, prefetched or fetched on demand</li>
+            </ol>
+          </div>
+        </figure>
         <p>My manager designed this architecture, and I worked within it while building the experience. The constraint made sense once I understood the user. A wrong line from the model could interrupt an exercise or make a voice that was supposed to feel familiar suddenly behave unpredictably.</p>
         <p>That changed how I thought about AI in a product. The design depended on knowing when the system would speak, what it would say, and how that line should sound. Predictability was part of the experience we were designing for the child.</p>
 
@@ -281,10 +333,29 @@
     <section class="cs-sec" id="outcome">
       <div class="sec-head"><h2 class="sec-label"><em>Outcome</em></h2></div>
       <div class="cs-prose">
-        <h3 class="cs-subhead">At the end of my internship</h3>
         <p>By the end of the summer development period, everything I built for the family app, from onboarding to parent video recording and Community Voices, had been merged and was in use, including in the versions the team presented in fundraising and pitch conversations. My therapist-side features were still unmerged.</p>
-        <h3 class="cs-subhead">What followed</h3>
+        <h3 class="cs-subhead">After the internship</h3>
         <p>Worlds of Hello continued into further research and product testing after the summer development period. An NSF SBIR Phase I grant supported prototype development, testing with parents, educators, and speech-language pathologists, and technical refinement of the platform. The team also participated in the 2025 MITRE RISE Accelerator.</p>
+        <!-- The three headline numbers from the paragraph below, worded as in it. Styles: .cs-results in case-study.css. -->
+        <figure class="cs-chart cs-results">
+          <figcaption class="cs-chart-q">Results since the summer development period</figcaption>
+          <ul class="cs-results-list">
+            <li>
+              <span class="cs-results-val">170</span>
+              <span class="cs-results-label">voices in the Community Voices library, across more than 10 accent categories</span>
+            </li>
+            <li>
+              <span class="cs-results-val">75%</span>
+              <span class="cs-results-label">of caregivers felt culturally represented through the voice library</span>
+              <span class="cs-results-src">Research with 19 caregiver-child pairs and 33 speech-language pathologists</span>
+            </li>
+            <li>
+              <span class="cs-results-val">49%</span>
+              <span class="cs-results-label">higher activity completion in experiences using familial voice clones</span>
+              <span class="cs-results-src">The team’s internal testing</span>
+            </li>
+          </ul>
+        </figure>
         <p>The Community Voices library later grew to 170 voices across more than 10 accent categories. Research with 19 caregiver-child pairs and 33 speech-language pathologists found that 75% of caregivers felt culturally represented through the voice library, and the team’s internal testing found a 49% higher activity completion rate in experiences using familial voice clones.</p>
         <p>The work was published in the ACM Digital Library as <a href="https://doi.org/10.1145/3794786.3830734" target="_blank" rel="noopener noreferrer"><cite>Culturally Representative AI Voices for Equitable Pediatric Speech Therapy: Design and Preliminary Evaluation</cite></a>. Presented in the proceedings of GoodIT ’26, the 2026 International Conference on Information Technology for Social Good, the paper lists me as a co-author alongside Donell Mtabvuri and Amy Quarkume.</p>
       </div>
@@ -296,7 +367,7 @@
         <p>Worlds of Hello changed how I understood frontend work. I started the summer translating Figma designs into Flutter, and the work gradually pushed me into the systems underneath those screens. In later design work, I pay much more attention to the data and technical constraints behind an interface.</p>
         <p>I also came away with a more practical view of AI product development. The question I now ask is how much control the experience requires.</p>
         <!-- Credit for images taken from the public Worlds of Hello site -->
-        <p class="cs-media-note cs-credit">The iPad lesson mockup, the photo in Overview, and the initial agentic voice flow diagram are from <a href="https://donell.dev/projects/worlds-of-hello/" target="_blank" rel="noopener noreferrer">Donell Mtabvuri’s Worlds of Hello project page</a>.</p>
+        <p class="cs-media-note cs-credit">The iPad lesson mockup and the photo in Overview are from <a href="https://donell.dev/projects/worlds-of-hello/" target="_blank" rel="noopener noreferrer">Donell Mtabvuri’s Worlds of Hello project page</a>.</p>
       </div>
     </section>
   </article>
