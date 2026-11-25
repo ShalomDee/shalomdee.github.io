@@ -39,7 +39,7 @@
   --ink:   #121A28;
   --vellum:#D9CEB2;
   --gold:  #C9A96E;
-  --terra: #C4695F;
+  --terra: #D07A6F;
   --stamp: var(--terra);
   --hl: rgba(140,65,50,.40);
   --foot:  #0A0F18;   /* deeper than the page, as in light */
@@ -191,7 +191,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .kicker{
   font-family:var(--font-ui);font-size:var(--sz-2xs);
   font-weight:600;text-transform:uppercase;letter-spacing:0.14em;
-  color:var(--gold);display:block;margin-bottom:2px;
+  color:var(--terra);display:block;margin-bottom:2px;
 }
 
 /* ═══ MASTHEAD ═══ */
@@ -862,7 +862,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .pa-links:empty + .pa-techs{margin-left:auto;}
 .pa-link{
   font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;
-  text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);
+  text-transform:uppercase;letter-spacing:0.08em;color:var(--terra);
   display:inline-flex;align-items:center;gap:4px;
   transition:gap var(--t),color var(--t);
 }
