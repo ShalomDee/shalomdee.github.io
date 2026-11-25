@@ -799,7 +799,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .pa-card:hover{
   border-color:var(--gold);
-  transform:translateY(-3px);
+  transform:translateY(-6px);
   box-shadow:0 8px 24px rgba(0,0,0,0.4);
 }
 [data-theme="light"] .pa-card{background:#FAFAF8;}
