@@ -115,6 +115,8 @@
 /* The hero's baked shadow is too faint to read on the dark page, so Night
    Edition adds a deeper one under the laptop */
 [data-theme="dark"] .cs-hero .cs-media--bare > img{filter:drop-shadow(16px 28px 28px rgba(0,0,0,0.9));}
+/* Night Edition: product screens are light UIs, so they glare on the dark page; dim them a little */
+[data-theme="dark"] .cs-prose img,[data-theme="dark"] .cs-prose video{filter:brightness(.9);}
 /* Images drawn twice, one per theme (e.g. black phones in Day Edition, light phones in Night Edition) */
 .cs-theme-dark{display:none;}
 [data-theme="dark"] .cs-media > img.cs-theme-light{display:none;}

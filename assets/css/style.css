@@ -767,7 +767,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-family:var(--font-bd);font-size:var(--sz-sm);
   color:var(--v70);line-height:1.4;
 }
-.ed-text--md{font-size:var(--sz-base);}
+.ed-text--md{font-size:var(--sz-base);color:var(--v85);}
 .ed-tile--1 .ed-headline{font-size:var(--sz-lg);line-height:1.2;}
 .ed-subtext{
   font-family:var(--font-bd);font-size:var(--sz-2xs);
