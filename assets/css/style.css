@@ -497,10 +497,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   margin: var(--sp-md) auto 0; background: var(--v100);
 }
 .ms-headline {
-  font-family: Georgia, serif; font-weight: 900;
+  font-family: var(--font-hd); font-weight: 700;
   font-size: clamp(2.1rem, 9vw, 2.6rem);
-  line-height: 1.0; color: var(--v100);
-  text-transform: uppercase;
+  line-height: 1.05; color: var(--v100);
 }
 .ms-headline > span { display: block; }
 /* Phones: "Designs." and "Codes." each take a line, with the rest of the sentence above */
