@@ -800,18 +800,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-ground--radio{left:67%;top:94%;width:35%;height:6%;}
 .ed-ground--ball{left:-3%;top:76%;width:46%;height:9%;}
 
-/* Hockey: the goal casts a long, flat, hard-edged shadow to the right, off the edge of the tile.
-   It is a dark copy of the goal half of the picture, squashed and sheared along the ground. */
-.ed-tile--5 .ed-art{justify-content:flex-start;}
-.ed-tile--5 .ed-art-in{width:calc(min(100cqw,100cqh * var(--ar)) * 0.88);}
-.ed-goal-shadow{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
-  clip-path:inset(0 0 0 68%);
-  filter:brightness(0);opacity:0.55;
-  transform-origin:70% 81%;transform:scaleY(0.55) skewX(-62deg);
-  pointer-events:none;
-}
-[data-theme="light"] .ed-goal-shadow{opacity:0.35;}
 
 /* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
 @property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
