@@ -741,10 +741,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .ed-art-in img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
-  filter:drop-shadow(0 6px 8px rgba(0,0,0,0.3));
+  filter:drop-shadow(3px 4px 0 rgba(0,0,0,0.42));
   transition:opacity 0.5s ease;
 }
-[data-theme="light"] .ed-art-in img{filter:drop-shadow(0 6px 8px rgba(13,17,23,0.22));}
+[data-theme="light"] .ed-art-in img{filter:drop-shadow(3px 4px 0 rgba(13,17,23,0.26));}
 
 /* Second image: shown on hover, or after a tap (.is-on, main.js) */
 .ed-art-in .ed-b{opacity:0;}
@@ -763,18 +763,18 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Card 2: the paper and pen run a little larger, since the poem is the point of the tile */
 .ed-tile--2 .ed-art{inset:6px 10px var(--ed-bot,78px);}
 
-/* Things that lie flat on a surface (sketchbook, paper and pen, yarn): a tight dark contact shadow plus softer ones further out.
+/* Things that lie flat on a surface (sketchbook, paper and pen, yarn): a hard-edged shadow, a little longer than the rest, so its edge stays visible.
    On the sketchbook the shadow sits on the container, so the pencil and colour layers share one shadow
    and the colour paint-in changes nothing but the pages. */
 .ed-tile--2 .ed-art-in img,
 .ed-tile--4 .ed-art-in img,
 .ed-tile--3 .ed-art-in{
-  filter:drop-shadow(0 1px 1px rgba(0,0,0,0.6)) drop-shadow(0 3px 4px rgba(0,0,0,0.4)) drop-shadow(0 8px 10px rgba(0,0,0,0.22));
+  filter:drop-shadow(4px 5px 0 rgba(0,0,0,0.45));
 }
 [data-theme="light"] .ed-tile--2 .ed-art-in img,
 [data-theme="light"] .ed-tile--4 .ed-art-in img,
 [data-theme="light"] .ed-tile--3 .ed-art-in{
-  filter:drop-shadow(0 1px 1px rgba(13,17,23,0.5)) drop-shadow(0 3px 4px rgba(13,17,23,0.32)) drop-shadow(0 8px 10px rgba(13,17,23,0.18));
+  filter:drop-shadow(4px 5px 0 rgba(13,17,23,0.3));
 }
 .ed-tile--3 .ed-art-in img,
 [data-theme="light"] .ed-tile--3 .ed-art-in img{filter:none;}
@@ -819,9 +819,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .ed-art-in .ed-g-face{
   inset:auto auto -16% -2%;width:33%;height:auto;object-fit:initial;
-  filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
+  filter:drop-shadow(2px 3px 0 rgba(0,0,0,0.42));transform-origin:50% 100%;
 }
-[data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
+[data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(2px 3px 0 rgba(13,17,23,0.26));}
 .ed-art-in .ed-g:nth-child(4) .ed-g-face{left:-5.5%;}
 .ed-art-in .ed-g:nth-child(5) .ed-g-face{left:-3%;}
 .ed-g.is-cur .ed-g-face{animation:ed-pop 0.35s ease-out;}
