@@ -777,10 +777,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(0,0,0,0.45));}
 [data-theme="light"] .ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(13,17,23,0.3));}
 
-.ed-tile--4 .ed-art-in .ed-y-ball{filter:drop-shadow(5px 6px 0 rgba(0,0,0,0.45));}
+.ed-tile--4 .ed-art-in .ed-y-ball{filter:none;}
 .ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(0,0,0,0.45));}
 .ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(0,0,0,0.45));}
-[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-ball{filter:drop-shadow(5px 6px 0 rgba(13,17,23,0.3));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-ball{filter:none;}
 [data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(13,17,23,0.3));}
 [data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(13,17,23,0.3));}
 
@@ -798,6 +798,20 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 [data-theme="light"] .ed-ground{background:rgba(13,17,23,0.26);}
 .ed-ground--tv{left:6%;top:92%;width:66%;height:8%;}
 .ed-ground--radio{left:67%;top:94%;width:35%;height:6%;}
+.ed-ground--ball{left:2%;top:74%;width:43%;height:9%;}
+
+/* Hockey: the goal casts a long, flat, hard-edged shadow to the right, off the edge of the tile.
+   It is a dark copy of the goal half of the picture, squashed and sheared along the ground. */
+.ed-tile--5 .ed-art{justify-content:flex-start;}
+.ed-tile--5 .ed-art-in{width:calc(min(100cqw,100cqh * var(--ar)) * 0.88);}
+.ed-goal-shadow{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  clip-path:inset(0 0 0 68%);
+  filter:brightness(0);opacity:0.55;
+  transform-origin:70% 81%;transform:scaleY(0.55) skewX(-62deg);
+  pointer-events:none;
+}
+[data-theme="light"] .ed-goal-shadow{opacity:0.35;}
 
 /* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
 @property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
