@@ -774,15 +774,15 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile--3 .ed-art-in img,
 [data-theme="light"] .ed-tile--3 .ed-art-in img{filter:none;}
 
-.ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(0,0,0,0.45));}
-[data-theme="light"] .ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(13,17,23,0.3));}
+.ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 3px 0 rgba(0,0,0,0.45));}
+[data-theme="light"] .ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 3px 0 rgba(13,17,23,0.3));}
 
 .ed-tile--4 .ed-art-in .ed-y-ball{filter:none;}
-.ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(0,0,0,0.45));}
-.ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(0,0,0,0.45));}
+.ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(3px 3px 0 rgba(0,0,0,0.45));}
+.ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(4px 4px 0 rgba(0,0,0,0.45));}
 [data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-ball{filter:none;}
-[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(13,17,23,0.3));}
-[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(13,17,23,0.3));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(3px 3px 0 rgba(13,17,23,0.3));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(4px 4px 0 rgba(13,17,23,0.3));}
 
 .ed-tile--5 .ed-art-in > img,
 .ed-tile--6 .ed-art-in > img{filter:drop-shadow(0 6px 8px rgba(0,0,0,0.3));}
@@ -798,7 +798,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 [data-theme="light"] .ed-ground{background:rgba(13,17,23,0.26);}
 .ed-ground--tv{left:6%;top:92%;width:66%;height:8%;}
 .ed-ground--radio{left:67%;top:94%;width:35%;height:6%;}
-.ed-ground--ball{left:2%;top:74%;width:43%;height:9%;}
+.ed-ground--ball{left:-3%;top:76%;width:46%;height:9%;}
 
 /* Hockey: the goal casts a long, flat, hard-edged shadow to the right, off the edge of the tile.
    It is a dark copy of the goal half of the picture, squashed and sheared along the ground. */
@@ -1225,7 +1225,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 
 @media(max-width:959.98px){
-  .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);}
+  .foot-inner{grid-template-columns:1fr;gap:var(--sp-xl);border-bottom:0;}
+  .foot-bottom{position:relative;}
+  .foot-bottom::before{content:'';position:absolute;top:0;left:var(--pad);right:var(--pad);height:1px;background:var(--v15);}
 
   /* Short items become compact rows: thumbnail left, text right */
   .archive-grid .pa-card--short{
