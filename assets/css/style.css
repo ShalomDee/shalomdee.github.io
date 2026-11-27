@@ -760,6 +760,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile--4 .ed-art{transform:translateY(6px);}
 .ed-tile--7 .ed-art{transform:translateY(8px);}
 
+/* Card 2: the paper and pen run a little larger, since the poem is the point of the tile */
+.ed-tile--2 .ed-art{inset:6px 10px var(--ed-bot,78px);}
+
 /* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
 @property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
 .ed-tile--3 .ed-art-in .ed-b{
@@ -780,7 +783,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-verse{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;}
 .ed-verse text{
   font-family:var(--font-bd);font-style:italic;font-weight:500;
-  font-size:8.6px;fill:#3a2618;
+  font-size:10px;fill:#3a2618;
 }
 
 /* Card 6: a greeting and a face per language, shown while hovering or after taps (main.js) */
@@ -803,7 +806,8 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
-.ed-art-in .ed-g:nth-child(4) .ed-g-face,.ed-art-in .ed-g:nth-child(5) .ed-g-face{left:-5.5%;}
+.ed-art-in .ed-g:nth-child(4) .ed-g-face{left:-5.5%;}
+.ed-art-in .ed-g:nth-child(5) .ed-g-face{left:-3%;}
 .ed-g.is-cur .ed-g-face{animation:ed-pop 0.35s ease-out;}
 @keyframes ed-pop{0%{transform:scale(0.8);}70%{transform:scale(1.06);}100%{transform:scale(1);}}
 
