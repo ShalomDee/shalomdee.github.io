@@ -763,21 +763,41 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Card 2: the paper and pen run a little larger, since the poem is the point of the tile */
 .ed-tile--2 .ed-art{inset:6px 10px var(--ed-bot,78px);}
 
-/* Things that lie flat on a surface (sketchbook, paper and pen, yarn): a hard-edged shadow, a little longer than the rest, so its edge stays visible.
-   On the sketchbook the shadow sits on the container, so the pencil and colour layers share one shadow
-   and the colour paint-in changes nothing but the pages. */
-.ed-tile--2 .ed-art-in img,
-.ed-tile--4 .ed-art-in img,
-.ed-tile--3 .ed-art-in{
-  filter:drop-shadow(4px 5px 0 rgba(0,0,0,0.45));
-}
-[data-theme="light"] .ed-tile--2 .ed-art-in img,
-[data-theme="light"] .ed-tile--4 .ed-art-in img,
-[data-theme="light"] .ed-tile--3 .ed-art-in{
-  filter:drop-shadow(4px 5px 0 rgba(13,17,23,0.3));
-}
+/* Shadows, tile by tile. Flat things (sketchbook, paper and pen, yarn) get hard-edged shadows so the edge stays visible.
+   The sketchbook's shadow sits on the container, so the pencil and colour layers share it and the paint-in changes
+   nothing but the pages. The poem's shadow falls to the left, not down. The yarn is three layers (ball, loose strand,
+   pom-pom and ring) so each gets a shadow that matches how high it sits: long under the ball, close under the strand.
+   Hockey and the speech bubbles keep the original soft shadow. The TV and radio have none around the sides; they stand
+   on ground shadows instead (.ed-ground). */
+.ed-tile--3 .ed-art-in{filter:drop-shadow(4px 5px 0 rgba(0,0,0,0.45));}
+[data-theme="light"] .ed-tile--3 .ed-art-in{filter:drop-shadow(4px 5px 0 rgba(13,17,23,0.3));}
 .ed-tile--3 .ed-art-in img,
 [data-theme="light"] .ed-tile--3 .ed-art-in img{filter:none;}
+
+.ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(0,0,0,0.45));}
+[data-theme="light"] .ed-tile--2 .ed-art-in img{filter:drop-shadow(-5px 1px 0 rgba(13,17,23,0.3));}
+
+.ed-tile--4 .ed-art-in .ed-y-ball{filter:drop-shadow(5px 6px 0 rgba(0,0,0,0.45));}
+.ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(0,0,0,0.45));}
+.ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(0,0,0,0.45));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-ball{filter:drop-shadow(5px 6px 0 rgba(13,17,23,0.3));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-strand{filter:drop-shadow(2px 2px 0 rgba(13,17,23,0.3));}
+[data-theme="light"] .ed-tile--4 .ed-art-in .ed-y-pom{filter:drop-shadow(3px 4px 0 rgba(13,17,23,0.3));}
+
+.ed-tile--5 .ed-art-in > img,
+.ed-tile--6 .ed-art-in > img{filter:drop-shadow(0 6px 8px rgba(0,0,0,0.3));}
+[data-theme="light"] .ed-tile--5 .ed-art-in > img,
+[data-theme="light"] .ed-tile--6 .ed-art-in > img{filter:drop-shadow(0 6px 8px rgba(13,17,23,0.22));}
+
+.ed-tile--7 .ed-art-in img,
+[data-theme="light"] .ed-tile--7 .ed-art-in img{filter:none;}
+.ed-ground{
+  position:absolute;border-radius:50%;pointer-events:none;
+  background:rgba(0,0,0,0.4);
+}
+[data-theme="light"] .ed-ground{background:rgba(13,17,23,0.26);}
+.ed-ground--tv{left:6%;top:92%;width:66%;height:8%;}
+.ed-ground--radio{left:67%;top:94%;width:35%;height:6%;}
 
 /* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
 @property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
