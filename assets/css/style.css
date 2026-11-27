@@ -757,7 +757,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile[data-act]{cursor:pointer;}
 
 /* Per-tile nudges to the drawing's position (the size is unchanged) */
-.ed-tile--4 .ed-art{transform:translateY(-8px);}
+.ed-tile--4 .ed-art{transform:translateY(6px);}
 .ed-tile--7 .ed-art{transform:translateY(8px);}
 
 /* Card 2: the verse is live text, drawn in an SVG that uses the paper image's own coordinates and
@@ -784,7 +784,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-size:3.3cqw;letter-spacing:0.14em;text-transform:uppercase;color:#6b4a33;
 }
 .ed-art-in .ed-g-face{
-  inset:auto auto -8% -3%;width:34%;height:auto;object-fit:initial;
+  inset:auto auto -16% 9%;width:30%;height:auto;object-fit:initial;
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
