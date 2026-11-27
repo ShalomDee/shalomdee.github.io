@@ -763,6 +763,20 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Card 2: the paper and pen run a little larger, since the poem is the point of the tile */
 .ed-tile--2 .ed-art{inset:6px 10px var(--ed-bot,78px);}
 
+/* Things that lie flat on a surface (sketchbook, paper and pen): a tight dark contact shadow plus softer ones further out.
+   On the sketchbook the shadow sits on the container, so the pencil and colour layers share one shadow
+   and the colour paint-in changes nothing but the pages. */
+.ed-tile--2 .ed-art-in img,
+.ed-tile--3 .ed-art-in{
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,0.6)) drop-shadow(0 3px 4px rgba(0,0,0,0.4)) drop-shadow(0 8px 10px rgba(0,0,0,0.22));
+}
+[data-theme="light"] .ed-tile--2 .ed-art-in img,
+[data-theme="light"] .ed-tile--3 .ed-art-in{
+  filter:drop-shadow(0 1px 1px rgba(13,17,23,0.5)) drop-shadow(0 3px 4px rgba(13,17,23,0.32)) drop-shadow(0 8px 10px rgba(13,17,23,0.18));
+}
+.ed-tile--3 .ed-art-in img,
+[data-theme="light"] .ed-tile--3 .ed-art-in img{filter:none;}
+
 /* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
 @property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
 .ed-tile--3 .ed-art-in .ed-b{
