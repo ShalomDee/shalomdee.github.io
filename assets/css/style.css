@@ -760,6 +760,21 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile--4 .ed-art{transform:translateY(6px);}
 .ed-tile--7 .ed-art{transform:translateY(8px);}
 
+/* Card 3: the colour is painted in, growing outward from the sunflower with a soft edge, instead of fading */
+@property --ed-r{syntax:'<length>';inherits:false;initial-value:0px;}
+.ed-tile--3 .ed-art-in .ed-b{
+  opacity:1;--ed-r:0px;
+  -webkit-mask-image:radial-gradient(circle at 56% 25%,#000 calc(var(--ed-r) - 18cqw),transparent var(--ed-r));
+  mask-image:radial-gradient(circle at 56% 25%,#000 calc(var(--ed-r) - 18cqw),transparent var(--ed-r));
+  transition:--ed-r 1.3s cubic-bezier(0.35,0.1,0.3,1);
+}
+.ed-tile--3.is-on .ed-a{opacity:1;}
+.ed-tile--3.is-on .ed-b{--ed-r:80cqw;}
+@media (hover:hover){
+  .ed-tile--3[data-act]:hover .ed-a{opacity:1;}
+  .ed-tile--3[data-act]:hover .ed-b{--ed-r:80cqw;}
+}
+
 /* Card 2: the verse is live text, drawn in an SVG that uses the paper image's own coordinates and
    a matrix fitted to the paper's four corners, so it follows the paper's angle and lean */
 .ed-verse{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;}
@@ -788,6 +803,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
+.ed-art-in .ed-g:nth-child(4) .ed-g-face,.ed-art-in .ed-g:nth-child(5) .ed-g-face{left:-5.5%;}
 .ed-g.is-cur .ed-g-face{animation:ed-pop 0.35s ease-out;}
 @keyframes ed-pop{0%{transform:scale(0.8);}70%{transform:scale(1.06);}100%{transform:scale(1);}}
 
