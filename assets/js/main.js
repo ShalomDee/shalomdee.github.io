@@ -248,7 +248,7 @@ const edGreet = edGreetTile && (() => {
 })();
 
 /* ─── Editorial strip (phones) ───
-   Below 768px the tiles show one at a time. Each holds for 4s while the ring
+   Below 768px the tiles show one at a time. Each holds for 6s while the ring
    fills, then slides to the next, looping. Only the ring button pauses it.
    A tile with data-act names its own tap interaction: tapping it pauses the
    strip and fires an "ed:interact" event on the tile. Swiping moves by hand
@@ -260,7 +260,7 @@ const edBar = document.querySelector('.ed-bar');
 if (edStrip && edBar) {
   const track = edStrip.querySelector('.editorial-grid');
   const tiles = [...track.children];
-  const N = tiles.length, HOLD = 4000, RING = 106.8;
+  const N = tiles.length, HOLD = 6000, RING = 106.8;
   const count = edBar.querySelector('.ed-count');
   const hint = edBar.querySelector('.ed-hint');
   const btn = edBar.querySelector('.ed-ring-btn');
