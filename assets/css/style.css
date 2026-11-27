@@ -760,12 +760,12 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 .ed-tile--4 .ed-art{transform:translateY(-8px);}
 .ed-tile--7 .ed-art{transform:translateY(8px);}
 
-/* Card 2: the verse is live text laid over the blank paper */
-.ed-verse{
-  position:absolute;left:15%;top:42%;width:48%;
-  transform:rotate(-14deg);transform-origin:left top;
+/* Card 2: the verse is live text, drawn in an SVG that uses the paper image's own coordinates and
+   a matrix fitted to the paper's four corners, so it follows the paper's angle and lean */
+.ed-verse{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;}
+.ed-verse text{
   font-family:var(--font-bd);font-style:italic;font-weight:500;
-  font-size:6.2cqw;line-height:1.4;color:#3a2618;text-align:center;
+  font-size:8.6px;fill:#3a2618;
 }
 
 /* Card 6: a greeting and a face per language, shown while hovering or after taps (main.js) */
@@ -776,7 +776,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   position:absolute;left:24%;top:24%;width:52%;height:38%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   font-family:var(--font-hd);font-style:italic;font-weight:700;
-  font-size:9.5cqw;line-height:1.05;color:#3a2618;
+  font-size:8cqw;line-height:1.05;color:#3a2618;
 }
 .ed-g-word small{
   display:block;margin-top:2.4cqw;
@@ -784,7 +784,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-size:3.3cqw;letter-spacing:0.14em;text-transform:uppercase;color:#6b4a33;
 }
 .ed-art-in .ed-g-face{
-  inset:auto -3% -8% auto;width:34%;height:auto;object-fit:initial;
+  inset:auto auto -8% -3%;width:34%;height:auto;object-fit:initial;
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
@@ -793,7 +793,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 
 /* Card 7: music notes drawn in the text colour, drifting up while the TV is on */
 .ed-notes{
-  position:absolute;right:-2%;top:-8%;width:30%;height:auto;
+  position:absolute;right:1%;top:19%;width:27%;height:auto;
   color:var(--vellum);opacity:0;pointer-events:none;
 }
 .ed-notes path{opacity:0;}
