@@ -784,7 +784,7 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   font-size:3.3cqw;letter-spacing:0.14em;text-transform:uppercase;color:#6b4a33;
 }
 .ed-art-in .ed-g-face{
-  inset:auto auto -16% -5%;width:30%;height:auto;object-fit:initial;
+  inset:auto auto -16% -2%;width:33%;height:auto;object-fit:initial;
   filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
