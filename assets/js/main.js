@@ -215,6 +215,38 @@ if (editorialSection) {
   editorialObserver.observe(editorialSection);
 }
 
+/* ─── Editorial swap tiles ───
+   A tile with data-act shows its second image on hover (CSS). Where there is
+   no hover (phones, tablets) a tap toggles .is-on instead. */
+const edTouch = window.matchMedia('(hover: none)');
+document.querySelectorAll('.ed-tile[data-act]:not([data-greet])').forEach(tile => {
+  tile.addEventListener('click', () => {
+    if (edTouch.matches) tile.classList.toggle('is-on');
+  });
+});
+
+/* The greetings tile: while the pointer is over it the greetings change every
+   1.8s; a tap or click moves to the next one. Leaving the tile clears it.
+   With reduced motion the greetings only change on a tap. */
+const edGreetTile = document.querySelector('.ed-tile[data-greet]');
+const edGreet = edGreetTile && (() => {
+  const items = [...edGreetTile.querySelectorAll('.ed-g')];
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let cur = -1, timer = 0;
+  const show = k => { cur = k; items.forEach((el, j) => el.classList.toggle('is-cur', j === k)); };
+  const next = () => show((cur + 1) % items.length);
+  const stop = () => { clearInterval(timer); timer = 0; };
+  const hide = () => { stop(); show(-1); };
+  edGreetTile.addEventListener('mouseenter', () => {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    next(); stop();
+    if (!calm.matches) timer = setInterval(next, 1800);
+  });
+  edGreetTile.addEventListener('mouseleave', () => { if (window.matchMedia('(hover: hover)').matches) hide(); });
+  edGreetTile.addEventListener('click', () => { if (!timer) next(); });
+  return { hide };
+})();
+
 /* ─── Editorial strip (phones) ───
    Below 768px the tiles show one at a time. Each holds for 4s while the ring
    fills, then slides to the next, looping. Only the ring button pauses it.
@@ -252,6 +284,8 @@ if (edStrip && edBar) {
     i = k;
     track.style.transform = `translateX(${-i * step()}px)`;
     elapsed = 0; setRing(0); sliding = motion;
+    tiles.forEach(t => t.classList.remove('is-on'));
+    if (edGreet) edGreet.hide();
     const cur = tiles[i % N];
     count.textContent = `${(i % N) + 1} / ${N}`;
     hint.textContent = cur.dataset.act ? `Tap the card to ${cur.dataset.act}` : '';

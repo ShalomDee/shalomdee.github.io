@@ -166,7 +166,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   html{scroll-behavior:auto;}
   .animate-in{opacity:1;animation:none;}
   *,*::before,*::after{transition-duration:0.01ms!important;}
-  html .pa-card:hover,html .ed-tile:hover .ed-img img{transform:none;}
+  html .pa-card:hover{transform:none;}
+  .ed-notes path{animation:none!important;opacity:1!important;}
+  .ed-g,.ed-g.is-cur .ed-g-face{transition:none;animation:none;}
   .editorial-grid{transition:none;}
 }
 
@@ -687,7 +689,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   color:var(--vellum);
 }
 
-/* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══ */
+/* ═══ EDITORIAL (grid from 768px; below that a card-by-card strip, see the phones block) ═══
+   Each tile is a flat colour (--tile, set per tile and theme) with a cut-out drawing on top.
+   The drop shadow is CSS so one transparent image serves Night and Day. */
 .editorial-section{
   display:none;
   padding-top:var(--sp-2xl);padding-bottom:var(--sp-xl);
@@ -704,86 +708,128 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   border-radius:4px;overflow:hidden;
   position:relative;
   border:1px solid var(--v20);
+  background:var(--tile);
   transition:box-shadow 0.3s ease;
 }
-.ed-tile--1{background:#001a33;} .ed-tile--2{background:#3d261a;}
-.ed-tile--3{background:#2A3D38;} .ed-tile--4{background:#301934;}
-.ed-tile--5{background:#d3cbb1;} .ed-tile--6{background:#333333;}
-.ed-tile--5 .ed-top,.ed-tile--5 .ed-body{color:#1a1a1a;text-shadow:none;}
-[data-theme="light"] .ed-tile--1{background:#ffffff;}
-[data-theme="light"] .ed-tile--2{background:#A898B8;}
-[data-theme="light"] .ed-tile--3{background:#C4B89A;}
-[data-theme="light"] .ed-tile--4{background:#8AAFC4;}
-[data-theme="light"] .ed-tile--5{background:#C9A090;}
-[data-theme="light"] .ed-tile--6{background:#9AAF8E;}
-[data-theme="light"] .ed-tile--5 .ed-top,[data-theme="light"] .ed-tile--5 .ed-body{color:inherit;}
+/* Night tiles: deep colours behind the cream text. Day tiles: lighter colours behind the dark text. */
+.ed-tile--1{--tile:#1D2250;} .ed-tile--2{--tile:#5E4920;} .ed-tile--3{--tile:#3B4A5A;}
+.ed-tile--4{--tile:#4A2A1E;} .ed-tile--5{--tile:#1F5558;} .ed-tile--6{--tile:#4A2F6B;}
+.ed-tile--7{--tile:#2F5A4B;}
+[data-theme="light"] .ed-tile--1{--tile:#C9CBEA;} [data-theme="light"] .ed-tile--2{--tile:#E2C16E;}
+[data-theme="light"] .ed-tile--3{--tile:#B7C4CF;} [data-theme="light"] .ed-tile--4{--tile:#C57A68;}
+[data-theme="light"] .ed-tile--5{--tile:#8FC1BE;} [data-theme="light"] .ed-tile--6{--tile:#C7B3DE;}
+[data-theme="light"] .ed-tile--7{--tile:#A9C4A8;}
 .ed-tile:hover{box-shadow:0 6px 24px rgba(0,0,0,0.35);}
 [data-theme="light"] .ed-tile:hover{box-shadow:0 6px 24px rgba(13,17,23,0.15);}
 
-/* Image fills entire card */
-.ed-img{
-  position:absolute;inset:0;width:100%;height:100%;
-  overflow:hidden;z-index:1;
-}
-.ed-img img{
-  width:100%;height:100%;object-fit:cover;object-position:center;
-  filter:grayscale(0.3) brightness(0.85) contrast(1.05);
-  transition:transform 0.3s ease,filter 0.85s ease;
-}
-.editorial-section.in-view .ed-img img{filter:none;}
-.ed-tile:hover .ed-img img{transform:scale(1.03);}
+/* Card 1: the GIF fills the tile; its caption sits on a dark fade so it reads in both themes */
+.ed-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ed-tile--1 .ed-body{background:linear-gradient(transparent,rgba(5,8,20,0.82));padding-top:40px;}
+.ed-tile--1 .ed-headline,.ed-tile--1 .ed-body{color:#F5F1E8;}
 
-/* Text overlays. In dark mode a dark halo keeps text legible on busy photos; light mode has none. */
-.ed-body,.ed-top{text-shadow:0 0 3px var(--ink),0 0 8px var(--ink);}
-[data-theme="light"] .ed-body,[data-theme="light"] .ed-top{text-shadow:none;}
+/* Drawings: --ar is the image's width/height, --ed-bot the room kept for the text below.
+   .ed-art-in is sized to the drawing itself so overlays (verse, notes) line up with it. */
+.ed-art{
+  position:absolute;inset:14px 14px var(--ed-bot,80px);
+  display:flex;align-items:center;justify-content:center;
+  container-type:size;
+}
+.ed-art-in{
+  position:relative;
+  width:min(100cqw,calc(100cqh * var(--ar)));aspect-ratio:var(--ar);
+  container-type:inline-size;
+}
+.ed-art-in img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  filter:drop-shadow(0 6px 8px rgba(0,0,0,0.3));
+  transition:opacity 0.5s ease;
+}
+[data-theme="light"] .ed-art-in img{filter:drop-shadow(0 6px 8px rgba(13,17,23,0.22));}
+
+/* Second image: shown on hover, or after a tap (.is-on, main.js) */
+.ed-art-in .ed-b{opacity:0;}
+.ed-tile.is-on .ed-a{opacity:0;}
+.ed-tile.is-on .ed-b{opacity:1;}
+@media (hover:hover){
+  .ed-tile[data-act]:hover .ed-a{opacity:0;}
+  .ed-tile[data-act]:hover .ed-b{opacity:1;}
+}
+.ed-tile[data-act]{cursor:pointer;}
+
+/* Per-tile nudges to the drawing's position (the size is unchanged) */
+.ed-tile--4 .ed-art{transform:translateY(-8px);}
+.ed-tile--7 .ed-art{transform:translateY(8px);}
+
+/* Card 2: the verse is live text laid over the blank paper */
+.ed-verse{
+  position:absolute;left:15%;top:42%;width:48%;
+  transform:rotate(-14deg);transform-origin:left top;
+  font-family:var(--font-bd);font-style:italic;font-weight:500;
+  font-size:6.2cqw;line-height:1.4;color:#3a2618;text-align:center;
+}
+
+/* Card 6: a greeting and a face per language, shown while hovering or after taps (main.js) */
+.ed-greet{position:absolute;inset:0;pointer-events:none;}
+.ed-g{position:absolute;inset:0;opacity:0;transition:opacity 0.25s ease;}
+.ed-g.is-cur{opacity:1;}
+.ed-g-word{
+  position:absolute;left:24%;top:24%;width:52%;height:38%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--font-hd);font-style:italic;font-weight:700;
+  font-size:9.5cqw;line-height:1.05;color:#3a2618;
+}
+.ed-g-word small{
+  display:block;margin-top:2.4cqw;
+  font-family:var(--font-ui);font-style:normal;font-weight:600;
+  font-size:3.3cqw;letter-spacing:0.14em;text-transform:uppercase;color:#6b4a33;
+}
+.ed-art-in .ed-g-face{
+  inset:auto -3% -8% auto;width:34%;height:auto;object-fit:initial;
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,0.3));transform-origin:50% 100%;
+}
+[data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(0 4px 6px rgba(13,17,23,0.22));}
+.ed-g.is-cur .ed-g-face{animation:ed-pop 0.35s ease-out;}
+@keyframes ed-pop{0%{transform:scale(0.8);}70%{transform:scale(1.06);}100%{transform:scale(1);}}
+
+/* Card 7: music notes drawn in the text colour, drifting up while the TV is on */
+.ed-notes{
+  position:absolute;right:-2%;top:-8%;width:30%;height:auto;
+  color:var(--vellum);opacity:0;pointer-events:none;
+}
+.ed-notes path{opacity:0;}
+.ed-tile--7.is-on .ed-notes{opacity:1;}
+.ed-tile--7.is-on .ed-notes path{animation:ed-note 2.6s ease-in-out infinite;}
+.ed-tile--7.is-on .ed-notes .n2{animation-delay:.5s;}
+.ed-tile--7.is-on .ed-notes .n3{animation-delay:1s;}
+@media (hover:hover){
+  .ed-tile--7:hover .ed-notes{opacity:1;}
+  .ed-tile--7:hover .ed-notes path{animation:ed-note 2.6s ease-in-out infinite;}
+  .ed-tile--7:hover .ed-notes .n2{animation-delay:.5s;}
+  .ed-tile--7:hover .ed-notes .n3{animation-delay:1s;}
+}
+@keyframes ed-note{
+  0%{opacity:0;transform:translateY(8px);}
+  25%{opacity:1;}
+  80%{opacity:1;}
+  100%{opacity:0;transform:translateY(-8px);}
+}
+
 .ed-body{
-  position:absolute;z-index:3;
+  position:absolute;z-index:3;bottom:0;left:0;right:0;
   padding:var(--sp-sm) var(--sp-md);
 }
 
-/* Card 1: top right, right-aligned */
-.ed-tile--1 .ed-body{top:0;right:0;text-align:right;}
-/* Cards 2, 3, 4: bottom left */
-.ed-tile--2 .ed-body,
-.ed-tile--3 .ed-body,
-.ed-tile--4 .ed-body{bottom:0;left:0;}
-/* Card 5: top center + bottom center */
-.ed-tile--5 .ed-top{position:absolute;top:0;left:0;right:0;z-index:3;padding:var(--sp-sm) var(--sp-md);text-align:center;}
-.ed-tile--5 .ed-body{bottom:0;left:0;right:0;text-align:center;}
-/* Card 6: top left */
-.ed-tile--6 .ed-body{top:0;left:0;}
-
-/* Flags: show dark version in dark, light in light */
-.ed-img--flags img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.flags-light{opacity:0;transition:opacity 0.3s;}
-[data-theme="light"] .flags-dark{opacity:0;}
-[data-theme="light"] .flags-light{opacity:1;}
 .ed-headline{
   font-family:var(--font-hd);font-size:var(--sz-base);
   font-weight:900;text-transform:uppercase;letter-spacing:0.04em;
-  margin-bottom:2px;
+  color:var(--v100);margin-bottom:2px;
 }
 .ed-text{
   font-family:var(--font-bd);font-size:var(--sz-sm);
-  color:var(--v70);line-height:1.4;
-}
-.ed-text--md{font-size:var(--sz-base);color:var(--v85);}
-.ed-tile--1 .ed-headline{font-size:var(--sz-lg);line-height:1.2;}
-.ed-subtext{
-  font-family:var(--font-bd);font-size:var(--sz-2xs);
-  font-style:italic;color:var(--v70);margin-top:2px;
-}
-.editorial-caption{
-  font-family:var(--font-bd);font-size:var(--sz-sm);
-  font-style:italic;color:var(--v45);
-  display:flex;align-items:center;gap:var(--sp-md);
-  white-space:nowrap;
+  color:var(--v85);line-height:1.4;
 }
 /* Strip controls: phones only */
 .ed-bar{display:none;}
-.editorial-caption::before,.editorial-caption::after{
-  content:'';flex:1;height:1px;background:var(--v15);
-}
 
 /* ═══ PRESS ARCHIVE ═══ */
 .press-archive{
@@ -1012,8 +1058,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .nav-ticker{gap:var(--sp-md);}   /* desktop spacing runs into the toggle below 960px */
   /* Editorial: two columns, three rows */
   .editorial-section{display:block;}
-  .editorial-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,240px);}
+  .editorial-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,240px);}
   .editorial-grid .ed-tile{grid-column:auto;grid-row:auto;}
+  .editorial-grid .ed-tile--7{grid-column:1/-1;}
 }
 
 @media(min-width:960px){
@@ -1047,8 +1094,9 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .editorial-grid .ed-tile--2{grid-column:9/15;grid-row:1;}
   .editorial-grid .ed-tile--3{grid-column:15/21;grid-row:1;}
   .editorial-grid .ed-tile--4{grid-column:1/6;grid-row:2;}
-  .editorial-grid .ed-tile--5{grid-column:6/16;grid-row:2;}
-  .editorial-grid .ed-tile--6{grid-column:16/21;grid-row:2;}
+  .editorial-grid .ed-tile--5{grid-column:6/11;grid-row:2;}
+  .editorial-grid .ed-tile--6{grid-column:11/16;grid-row:2;}
+  .editorial-grid .ed-tile--7{grid-column:16/21;grid-row:2;}
 
   /* Selected Builds: lead across the top, image beside its text; second
      stories in halves; short items in thirds */
@@ -1083,8 +1131,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
     transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);
   }
   .editorial-grid .ed-tile{flex:none;width:min(280px,76vw);height:240px;}
-  /* The Shift is a wide drawing on a transparent background: show all of it, the tile colour fills around it */
-  .editorial-grid .ed-tile--5 .ed-img img{object-fit:contain;}
   .ed-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-md);margin:var(--sp-sm) 0 var(--sp-lg);}
   .ed-count{font-family:var(--font-ui);font-size:var(--sz-xs);font-weight:600;letter-spacing:0.08em;color:var(--v55);font-variant-numeric:tabular-nums;}
   .ed-hint{flex:1;text-align:center;font-family:var(--font-bd);font-style:italic;font-size:var(--sz-sm);color:var(--v60);}
@@ -1101,6 +1147,11 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   .ed-ic-play,.ed-bar.is-paused .ed-ic-pause{display:none;}
   .ed-bar.is-paused .ed-ic-play{display:block;}
   .mast-top{justify-content:flex-end;padding:8px var(--pad);}
+}
+
+@media(min-width:768px) and (max-width:959.98px){
+  /* the last Editorial tile spans the full width here and has room to spare */
+  .ed-tile--7 .ed-art{--ed-bot:70px!important;}
 }
 
 @media(max-width:959.98px){

@@ -34,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,900&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Manufacturing+Consent&display=swap" rel="stylesheet">
   <!-- When style.css or main.js changes, set ?v= on both lines, and on every case-studies/*/index.html, to the deploy date (YYYY-MM-DD, plus b, c… for a second deploy that day) so returning visitors get the new files -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-25l">
-  <script src="./assets/js/main.js?v=2026-11-25l" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css?v=2026-11-27">
+  <script src="./assets/js/main.js?v=2026-11-27" defer></script>
 </head>
 <body>
 
@@ -438,86 +438,123 @@
 
 </div>
 
-<!-- ═══ EDITORIAL (desktop only) ═══ -->
+<!-- ═══ EDITORIAL ═══ -->
 <section class="editorial-section wrap" id="editorials">
   <div class="sec-head sec-head-gold">
     <h2 class="sec-label"><em>Editorial</em></h2>
     <span class="sec-meta">Fun Facts About Me</span>
   </div>
 
-  <!-- Phones: .ed-strip clips the grid into a one-tile-at-a-time strip (main.js). Desktop ignores it. -->
+  <!-- Phones: .ed-strip clips the grid into a one-tile-at-a-time strip (main.js). Desktop ignores it.
+       A tile with data-act swaps to its second image on hover, or on tap (main.js adds .is-on).
+       The data-greet tile instead steps through its greetings (hover or tap);
+       on phones .ed-hint shows "Tap the card to <data-act>" while that tile is on screen. -->
   <div class="ed-strip">
   <div class="editorial-grid">
 
     <article class="ed-tile ed-tile--1">
-      <div class="ed-img">
-        <img loading="lazy" src="./assets/images/cards/card1.webp" width="1020" height="600" alt="Anya from Spy × Family" class="alive-reveal">
-      </div>
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="./assets/images/cards/ed-anya-still.webp">
+        <img class="ed-cover" loading="lazy" src="./assets/images/cards/ed-anya.webp" width="498" height="281" alt="Anya from Spy × Family smirking over a globe with her hands raised">
+      </picture>
       <div class="ed-body">
-        <span class="ed-headline">Serious About<br>Not Being Serious</span>
+        <h3 class="ed-headline">Completely normal career goals</h3>
       </div>
     </article>
 
     <article class="ed-tile ed-tile--2">
-      <div class="ed-img">
-        <img loading="lazy" src="./assets/images/cards/card2.webp" width="750" height="600" alt="Handmade yarn keychains" class="alive-reveal">
+      <div class="ed-art" style="--ar:1.231;--ed-bot:56px">
+        <div class="ed-art-in">
+          <img loading="lazy" src="./assets/images/cards/ed-paper.webp" width="900" height="731" alt="">
+          <p class="ed-verse">I’d write a little more for you,<br>But this must fit on mobile too.</p>
+        </div>
       </div>
       <div class="ed-body">
-        <h3 class="ed-headline">FIRST MICRO BUSINESS</h3>
+        <h3 class="ed-headline">Award-winning poet</h3>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--3" data-act="add the colour">
+      <div class="ed-art" style="--ar:1.590;--ed-bot:92px">
+        <div class="ed-art-in">
+          <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-art.webp" width="900" height="566" alt="Open sketchbook surrounded by pencils, brushes and paints">
+          <img class="ed-b" loading="lazy" src="./assets/images/cards/ed-art-colour.webp" width="900" height="566" alt="" aria-hidden="true">
+        </div>
+      </div>
+      <div class="ed-body">
+        <h3 class="ed-headline">Artistic beginnings</h3>
+        <p class="ed-text">6 years of experimenting with pencils, pastels, paints and more.</p>
+      </div>
+    </article>
+
+    <article class="ed-tile ed-tile--4" data-act="unravel the yarn">
+      <div class="ed-art" style="--ar:1.826;--ed-bot:96px">
+        <div class="ed-art-in">
+          <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-yarn.webp" width="900" height="493" alt="A ball of yarn and a pom-pom keychain">
+          <img class="ed-b" loading="lazy" src="./assets/images/cards/ed-yarn-unravelled.webp" width="900" height="493" alt="" aria-hidden="true">
+        </div>
+      </div>
+      <div class="ed-body">
+        <h3 class="ed-headline">My entrepreneurial debut</h3>
+        <p class="ed-text">ShaDo Crafts (2018–2019).</p>
         <p class="ed-text">Handmade yarn keychains.</p>
-        <p class="ed-text">— ShaDo Crafts —</p>
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--3">
-      <div class="ed-img">
-        <img loading="lazy" src="./assets/images/cards/card3.webp" width="750" height="600" alt="Open sketchbook" class="alive-reveal">
+    <article class="ed-tile ed-tile--5" data-act="take the shot">
+      <div class="ed-art" style="--ar:2.452;--ed-bot:70px">
+        <div class="ed-art-in">
+          <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-hockey.webp" width="900" height="367" alt="Field hockey player lining up a shot toward a goal">
+          <img class="ed-b" loading="lazy" src="./assets/images/cards/ed-hockey-goal.webp" width="900" height="367" alt="" aria-hidden="true">
+        </div>
       </div>
       <div class="ed-body">
-        <p class="ed-text ed-text--md">Sketchbooks built the eye,<br>The IDE inherited it.</p>
+        <h3 class="ed-headline">My field hockey days</h3>
+        <p class="ed-text">8 years on the field.</p>
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--4">
-      <div class="ed-img ed-img--flags">
-        <img loading="lazy" class="flags-dark alive-reveal" src="./assets/images/cards/card4d.webp" width="620" height="520" alt="Flag icons">
-        <img loading="lazy" class="flags-light alive-reveal" src="./assets/images/cards/card4l.webp" width="620" height="520" alt="">
+    <article class="ed-tile ed-tile--6" data-act="hear a hello" data-greet>
+      <div class="ed-art" style="--ar:1.679;--ed-bot:108px">
+        <div class="ed-art-in">
+          <img loading="lazy" src="./assets/images/cards/ed-bubbles.webp" width="900" height="536" alt="Three overlapping speech bubbles">
+          <div class="ed-greet" aria-hidden="true">
+            <div class="ed-g"><span class="ed-g-word">Eita!<small>Ndebele</small></span><img class="ed-g-face" loading="lazy" src="./assets/images/cards/ed-face-ndebele.webp" width="420" height="422" alt=""></div>
+            <div class="ed-g"><span class="ed-g-word">Sawubona<small>Zulu</small></span><img class="ed-g-face" loading="lazy" src="./assets/images/cards/ed-face-zulu.webp" width="420" height="422" alt=""></div>
+            <div class="ed-g"><span class="ed-g-word">Molo<small>Xhosa</small></span><img class="ed-g-face" loading="lazy" src="./assets/images/cards/ed-face-xhosa.webp" width="420" height="422" alt=""></div>
+            <div class="ed-g"><span class="ed-g-word">Yebo<small>Swati</small></span><img class="ed-g-face" loading="lazy" src="./assets/images/cards/ed-face-swati.webp" width="420" height="422" alt=""></div>
+            <div class="ed-g"><span class="ed-g-word">Bho here?<small>Shona</small></span><img class="ed-g-face" loading="lazy" src="./assets/images/cards/ed-face-shona.webp" width="420" height="422" alt=""></div>
+          </div>
+        </div>
       </div>
       <div class="ed-body">
-        <h3 class="ed-headline">LANGUAGES</h3>
-        <p class="ed-text">English, Ndebele, Zulu</p>
-        <p class="ed-subtext">four others</p>
+        <h3 class="ed-headline">A little multilingual</h3>
+        <p class="ed-text">English, Ndebele, Zulu, Xhosa, Swati and some Shona.</p>
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--5">
-      <div class="ed-top">
-        <h3 class="ed-headline">THE SHIFT</h3>
-      </div>
-      <div class="ed-img">
-        <img loading="lazy" src="./assets/images/cards/card5.webp" width="1260" height="520" alt="Figure walking from sketchbook to IDE" class="alive-reveal">
-      </div>
-      <div class="ed-body">
-      </div>
-    </article>
-
-    <article class="ed-tile ed-tile--6">
-      <div class="ed-img">
-        <img loading="lazy" src="./assets/images/cards/card6.webp" width="620" height="520" alt="Church and community building cityscape" class="alive-reveal">
+    <article class="ed-tile ed-tile--7" data-act="switch on the TV">
+      <div class="ed-art" style="--ar:1.601;--ed-bot:122px">
+        <div class="ed-art-in">
+          <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-tv-off.webp" width="900" height="562" alt="A retro television and a portable radio">
+          <img class="ed-b" loading="lazy" src="./assets/images/cards/ed-tv-on.webp" width="900" height="562" alt="" aria-hidden="true">
+          <svg class="ed-notes" viewBox="0 0 100 60" aria-hidden="true">
+            <g fill="currentColor"><path class="n1" d="M12 40V12l14-3v26a5 5 0 1 1-3-4.5V16l-8 2v22a5 5 0 1 1-3-4.5z"/><path class="n2" d="M46 36V10l12-3v24a4.5 4.5 0 1 1-2.6-4V13l-7 1.8V36a4.5 4.5 0 1 1-2.4-4z"/><path class="n3" d="M78 42V16l12-3v24a4.5 4.5 0 1 1-2.6-4V19l-7 1.8V42a4.5 4.5 0 1 1-2.4-4z"/></g>
+          </svg>
+        </div>
       </div>
       <div class="ed-body">
-        <h3 class="ed-headline">DESIGN WORK</h3>
-        <p class="ed-text">Graphics created for churches and community organizations.</p>
+        <h3 class="ed-headline">My unofficial Sotho teachers</h3>
+        <p class="ed-text">Picked up a little Sotho through TV shows and gospel music.</p>
       </div>
     </article>
 
   </div>
   </div>
 
-  <!-- Phones only. A tile with data-act="flip the sketchbook" (for example) shows
-       "Tap the card to flip the sketchbook" in .ed-hint while it is on screen. -->
+  <!-- Phones only -->
   <div class="ed-bar">
-    <span class="ed-count">1 / 6</span>
+    <span class="ed-count">1 / 7</span>
     <span class="ed-hint"></span>
     <button type="button" class="ed-ring-btn" aria-label="Pause the Editorial slides">
       <svg class="ed-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="ed-ring-track" cx="20" cy="20" r="17"/><circle class="ed-ring-fill" cx="20" cy="20" r="17"/></svg>
@@ -525,8 +562,6 @@
       <svg class="ed-ic ed-ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
     </button>
   </div>
-
-  <p class="editorial-caption"><em>A Maker’s Journey</em></p>
 </section>
 
 </main>
