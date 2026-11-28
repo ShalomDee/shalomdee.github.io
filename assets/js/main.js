@@ -102,7 +102,8 @@ if (heroArt) {
 
   let t = DURATION, playing = false, last = 0;
   function frame(now) {
-    t = Math.min(DURATION, t + (now - last) / 1000);
+    // A slow frame slows the animation down instead of skipping its phases
+    t = Math.min(DURATION, t + Math.min(0.05, Math.max(0, (now - last) / 1000)));
     last = now;
     render(t);
     if (t < DURATION) requestAnimationFrame(frame); else playing = false;
@@ -112,16 +113,32 @@ if (heroArt) {
     requestAnimationFrame(frame);
   }
 
+  // It starts when the page has finished loading, the engraving is decoded and
+  // the hero is on screen, so it is not spent behind the page's own fade-in.
+  // Each time the hero comes back into view it plays again.
   const still = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!still.matches) {
-    const replay = () => { if (!playing && !still.matches) play(); };
+    let ready = false, inView = false, waiting = false;
+    const maybePlay = () => {
+      if (!ready || !inView || playing || waiting) return;
+      waiting = true;
+      setTimeout(() => { waiting = false; if (inView && !playing) play(); }, 600);
+    };
+    const replay = () => { if (ready && !playing) play(); };
     heroArt.addEventListener('mouseenter', replay);
     heroArt.addEventListener('click', replay);
+    const visibleBase = () => (document.documentElement.getAttribute('data-theme') === 'dark' ? layers.dark : layers.light).querySelector('.hero-art-base');
+    const whenReady = () => {
+      const img = visibleBase();
+      const done = () => { ready = true; maybePlay(); };
+      if (img && img.decode) img.decode().then(done, done); else done();
+    };
+    if (document.readyState === 'complete') whenReady(); else window.addEventListener('load', whenReady);
     if ('IntersectionObserver' in window) {
-      const seen = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) { play(); seen.disconnect(); }
-      }, { threshold: 0.5 });
-      seen.observe(heroArt);
+      new IntersectionObserver(entries => {
+        inView = entries[0].isIntersecting;
+        if (inView) maybePlay();
+      }, { threshold: 0.5 }).observe(heroArt);
     }
   }
 
