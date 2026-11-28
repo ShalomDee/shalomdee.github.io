@@ -909,10 +909,10 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 /* Strip controls: phones only */
 .ed-bar{display:none;}
 
-/* Stacked layout (below 960px): the rules between Projects, Experience and Skills run edge to edge like the ones between the other sections. They sit on the section containers, not on the inset section headers. */
+/* Section breaks run edge to edge, and the heading below does not draw its own rule. Projects ends with the rule; Experience and Skills sit under it. When they stack (below 960px), Skills gets the same rule above it. */
+.press-archive{border-bottom:2px solid var(--gold);}
+.exp-wire .sec-head,.classifieds-col .sec-head{border-top:0;}
 @media(max-width:959.98px){
-  .press-archive{border-bottom:2px solid var(--gold);}
-  .exp-wire .sec-head,.classifieds-col .sec-head{border-top:0;}
   .classifieds-col{
     margin:var(--sp-2xl) calc(-1 * var(--pad)) 0;
     padding:var(--sp-2xl) var(--pad) 0;
