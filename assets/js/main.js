@@ -28,9 +28,8 @@ function applyTheme(theme) {
   document.querySelectorAll('.theme-btn').forEach(btn => {
     btn.setAttribute('aria-label', dark ? btn.dataset.labelDark : btn.dataset.labelLight);
   });
-  // The dark hero <source> wins only in dark theme
-  const heroDark = document.getElementById('heroDark');
-  if (heroDark) heroDark.media = dark ? 'all' : 'not all';
+  // The hero art fades to the new theme's engraving (defined below)
+  if (window.showHeroArt) window.showHeroArt(theme);
   // Browser UI colour (mobile address bar) follows the page background
   const themeColor = document.querySelector('meta[name="theme-color"]');
   if (themeColor) themeColor.content = dark ? '#121A28' : '#F5F1E8';
@@ -54,6 +53,117 @@ document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('cli
 if (darkQuery.addEventListener) darkQuery.addEventListener('change', e => {
   if (!chosenThisVisit && !savedTheme()) applyTheme(e.matches ? 'dark' : 'light');
 });
+
+/* ─── Hero art ───
+   The engraving is a still. When it is half on screen one timeline plays
+   once: the icon glow comes up, two lights travel along the rope, a spark
+   bursts, then everything dies down to the plain still. Hover or tap
+   replays it. Reduced motion keeps the plain still. The animation is one
+   function of time, so every state is reproducible. */
+const heroArt = document.getElementById('heroArt');
+if (heroArt) {
+  const DURATION = 7;
+  const layers = {
+    light: heroArt.querySelector('.hero-layer-day'),
+    dark: heroArt.querySelector('.hero-layer-night')
+  };
+  const glows = heroArt.querySelectorAll('.hero-art-glow');
+  const burst = heroArt.querySelector('.fx-burst');
+  const halo = heroArt.querySelector('.fx-halo');
+  const lightL = heroArt.querySelector('.fx-light-l');
+  const lightR = heroArt.querySelector('.fx-light-r');
+
+  const clamp = x => Math.min(1, Math.max(0, x));
+  const seg = (t, a, b) => clamp((t - a) / (b - a));
+  const easeOut = x => 1 - Math.pow(1 - x, 3);
+  const easeInOut = x => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+
+  function render(t) {
+    // Dying down: the spark shrinks to an ember and goes out first; the icon
+    // glow cools more slowly, dropping fast and then lingering.
+    const cool = Math.pow(1 - seg(t, 5.0, 7.0), 2);
+    const spark = Math.pow(1 - seg(t, 4.4, 6.0), 2);
+    const glow = easeInOut(seg(t, 0.15, 1.6)) * cool;
+    glows.forEach(g => { g.style.opacity = glow; });
+
+    const p = easeInOut(seg(t, 1.0, 2.4)); // lights along the rope
+    const lo = seg(t, 1.0, 1.2) * (1 - seg(t, 2.25, 2.45));
+    lightL.style.opacity = lo; lightL.style.transform = 'translateX(' + (162 * p) + 'px)';
+    lightR.style.opacity = lo; lightR.style.transform = 'translateX(' + (-168 * p) + 'px)';
+
+    const up = easeOut(seg(t, 2.5, 3.0)), down = easeInOut(seg(t, 3.0, 4.0));
+    const scale = (t < 3 ? 0.05 + 1.85 * up : 1.9 - 0.9 * down) * (1 - 0.45 * seg(t, 4.4, 6.0));
+    burst.style.opacity = seg(t, 2.5, 2.65) * spark;
+    burst.style.transform = 'scale(' + scale + ')';
+    const haloScale = t < 3 ? 0.3 + 0.95 * up : 1.25 - 0.55 * down;
+    halo.style.opacity = (t < 3 ? 0.85 : 0.85 - 0.4 * down) * seg(t, 2.5, 2.6) * spark;
+    halo.style.transform = 'scale(' + haloScale + ')';
+  }
+
+  let t = DURATION, playing = false, last = 0;
+  function frame(now) {
+    t = Math.min(DURATION, t + (now - last) / 1000);
+    last = now;
+    render(t);
+    if (t < DURATION) requestAnimationFrame(frame); else playing = false;
+  }
+  function play() {
+    t = 0; playing = true; last = performance.now();
+    requestAnimationFrame(frame);
+  }
+
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!still.matches) {
+    const replay = () => { if (!playing && !still.matches) play(); };
+    heroArt.addEventListener('mouseenter', replay);
+    heroArt.addEventListener('click', replay);
+    if ('IntersectionObserver' in window) {
+      const seen = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { play(); seen.disconnect(); }
+      }, { threshold: 0.5 });
+      seen.observe(heroArt);
+    }
+  }
+
+  // The other theme's engraving loads once the page has settled, or when the
+  // theme button is reached, so most visitors never wait for it.
+  let fetched = {};
+  function loadArt(theme) {
+    if (fetched[theme]) return;
+    fetched[theme] = true;
+    layers[theme].querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src; img.removeAttribute('data-src');
+    });
+  }
+  loadArt('light');
+  const settle = () => loadArt('dark');
+  if (document.documentElement.getAttribute('data-theme') === 'dark') settle();
+  else if ('requestIdleCallback' in window) requestIdleCallback(settle, { timeout: 4000 });
+  else setTimeout(settle, 2500);
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    ['pointerenter', 'focus'].forEach(ev => btn.addEventListener(ev, settle, { once: true }));
+  });
+
+  // New engraving fades in over the old one on the page's own 0.3s curve,
+  // so the art's box tracks the page background and never shows.
+  let shown = null, tidy = 0;
+  window.showHeroArt = theme => {
+    const next = layers[theme], prev = shown && layers[shown];
+    clearTimeout(tidy);
+    if (prev === next) return;
+    if (!prev) {
+      shown = theme;
+      return; // first paint: CSS already shows the right layer
+    }
+    shown = theme;
+    prev.style.transition = 'none'; prev.style.opacity = '1'; prev.style.zIndex = '1';
+    next.style.transition = 'none'; next.style.opacity = '0'; next.style.zIndex = '2';
+    void next.offsetWidth;
+    next.style.transition = 'opacity 0.3s var(--ease)'; next.style.opacity = '1';
+    tidy = setTimeout(() => { prev.style.transition = 'none'; prev.style.opacity = '0'; }, 320);
+  };
+  window.showHeroArt(document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+}
 
 /* ─── Drawer ─── */
 const drawer = document.getElementById('drawer');

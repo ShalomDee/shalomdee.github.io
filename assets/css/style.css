@@ -472,14 +472,35 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   width:80%;max-width:400px;
   overflow:hidden;border-radius:3px;
 }
-.hero-illo picture{display:block;}
-.hero-illo img{
-  width:100%;height:auto;display:block;
-  filter:brightness(0.72) contrast(1.12);
+/* Hero art: the engraving is a still image. The glow layer and the SVG spark sit on top; main.js drives them from one timeline function (glow in, two lights along the rope, burst, then everything dies down to the plain still). */
+.hero-art{
+  position:relative;aspect-ratio:4/3;
+  --fx-ray:#8E2030;--fx-halo:rgba(222,70,80,.4);--fx-core:#E0303F;--fx-dot:#fff;
 }
-[data-theme="light"] .hero-illo img{
-  filter:brightness(0.95) contrast(1.05);
+[data-theme="dark"] .hero-art{
+  --fx-ray:#D98577;--fx-halo:rgba(208,122,111,.4);--fx-core:#E8998A;--fx-dot:#FFE6DF;
 }
+.hero-layer,.hero-art img,.hero-fx{position:absolute;inset:0;width:100%;height:100%;display:block;}
+/* The edges of the art fade to transparent so, even mid theme-switch, no rectangle shows. The drawing stays clear of these margins. */
+.hero-layer{
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);
+  mask-composite:intersect;
+}
+/* Right layer before JS runs; main.js then sets inline styles for the cross-fade */
+.hero-layer{opacity:0;}
+[data-theme="light"] .hero-layer-day,[data-theme="dark"] .hero-layer-night{opacity:1;z-index:2;}
+.hero-art-glow{opacity:0;}
+.hero-fx{pointer-events:none;overflow:visible;}
+.fx-s-halo{stop-color:var(--fx-halo);}
+.fx-s-core{stop-color:var(--fx-core);}
+.fx-rays{stroke:var(--fx-ray);stroke-width:1.6;stroke-linecap:round;}
+.fx-rays line{vector-effect:non-scaling-stroke;}
+.fx-stars{fill:var(--fx-ray);}
+.fx-dot{fill:var(--fx-dot);}
+.fx-burst,.fx-light{opacity:0;}
+.fx-burst,.fx-halo{transform-origin:722px 490px;}
 
 /* ═══ MAIN STORY ═══
    Headline across the full width between a double rule above and a single
@@ -500,12 +521,13 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 .ms-headline {
   font-family: var(--font-hd); font-weight: 700;
-  font-size: clamp(2.1rem, 9vw, 2.6rem);
+  /* Phones: two lines, one sentence each. The longer line is about 10.7em wide, so the size follows the width of the column. */
+  font-size: clamp(1.4rem, calc((100vw - 2 * var(--pad)) / 11), 2.6rem);
   line-height: 1.05; color: var(--v100);
+  text-align: center; /* sits on the same centre line as the byline and the short rules under it */
 }
-.ms-headline > span { display: block; }
-/* Phones: "Designs." and "Codes." each take a line, with the rest of the sentence above */
-.ms-headline .hl-line { display: block; }
+.ms-headline > span { display: block; white-space: nowrap; }
+.ms-headline .hl-line { display: inline; }
 
 .ms-grid { display: grid; row-gap: var(--sp-lg); }
 .ms-text { display: contents; }
@@ -843,7 +865,6 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
   filter:drop-shadow(2px 3px 0 rgba(0,0,0,0.42));transform-origin:50% 100%;
 }
 [data-theme="light"] .ed-art-in .ed-g-face{filter:drop-shadow(2px 3px 0 rgba(13,17,23,0.26));}
-.ed-art-in .ed-g:nth-child(4) .ed-g-face{left:-5.5%;}
 .ed-art-in .ed-g:nth-child(5) .ed-g-face{left:-3%;}
 .ed-g.is-cur .ed-g-face{animation:ed-pop 0.35s ease-out;}
 @keyframes ed-pop{0%{transform:scale(0.8);}70%{transform:scale(1.06);}100%{transform:scale(1);}}
@@ -887,6 +908,17 @@ html{scrollbar-color:var(--v45) var(--ink);scrollbar-width:thin;}
 }
 /* Strip controls: phones only */
 .ed-bar{display:none;}
+
+/* Section breaks run edge to edge, and the heading below does not draw its own rule. Projects ends with the rule; Experience and Skills sit under it. When they stack (below 960px), Skills gets the same rule above it. */
+.press-archive{border-bottom:2px solid var(--gold);}
+.exp-wire .sec-head,.classifieds-col .sec-head{border-top:0;}
+@media(max-width:959.98px){
+  .classifieds-col{
+    margin:var(--sp-2xl) calc(-1 * var(--pad)) 0;
+    padding:var(--sp-2xl) var(--pad) 0;
+    border-top:2px solid var(--gold);
+  }
+}
 
 /* ═══ PRESS ARCHIVE ═══ */
 .press-archive{

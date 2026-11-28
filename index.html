@@ -150,11 +150,59 @@
     </div>
   </div>
   <div class="hero-illo animate-in delay-1">
-    <!-- main.js sets the source's media to match the active theme -->
-    <picture>
-      <source id="heroDark" srcset="./assets/images/hero-dark.webp" media="(prefers-color-scheme: dark)" width="1264" height="842">
-      <img fetchpriority="high" src="./assets/images/hero-light.webp" width="1280" height="853" alt="Victorian etching: two figures pulling a rope between code and design worlds">
-    </picture>
+    <div class="hero-art" id="heroArt" role="img" aria-label="Victorian etching: two figures pulling a rope between code and design worlds. Light gathers along the rope and bursts into a spark at the centre, then fades.">
+      <!-- Two stacked layers, one per theme. main.js fades the new one in over the old on the page's own 0.3s curve. The night files load after the page settles, or at once for a night visit. -->
+      <div class="hero-layer hero-layer-day">
+        <img class="hero-art-base" fetchpriority="high" src="./assets/images/hero-day-art.webp" width="1280" height="960" alt="">
+        <img class="hero-art-glow" src="./assets/images/hero-day-glow.webp" width="1280" height="960" alt="">
+      </div>
+      <div class="hero-layer hero-layer-night">
+        <img class="hero-art-base" data-src="./assets/images/hero-night-art.webp" width="1280" height="960" alt="">
+        <img class="hero-art-glow" data-src="./assets/images/hero-night-glow.webp" width="1280" height="960" alt="">
+      </div>
+    <svg class="hero-fx" viewBox="0 0 1448 1086" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="hfHalo"><stop offset="0" class="fx-s-halo" stop-opacity="1"/><stop offset="1" class="fx-s-halo" stop-opacity="0"/></radialGradient>
+        <radialGradient id="hfDot"><stop offset="0" class="fx-s-core" stop-opacity="1"/><stop offset="0.45" class="fx-s-core" stop-opacity="0.55"/><stop offset="1" class="fx-s-core" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g class="fx-lights">
+        <circle class="fx-light fx-light-l" cx="560" cy="490" r="30" fill="url(#hfDot)"/>
+        <circle class="fx-light fx-light-r" cx="890" cy="490" r="30" fill="url(#hfDot)"/>
+      </g>
+      <g class="fx-burst">
+        <circle class="fx-halo" cx="722" cy="490" r="170" fill="url(#hfHalo)"/>
+        <g class="fx-rays">
+          <line x1="738.0" y1="489.2" x2="808.3" y2="485.5"/>
+          <line x1="737.1" y1="495.2" x2="773.1" y2="507.6"/>
+          <line x1="736.3" y1="497.3" x2="794.5" y2="527.0"/>
+          <line x1="732.5" y1="502.1" x2="749.4" y2="521.5"/>
+          <line x1="730.7" y1="503.4" x2="779.2" y2="578.1"/>
+          <line x1="725.1" y1="505.7" x2="732.0" y2="541.2"/>
+          <line x1="722.8" y1="506.0" x2="726.2" y2="569.9"/>
+          <line x1="716.8" y1="505.1" x2="704.8" y2="539.9"/>
+          <line x1="714.7" y1="504.3" x2="682.3" y2="567.9"/>
+          <line x1="709.9" y1="500.5" x2="680.8" y2="525.8"/>
+          <line x1="708.6" y1="498.7" x2="669.2" y2="524.3"/>
+          <line x1="706.3" y1="493.1" x2="680.8" y2="498.0"/>
+          <line x1="706.0" y1="490.8" x2="616.5" y2="495.5"/>
+          <line x1="706.9" y1="484.8" x2="673.5" y2="473.3"/>
+          <line x1="707.7" y1="482.7" x2="652.8" y2="454.7"/>
+          <line x1="711.5" y1="477.9" x2="696.0" y2="460.1"/>
+          <line x1="713.3" y1="476.6" x2="667.5" y2="406.1"/>
+          <line x1="718.9" y1="474.3" x2="709.8" y2="427.4"/>
+          <line x1="721.2" y1="474.0" x2="718.0" y2="414.1"/>
+          <line x1="727.2" y1="474.9" x2="738.4" y2="442.3"/>
+          <line x1="729.3" y1="475.7" x2="759.6" y2="416.2"/>
+          <line x1="734.1" y1="479.5" x2="761.2" y2="455.9"/>
+          <line x1="735.4" y1="481.3" x2="786.6" y2="448.1"/>
+          <line x1="737.7" y1="486.9" x2="761.2" y2="482.4"/>
+        </g>
+        <g class="fx-stars"><path d="M676,435 Q676,450 691,450 Q676,450 676,465 Q676,450 661,450 Q676,450 676,435Z"/><path d="M760,509 Q760,526 777,526 Q760,526 760,543 Q760,526 743,526 Q760,526 760,509Z"/><path d="M780,429 Q780,438 789,438 Q780,438 780,447 Q780,438 771,438 Q780,438 780,429Z"/></g>
+        <circle class="fx-core" cx="722" cy="490" r="22" fill="url(#hfDot)"/>
+        <circle class="fx-dot" cx="722" cy="490" r="5"/>
+      </g>
+    </svg>
+    </div>
   </div>
 </section>
 
@@ -481,7 +529,7 @@
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--3" data-act="add the colour">
+    <article class="ed-tile ed-tile--3" data-act="complete the artwork">
       <div class="ed-art" style="--ar:1.607;--ed-bot:92px">
         <div class="ed-art-in">
           <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-art.webp" width="900" height="560" alt="Open sketchbook surrounded by pencils, brushes and paints">
@@ -510,7 +558,7 @@
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--5" data-act="take the shot">
+    <article class="ed-tile ed-tile--5" data-act="take your shot">
       <div class="ed-art" style="--ar:2.452;--ed-bot:70px">
         <div class="ed-art-in">
           <img class="ed-a" loading="lazy" src="./assets/images/cards/ed-hockey.webp" width="900" height="367" alt="Field hockey player lining up a shot toward a goal">
@@ -523,7 +571,7 @@
       </div>
     </article>
 
-    <article class="ed-tile ed-tile--6" data-act="hear a hello" data-greet>
+    <article class="ed-tile ed-tile--6" data-act="get a greeting" data-greet>
       <div class="ed-art" style="--ar:1.679;--ed-bot:108px">
         <div class="ed-art-in">
           <img loading="lazy" src="./assets/images/cards/ed-bubbles.webp" width="900" height="536" alt="Three overlapping speech bubbles">
